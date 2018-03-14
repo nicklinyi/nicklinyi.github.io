@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2017/08/install.html</loc>
+    <loc>https://nicklinyi.github.io/blog/2017/08/optmize-rsf-code.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2016/06/data-resources.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://nicklinyi.github.io/blog/2016/05/su-scons-together.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
@@ -30,21 +23,14 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2016/06/rsf-data-handle.html</loc>
+    <loc>https://nicklinyi.github.io/blog/2016/06/data-resources.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/categories/index.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/about.html</loc>
+    <loc>https://nicklinyi.github.io/tags/index.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
@@ -58,14 +44,7 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2017/01/rsf-print-log.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/blog/2016/05/vim-scons-highlight.html</loc>
+    <loc>https://nicklinyi.github.io/about.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
@@ -79,7 +58,21 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2017/08/optmize-rsf-code.html</loc>
+    <loc>https://nicklinyi.github.io/blog/2016/06/rsf-data-handle.html</loc>
+    
+    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2016/05/vim-scons-highlight.html</loc>
+    
+    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2017/01/rsf-print-log.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
@@ -93,6 +86,13 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/blog/2017/08/install.html</loc>
+    
+    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/blog/2017/10/specfem2d-gmt.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
@@ -100,7 +100,7 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/index.html</loc>
+    <loc>https://nicklinyi.github.io/categories/index.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
