@@ -241,21 +241,6 @@ Argument list to give program being debugged when it is started is &quot;file1=a
   
     
     <entry>
-      <title><![CDATA[关于]]></title>
-      <url>https://nicklinyi.github.io/about.html</url>
-      <content type="html"><![CDATA[<h4>关于博主</h4>
-
-<p>地震学在读</p>
-<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
-<ul>
-<li>Email：<a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#x6c;&#x69;&#x6e;&#121;&#105;&#104;&#x61;&#x6e;&#99;&#104;&#117;&#97;&#x6e;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x69;&#x6e;&#121;&#105;&#104;&#x61;&#x6e;&#99;&#104;&#117;&#97;&#x6e;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></li>
-</ul>
-<p>如未能及时回复各种问题，请见谅。</p>
-<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
-]]></content>
-    </entry>
-    
-    <entry>
       <title></title>
       <url>https://nicklinyi.github.io/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -316,6 +301,21 @@ Argument list to give program being debugged when it is started is &quot;file1=a
 <li><a href="http://sepwww.stanford.edu/doku.php?id=sep:home" title="Stanford Exploration Project" target="_blank" rel="noopener">SEP</a></li>
 <li><a href="https://seiscope2.osug.fr/" target="_blank" rel="noopener">SEISCOPE</a></li>
 </ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>https://nicklinyi.github.io/about.html</url>
+      <content type="html"><![CDATA[<h4>关于博主</h4>
+
+<p>地震学在读</p>
+<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
+<ul>
+<li>Email：<a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x6c;&#105;&#110;&#121;&#105;&#x68;&#x61;&#110;&#99;&#x68;&#117;&#97;&#x6e;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#105;&#110;&#121;&#105;&#x68;&#x61;&#110;&#99;&#x68;&#117;&#97;&#x6e;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+</ul>
+<p>如未能及时回复各种问题，请见谅。</p>
+<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
 ]]></content>
     </entry>
     
