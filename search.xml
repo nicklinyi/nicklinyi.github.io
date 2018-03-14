@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[采用 GMT 绘制 SPECFEM2D 波场快照]]></title>
+      <url>https://nicklinyi.github.io/blog/2017/10/specfem2d-gmt.html</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于<br>与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。</p>
+<h2 id="运行程序中的一些参数设置"><a href="#运行程序中的一些参数设置" class="headerlink" title="运行程序中的一些参数设置"></a>运行程序中的一些参数设置</h2><p>这里主要显示绘图需要的部分参数：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#### for wavefield dumps ####</span></div><div class="line">output_wavefield_dumps          = .<span class="literal">true</span>.        #将这里设为 <span class="literal">true</span>， 主要是输出绘图文件</div><div class="line">imagetype_wavefield_dumps       = 1              # display <span class="attribute">1</span>=displ vector <span class="attribute">2</span>=veloc vector <span class="attribute">3</span>=accel vector <span class="attribute">4</span>=pressure， 这儿一般选择绘制位移，也可以选择绘制其他的，根据自己的需要进行修改</div><div class="line">use_binary_for_wavefield_dumps  = .<span class="literal">false</span>.        # use ASCII <span class="keyword">or</span> single-precision binary format <span class="keyword">for</span> the wave field dumps， 由于 GMT 画 ASCII 文件相对简单一点，因此这里选择 <span class="literal">false</span></div></pre></td></tr></table></figure>
+<h2 id="运行程序并绘图"><a href="#运行程序并绘图" class="headerlink" title="运行程序并绘图"></a>运行程序并绘图</h2><p>运行完程序之后，在<code>OUTPUT_FILES</code>文件夹下应该存在很多波场快照的文件(文件名类似于 <code>wavefield0000100_01.txt</code>)，最后还有一个网格节点坐标的文件(文件名类似于<code>wavefield_grid_for_dumps.txt</code>)。其中波场快照文件共有两列，分别为水平向和垂直向的波场信息。网格节点坐标文件也有两列数据，每一行记录一个网格节点的坐标信息(x z)。波场快照文件和网格节点坐标文件行数都相等，为总共计算的网格点数（程序运行的时候会在终端上打印该节点数）。</p>
+<h3 id="构建绘图原始文本"><a href="#构建绘图原始文本" class="headerlink" title="构建绘图原始文本"></a>构建绘图原始文本</h3><p>由于波场快照文件记录的是每个网格节点上的波场值，因此和传统的有限差分程序输出的波场快照文件不同。属于不规则网格数据（即使是一个均匀分布的网格），因此无法通过 SU, Madagascar 直接绘制波场快照信息。只能通过绘制一个 xyz 数据体的格式来进行，这个采用 GMT 很容易实现。但前提是需要把原来输出的波场快照，网格节点转化为一个文本文件，然后再使用 GMT 来绘图。</p>
+<p>构建绘图原始文本可采用 Linux 下的 <code>paste</code> 命令，其操作如下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 将 wavefield0001000_01.txt 按列粘贴到 wavefield_grid_for_dumps.txt 中，并存储为 wavefield_ux_uz.txt</span></div><div class="line"><span class="meta">$</span><span class="bash"> paste  wavefield_grid_for_dumps.txt wavefield0001000_01.txt &gt; wavefield_ux_uz.txt</span></div></pre></td></tr></table></figure></p>
+<p>通过上述处理后， <code>wavefield_ux_uz.txt</code>文件的前两列分别为 x,y 坐标；后两列为 ux, uz 值。</p>
+<h3 id="GMT绘图脚本"><a href="#GMT绘图脚本" class="headerlink" title="GMT绘图脚本"></a>GMT绘图脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"></div><div class="line"><span class="comment"># 模型的尺寸为1000 m * 1000 m</span></div><div class="line">R=<span class="string">"-R0/1000/0/1000"</span></div><div class="line">data=<span class="string">"wavefield_ux_uz.txt"</span></div><div class="line">grid=<span class="string">"output.grd"</span></div><div class="line">J=<span class="string">"-JX10c/10c"</span></div><div class="line">PS=<span class="string">"wavefield_ux.ps"</span></div><div class="line"></div><div class="line"><span class="comment"># 将前三列数据生成网格文件，用于绘制ux；若要绘制uz,修改为-i0,1,3即可</span></div><div class="line">gmt surface  -i0,1,2 <span class="variable">$R</span> <span class="variable">$data</span> -I2/2 -G<span class="variable">$grid</span></div><div class="line"></div><div class="line"><span class="comment"># 绘制底图</span></div><div class="line">gmt psbasemap  <span class="variable">$R</span>  <span class="variable">$J</span> -P -Bxa100 -Bya100 -K  &gt; <span class="variable">$PS</span></div><div class="line"></div><div class="line"><span class="comment"># 绘制波场快照</span></div><div class="line">gmt grdimage <span class="variable">$grid</span> <span class="variable">$R</span> <span class="variable">$J</span> -I -Cgray -O  &gt;&gt; <span class="variable">$PS</span></div><div class="line"></div><div class="line"><span class="comment"># ####</span></div><div class="line">gmt psconvert <span class="variable">$PS</span> -Tg -E300 -A -Tf</div><div class="line">rm gmt.history</div><div class="line">rm *.grd</div></pre></td></tr></table></figure>
+<h3 id="结果图"><a href="#结果图" class="headerlink" title="结果图"></a>结果图</h3><p>只是一个简单的示例，未添加横坐标和纵坐标的label，大家可自行修改。这里显示的绘制的结果不是ux,也不是uz,<br>而是<code>u=sqrt(ux**2 + uz**2)</code>。</p>
+<p><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1703880-097c8d13426b0e34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:40%" alt="波场快照图" align="center/"><br></div><br>注意：<br>之前波场输出文件的选项<code>use_binary_for_wavefield_dumps  = .false.</code>建议选为false，生成文本文件。最开始我选的是true主要的考虑是占用更小的磁盘空间，当时想着用 ximage 来画一个初步的波场快照信息，结果通过分析文件字节数怎么算都有个二倍的数据量，后面才想到是通过记录了两个波场分量的信息。如果采用ascii文本文件输出的话，就不会走这么多弯路了。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Madagascar 绘制 SEG/EAGE 模型的盐丘轮廓]]></title>
+      <url>https://nicklinyi.github.io/blog/2017/09/plot-salt.html</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>盐丘轮廓的绘制在地震偏移领域用途十分广泛，主要目的是为了分析偏移结果的好坏。当偏移结果和盐丘的轮廓基本吻合时，偏移质量就很高。最开始绘制轮廓的时候我采用的PS法，通过磁性套索把整个盐丘模型轮廓勾勒出来，然后再保存下来，与偏移结果进行对比。这里介绍一种直接通过 Madagascar 脚本的形式来绘制盐丘的结果，非常方便，可复用性很强，还可以用于其他的方面。此方法也借鉴于Prof. Sava 在 Madagascar book 文件夹下贡献的一个关于 Sigsbee 模型的脚本。</p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>下面通过脚本的形式来说明主要的操作步骤：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 提取盐丘外形</span></div><div class="line">Flow(  <span class="string">'salt'</span>,<span class="string">'vraw'</span>,<span class="string">'add add=-4.280 | clip clip=0.300 '</span>)</div><div class="line"><span class="comment"># vraw为盐丘速度模型,其速度值单位为km/s</span></div><div class="line"></div><div class="line"><span class="comment">#　计算水平梯度和垂直梯度</span></div><div class="line">Flow(  <span class="string">'edgez'</span>,<span class="string">'salt'</span>,<span class="string">'         igrad square=y'</span>)</div><div class="line">Flow(  <span class="string">'edgex'</span>,<span class="string">'salt'</span>,<span class="string">'transp | igrad square=y | transp'</span>)</div><div class="line">Flow(  <span class="string">'edge'</span>,<span class="string">'edgez edgex'</span>,</div><div class="line">       <span class="string">'math z=$&#123;SOURCES[0]&#125; x=$&#123;SOURCES[1]&#125; output="z+x"'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 对于给定的阈值进行mask，大于阈值部分为1，小于则为0</span></div><div class="line">Flow(  <span class="string">'mask'</span>,<span class="string">'edge'</span>,<span class="string">'mask min=0.04'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 计算盐丘外壳的x与z坐标</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> (<span class="string">'x1'</span>,<span class="string">'x2'</span>):</div><div class="line">    <span class="keyword">if</span>(x==<span class="string">'x1'</span>): o=<span class="string">'zs'</span></div><div class="line">    <span class="keyword">if</span>(x==<span class="string">'x2'</span>): o=<span class="string">'xs'</span></div><div class="line"></div><div class="line">    Flow(o,<span class="string">'edge mask'</span>,</div><div class="line">         <span class="string">'''</span></div><div class="line"><span class="string">         math output=%s |</span></div><div class="line"><span class="string">         put n1=1 n2=%d |</span></div><div class="line"><span class="string">         headerwindow mask=$&#123;SOURCES[1]&#125; |</span></div><div class="line"><span class="string">         window</span></div><div class="line"><span class="string">         '''</span> % (x,par[<span class="string">'nz'</span>]*par[<span class="string">'nx'</span>]))</div><div class="line"></div><div class="line"><span class="comment"># 合并x和z坐标</span></div><div class="line">Flow(<span class="string">'ss'</span>,[<span class="string">'xs'</span>,<span class="string">'zs'</span>],</div><div class="line">     <span class="string">'''</span></div><div class="line"><span class="string">     cat axis=2 space=n</span></div><div class="line"><span class="string">     $&#123;SOURCES[0]&#125; $&#123;SOURCES[1]&#125; | transp |</span></div><div class="line"><span class="string">     window j2=2</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">     '''</span>, stdin=<span class="number">0</span>)</div><div class="line"></div><div class="line">fdmod.param(par)</div><div class="line"><span class="comment"># 绘制外壳图像</span></div><div class="line">Plot(  <span class="string">'ss'</span>,fdmod.ssplot(<span class="string">'plotfat=2 plotcol=6 symbol=.'</span>,par))</div></pre></td></tr></table></figure></p>
+<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1703880-311559847c4732b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:40%" alt="波场快照图" align="center/"><br></div>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[优化 Madagascar 程序]]></title>
+      <url>https://nicklinyi.github.io/blog/2017/08/optmize-rsf-code.html</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在勘探地球物理中，往往一个程序会重复计算多次，比如叠前数据的合成（需要对一个有限差分程序往复执行上<br>百次，最后得到一个叠前的炮集记录）。因此学会对程序进行优化是一个很好的解决方案。</p>
+<p>GNU C Compiler (GCC) 自带了一个通用的 Profile 工具 <code>gprof</code>， 用于对程序各函数的运行时间进行<br>统计，方便用户确认程序的 Hot Spot(运行耗时最多的函数)。下面将介绍如何将该工具用于 Madagascar<br>程序的 Profile 中。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先，准备好要 Profile 的程序，这里为<code>Mfdtd2d.c</code>。然后写一个用来编译该程序的 <code>SConstruct</code> 脚本，代码如下：</p>
+<pre><code><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os, sys, re, string</div><div class="line"></div><div class="line"></div><div class="line">try:</div><div class="line">    <span class="keyword">import</span> bldutil</div><div class="line">    glob_build = True <span class="comment"># scons command launched in RSFSRC</span></div><div class="line">    srcroot = <span class="string">'../..'</span> <span class="comment"># cwd is RSFSRC/build/user/jeff</span></div><div class="line">    Import(<span class="string">'env bindir libdir pkgdir'</span>)</div><div class="line">    env = env.Clone()</div><div class="line">except:</div><div class="line">    glob_build = False <span class="comment"># scons command launched in the local directory</span></div><div class="line">    srcroot = os.environ.get(<span class="string">'RSFSRC'</span>, <span class="string">'../..'</span>)</div><div class="line">    sys.path.append(os.path.join(srcroot,<span class="string">'framework'</span>))</div><div class="line">    <span class="keyword">import</span> bldutil</div><div class="line">    env = bldutil.Debug() <span class="comment"># Debugging flags for compilers</span></div><div class="line">    <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span> very <span class="keyword">import</span> !!!!!!!! <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">#</span></div><div class="line">    env[<span class="string">'CC'</span>] = <span class="string">'gcc -pg'</span> <span class="comment"># add option `-pg`  to gcc to enable gprof</span></div><div class="line">    <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">#####</span></div><div class="line"><span class="comment">    bindir = libdir = pkgdir = None</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">targets = bldutil.UserSconsTargets()</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"># C mains</span></div><div class="line"><span class="comment">targets.c = '''</span></div><div class="line"><span class="comment">fdtd2d</span></div><div class="line"><span class="comment">'''</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">targets.build_all(env, glob_build, srcroot, bindir, libdir, pkgdir)</span></div></pre></td></tr></table></figure>
+</code></pre><p>从编译脚本可以看到 gcc 的编译选项里增加了<code>-pg</code>选项，这是采用<code>gprof</code>来 Profile 所必须的。<br>如果自己手写编译脚本的话，记得在编译和链接两步都要加上<code>-pg</code>选项，否则无法成功运行<code>gprof</code>。</p>
+<h2 id="编译并链接代码"><a href="#编译并链接代码" class="headerlink" title="编译并链接代码"></a>编译并链接代码</h2><pre><code>$ scons
+</code></pre><p>运行完该语句会在当前目录下生成一个可执行的二进制文件<code>sffdtd2d</code>。然后我们正常运行该程序。假设<br>其所需的参数为：速度模型<code>vel.rsf</code>, 子波<code>wav.rsf</code>，生成的地震记录为<code>dd.rsf</code>。然后运行该程序</p>
+<pre><code>$ ./sffdtd2d &lt; vel.rsf wav=wav.rsf &gt; dd.rsf
+</code></pre><h2 id="Profile"><a href="#Profile" class="headerlink" title="Profile"></a>Profile</h2><p>执行完<code>./sffdtd2d &lt; vel.rsf wav=wav.rsf &gt; dd.rsf</code>语句后，我们可以在当前目录下发现一个命名<br>为<code>gmon.out</code>的文件。下一步将使用该文件进行 Profile。</p>
+<p>执行<code>gprof ./sffdtd2d gmon.out -p</code>，将得到下列信息：</p>
+<pre><code>$ gprof ./sffdtd2d gmon.out -p
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 96.28     76.63    76.63     1000    76.63    76.63  fd_kernel
+  1.99     78.21     1.58                             main
+  1.75     79.60     1.39     5000     0.28     0.28  fun()
+  0.00     79.60     0.00        4     0.00     0.00  fun2()
+  0.00     79.60     0.00        2     0.00     0.00  fun3()
+  0.00     79.60     0.00        1     0.00     0.00  fun4()
+  0.00     79.60     0.00        1     0.00     0.00  fun5()
+</code></pre><p>通过该信息，我们发现<code>fd_kernel</code>这个函数占用了96.28%的计算时间，因此我们找到了程序的 Hot Spot<br>，从而可以通过采用 OpenMP， MPI, CUDA C等方式进一步对程序进行优化加速。</p>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><ul>
+<li><a href="https://sourceware.org/binutils/docs/gprof/Executing.html#Executing" target="_blank" rel="noopener">Gprof官方文档</a></li>
+<li><a href="http://scons.org/doc/production/HTML/scons-user.html#sect-external-environments" target="_blank" rel="noopener">SCons官方文档</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/l-gnuprof.html" target="_blank" rel="noopener">使用 GNU profile 来提高代码运行速度</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[安装软件相关博文迁移]]></title>
+      <url>https://nicklinyi.github.io/blog/2017/08/install.html</url>
+      <content type="html"><![CDATA[<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>为了方便分类统一管理，所有软件的安装博文已迁移至新的项目 <a href="https://github.com/nicklinyi/awesome-installation.git" target="_blank" rel="noopener">Awesome-Installation</a>。</p>
+<p>项目主页: <a href="http://nickwhyy.top/awesome-installation/" target="_blank" rel="noopener">http://nickwhyy.top/awesome-installation/</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Madagascar绘图字体以及特殊符号的处理]]></title>
+      <url>https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html</url>
+      <content type="html"><![CDATA[<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Madagascar自带的一共有15种字体，这些字体文件位于<code>$RSFSRC/pens/fonts</code>，通过编译最后得到的字体二进制文件位于<code>$RSFSRC/build/pens/fonts</code>下，后缀为<code>.bin</code>。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。</p>
+<h2 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h2><p>编辑<code>$RSFROOT/share/madagascar/etc/env.sh</code>或<code>$RSFROOT/share/madagascar/etc/env.csh</code>,根据自己所使用的shell决定。在该文件最后添加下列语句<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">VPLOTFONTDIR</span>=<span class="variable">$RSFSRC</span>/build/pens/fonts/</div></pre></td></tr></table></figure></p>
+<p>然后再终端执行下述语句完成环境变量的设置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bashrc</div></pre></td></tr></table></figure></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="改变字体"><a href="#改变字体" class="headerlink" title="改变字体"></a>改变字体</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Plot('example',fdmod.cgrey('font=<span class="number">1</span>'),par)</div><div class="line"># font=[<span class="number">1</span>,<span class="number">15</span>] 选择不同的字体，默认应</div><div class="line"># 该是<span class="number">3</span>,近年来文章中出现的比较多的是<span class="number">1</span>和<span class="number">2</span>．</div></pre></td></tr></table></figure>
+<h3 id="输入特殊字符"><a href="#输入特殊字符" class="headerlink" title="输入特殊字符"></a>输入特殊字符</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Plot<span class="params">('examples',fdmod.cgrey('<span class="attr">wantscalebar</span>=y  <span class="attr">font</span>=1 <span class="attr">bias</span>=0 <span class="attr">color</span>=e <span class="attr">allpos</span>=n <span class="attr">min1</span>=.5 <span class="attr">formatbar</span>=%3.0f <span class="attr">barlabel</span>="\s150 \\F10 \\v104 \\F10 "  <span class="attr">color</span>=e',par)</span>)</div><div class="line"><span class="comment"># F10为greekc字符集，v104查表可知为eta符号</span></div><div class="line"><span class="comment"># 注意一定要用`\\`，第一个表示转义，这样在命令行中出现的是\F10</span></div><div class="line"><span class="comment"># 如果在命令行中输入的话，用`\`即可</span></div></pre></td></tr></table></figure>
+<h3 id="特殊字符表"><a href="#特殊字符表" class="headerlink" title="特殊字符表"></a>特殊字符表</h3><h4 id="在线浏览"><a href="#在线浏览" class="headerlink" title="在线浏览"></a>在线浏览</h4><p>见<a href="http://ahay.org/blog/?s=font" target="_blank" rel="noopener">Madagascar官方博客</a></p>
+<h4 id="本地浏览"><a href="#本地浏览" class="headerlink" title="本地浏览"></a>本地浏览</h4><pre><code>$ cd $RSFSRC
+$ cd pens/tests
+$ scons
+</code></pre><p>运行完上述命令后，在<code>$RSFSRC/pens/tests/Fig</code>目录下会出现很多<code>.vpl</code>文件。接着我们把<code>font*.vpl</code><br>转化为<code>font*.pdf</code>，便于本地浏览。</p>
+<pre><code>$ vpconvert font*.vpl format=pdf
+</code></pre><p>至此，我们可以在本地浏览各种 font 字体了。感兴趣的同学也可以自己看看该目录下的其他字体。</p>
+<h2 id="修订历史"><a href="#修订历史" class="headerlink" title="修订历史"></a>修订历史</h2><ul>
+<li>2017-07-26：初稿；</li>
+<li>2017-08-13：增加本地浏览部分；</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Madagascar输出程序运行日志文件]]></title>
+      <url>https://nicklinyi.github.io/blog/2017/01/rsf-print-log.html</url>
+      <content type="html"><![CDATA[<h2 id="为什么要输出日志文件？"><a href="#为什么要输出日志文件？" class="headerlink" title="为什么要输出日志文件？"></a>为什么要输出日志文件？</h2><p>输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。</p>
+<p>程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。</p>
+<h2 id="命令行下处理"><a href="#命令行下处理" class="headerlink" title="命令行下处理"></a>命令行下处理</h2><p>命令行下执行Madagascar命令并将输出信息打印至日志文件的方式比较简单，可采用如下方式<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sfmycode &lt; in1<span class="selector-class">.rsf</span> out1=out1<span class="selector-class">.rsf</span> <span class="number">2</span>&gt; log.txt</div></pre></td></tr></table></figure></p>
+<p><code>2&gt; log.txt</code>　表示将程序里的其他输出语句如<code>printf(stderr,&quot;t= \n&quot;,t)</code>,<code>sf_warning()</code>等输出到日志文件中。</p>
+<h2 id="SCons脚本处理"><a href="#SCons脚本处理" class="headerlink" title="SCons脚本处理"></a>SCons脚本处理</h2><p>当采用SCons脚本来运行程序并打印相关的数据至日志文件的时候,需要进行如下处理。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Flow(<span class="string">'out1 '</span>,<span class="string">'in1.rsf'</span>,</div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    sfmycode</span></div><div class="line"><span class="string">    out=$&#123;TARGET[0]&#125;</span></div><div class="line"><span class="string">    2&gt; "log.txt"</span></div><div class="line"><span class="string">    '''</span>,stdout=-<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p><code>stdout=-1</code>表示标准输出设备未指向任何文件指针。</p>
+<p>注意：文件输出的选择，此时不要选择将stdout作为文件的输出指针(即在源代码中不要出现像<code>Fout = sf_output(&quot;out&quot;)</code>这样的语句)，这样的话就无法完成分别输出不同信息至屏幕和日志文件的目的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[DATAPATH 的使用]]></title>
+      <url>https://nicklinyi.github.io/blog/2016/12/rsf-datapath.html</url>
+      <content type="html"><![CDATA[<p>正常情况下， 执行完Madagascar命令后的二进制数据文件是存在<code>/var/tmp/</code>下的，实际我们在写自己就的项目的时候，一般最好是把数据文件和项目存在一起，这样管理起来比较方便。因此需要了解Madagascar存储文件时选择<code>DATAPATH</code>的优先级关系。具体见官方说明文档 <a href="http://www.ahay.org/wiki/Guide_to_RSF_file_format。" target="_blank" rel="noopener">http://www.ahay.org/wiki/Guide_to_RSF_file_format。</a></p>
+<p>简述如下：</p>
+<ul>
+<li>查看命令行是否含<code>--out=XXX</code>参数，如果有，则按其指定的方式进行存储，没有则继续进行下面的操作</li>
+<li>查看命令行是否含<code>datapath=XXX</code>参数，如果有，则按按其指定的路径进行存储，没有则继续进行下面的操作</li>
+<li>查看当前路径下是否含<code>.datapath</code>文件，如果有，则按该文件内指定的路径进行存储，没有则继续进行下面的操作</li>
+<li>查看当前用户的根目录下是否含<code>.datapath</code>文件，如果有，则按该文件内指定的路径进行存储，没有则继续进行下面的操作</li>
+<li>查看系统的环境变量是否含<code>DATAPATH</code>变量，如果有，则按该环境变量指定的路径进行存储，没有则继续进行下面的操作</li>
+<li>以上都没有的话，会直接将二进制存在当前工作路径下。</li>
+</ul>
+<p>因此，为了保证项目的完整型，选择第二种方式进行处理。即首先进入当前工作路径，然后在该路径下建立一个<code>data/</code>目录，用于存放数据。其次，在当前目录下新建一个<code>.datapath</code>文件，并在该文件中输入如下内容<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">datapath</span>=./<span class="class"><span class="keyword">data</span>/ # 注意<span class="keyword">data</span>后面必须跟一个/,表示这个是一个目录文件。</span></div></pre></td></tr></table></figure></p>
+<p>最后写SConstruct脚本的时候就不需要在每个命令里添加<code>--out=stdout</code>了。所有的数据文件都会存储至data/目录下。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux下复制单个文件到多个文件夹]]></title>
+      <url>https://nicklinyi.github.io/blog/2016/12/cp-command.html</url>
+      <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>复制一个文件到多个文件夹中</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">echo</span> ~<span class="string">/test1</span> ~<span class="string">/test2</span> | xargs -n 1</div><div class="line">cp -v test.py</div></pre></td></tr></table></figure>
+<p>上面的命令，目录的路径(<code>~/test1</code>,<code>~/test2</code>)被管道作为输入到<code>xargs</code>命令中，<br>含义是:</p>
+<ul>
+<li><code>-n 1</code>告诉xargs命令每个命令行最多使用一个参数，并发送到cp命令中;</li>
+<li><code>cp</code>用于复制文件;</li>
+<li><code>-v</code>启用详细模式来显示更多细节</li>
+</ul>
+<p>执行的结果如下<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>echo ~<span class="regexp">/test1 ~/test</span>2 | xargs -n <span class="number">1</span></div><div class="line">cp -v test.py</div><div class="line"><span class="string">'test.py'</span> -&gt; <span class="string">'/home/nick/test1/test.py'</span></div><div class="line"><span class="string">'test.py'</span> -&gt; <span class="string">'/home/nick/test2/test.py'</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Debug Madagascar程序]]></title>
+      <url>https://nicklinyi.github.io/blog/2016/06/debug-in-rsf.html</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当我们在 Madagascar API框架上写完自己的代码后，对于简单的程序，可以采用在源文件中增加<code>printf</code>或者<code>write</code>语句等打印一些变量信息，但比较麻烦的是每次增加一些<code>printf</code>等语句后，需要重新编译源代码，造成不必要的麻烦。因此，这里简单的介绍如何使用<code>gdb</code>来debug Madagascar程序。</p>
+<h2 id="安装gdb"><a href="#安装gdb" class="headerlink" title="安装gdb"></a>安装gdb</h2><p>首先，需要查看自己的计算机是否安装了<code>gdb</code>软件，我们采用<code>which</code>命令。</p>
+<pre><code>$ which gdb
+</code></pre><p>如果终端中返回<code>gdb</code>可执行二进制文件的目录则表示已安装<code>gdb</code>，若提示找不到该命令则需要安装<code>gdb</code>。安装比较简单，输入下面语句即可安装<code>gdb</code></p>
+<pre><code>$ sudo apt-get install gdb
+</code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装完<code>gdb</code>后，我们首先进入自己编写的Madagascar程序的源文件目录，编译该代码生成可执行二进制文件。<br>假设我们的这个代码是实现对两个<code>.rsf</code>文件进行相加，最终得到二者之和。生成的可执行二进制文件名为<code>sfadd</code>,那么我们可以通过如下方式对其debug.</p>
+<p>首先在终端输入<code>$ gdb ./sfadd</code>进入debug模式。在终端中表现为如下结果：</p>
+<pre><code>(gdb) 
+</code></pre><p>由于该代码需要接收两个<code>.rsf</code>文件作为其<code>args</code>。这里假设两个文件分别为<code>add1.rsf</code>,<code>add2.rsf</code>,输出的结果文件为<code>add.rsf</code>.那么接着在gdb中，继续键入参数信息：</p>
+<pre><code>(gdb) set args &quot;file1=add1.rsf&quot; &quot;file2=add2.rsf&quot; &quot;out=add.rsf&quot;
+</code></pre><p>这个命令通过<code>set args</code>来传递<code>args</code>信息，之后我们可以通过<code>show args</code>来确认参数信息。</p>
+<pre><code>(gdb) show args
+Argument list to give program being debugged when it is started is &quot;file1=add1.rsf&quot; &quot;file2=add2.rsf&quot; &quot;out=add.rsf&quot;
+(gdb)
+</code></pre><p>说明:<br>1.所有的参数文件必须与二进制可执行文件在同一文件夹下，如果不在，则需要显式给出其路径<br>2.<code>args</code>中的<code>file1</code>,<code>file2</code>是对应自己Madagascar程序中参数文件名，根据自己的设置修改</p>
+<p>最后，我们可以在<code>gdb</code>中输入<code>run</code>来跑自己的程序，还有一些其他的操作，比如设置断点以及打印变量等与正常调用<code>gdb</code>一致，这里不再赘述。大家可以参考在线gnu的gdb文档，里边有非常详细的介绍。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[合并 Madagascar 道头与数据]]></title>
+      <url>https://nicklinyi.github.io/blog/2016/06/rsf-data-handle.html</url>
+      <content type="html"><![CDATA[<h2 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h2><p>我们都知道 Madagascar 的数据和道头是放置在不同的位置，然后在道头里通过指针指向数据文件的实际位置。这样做的好处有一下几点:</p>
+<ul>
+<li>误删文件不会造成实际数据的丢失</li>
+<li>本地移动文件的实际移动的只是道头，这样可以实现快速复制或者剪切整个文件夹</li>
+<li>…</li>
+</ul>
+<p>因此，在大多数时候这种机制都是非常方便我们操作和处理文件及数据。但有些时候我们需要将道头和数据放置在一起，类似于<code>.su</code>或<code>.segy</code>格式，从而保证数据的完整性。比如，我们在服务器计算叠前偏移，最后得到一个偏移结果，然后需要将结果备份到本地做进一步的分析和处理(画图等),这时候就需要数据是完整的。</p>
+<h2 id="How"><a href="#How" class="headerlink" title="How?"></a>How?</h2><p>对于一个<code>.rsf</code>文件，有几种方式可以达到这一目的。Madagascar 的官方说明文档写的是在处理数据的时候直接加一个输出选项就可以实现这一功能。该例子如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ sfspike n1=10 --out=stdout &gt; spike.rsf</div><div class="line">$ grep in spike.rsf</div><div class="line">Binary file spike.rsf matches</div><div class="line"></div><div class="line">$ sfin spike.rsf</div><div class="line">spike.rsf:</div><div class="line">    in=&quot;stdin&quot;  </div><div class="line">    esize=4 type=float form=native</div><div class="line">    n1=10          d1=0.004       o1=0          label1=&quot;Time&quot; unit1=&quot;s&quot;</div><div class="line">        10 elements 40 bytes</div></pre></td></tr></table></figure></p>
+<p>但如果处理的时候没有使用<code>--out=stdout</code>选项，那么如何将道头和数据打包在一起呢？对于上面这个例子只需要重新写一个命令加上<code>--out=stdout</code>选项就行了，因为运行时间短，这样最快捷最简便。但是如果对于某些生成最终结果需要很长时间的文件，这种方法显然显得不合时宜。这时候可以 Madagascar 的<code>sfcp</code>命令。假设我们通过下面的命令生成了一个<code>.rsf</code>文件</p>
+<pre><code>$ sfspike n1=10 &gt;spike.rsf
+</code></pre><p>然后，我们可以通过<code>sfin</code>来查看<code>spike.rsf</code>文件的道头信息以及数据文件的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ sfin spike.rsf</div><div class="line">in:</div><div class="line">    in=&quot;/var/tmp/spike.rsf@&quot;   </div><div class="line">    esize=4 type=float form=native </div><div class="line">    n1=10          d1=0.004       o1=0          label1=&quot;Time&quot; unit1=&quot;s&quot; </div><div class="line">        10 elements 40 bytes</div></pre></td></tr></table></figure></p>
+<p>从上面的结果可以看出<code>spike.rsf</code>的数据文件是<code>/var/tmp</code>目录下<code>spike.rsf@</code>文件。如果安装了 Seismic Unix 的话，还可以通过<code>xwigb</code>命令来绘制这个结果。</p>
+<pre><code>$ xwigb &lt;/var/tmp/spike.rsf@ n1=10
+</code></pre><p>下面采用<code>sfcp</code>来合并道头和数据，命令如下:</p>
+<pre><code>$ sfcp &lt;spike.rsf --out=stdout &gt;spikenew.rsf
+</code></pre><p>现在我们通过<code>sfin</code>来查看<code>spikenew.rsf</code>的数据文件位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ sfin &lt;spikenew.rsf</div><div class="line">in:</div><div class="line">    in=&quot;stdin&quot;</div><div class="line">    esize=4 type=float form=native   </div><div class="line">    n1=10          d1=0.004       o1=0          label1=&quot;Time&quot; unit1=&quot;s&quot; </div><div class="line">        10 elements 40 bytes</div></pre></td></tr></table></figure>
+<p>这时候我们发现数据和道头文件合并在一起了(<code>in=&quot;stdin&quot;</code>).相信大家会有种上当受骗的感觉，想想这不还是用到了官方中说的那个选项<code>--out=stdout</code>么？因此，通过这个例子可以发现，几乎任何一个 Madagascar 的命令都可以实现这样的操作，但<code>sfcp</code>应该是比较合理的了，因为它只是单纯的复制文件而已，如果要使用一些其他命令的话，可能会出现一些奇怪的事情，大家可以尽情尝试。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[勘探数据获取]]></title>
+      <url>https://nicklinyi.github.io/blog/2016/06/data-resources.html</url>
+      <content type="html"><![CDATA[<p>本文主要用于收集一些免费的数据来源。将不定期更新新的数据源。</p>
+<p>Madagascar 数据：<a href="http://www.ahay.org/data/" target="_blank" rel="noopener">http://www.ahay.org/data/</a></p>
+<p>SEG Research Data: <a href="http://seg.org/News-Resources/Research-Data" target="_blank" rel="noopener">http://seg.org/News-Resources/Research-Data</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[采用 SCons 写 SU 脚本]]></title>
+      <url>https://nicklinyi.github.io/blog/2016/05/su-scons-together.html</url>
+      <content type="html"><![CDATA[<p>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题：</p>
+<ol>
+<li>bash 脚本是按顺序执行的，也就是说，如果你在脚本的最后几句有一个绘图命令的话，那么第一次执行脚本的时候可以处理前面的一些工作流程，然后再绘图。如果后面我们觉得结果已经很完美了，但图片的大小或者标题什么需要修改一下，那么当我们修改绘图命令后再次运行脚本的话，会把前面的整个工作流程再重复一遍，这将浪费很多时间。</li>
+<li>bash 脚本对计算的支持很弱，如果不使用一些工具的话，没法进行浮点数运算。</li>
+</ol>
+<p>对于问题 1，可以单独将绘图命令拿出来另写一个脚本文件解决，但会使得文件目录下脚本文件过多，不便于文件的整理。其次，假设我们有一个脚本文件，里边有 5 行命令用来处理数据，如果我们改变了第 3 行的命令行参数，那么再次运行脚本，仍会继续执行第 1 条和第 2 条命令，那为了避免浪费时间，我们也得把剩下的第 3-5 条命令单独拿出来写入一个新的脚本？</p>
+<p>对于问题 2，目前是没有更好的办法解决的，只能使用 bash 的 <code>bc</code> 计算功能，但其表达式书写繁琐，不易搞懂。</p>
+<p>针对以上问题，Madagascar 提供了更好的解决方案，使得我们可以 借用 SCons 工具来写 SU 的脚本。模板如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> rsf.suproj <span class="keyword">as</span> surun</div><div class="line"><span class="comment"># creat a common offset data file</span></div><div class="line">surun.Flow(<span class="string">'plane'</span>,<span class="keyword">None</span>,<span class="string">'suplane'</span>,stdin=<span class="number">0</span>)</div><div class="line"><span class="comment"># creat a wigb type plot </span></div><div class="line">surun.Plot(<span class="string">'plane'</span>,<span class="string">'supswigb'</span>)</div><div class="line"></div><div class="line">surun.End()</div></pre></td></tr></table></figure>
+<p>上述脚本实际上是 SU 安装是否成功的一个简单的测试例子,这里将 <code>rsf.proj</code>模块导入并命名为<code>surun</code>，大家可以更改为不同的名字，主要目的是为了在同一文件中既写 SU 的脚本，也写 Madagascar 的脚本。需要注意的是上述脚本创建了一个<code>plane.su</code>的文件，然后通过<code>surun.Plot</code>命令创建了<code>plane.eps</code>的矢量图片文件。因为 SCons 总是将不含后缀的文件自动加上<code>.su</code>的后缀。而并不是所有的 SU 程序都生成<code>.su</code>后缀的文件，比如速度建模程序<code>unif2</code>，因此，对于 SU 的 SCons 脚本书写规范，建议最好对于输入和输出文件都显示的给出文件后缀。总结一下就是：</p>
+<ul>
+<li>含以<code>su</code>开头的 SU 命令的 Flow 语句，文件的输出统一加上<code>.su</code>后缀</li>
+<li>含<strong>不以</strong><code>su</code>开头的 SU 命令的Flow 语句，文件的输出统一加上<code>.bin</code>后缀</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Vim高亮SConstruct]]></title>
+      <url>https://nicklinyi.github.io/blog/2016/05/vim-scons-highlight.html</url>
+      <content type="html"><![CDATA[<p>Vim高亮文件一般只对含后缀的文件名有效，对于经常使用 Madagascar 的人来说，每次采用 Vim 写 SConstruct 文件显得十分不便，因此如果能让 Vim 自动识别 SConstruct 文件为 Python 文件，则处理起来会很方便.</p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>对于 SCons 要编译的文件，不命名为 SConstruct, 而命名为其他以<code>.py</code>结尾的文件，然后用 SCons 编译的时候指定该文件名。虽然可行，但还是没有解决根本问题。</p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>每次打开 SConstruct 文件后进入 Vim 命令行模式将文件类型设置为 Python 。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:<span class="builtin-name">set</span> <span class="attribute">ft</span>=python</div></pre></td></tr></table></figure></p>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>在<code>~/.vimrc</code>文件中指定所有的 SCons 相关的文件类型为 python，可直接在<code>~/.vimrc</code>文件末尾添加下列语句即可达成目标<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">" Filetype related</span></div><div class="line"><span class="keyword">au</span> BufNewFile,BufRead SConstruct,sconstruct,SConscript,sconscript <span class="keyword">set</span> ft=<span class="keyword">python</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Madagascar下使用latex]]></title>
+      <url>https://nicklinyi.github.io/blog/2016/05/rsf-use-latex.html</url>
+      <content type="html"><![CDATA[<p>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，<code>cd</code>到<code>book</code>目录下，任选一个文件夹进去，然后运行<code>$ scons</code>，发现总是出现权限不够错误。后来再进入到其他文件夹，发现还是存在同样的问题。但这次发现问题的根源所在了。</p>
+<p>Madagascar 下使用 scons 来编译 latex 将会在<code>$RSFROOT/share/madagascar</code>下创建一个本地文件夹的副本，其目的是为了用来之后<code>lock</code>图片所用，而由于不管将 Madagascar 安装在<code>/opt</code>下，还是<code>$HOME</code>下的某个目录，<code>$RSFROOT</code>都默认不是 766 权限。因此其下的<code>share/madagascar</code>也一样。通过测试发现，只有<code>share/madagascar</code>为 766 权限时，madagascar 才能向里边写文件.因此第一步就是将该路径设置为 766 .</p>
+<p>按上述设置后，scons 暂时不报错了，也可以正常编译 latex 文件，但是由于 madagascar 下的 tex 基本是与地球物理相关的，因此 latex 下的 texmf 缺少一些 cls 文件，可从 sourceforge 上下载 segtex ，然后将源码解压并放在<code>$HOME/texmf</code>下，然后通过<code>texhash</code>来将其添加到现有的 latex 的 texmf 中。</p>
+<p>虽然，按上述操作后 latex 也不报错了，但 latex 编译完后，scons 还是会报一些小的错误，主要是关于阅读和打印 pdf 的问题，因为采用 tex.py 中的 Paper 来编译 latex 文件时，编译完会自动打开并打印文件，而在其打印机下并未写打印机名称以及地址，因此总会报错，毕竟这是一个 machine-depending 的问题， Madagascar 没有处理好这个问题是很正常的。这算是 Madagascar 的一个小 bug 。但并不影响读者正常编译和使用。</p>
+<p>但笔者还是要解决这个问题，因为并不是每个人编译完文件都想马上打开 pdf 文件，也没有这个必要这么做，因此，我们找到<code>$RSFROOT</code>中的 tex.py 文件，注释掉其中的两行代码，就可解决上述问题。</p>
+<p>至于 latex 编译时会遇到系统中缺少一些字体的情况，并不是本文讨论的重点。大家可自行谷歌予以解决。</p>
+]]></content>
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>https://nicklinyi.github.io/about.html</url>
+      <content type="html"><![CDATA[<h4>关于博主</h4>
+
+<p>地震学在读</p>
+<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
+<ul>
+<li>Email：<a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#x6c;&#x69;&#x6e;&#121;&#105;&#104;&#x61;&#x6e;&#99;&#104;&#117;&#97;&#x6e;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x69;&#x6e;&#121;&#105;&#104;&#x61;&#x6e;&#99;&#104;&#117;&#97;&#x6e;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></li>
+</ul>
+<p>如未能及时回复各种问题，请见谅。</p>
+<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
+]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>https://nicklinyi.github.io/404.html</url>
+      <content type="html"><![CDATA[<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8;">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="robots" content="all">
+  <meta name="robots" content="index,follow">
+</head>
+<body>
+
+<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="your site url " homepagename="回到我的主页">
+</script>
+
+</body>
+</html>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[藏经阁]]></title>
+      <url>https://nicklinyi.github.io/links.html</url>
+      <content type="html"><![CDATA[<h3 id="正演模拟"><a href="#正演模拟" class="headerlink" title="正演模拟"></a>正演模拟</h3><h4 id="谱元法"><a href="#谱元法" class="headerlink" title="谱元法"></a>谱元法</h4><ul>
+<li><a href="https://github.com/komatits/specfem1d" target="_blank" rel="noopener">SPECFEM1D - Spectral element seismic modelling code in 1D media</a></li>
+<li><a href="https://github.com/komatits/specfem2d" target="_blank" rel="noopener">SPECFEM2D - Spectral element seismic modelling code in 2D Cartesian Coordinates</a></li>
+<li><a href="https://github.com/komatits/specfem3d" target="_blank" rel="noopener">SPECFEM3D - Spectral element seismic modelling code in 3D Cartesian Coordinates</a></li>
+<li><a href="https://github.com/komatits/specfem3d_globe" target="_blank" rel="noopener">SPECFEM3D_GLOBE - Spectral element seismic modelling code in 3D Spherical Coordinates</a></li>
+</ul>
+<h4 id="有限差分"><a href="#有限差分" class="headerlink" title="有限差分"></a>有限差分</h4><ul>
+<li><a href="https://www.gpi.kit.edu/Software-WS.php" target="_blank" rel="noopener">Seismic 2D/3D modelling FD codes SOFI from　KIT</a></li>
+<li><a href="https://github.com/komatits/seismic_cpml" target="_blank" rel="noopener">Seismic CPML 2D/3D FD modelling codes for visco- and　poroelastic media by D. Komatitsch and R.　Martin</a></li>
+</ul>
+<h4 id="有限元"><a href="#有限元" class="headerlink" title="有限元"></a>有限元</h4><ul>
+<li><a href="http://www.gmg.ruhr-uni-bochum.de/geophysik/seismology/nexd.html" target="_blank" rel="noopener">NEXD - 2D/3D seismic nodal DG-FEM codes by Lasse Lambrecht</a></li>
+<li><a href="http://montjoie.gforge.inria.fr/" target="_blank" rel="noopener">Montjoie - FE-Codes from Inria</a></li>
+</ul>
+<h3 id="全波形反演"><a href="#全波形反演" class="headerlink" title="全波形反演"></a>全波形反演</h3><ul>
+<li><a href="https://seiscope2.osug.fr/TOY2DAC,82" target="_blank" rel="noopener">TOY2DAC - 2D FDFD acoustic FWI code by R. Brossier and L.　Métivier</a></li>
+<li><a href="http://www.gmg.ruhr-uni-bochum.de/geophysik/seismology/aski.html" target="_blank" rel="noopener">ASKI - modularized program suite for sensitivity analysis and　FWI</a></li>
+<li><a href="https://github.com/tleeuwen/SimpleFWI" target="_blank" rel="noopener">SimpleFWI - small FDFD Matlab FWI code by T. van　Leeuwen</a> </li>
+<li><a href="https://github.com/JuliaInv/FWI.jl" target="_blank" rel="noopener">JuliaInvFWI - small FDFD JULIA FWI　code</a> </li>
+<li><a href="http://www.cos.ethz.ch/software/ses3d.html" target="_blank" rel="noopener">SES3D - Spectral element (visco)elastic Modelling and FWI code from ETH-Zürich</a></li>
+<li><a href="https://www.gpi.kit.edu/Software-FWI.php" target="_blank" rel="noopener">Seismic 2D FWI codes IFOS from KIT</a></li>
+</ul>
+<p></p><h3> 勘探地震学相关软件</h3><p></p>
+<ul>
+<li><a href="http://www.cwp.mines.edu/cwpcodes/" target="_blank" rel="noopener">Seismic Unix</a></li>
+<li><a href="http://www.ahay.org/wiki/Main_Page" target="_blank" rel="noopener">Madagascar</a></li>
+<li><a href="http://sepwww.stanford.edu/doku.php?id=sep:software:seplib" target="_blank" rel="noopener">SEPlib</a></li>
+<li><a href="http://www.crewes.org/ResearchLinks/FreeSoftware/" target="_blank" rel="noopener">CREWES</a></li>
+<li><a href="https://github.com/SeismicJulia/Seismic.jl" target="_blank" rel="noopener">SeismicJulia</a></li>
+<li><a href="http://www.opendtect.org/" target="_blank" rel="noopener">OpendTect</a></li>
+</ul>
+<p></p><h3>  研究小组</h3><p></p>
+<ul>
+<li><a href="http://www.cwp.mines.edu/index.html" title="Center for Wave Phenomena" target="_blank" rel="noopener">CWP</a></li>
+<li><a href="http://sepwww.stanford.edu/doku.php?id=sep:home" title="Stanford Exploration Project" target="_blank" rel="noopener">SEP</a></li>
+<li><a href="https://seiscope2.osug.fr/" target="_blank" rel="noopener">SEISCOPE</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[categories]]></title>
+      <url>https://nicklinyi.github.io/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>https://nicklinyi.github.io/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+  
+</search>
