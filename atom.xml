@@ -130,32 +130,6 @@ Each sample counts as 0.01 seconds.
   </entry>
   
   <entry>
-    <title>安装软件相关博文迁移</title>
-    <link href="https://nicklinyi.github.io//blog/2017/08/install.html"/>
-    <id>https://nicklinyi.github.io//blog/2017/08/install.html</id>
-    <published>2017-08-08T04:47:24.000Z</published>
-    <updated>2018-01-01T13:52:33.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;迁移&quot;&gt;&lt;a href=&quot;#迁移&quot; class=&quot;headerlink&quot; title=&quot;迁移&quot;&gt;&lt;/a&gt;迁移&lt;/h2&gt;&lt;p&gt;为了方便分类统一管理，所有软件的安装博文已迁移至新的项目 &lt;a href=&quot;https://github.com/nicklinyi/awesome-installation.git&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Awesome-Installation&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;项目主页: &lt;a href=&quot;http://nickwhyy.top/awesome-installation/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://nickwhyy.top/awesome-installation/&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;迁移&quot;&gt;&lt;a href=&quot;#迁移&quot; class=&quot;headerlink&quot; title=&quot;迁移&quot;&gt;&lt;/a&gt;迁移&lt;/h2&gt;&lt;p&gt;为了方便分类统一管理，所有软件的安装博文已迁移至新的项目 &lt;a href=&quot;https://github.com/nicklinyi/awe
-    
-    </summary>
-    
-      <category term="软件安装" scheme="https://nicklinyi.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    
-    
-      <category term="软件" scheme="https://nicklinyi.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-      <category term="安装" scheme="https://nicklinyi.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Madagascar绘图字体以及特殊符号的处理</title>
     <link href="https://nicklinyi.github.io//blog/2017/07/rsf-fonts.html"/>
     <id>https://nicklinyi.github.io//blog/2017/07/rsf-fonts.html</id>

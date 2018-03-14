@@ -64,14 +64,6 @@ Each sample counts as 0.01 seconds.
     </entry>
     
     <entry>
-      <title><![CDATA[安装软件相关博文迁移]]></title>
-      <url>https://nicklinyi.github.io/blog/2017/08/install.html</url>
-      <content type="html"><![CDATA[<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>为了方便分类统一管理，所有软件的安装博文已迁移至新的项目 <a href="https://github.com/nicklinyi/awesome-installation.git" target="_blank" rel="noopener">Awesome-Installation</a>。</p>
-<p>项目主页: <a href="http://nickwhyy.top/awesome-installation/" target="_blank" rel="noopener">http://nickwhyy.top/awesome-installation/</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Madagascar绘图字体以及特殊符号的处理]]></title>
       <url>https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html</url>
       <content type="html"><![CDATA[<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Madagascar自带的一共有15种字体，这些字体文件位于<code>$RSFSRC/pens/fonts</code>，通过编译最后得到的字体二进制文件位于<code>$RSFSRC/build/pens/fonts</code>下，后缀为<code>.bin</code>。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。</p>
@@ -262,6 +254,21 @@ Argument list to give program being debugged when it is started is &quot;file1=a
     </entry>
     
     <entry>
+      <title><![CDATA[关于]]></title>
+      <url>https://nicklinyi.github.io/about.html</url>
+      <content type="html"><![CDATA[<h4>关于博主</h4>
+
+<p>地震学在读</p>
+<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
+<ul>
+<li>Email：<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#108;&#105;&#x6e;&#x79;&#x69;&#x68;&#97;&#110;&#99;&#x68;&#117;&#x61;&#x6e;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#108;&#105;&#x6e;&#x79;&#x69;&#x68;&#97;&#110;&#99;&#x68;&#117;&#x61;&#x6e;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;</a></li>
+</ul>
+<p>如未能及时回复各种问题，请见谅。</p>
+<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[藏经阁]]></title>
       <url>https://nicklinyi.github.io/links.html</url>
       <content type="html"><![CDATA[<h3 id="正演模拟"><a href="#正演模拟" class="headerlink" title="正演模拟"></a>正演模拟</h3><h4 id="谱元法"><a href="#谱元法" class="headerlink" title="谱元法"></a>谱元法</h4><ul>
@@ -301,21 +308,6 @@ Argument list to give program being debugged when it is started is &quot;file1=a
 <li><a href="http://sepwww.stanford.edu/doku.php?id=sep:home" title="Stanford Exploration Project" target="_blank" rel="noopener">SEP</a></li>
 <li><a href="https://seiscope2.osug.fr/" target="_blank" rel="noopener">SEISCOPE</a></li>
 </ul>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[关于]]></title>
-      <url>https://nicklinyi.github.io/about.html</url>
-      <content type="html"><![CDATA[<h4>关于博主</h4>
-
-<p>地震学在读</p>
-<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
-<ul>
-<li>Email：<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x6c;&#x69;&#110;&#x79;&#x69;&#104;&#97;&#110;&#x63;&#x68;&#x75;&#97;&#110;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x6c;&#x69;&#110;&#x79;&#x69;&#104;&#97;&#110;&#x63;&#x68;&#x75;&#97;&#110;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></li>
-</ul>
-<p>如未能及时回复各种问题，请见谅。</p>
-<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
 ]]></content>
     </entry>
     
