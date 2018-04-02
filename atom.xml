@@ -241,9 +241,9 @@ $ scons
       <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
-    
       <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
+    
+      <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
     
   </entry>
   
@@ -277,9 +277,9 @@ $ scons
       <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
-    
       <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
+    
+      <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
     
   </entry>
   
@@ -402,7 +402,7 @@ Argument list to give program being debugged when it is started is &amp;quot;fil
     <link href="https://nicklinyi.github.io//blog/2016/06/data-resources.html"/>
     <id>https://nicklinyi.github.io//blog/2016/06/data-resources.html</id>
     <published>2016-06-09T05:08:28.000Z</published>
-    <updated>2018-03-30T02:16:57.934Z</updated>
+    <updated>2018-04-02T01:03:12.002Z</updated>
     
     <content type="html">&lt;p&gt;本文主要用于收集一些免费的数据来源。将不定期更新新的数据源。&lt;/p&gt;
 &lt;p&gt;Madagascar 数据：&lt;a href=&quot;http://www.ahay.org/data/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.ahay.org/data/&lt;/a&gt;&lt;/p&gt;
@@ -411,6 +411,7 @@ Argument list to give program being debugged when it is started is &amp;quot;fil
 &lt;p&gt;SAIG 公开的数据 : &lt;a href=&quot;http://seismic.physics.ualberta.ca/data/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://seismic.physics.ualberta.ca/data/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;SeismicLab 里面自带部分数据: &lt;a href=&quot;http://seismic-lab.physics.ualberta.ca/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://seismic-lab.physics.ualberta.ca/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;HIT 公开的数据: &lt;a href=&quot;http://pan.baidu.com/s/1qYwI1IG&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://pan.baidu.com/s/1qYwI1IG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Open Seismic Repository: &lt;a href=&quot;http://opendtect.org/osr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://opendtect.org/osr/&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">

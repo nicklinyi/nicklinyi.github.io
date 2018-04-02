@@ -215,6 +215,7 @@ Argument list to give program being debugged when it is started is &quot;file1=a
 <p>SAIG 公开的数据 : <a href="http://seismic.physics.ualberta.ca/data/" target="_blank" rel="noopener">http://seismic.physics.ualberta.ca/data/</a></p>
 <p>SeismicLab 里面自带部分数据: <a href="http://seismic-lab.physics.ualberta.ca/" target="_blank" rel="noopener">http://seismic-lab.physics.ualberta.ca/</a></p>
 <p>HIT 公开的数据: <a href="http://pan.baidu.com/s/1qYwI1IG" target="_blank" rel="noopener">http://pan.baidu.com/s/1qYwI1IG</a></p>
+<p>Open Seismic Repository: <a href="http://opendtect.org/osr/" target="_blank" rel="noopener">http://opendtect.org/osr/</a></p>
 ]]></content>
     </entry>
     
@@ -264,6 +265,21 @@ Argument list to give program being debugged when it is started is &quot;file1=a
   
     
     <entry>
+      <title><![CDATA[关于]]></title>
+      <url>https://nicklinyi.github.io/about.html</url>
+      <content type="html"><![CDATA[<h4>关于博主</h4>
+
+<p>地震学在读</p>
+<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
+<ul>
+<li>Email：<a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#108;&#x69;&#x6e;&#x79;&#x69;&#104;&#x61;&#x6e;&#99;&#x68;&#117;&#x61;&#110;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#108;&#x69;&#x6e;&#x79;&#x69;&#104;&#x61;&#x6e;&#99;&#x68;&#117;&#x61;&#110;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a></li>
+</ul>
+<p>如未能及时回复各种问题，请见谅。</p>
+<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
+]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>https://nicklinyi.github.io/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -281,21 +297,6 @@ Argument list to give program being debugged when it is started is &quot;file1=a
 
 </body>
 </html>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[关于]]></title>
-      <url>https://nicklinyi.github.io/about.html</url>
-      <content type="html"><![CDATA[<h4>关于博主</h4>
-
-<p>地震学在读</p>
-<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
-<ul>
-<li>Email：<a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x6c;&#x69;&#110;&#x79;&#105;&#104;&#x61;&#x6e;&#99;&#x68;&#117;&#97;&#110;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#x6c;&#x69;&#110;&#x79;&#105;&#104;&#x61;&#x6e;&#99;&#x68;&#117;&#97;&#110;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a></li>
-</ul>
-<p>如未能及时回复各种问题，请见谅。</p>
-<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
 ]]></content>
     </entry>
     
@@ -343,14 +344,14 @@ Argument list to give program being debugged when it is started is &quot;file1=a
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>https://nicklinyi.github.io/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>https://nicklinyi.github.io/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>https://nicklinyi.github.io/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>https://nicklinyi.github.io/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
