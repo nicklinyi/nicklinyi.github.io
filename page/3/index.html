@@ -441,27 +441,20 @@
 
       
         
-          
-            <h2 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h2><p>我们都知道 Madagascar 的数据和道头是放置在不同的位置，然后在道头里通过指针指向数据文件的实际位置。这样做的好处有一下几点:</p>
+          <h2 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h2><p>我们都知道 Madagascar 的数据和道头是放置在不同的位置，然后在道头里通过指针指向数据文件的实际位置。这样做的好处有一下几点:</p>
 <ul>
 <li>误删文件不会造成实际数据的丢失</li>
 <li>本地移动文件的实际移动的只是道头，这样可以实现快速复制或者剪切整个文件夹</li>
 <li>…</li>
 </ul>
 <p>因此，在大多数时候这种机制都是非常方便我们操作和处理文件及数据。但有些时候我们需要将道头和数据放置在一起，类似于<code>.su</code>或<code>.segy</code>格式，从而保证数据的完整性。比如，我们在服务器计算叠前偏移，最后得到一个偏移结果，然后需要将结果备份到本地做进一步的分析和处理(画图等),这时候就需要数据是完整的。</p>
-<h2 id="How"><a href="#How" class="headerlink" title="How?"></a>How?</h2><p>对于一个<code>.rsf</code>文件，有几种方式可以达到这一目的。Madagascar 的官方说明文档写的是在处理数据的时候直接加一个输出选项就可以实现这一功能。该例子如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ sfspike n1=10 --out=stdout &gt; spike.rsf</div><div class="line">$ grep in spike.rsf</div><div class="line">Binary file spike.rsf matches</div><div class="line"></div><div class="line">$ sfin spike.rsf</div><div class="line">spike.rsf:</div><div class="line">    in=&quot;stdin&quot;  </div><div class="line">    esize=4 type=float form=native</div><div class="line">    n1=10          d1=0.004       o1=0          label1=&quot;Time&quot; unit1=&quot;s&quot;</div><div class="line">        10 elements 40 bytes</div></pre></td></tr></table></figure></p>
-<p>但如果处理的时候没有使用<code>--out=stdout</code>选项，那么如何将道头和数据打包在一起呢？对于上面这个例子只需要重新写一个命令加上<code>--out=stdout</code>选项就行了，因为运行时间短，这样最快捷最简便。但是如果对于某些生成最终结果需要很长时间的文件，这种方法显然显得不合时宜。这时候可以 Madagascar 的<code>sfcp</code>命令。假设我们通过下面的命令生成了一个<code>.rsf</code>文件</p>
-<pre><code>$ sfspike n1=10 &gt;spike.rsf
-</code></pre><p>然后，我们可以通过<code>sfin</code>来查看<code>spike.rsf</code>文件的道头信息以及数据文件的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ sfin spike.rsf</div><div class="line">in:</div><div class="line">    in=&quot;/var/tmp/spike.rsf@&quot;   </div><div class="line">    esize=4 type=float form=native </div><div class="line">    n1=10          d1=0.004       o1=0          label1=&quot;Time&quot; unit1=&quot;s&quot; </div><div class="line">        10 elements 40 bytes</div></pre></td></tr></table></figure></p>
-<p>从上面的结果可以看出<code>spike.rsf</code>的数据文件是<code>/var/tmp</code>目录下<code>spike.rsf@</code>文件。如果安装了 Seismic Unix 的话，还可以通过<code>xwigb</code>命令来绘制这个结果。</p>
-<pre><code>$ xwigb &lt;/var/tmp/spike.rsf@ n1=10
-</code></pre><p>下面采用<code>sfcp</code>来合并道头和数据，命令如下:</p>
-<pre><code>$ sfcp &lt;spike.rsf --out=stdout &gt;spikenew.rsf
-</code></pre><p>现在我们通过<code>sfin</code>来查看<code>spikenew.rsf</code>的数据文件位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ sfin &lt;spikenew.rsf</div><div class="line">in:</div><div class="line">    in=&quot;stdin&quot;</div><div class="line">    esize=4 type=float form=native   </div><div class="line">    n1=10          d1=0.004       o1=0          label1=&quot;Time&quot; unit1=&quot;s&quot; </div><div class="line">        10 elements 40 bytes</div></pre></td></tr></table></figure>
-<p>这时候我们发现数据和道头文件合并在一起了(<code>in=&quot;stdin&quot;</code>).相信大家会有种上当受骗的感觉，想想这不还是用到了官方中说的那个选项<code>--out=stdout</code>么？因此，通过这个例子可以发现，几乎任何一个 Madagascar 的命令都可以实现这样的操作，但<code>sfcp</code>应该是比较合理的了，因为它只是单纯的复制文件而已，如果要使用一些其他命令的话，可能会出现一些奇怪的事情，大家可以尽情尝试。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2016/06/rsf-data-handle.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -773,7 +766,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  738
+                  737
                 </span>
               
 
@@ -811,23 +804,20 @@
 
       
         
-          
-            <p>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题：</p>
+          <p>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题：</p>
 <ol>
 <li>bash 脚本是按顺序执行的，也就是说，如果你在脚本的最后几句有一个绘图命令的话，那么第一次执行脚本的时候可以处理前面的一些工作流程，然后再绘图。如果后面我们觉得结果已经很完美了，但图片的大小或者标题什么需要修改一下，那么当我们修改绘图命令后再次运行脚本的话，会把前面的整个工作流程再重复一遍，这将浪费很多时间。</li>
 <li>bash 脚本对计算的支持很弱，如果不使用一些工具的话，没法进行浮点数运算。</li>
 </ol>
 <p>对于问题 1，可以单独将绘图命令拿出来另写一个脚本文件解决，但会使得文件目录下脚本文件过多，不便于文件的整理。其次，假设我们有一个脚本文件，里边有 5 行命令用来处理数据，如果我们改变了第 3 行的命令行参数，那么再次运行脚本，仍会继续执行第 1 条和第 2 条命令，那为了避免浪费时间，我们也得把剩下的第 3-5 条命令单独拿出来写入一个新的脚本？</p>
 <p>对于问题 2，目前是没有更好的办法解决的，只能使用 bash 的 <code>bc</code> 计算功能，但其表达式书写繁琐，不易搞懂。</p>
-<p>针对以上问题，Madagascar 提供了更好的解决方案，使得我们可以 借用 SCons 工具来写 SU 的脚本。模板如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> rsf.suproj <span class="keyword">as</span> surun</div><div class="line"><span class="comment"># creat a common offset data file</span></div><div class="line">surun.Flow(<span class="string">'plane'</span>,<span class="keyword">None</span>,<span class="string">'suplane'</span>,stdin=<span class="number">0</span>)</div><div class="line"><span class="comment"># creat a wigb type plot </span></div><div class="line">surun.Plot(<span class="string">'plane'</span>,<span class="string">'supswigb'</span>)</div><div class="line"></div><div class="line">surun.End()</div></pre></td></tr></table></figure>
-<p>上述脚本实际上是 SU 安装是否成功的一个简单的测试例子,这里将 <code>rsf.proj</code>模块导入并命名为<code>surun</code>，大家可以更改为不同的名字，主要目的是为了在同一文件中既写 SU 的脚本，也写 Madagascar 的脚本。需要注意的是上述脚本创建了一个<code>plane.su</code>的文件，然后通过<code>surun.Plot</code>命令创建了<code>plane.eps</code>的矢量图片文件。因为 SCons 总是将不含后缀的文件自动加上<code>.su</code>的后缀。而并不是所有的 SU 程序都生成<code>.su</code>后缀的文件，比如速度建模程序<code>unif2</code>，因此，对于 SU 的 SCons 脚本书写规范，建议最好对于输入和输出文件都显示的给出文件后缀。总结一下就是：</p>
-<ul>
-<li>含以<code>su</code>开头的 SU 命令的 Flow 语句，文件的输出统一加上<code>.su</code>后缀</li>
-<li>含<strong>不以</strong><code>su</code>开头的 SU 命令的Flow 语句，文件的输出统一加上<code>.bin</code>后缀</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2016/05/su-scons-together.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1173,15 +1163,16 @@
 
       
         
-          
-            <p>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，<code>cd</code>到<code>book</code>目录下，任选一个文件夹进去，然后运行<code>$ scons</code>，发现总是出现权限不够错误。后来再进入到其他文件夹，发现还是存在同样的问题。但这次发现问题的根源所在了。</p>
+          <p>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，<code>cd</code>到<code>book</code>目录下，任选一个文件夹进去，然后运行<code>$ scons</code>，发现总是出现权限不够错误。后来再进入到其他文件夹，发现还是存在同样的问题。但这次发现问题的根源所在了。</p>
 <p>Madagascar 下使用 scons 来编译 latex 将会在<code>$RSFROOT/share/madagascar</code>下创建一个本地文件夹的副本，其目的是为了用来之后<code>lock</code>图片所用，而由于不管将 Madagascar 安装在<code>/opt</code>下，还是<code>$HOME</code>下的某个目录，<code>$RSFROOT</code>都默认不是 766 权限。因此其下的<code>share/madagascar</code>也一样。通过测试发现，只有<code>share/madagascar</code>为 766 权限时，madagascar 才能向里边写文件.因此第一步就是将该路径设置为 766 .</p>
 <p>按上述设置后，scons 暂时不报错了，也可以正常编译 latex 文件，但是由于 madagascar 下的 tex 基本是与地球物理相关的，因此 latex 下的 texmf 缺少一些 cls 文件，可从 sourceforge 上下载 segtex ，然后将源码解压并放在<code>$HOME/texmf</code>下，然后通过<code>texhash</code>来将其添加到现有的 latex 的 texmf 中。</p>
-<p>虽然，按上述操作后 latex 也不报错了，但 latex 编译完后，scons 还是会报一些小的错误，主要是关于阅读和打印 pdf 的问题，因为采用 tex.py 中的 Paper 来编译 latex 文件时，编译完会自动打开并打印文件，而在其打印机下并未写打印机名称以及地址，因此总会报错，毕竟这是一个 machine-depending 的问题， Madagascar 没有处理好这个问题是很正常的。这算是 Madagascar 的一个小 bug 。但并不影响读者正常编译和使用。</p>
-<p>但笔者还是要解决这个问题，因为并不是每个人编译完文件都想马上打开 pdf 文件，也没有这个必要这么做，因此，我们找到<code>$RSFROOT</code>中的 tex.py 文件，注释掉其中的两行代码，就可解决上述问题。</p>
-<p>至于 latex 编译时会遇到系统中缺少一些字体的情况，并不是本文讨论的重点。大家可自行谷歌予以解决。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2016/05/rsf-use-latex.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

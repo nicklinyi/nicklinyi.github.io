@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="为什么要输出日志文件？输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。 命令行下处理命令行下执行Madagascar命">
+<meta name="description" content="为什么要输出日志文件？输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。">
 <meta name="keywords" content="SCons,Madagascar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Madagascar输出程序运行日志文件">
 <meta property="og:url" content="https://nicklinyi.github.io/blog/2017/01/rsf-print-log.html">
 <meta property="og:site_name" content="Nick@Seis">
-<meta property="og:description" content="为什么要输出日志文件？输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。 命令行下处理命令行下执行Madagascar命">
+<meta property="og:description" content="为什么要输出日志文件？输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-01T13:52:33.000Z">
+<meta property="og:updated_time" content="2018-04-24T07:17:23.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Madagascar输出程序运行日志文件">
-<meta name="twitter:description" content="为什么要输出日志文件？输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。 命令行下处理命令行下执行Madagascar命">
+<meta name="twitter:description" content="为什么要输出日志文件？输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。">
 
 
 
@@ -446,6 +446,7 @@
       
         <h2 id="为什么要输出日志文件？"><a href="#为什么要输出日志文件？" class="headerlink" title="为什么要输出日志文件？"></a>为什么要输出日志文件？</h2><p>输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。</p>
 <p>程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。</p>
+<a id="more"></a>
 <h2 id="命令行下处理"><a href="#命令行下处理" class="headerlink" title="命令行下处理"></a>命令行下处理</h2><p>命令行下执行Madagascar命令并将输出信息打印至日志文件的方式比较简单，可采用如下方式<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sfmycode &lt; in1<span class="selector-class">.rsf</span> out1=out1<span class="selector-class">.rsf</span> <span class="number">2</span>&gt; log.txt</div></pre></td></tr></table></figure></p>
 <p><code>2&gt; log.txt</code>　表示将程序里的其他输出语句如<code>printf(stderr,&quot;t= \n&quot;,t)</code>,<code>sf_warning()</code>等输出到日志文件中。</p>
 <h2 id="SCons脚本处理"><a href="#SCons脚本处理" class="headerlink" title="SCons脚本处理"></a>SCons脚本处理</h2><p>当采用SCons脚本来运行程序并打印相关的数据至日志文件的时候,需要进行如下处理。</p>

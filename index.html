@@ -797,19 +797,14 @@
 
       
         
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于<br>与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。</p>
-<h2 id="运行程序中的一些参数设置"><a href="#运行程序中的一些参数设置" class="headerlink" title="运行程序中的一些参数设置"></a>运行程序中的一些参数设置</h2><p>这里主要显示绘图需要的部分参数：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#### for wavefield dumps ####</span></div><div class="line">output_wavefield_dumps          = .<span class="literal">true</span>.        #将这里设为 <span class="literal">true</span>， 主要是输出绘图文件</div><div class="line">imagetype_wavefield_dumps       = 1              # display <span class="attribute">1</span>=displ vector <span class="attribute">2</span>=veloc vector <span class="attribute">3</span>=accel vector <span class="attribute">4</span>=pressure， 这儿一般选择绘制位移，也可以选择绘制其他的，根据自己的需要进行修改</div><div class="line">use_binary_for_wavefield_dumps  = .<span class="literal">false</span>.        # use ASCII <span class="keyword">or</span> single-precision binary format <span class="keyword">for</span> the wave field dumps， 由于 GMT 画 ASCII 文件相对简单一点，因此这里选择 <span class="literal">false</span></div></pre></td></tr></table></figure>
-<h2 id="运行程序并绘图"><a href="#运行程序并绘图" class="headerlink" title="运行程序并绘图"></a>运行程序并绘图</h2><p>运行完程序之后，在<code>OUTPUT_FILES</code>文件夹下应该存在很多波场快照的文件(文件名类似于 <code>wavefield0000100_01.txt</code>)，最后还有一个网格节点坐标的文件(文件名类似于<code>wavefield_grid_for_dumps.txt</code>)。其中波场快照文件共有两列，分别为水平向和垂直向的波场信息。网格节点坐标文件也有两列数据，每一行记录一个网格节点的坐标信息(x z)。波场快照文件和网格节点坐标文件行数都相等，为总共计算的网格点数（程序运行的时候会在终端上打印该节点数）。</p>
-<h3 id="构建绘图原始文本"><a href="#构建绘图原始文本" class="headerlink" title="构建绘图原始文本"></a>构建绘图原始文本</h3><p>由于波场快照文件记录的是每个网格节点上的波场值，因此和传统的有限差分程序输出的波场快照文件不同。属于不规则网格数据（即使是一个均匀分布的网格），因此无法通过 SU, Madagascar 直接绘制波场快照信息。只能通过绘制一个 xyz 数据体的格式来进行，这个采用 GMT 很容易实现。但前提是需要把原来输出的波场快照，网格节点转化为一个文本文件，然后再使用 GMT 来绘图。</p>
-<p>构建绘图原始文本可采用 Linux 下的 <code>paste</code> 命令，其操作如下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 将 wavefield0001000_01.txt 按列粘贴到 wavefield_grid_for_dumps.txt 中，并存储为 wavefield_ux_uz.txt</span></div><div class="line"><span class="meta">$</span><span class="bash"> paste  wavefield_grid_for_dumps.txt wavefield0001000_01.txt &gt; wavefield_ux_uz.txt</span></div></pre></td></tr></table></figure></p>
-<p>通过上述处理后， <code>wavefield_ux_uz.txt</code>文件的前两列分别为 x,y 坐标；后两列为 ux, uz 值。</p>
-<h3 id="GMT绘图脚本"><a href="#GMT绘图脚本" class="headerlink" title="GMT绘图脚本"></a>GMT绘图脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"></div><div class="line"><span class="comment"># 模型的尺寸为1000 m * 1000 m</span></div><div class="line">R=<span class="string">"-R0/1000/0/1000"</span></div><div class="line">data=<span class="string">"wavefield_ux_uz.txt"</span></div><div class="line">grid=<span class="string">"output.grd"</span></div><div class="line">J=<span class="string">"-JX10c/10c"</span></div><div class="line">PS=<span class="string">"wavefield_ux.ps"</span></div><div class="line"></div><div class="line"><span class="comment"># 将前三列数据生成网格文件，用于绘制ux；若要绘制uz,修改为-i0,1,3即可</span></div><div class="line">gmt surface  -i0,1,2 <span class="variable">$R</span> <span class="variable">$data</span> -I2/2 -G<span class="variable">$grid</span></div><div class="line"></div><div class="line"><span class="comment"># 绘制底图</span></div><div class="line">gmt psbasemap  <span class="variable">$R</span>  <span class="variable">$J</span> -P -Bxa100 -Bya100 -K  &gt; <span class="variable">$PS</span></div><div class="line"></div><div class="line"><span class="comment"># 绘制波场快照</span></div><div class="line">gmt grdimage <span class="variable">$grid</span> <span class="variable">$R</span> <span class="variable">$J</span> -I -Cgray -O  &gt;&gt; <span class="variable">$PS</span></div><div class="line"></div><div class="line"><span class="comment"># ####</span></div><div class="line">gmt psconvert <span class="variable">$PS</span> -Tg -E300 -A -Tf</div><div class="line">rm gmt.history</div><div class="line">rm *.grd</div></pre></td></tr></table></figure>
-<h3 id="结果图"><a href="#结果图" class="headerlink" title="结果图"></a>结果图</h3><p>只是一个简单的示例，未添加横坐标和纵坐标的label，大家可自行修改。这里显示的绘制的结果不是ux,也不是uz,<br>而是<code>u=sqrt(ux**2 + uz**2)</code>。</p>
-<p><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1703880-097c8d13426b0e34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:40%" alt="波场快照图" align="center/"><br></div><br>注意：<br>之前波场输出文件的选项<code>use_binary_for_wavefield_dumps  = .false.</code>建议选为false，生成文本文件。最开始我选的是true主要的考虑是占用更小的磁盘空间，当时想着用 ximage 来画一个初步的波场快照信息，结果通过分析文件字节数怎么算都有个二倍的数据量，后面才想到是通过记录了两个波场分量的信息。如果采用ascii文本文件输出的话，就不会走这么多弯路了。</p>
-
-          
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于<br>与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/10/specfem2d-gmt.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -979,12 +974,14 @@
 
       
         
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>盐丘轮廓的绘制在地震偏移领域用途十分广泛，主要目的是为了分析偏移结果的好坏。当偏移结果和盐丘的轮廓基本吻合时，偏移质量就很高。最开始绘制轮廓的时候我采用的PS法，通过磁性套索把整个盐丘模型轮廓勾勒出来，然后再保存下来，与偏移结果进行对比。这里介绍一种直接通过 Madagascar 脚本的形式来绘制盐丘的结果，非常方便，可复用性很强，还可以用于其他的方面。此方法也借鉴于Prof. Sava 在 Madagascar book 文件夹下贡献的一个关于 Sigsbee 模型的脚本。</p>
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>下面通过脚本的形式来说明主要的操作步骤：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 提取盐丘外形</span></div><div class="line">Flow(  <span class="string">'salt'</span>,<span class="string">'vraw'</span>,<span class="string">'add add=-4.280 | clip clip=0.300 '</span>)</div><div class="line"><span class="comment"># vraw为盐丘速度模型,其速度值单位为km/s</span></div><div class="line"></div><div class="line"><span class="comment">#　计算水平梯度和垂直梯度</span></div><div class="line">Flow(  <span class="string">'edgez'</span>,<span class="string">'salt'</span>,<span class="string">'         igrad square=y'</span>)</div><div class="line">Flow(  <span class="string">'edgex'</span>,<span class="string">'salt'</span>,<span class="string">'transp | igrad square=y | transp'</span>)</div><div class="line">Flow(  <span class="string">'edge'</span>,<span class="string">'edgez edgex'</span>,</div><div class="line">       <span class="string">'math z=$&#123;SOURCES[0]&#125; x=$&#123;SOURCES[1]&#125; output="z+x"'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 对于给定的阈值进行mask，大于阈值部分为1，小于则为0</span></div><div class="line">Flow(  <span class="string">'mask'</span>,<span class="string">'edge'</span>,<span class="string">'mask min=0.04'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 计算盐丘外壳的x与z坐标</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> (<span class="string">'x1'</span>,<span class="string">'x2'</span>):</div><div class="line">    <span class="keyword">if</span>(x==<span class="string">'x1'</span>): o=<span class="string">'zs'</span></div><div class="line">    <span class="keyword">if</span>(x==<span class="string">'x2'</span>): o=<span class="string">'xs'</span></div><div class="line"></div><div class="line">    Flow(o,<span class="string">'edge mask'</span>,</div><div class="line">         <span class="string">'''</span></div><div class="line"><span class="string">         math output=%s |</span></div><div class="line"><span class="string">         put n1=1 n2=%d |</span></div><div class="line"><span class="string">         headerwindow mask=$&#123;SOURCES[1]&#125; |</span></div><div class="line"><span class="string">         window</span></div><div class="line"><span class="string">         '''</span> % (x,par[<span class="string">'nz'</span>]*par[<span class="string">'nx'</span>]))</div><div class="line"></div><div class="line"><span class="comment"># 合并x和z坐标</span></div><div class="line">Flow(<span class="string">'ss'</span>,[<span class="string">'xs'</span>,<span class="string">'zs'</span>],</div><div class="line">     <span class="string">'''</span></div><div class="line"><span class="string">     cat axis=2 space=n</span></div><div class="line"><span class="string">     $&#123;SOURCES[0]&#125; $&#123;SOURCES[1]&#125; | transp |</span></div><div class="line"><span class="string">     window j2=2</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">     '''</span>, stdin=<span class="number">0</span>)</div><div class="line"></div><div class="line">fdmod.param(par)</div><div class="line"><span class="comment"># 绘制外壳图像</span></div><div class="line">Plot(  <span class="string">'ss'</span>,fdmod.ssplot(<span class="string">'plotfat=2 plotcol=6 symbol=.'</span>,par))</div></pre></td></tr></table></figure></p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1703880-311559847c4732b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:40%" alt="波场快照图" align="center/"><br></div>
-
-          
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>盐丘轮廓的绘制在地震偏移领域用途十分广泛，主要目的是为了分析偏移结果的好坏。当偏移结果和盐丘的轮廓基本吻合时，偏移质量就很高。最开始绘制轮廓的时候我采用的PS法，通过磁性套索把整个盐丘模型轮廓勾勒出来，然后再保存下来，与偏移结果进行对比。这里介绍一种直接通过 Madagascar 脚本的形式来绘制盐丘的结果，非常方便，可复用性很强，还可以用于其他的方面。此方法也借鉴于Prof. Sava 在 Madagascar book 文件夹下贡献的一个关于 Sigsbee 模型的脚本。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/09/plot-salt.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1154,38 +1151,15 @@
 
       
         
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在勘探地球物理中，往往一个程序会重复计算多次，比如叠前数据的合成（需要对一个有限差分程序往复执行上<br>百次，最后得到一个叠前的炮集记录）。因此学会对程序进行优化是一个很好的解决方案。</p>
-<p>GNU C Compiler (GCC) 自带了一个通用的 Profile 工具 <code>gprof</code>， 用于对程序各函数的运行时间进行<br>统计，方便用户确认程序的 Hot Spot(运行耗时最多的函数)。下面将介绍如何将该工具用于 Madagascar<br>程序的 Profile 中。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先，准备好要 Profile 的程序，这里为<code>Mfdtd2d.c</code>。然后写一个用来编译该程序的 <code>SConstruct</code> 脚本，代码如下：</p>
-<pre><code><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os, sys, re, string</div><div class="line"></div><div class="line"></div><div class="line">try:</div><div class="line">    <span class="keyword">import</span> bldutil</div><div class="line">    glob_build = True <span class="comment"># scons command launched in RSFSRC</span></div><div class="line">    srcroot = <span class="string">'../..'</span> <span class="comment"># cwd is RSFSRC/build/user/jeff</span></div><div class="line">    Import(<span class="string">'env bindir libdir pkgdir'</span>)</div><div class="line">    env = env.Clone()</div><div class="line">except:</div><div class="line">    glob_build = False <span class="comment"># scons command launched in the local directory</span></div><div class="line">    srcroot = os.environ.get(<span class="string">'RSFSRC'</span>, <span class="string">'../..'</span>)</div><div class="line">    sys.path.append(os.path.join(srcroot,<span class="string">'framework'</span>))</div><div class="line">    <span class="keyword">import</span> bldutil</div><div class="line">    env = bldutil.Debug() <span class="comment"># Debugging flags for compilers</span></div><div class="line">    <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span> very <span class="keyword">import</span> !!!!!!!! <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">#</span></div><div class="line">    env[<span class="string">'CC'</span>] = <span class="string">'gcc -pg'</span> <span class="comment"># add option `-pg`  to gcc to enable gprof</span></div><div class="line">    <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">#####</span></div><div class="line"><span class="comment">    bindir = libdir = pkgdir = None</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">targets = bldutil.UserSconsTargets()</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"># C mains</span></div><div class="line"><span class="comment">targets.c = '''</span></div><div class="line"><span class="comment">fdtd2d</span></div><div class="line"><span class="comment">'''</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">targets.build_all(env, glob_build, srcroot, bindir, libdir, pkgdir)</span></div></pre></td></tr></table></figure>
-</code></pre><p>从编译脚本可以看到 gcc 的编译选项里增加了<code>-pg</code>选项，这是采用<code>gprof</code>来 Profile 所必须的。<br>如果自己手写编译脚本的话，记得在编译和链接两步都要加上<code>-pg</code>选项，否则无法成功运行<code>gprof</code>。</p>
-<h2 id="编译并链接代码"><a href="#编译并链接代码" class="headerlink" title="编译并链接代码"></a>编译并链接代码</h2><pre><code>$ scons
-</code></pre><p>运行完该语句会在当前目录下生成一个可执行的二进制文件<code>sffdtd2d</code>。然后我们正常运行该程序。假设<br>其所需的参数为：速度模型<code>vel.rsf</code>, 子波<code>wav.rsf</code>，生成的地震记录为<code>dd.rsf</code>。然后运行该程序</p>
-<pre><code>$ ./sffdtd2d &lt; vel.rsf wav=wav.rsf &gt; dd.rsf
-</code></pre><h2 id="Profile"><a href="#Profile" class="headerlink" title="Profile"></a>Profile</h2><p>执行完<code>./sffdtd2d &lt; vel.rsf wav=wav.rsf &gt; dd.rsf</code>语句后，我们可以在当前目录下发现一个命名<br>为<code>gmon.out</code>的文件。下一步将使用该文件进行 Profile。</p>
-<p>执行<code>gprof ./sffdtd2d gmon.out -p</code>，将得到下列信息：</p>
-<pre><code>$ gprof ./sffdtd2d gmon.out -p
-Flat profile:
-
-Each sample counts as 0.01 seconds.
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls  ms/call  ms/call  name    
- 96.28     76.63    76.63     1000    76.63    76.63  fd_kernel
-  1.99     78.21     1.58                             main
-  1.75     79.60     1.39     5000     0.28     0.28  fun()
-  0.00     79.60     0.00        4     0.00     0.00  fun2()
-  0.00     79.60     0.00        2     0.00     0.00  fun3()
-  0.00     79.60     0.00        1     0.00     0.00  fun4()
-  0.00     79.60     0.00        1     0.00     0.00  fun5()
-</code></pre><p>通过该信息，我们发现<code>fd_kernel</code>这个函数占用了96.28%的计算时间，因此我们找到了程序的 Hot Spot<br>，从而可以通过采用 OpenMP， MPI, CUDA C等方式进一步对程序进行优化加速。</p>
-<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><ul>
-<li><a href="https://sourceware.org/binutils/docs/gprof/Executing.html#Executing" target="_blank" rel="noopener">Gprof官方文档</a></li>
-<li><a href="http://scons.org/doc/production/HTML/scons-user.html#sect-external-environments" target="_blank" rel="noopener">SCons官方文档</a></li>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/l-gnuprof.html" target="_blank" rel="noopener">使用 GNU profile 来提高代码运行速度</a></li>
-</ul>
-
-          
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在勘探地球物理中，往往一个程序会重复计算多次，比如叠前数据的合成（需要对一个有限差分程序往复执行上<br>百次，最后得到一个叠前的炮集记录）。因此学会对程序进行优化是一个很好的解决方案。</p>
+<p>GNU C Compiler (GCC) 自带了一个通用的 Profile 工具 <code>gprof</code>， 用于对程序各函数的运行时间进行<br>统计，方便用户确认程序的 Hot Spot(运行耗时最多的函数)。下面将介绍如何将该工具用于 Madagascar<br>程序的 Profile 中。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/08/optmize-rsf-code.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

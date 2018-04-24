@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://nicklinyi.github.io/blog/2017/10/specfem2d-gmt.html</loc>
+    
+    <lastmod>2018-04-24T07:17:47.577Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2017/09/plot-salt.html</loc>
+    
+    <lastmod>2018-04-24T07:17:42.042Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2017/08/optmize-rsf-code.html</loc>
+    
+    <lastmod>2018-04-24T07:17:36.593Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2017/01/rsf-print-log.html</loc>
+    
+    <lastmod>2018-04-24T07:17:23.172Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2016/12/rsf-datapath.html</loc>
+    
+    <lastmod>2018-04-24T07:17:14.310Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2016/06/rsf-data-handle.html</loc>
+    
+    <lastmod>2018-04-24T07:16:56.851Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2016/05/su-scons-together.html</loc>
+    
+    <lastmod>2018-04-24T07:16:46.787Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2016/05/rsf-use-latex.html</loc>
+    
+    <lastmod>2018-04-24T07:16:26.576Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/blog/2018/04/linear-events.html</loc>
     
     <lastmod>2018-04-24T07:14:21.076Z</lastmod>
@@ -23,20 +79,6 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2017/08/optmize-rsf-code.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/blog/2016/06/rsf-data-handle.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://nicklinyi.github.io/categories/index.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
@@ -44,28 +86,7 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/about.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/blog/2016/12/rsf-datapath.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/blog/2017/01/rsf-print-log.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/404.html</loc>
+    <loc>https://nicklinyi.github.io/tags/index.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
@@ -79,35 +100,14 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2017/09/plot-salt.html</loc>
+    <loc>https://nicklinyi.github.io/about.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2017/10/specfem2d-gmt.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/blog/2016/05/su-scons-together.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/blog/2016/05/rsf-use-latex.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/tags/index.html</loc>
+    <loc>https://nicklinyi.github.io/404.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     

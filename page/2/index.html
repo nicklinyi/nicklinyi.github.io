@@ -441,25 +441,16 @@
 
       
         
-          
-            <h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Madagascar自带的一共有15种字体，这些字体文件位于<code>$RSFSRC/pens/fonts</code>，通过编译最后得到的字体二进制文件位于<code>$RSFSRC/build/pens/fonts</code>下，后缀为<code>.bin</code>。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。</p>
+          <h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Madagascar自带的一共有15种字体，这些字体文件位于<code>$RSFSRC/pens/fonts</code>，通过编译最后得到的字体二进制文件位于<code>$RSFSRC/build/pens/fonts</code>下，后缀为<code>.bin</code>。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。</p>
 <h2 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h2><p>编辑<code>$RSFROOT/share/madagascar/etc/env.sh</code>或<code>$RSFROOT/share/madagascar/etc/env.csh</code>,根据自己所使用的shell决定。在该文件最后添加下列语句<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">VPLOTFONTDIR</span>=<span class="variable">$RSFSRC</span>/build/pens/fonts/</div></pre></td></tr></table></figure></p>
 <p>然后再终端执行下述语句完成环境变量的设置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bashrc</div></pre></td></tr></table></figure></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="改变字体"><a href="#改变字体" class="headerlink" title="改变字体"></a>改变字体</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Plot('example',fdmod.cgrey('font=<span class="number">1</span>'),par)</div><div class="line"># font=[<span class="number">1</span>,<span class="number">15</span>] 选择不同的字体，默认应</div><div class="line"># 该是<span class="number">3</span>,近年来文章中出现的比较多的是<span class="number">1</span>和<span class="number">2</span>．</div></pre></td></tr></table></figure>
-<h3 id="输入特殊字符"><a href="#输入特殊字符" class="headerlink" title="输入特殊字符"></a>输入特殊字符</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Plot<span class="params">('examples',fdmod.cgrey('<span class="attr">wantscalebar</span>=y  <span class="attr">font</span>=1 <span class="attr">bias</span>=0 <span class="attr">color</span>=e <span class="attr">allpos</span>=n <span class="attr">min1</span>=.5 <span class="attr">formatbar</span>=%3.0f <span class="attr">barlabel</span>="\s150 \\F10 \\v104 \\F10 "  <span class="attr">color</span>=e',par)</span>)</div><div class="line"><span class="comment"># F10为greekc字符集，v104查表可知为eta符号</span></div><div class="line"><span class="comment"># 注意一定要用`\\`，第一个表示转义，这样在命令行中出现的是\F10</span></div><div class="line"><span class="comment"># 如果在命令行中输入的话，用`\`即可</span></div></pre></td></tr></table></figure>
-<h3 id="特殊字符表"><a href="#特殊字符表" class="headerlink" title="特殊字符表"></a>特殊字符表</h3><h4 id="在线浏览"><a href="#在线浏览" class="headerlink" title="在线浏览"></a>在线浏览</h4><p>见<a href="http://ahay.org/blog/?s=font" target="_blank" rel="noopener">Madagascar官方博客</a></p>
-<h4 id="本地浏览"><a href="#本地浏览" class="headerlink" title="本地浏览"></a>本地浏览</h4><pre><code>$ cd $RSFSRC
-$ cd pens/tests
-$ scons
-</code></pre><p>运行完上述命令后，在<code>$RSFSRC/pens/tests/Fig</code>目录下会出现很多<code>.vpl</code>文件。接着我们把<code>font*.vpl</code><br>转化为<code>font*.pdf</code>，便于本地浏览。</p>
-<pre><code>$ vpconvert font*.vpl format=pdf
-</code></pre><p>至此，我们可以在本地浏览各种 font 字体了。感兴趣的同学也可以自己看看该目录下的其他字体。</p>
-<h2 id="修订历史"><a href="#修订历史" class="headerlink" title="修订历史"></a>修订历史</h2><ul>
-<li>2017-07-26：初稿；</li>
-<li>2017-08-13：增加本地浏览部分；</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/07/rsf-fonts.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -629,17 +620,15 @@ $ scons
 
       
         
-          
-            <h2 id="为什么要输出日志文件？"><a href="#为什么要输出日志文件？" class="headerlink" title="为什么要输出日志文件？"></a>为什么要输出日志文件？</h2><p>输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。</p>
+          <h2 id="为什么要输出日志文件？"><a href="#为什么要输出日志文件？" class="headerlink" title="为什么要输出日志文件？"></a>为什么要输出日志文件？</h2><p>输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。</p>
 <p>程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。</p>
-<h2 id="命令行下处理"><a href="#命令行下处理" class="headerlink" title="命令行下处理"></a>命令行下处理</h2><p>命令行下执行Madagascar命令并将输出信息打印至日志文件的方式比较简单，可采用如下方式<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sfmycode &lt; in1<span class="selector-class">.rsf</span> out1=out1<span class="selector-class">.rsf</span> <span class="number">2</span>&gt; log.txt</div></pre></td></tr></table></figure></p>
-<p><code>2&gt; log.txt</code>　表示将程序里的其他输出语句如<code>printf(stderr,&quot;t= \n&quot;,t)</code>,<code>sf_warning()</code>等输出到日志文件中。</p>
-<h2 id="SCons脚本处理"><a href="#SCons脚本处理" class="headerlink" title="SCons脚本处理"></a>SCons脚本处理</h2><p>当采用SCons脚本来运行程序并打印相关的数据至日志文件的时候,需要进行如下处理。</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Flow(<span class="string">'out1 '</span>,<span class="string">'in1.rsf'</span>,</div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    sfmycode</span></div><div class="line"><span class="string">    out=$&#123;TARGET[0]&#125;</span></div><div class="line"><span class="string">    2&gt; "log.txt"</span></div><div class="line"><span class="string">    '''</span>,stdout=-<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<p><code>stdout=-1</code>表示标准输出设备未指向任何文件指针。</p>
-<p>注意：文件输出的选择，此时不要选择将stdout作为文件的输出指针(即在源代码中不要出现像<code>Fout = sf_output(&quot;out&quot;)</code>这样的语句)，这样的话就无法完成分别输出不同信息至屏幕和日志文件的目的。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/01/rsf-print-log.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -809,21 +798,14 @@ $ scons
 
       
         
-          
-            <p>正常情况下， 执行完Madagascar命令后的二进制数据文件是存在<code>/var/tmp/</code>下的，实际我们在写自己就的项目的时候，一般最好是把数据文件和项目存在一起，这样管理起来比较方便。因此需要了解Madagascar存储文件时选择<code>DATAPATH</code>的优先级关系。具体见官方说明文档 <a href="http://www.ahay.org/wiki/Guide_to_RSF_file_format。" target="_blank" rel="noopener">http://www.ahay.org/wiki/Guide_to_RSF_file_format。</a></p>
-<p>简述如下：</p>
-<ul>
-<li>查看命令行是否含<code>--out=XXX</code>参数，如果有，则按其指定的方式进行存储，没有则继续进行下面的操作</li>
-<li>查看命令行是否含<code>datapath=XXX</code>参数，如果有，则按按其指定的路径进行存储，没有则继续进行下面的操作</li>
-<li>查看当前路径下是否含<code>.datapath</code>文件，如果有，则按该文件内指定的路径进行存储，没有则继续进行下面的操作</li>
-<li>查看当前用户的根目录下是否含<code>.datapath</code>文件，如果有，则按该文件内指定的路径进行存储，没有则继续进行下面的操作</li>
-<li>查看系统的环境变量是否含<code>DATAPATH</code>变量，如果有，则按该环境变量指定的路径进行存储，没有则继续进行下面的操作</li>
-<li>以上都没有的话，会直接将二进制存在当前工作路径下。</li>
-</ul>
-<p>因此，为了保证项目的完整型，选择第二种方式进行处理。即首先进入当前工作路径，然后在该路径下建立一个<code>data/</code>目录，用于存放数据。其次，在当前目录下新建一个<code>.datapath</code>文件，并在该文件中输入如下内容<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">datapath</span>=./<span class="class"><span class="keyword">data</span>/ # 注意<span class="keyword">data</span>后面必须跟一个/,表示这个是一个目录文件。</span></div></pre></td></tr></table></figure></p>
-<p>最后写SConstruct脚本的时候就不需要在每个命令里添加<code>--out=stdout</code>了。所有的数据文件都会存储至data/目录下。</p>
-
-          
+          <p>正常情况下， 执行完Madagascar命令后的二进制数据文件是存在<code>/var/tmp/</code>下的，实际我们在写自己就的项目的时候，一般最好是把数据文件和项目存在一起，这样管理起来比较方便。因此需要了解Madagascar存储文件时选择<code>DATAPATH</code>的优先级关系。具体见官方说明文档 <a href="http://www.ahay.org/wiki/Guide_to_RSF_file_format。" target="_blank" rel="noopener">http://www.ahay.org/wiki/Guide_to_RSF_file_format。</a></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2016/12/rsf-datapath.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1174,25 +1156,19 @@ $ scons
 
       
         
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当我们在 Madagascar API框架上写完自己的代码后，对于简单的程序，可以采用在源文件中增加<code>printf</code>或者<code>write</code>语句等打印一些变量信息，但比较麻烦的是每次增加一些<code>printf</code>等语句后，需要重新编译源代码，造成不必要的麻烦。因此，这里简单的介绍如何使用<code>gdb</code>来debug Madagascar程序。</p>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当我们在 Madagascar API框架上写完自己的代码后，对于简单的程序，可以采用在源文件中增加<code>printf</code>或者<code>write</code>语句等打印一些变量信息，但比较麻烦的是每次增加一些<code>printf</code>等语句后，需要重新编译源代码，造成不必要的麻烦。因此，这里简单的介绍如何使用<code>gdb</code>来debug Madagascar程序。</p>
 <h2 id="安装gdb"><a href="#安装gdb" class="headerlink" title="安装gdb"></a>安装gdb</h2><p>首先，需要查看自己的计算机是否安装了<code>gdb</code>软件，我们采用<code>which</code>命令。</p>
 <pre><code>$ which gdb
 </code></pre><p>如果终端中返回<code>gdb</code>可执行二进制文件的目录则表示已安装<code>gdb</code>，若提示找不到该命令则需要安装<code>gdb</code>。安装比较简单，输入下面语句即可安装<code>gdb</code></p>
 <pre><code>$ sudo apt-get install gdb
-</code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装完<code>gdb</code>后，我们首先进入自己编写的Madagascar程序的源文件目录，编译该代码生成可执行二进制文件。<br>假设我们的这个代码是实现对两个<code>.rsf</code>文件进行相加，最终得到二者之和。生成的可执行二进制文件名为<code>sfadd</code>,那么我们可以通过如下方式对其debug.</p>
-<p>首先在终端输入<code>$ gdb ./sfadd</code>进入debug模式。在终端中表现为如下结果：</p>
-<pre><code>(gdb) 
-</code></pre><p>由于该代码需要接收两个<code>.rsf</code>文件作为其<code>args</code>。这里假设两个文件分别为<code>add1.rsf</code>,<code>add2.rsf</code>,输出的结果文件为<code>add.rsf</code>.那么接着在gdb中，继续键入参数信息：</p>
-<pre><code>(gdb) set args &quot;file1=add1.rsf&quot; &quot;file2=add2.rsf&quot; &quot;out=add.rsf&quot;
-</code></pre><p>这个命令通过<code>set args</code>来传递<code>args</code>信息，之后我们可以通过<code>show args</code>来确认参数信息。</p>
-<pre><code>(gdb) show args
-Argument list to give program being debugged when it is started is &quot;file1=add1.rsf&quot; &quot;file2=add2.rsf&quot; &quot;out=add.rsf&quot;
-(gdb)
-</code></pre><p>说明:<br>1.所有的参数文件必须与二进制可执行文件在同一文件夹下，如果不在，则需要显式给出其路径<br>2.<code>args</code>中的<code>file1</code>,<code>file2</code>是对应自己Madagascar程序中参数文件名，根据自己的设置修改</p>
-<p>最后，我们可以在<code>gdb</code>中输入<code>run</code>来跑自己的程序，还有一些其他的操作，比如设置断点以及打印变量等与正常调用<code>gdb</code>一致，这里不再赘述。大家可以参考在线gnu的gdb文档，里边有非常详细的介绍。</p>
-
-          
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2016/06/debug-in-rsf.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

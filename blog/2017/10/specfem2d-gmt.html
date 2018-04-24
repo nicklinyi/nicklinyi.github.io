@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="前言SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。 运行程序中的一些参数设置这里主要显示绘图需要的部分参数： 1234#### for wavefield dumps ####output_wavefield_dumps">
+<meta name="description" content="前言SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。">
 <meta name="keywords" content="GMT,SPECFEM2D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="采用 GMT 绘制 SPECFEM2D 波场快照">
 <meta property="og:url" content="https://nicklinyi.github.io/blog/2017/10/specfem2d-gmt.html">
 <meta property="og:site_name" content="Nick@Seis">
-<meta property="og:description" content="前言SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。 运行程序中的一些参数设置这里主要显示绘图需要的部分参数： 1234#### for wavefield dumps ####output_wavefield_dumps">
+<meta property="og:description" content="前言SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1703880-097c8d13426b0e34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-01-01T13:52:33.000Z">
+<meta property="og:updated_time" content="2018-04-24T07:17:47.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="采用 GMT 绘制 SPECFEM2D 波场快照">
-<meta name="twitter:description" content="前言SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。 运行程序中的一些参数设置这里主要显示绘图需要的部分参数： 1234#### for wavefield dumps ####output_wavefield_dumps">
+<meta name="twitter:description" content="前言SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1703880-097c8d13426b0e34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -447,6 +447,7 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于<br>与其他模拟程序生成的波场快照进行对比。因此本文记录如何采用 GMT 绘制 SPECFEM2D 所生成的波场快照。</p>
+<a id="more"></a>
 <h2 id="运行程序中的一些参数设置"><a href="#运行程序中的一些参数设置" class="headerlink" title="运行程序中的一些参数设置"></a>运行程序中的一些参数设置</h2><p>这里主要显示绘图需要的部分参数：</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#### for wavefield dumps ####</span></div><div class="line">output_wavefield_dumps          = .<span class="literal">true</span>.        #将这里设为 <span class="literal">true</span>， 主要是输出绘图文件</div><div class="line">imagetype_wavefield_dumps       = 1              # display <span class="attribute">1</span>=displ vector <span class="attribute">2</span>=veloc vector <span class="attribute">3</span>=accel vector <span class="attribute">4</span>=pressure， 这儿一般选择绘制位移，也可以选择绘制其他的，根据自己的需要进行修改</div><div class="line">use_binary_for_wavefield_dumps  = .<span class="literal">false</span>.        # use ASCII <span class="keyword">or</span> single-precision binary format <span class="keyword">for</span> the wave field dumps， 由于 GMT 画 ASCII 文件相对简单一点，因此这里选择 <span class="literal">false</span></div></pre></td></tr></table></figure>
 <h2 id="运行程序并绘图"><a href="#运行程序并绘图" class="headerlink" title="运行程序并绘图"></a>运行程序并绘图</h2><p>运行完程序之后，在<code>OUTPUT_FILES</code>文件夹下应该存在很多波场快照的文件(文件名类似于 <code>wavefield0000100_01.txt</code>)，最后还有一个网格节点坐标的文件(文件名类似于<code>wavefield_grid_for_dumps.txt</code>)。其中波场快照文件共有两列，分别为水平向和垂直向的波场信息。网格节点坐标文件也有两列数据，每一行记录一个网格节点的坐标信息(x z)。波场快照文件和网格节点坐标文件行数都相等，为总共计算的网格点数（程序运行的时候会在终端上打印该节点数）。</p>

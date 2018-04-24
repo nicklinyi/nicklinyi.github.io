@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Nick@Seis">
 <meta property="og:description" content="最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题：  bash 脚本是按顺序执行的，也就是说，如果你在脚本的最后几句有一个绘图命令的话，那么第一次执行脚本的时候可以处理前面的一些工作流程，然后再绘图。如果后面我们觉得结果已经很完美了，但图片的大小或者标题什么需要修改一下，那么当我们修改绘图命令后再次运行脚本的话，会把前面的整">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-01T13:52:33.000Z">
+<meta property="og:updated_time" content="2018-04-24T07:16:46.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="采用 SCons 写 SU 脚本">
 <meta name="twitter:description" content="最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题：  bash 脚本是按顺序执行的，也就是说，如果你在脚本的最后几句有一个绘图命令的话，那么第一次执行脚本的时候可以处理前面的一些工作流程，然后再绘图。如果后面我们觉得结果已经很完美了，但图片的大小或者标题什么需要修改一下，那么当我们修改绘图命令后再次运行脚本的话，会把前面的整">
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  738
+                  737
                 </span>
               
 
@@ -451,8 +451,9 @@
 </ol>
 <p>对于问题 1，可以单独将绘图命令拿出来另写一个脚本文件解决，但会使得文件目录下脚本文件过多，不便于文件的整理。其次，假设我们有一个脚本文件，里边有 5 行命令用来处理数据，如果我们改变了第 3 行的命令行参数，那么再次运行脚本，仍会继续执行第 1 条和第 2 条命令，那为了避免浪费时间，我们也得把剩下的第 3-5 条命令单独拿出来写入一个新的脚本？</p>
 <p>对于问题 2，目前是没有更好的办法解决的，只能使用 bash 的 <code>bc</code> 计算功能，但其表达式书写繁琐，不易搞懂。</p>
+<a id="more"></a>
 <p>针对以上问题，Madagascar 提供了更好的解决方案，使得我们可以 借用 SCons 工具来写 SU 的脚本。模板如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> rsf.suproj <span class="keyword">as</span> surun</div><div class="line"><span class="comment"># creat a common offset data file</span></div><div class="line">surun.Flow(<span class="string">'plane'</span>,<span class="keyword">None</span>,<span class="string">'suplane'</span>,stdin=<span class="number">0</span>)</div><div class="line"><span class="comment"># creat a wigb type plot </span></div><div class="line">surun.Plot(<span class="string">'plane'</span>,<span class="string">'supswigb'</span>)</div><div class="line"></div><div class="line">surun.End()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> rsf.suproj <span class="keyword">as</span> surun</div><div class="line"><span class="comment"># creat a common offset data file</span></div><div class="line">surun.Flow(<span class="string">'plane'</span>,<span class="keyword">None</span>,<span class="string">'suplane'</span>,stdin=<span class="number">0</span>)</div><div class="line"><span class="comment"># creat a wigb type plot</span></div><div class="line">surun.Plot(<span class="string">'plane'</span>,<span class="string">'supswigb'</span>)</div><div class="line"></div><div class="line">surun.End()</div></pre></td></tr></table></figure>
 <p>上述脚本实际上是 SU 安装是否成功的一个简单的测试例子,这里将 <code>rsf.proj</code>模块导入并命名为<code>surun</code>，大家可以更改为不同的名字，主要目的是为了在同一文件中既写 SU 的脚本，也写 Madagascar 的脚本。需要注意的是上述脚本创建了一个<code>plane.su</code>的文件，然后通过<code>surun.Plot</code>命令创建了<code>plane.eps</code>的矢量图片文件。因为 SCons 总是将不含后缀的文件自动加上<code>.su</code>的后缀。而并不是所有的 SU 程序都生成<code>.su</code>后缀的文件，比如速度建模程序<code>unif2</code>，因此，对于 SU 的 SCons 脚本书写规范，建议最好对于输入和输出文件都显示的给出文件后缀。总结一下就是：</p>
 <ul>
 <li>含以<code>su</code>开头的 SU 命令的 Flow 语句，文件的输出统一加上<code>.su</code>后缀</li>
