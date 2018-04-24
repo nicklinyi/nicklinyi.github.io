@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="madagascar,绘图," />
+  <meta name="keywords" content="合成数据," />
 
 
 
@@ -81,25 +81,21 @@
 
 
 
-<meta name="description" content="波形图比如，绘制子波形态，单道地震记录等。采用sfgraph来绘图，类似与Matlab的plot命令。123456789101112131415161718192021222324# plot waveletfrom rsf.proj import *par=&amp;#123;&amp;#125;def waveplot(custom,par):    return &apos;&apos;&apos;    graph title=&quot;&quot;">
-<meta name="keywords" content="madagascar,绘图">
+<meta name="description" content="前言地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。 线性地震事件合成步骤前期准备这里采用SAIG组开发的SeismicLab中公开的代码linear_events来进行线性地震数据的合成。由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，点击这里查看">
+<meta name="keywords" content="合成数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Madagascar绘图总结">
-<meta property="og:url" content="https://nicklinyi.github.io/blog/2018/03/rsf-plot.html">
+<meta property="og:title" content="合成地震事件">
+<meta property="og:url" content="https://nicklinyi.github.io/blog/2018/04/linear-events.html">
 <meta property="og:site_name" content="Nick@Seis">
-<meta property="og:description" content="波形图比如，绘制子波形态，单道地震记录等。采用sfgraph来绘图，类似与Matlab的plot命令。123456789101112131415161718192021222324# plot waveletfrom rsf.proj import *par=&amp;#123;&amp;#125;def waveplot(custom,par):    return &apos;&apos;&apos;    graph title=&quot;&quot;">
+<meta property="og:description" content="前言地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。 线性地震事件合成步骤前期准备这里采用SAIG组开发的SeismicLab中公开的代码linear_events来进行线性地震数据的合成。由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，点击这里查看">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1703880-2abc71bb5e93e99e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1703880-f7cd2a3b636692a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1703880-e5807184207362d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1703880-c5c014618f04fed7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1703880-cafc3d996c171281.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1703880-e6ffea2f30d92e10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-03-31T10:59:42.033Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-d5011298fb447a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-588726ecd9fd9e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-04-24T07:12:05.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Madagascar绘图总结">
-<meta name="twitter:description" content="波形图比如，绘制子波形态，单道地震记录等。采用sfgraph来绘图，类似与Matlab的plot命令。123456789101112131415161718192021222324# plot waveletfrom rsf.proj import *par=&amp;#123;&amp;#125;def waveplot(custom,par):    return &apos;&apos;&apos;    graph title=&quot;&quot;">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1703880-2abc71bb5e93e99e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="合成地震事件">
+<meta name="twitter:description" content="前言地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。 线性地震事件合成步骤前期准备这里采用SAIG组开发的SeismicLab中公开的代码linear_events来进行线性地震数据的合成。由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，点击这里查看">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1703880-d5011298fb447a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -129,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://nicklinyi.github.io/blog/2018/03/rsf-plot.html"/>
+  <link rel="canonical" href="https://nicklinyi.github.io/blog/2018/04/linear-events.html"/>
 
 
 
 
 
-  <title>Madagascar绘图总结 | Nick@Seis</title>
+  <title>合成地震事件 | Nick@Seis</title>
   
 
 
@@ -326,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/03/rsf-plot.html">
+    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/04/linear-events.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nick">
@@ -343,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Madagascar绘图总结</h1>
+          <h1 class="post-title" itemprop="name headline">合成地震事件</h1>
         
 
         <div class="post-meta">
@@ -355,8 +351,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T08:57:57+08:00">
-                2018-03-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T13:08:28+08:00">
+                2018-04-24
               </time>
             
 
@@ -378,8 +374,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/绘图/" itemprop="url" rel="index">
-                    <span itemprop="name">绘图</span>
+                  <a href="/categories/地震学/" itemprop="url" rel="index">
+                    <span itemprop="name">地震学</span>
                   </a>
                 </span>
 
@@ -414,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  616
+                  654
                 </span>
               
 
@@ -451,27 +447,13 @@
       
 
       
-        <h2 id="波形图"><a href="#波形图" class="headerlink" title="波形图"></a>波形图</h2><p>比如，绘制子波形态，单道地震记录等。采用<code>sfgraph</code>来绘图，类似与Matlab的<code>plot</code>命令。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># plot wavelet</span></div><div class="line"><span class="keyword">from</span> rsf.proj <span class="keyword">import</span> *</div><div class="line"></div><div class="line">par=&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">waveplot</span><span class="params">(custom,par)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'''</span></div><div class="line"><span class="string">    graph title="" min1=%g min2=0 max2=+1</span></div><div class="line"><span class="string">    plotfat=5 plotcol=5</span></div><div class="line"><span class="string">    label1=%s unit1=%s</span></div><div class="line"><span class="string">    label2="Amplitude" unit2=""</span></div><div class="line"><span class="string">    parallel2=n screenratio=0.5 screenht=7</span></div><div class="line"><span class="string">    %s</span></div><div class="line"><span class="string">    '''</span> % (par[<span class="string">'oxx'</span>],par[<span class="string">'lxx'</span>],par[<span class="string">'uxx'</span>],</div><div class="line">           par[<span class="string">'labelattr'</span>]+<span class="string">' '</span>+custom)</div><div class="line"></div><div class="line">par[<span class="string">'labelattr'</span>]=<span class="string">' parallel2=n labelsz=6 labelfat=3 titlesz=12 titlefat=3 '</span></div><div class="line"></div><div class="line">par[<span class="string">'lxx'</span>]=<span class="string">'x'</span></div><div class="line">par[<span class="string">'uxx'</span>]=<span class="string">'m'</span></div><div class="line">par[<span class="string">'oxx'</span>]= <span class="number">0.</span></div><div class="line"></div><div class="line">Result(<span class="string">'wav'</span>,<span class="string">'transp |'</span> + waveplot(<span class="string">''</span>,par))</div></pre></td></tr></table></figure></p>
-<p><strong>说明<code>wav</code>为绘图的数据，其维度必须为1xn2的形式。</strong></p>
-<a id="more"></a>
-<p>示例：暂缺</p>
-<h2 id="3D图"><a href="#3D图" class="headerlink" title="3D图"></a>3D图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">par = &#123;</div><div class="line">    <span class="string">'nx'</span>:<span class="number">41</span>, <span class="string">'ox'</span>:<span class="number">0</span>, <span class="string">'dx'</span>:<span class="number">0.05</span>,  <span class="string">'lx'</span>:<span class="string">'x'</span>, <span class="string">'ux'</span>:<span class="string">'km'</span>,</div><div class="line">    <span class="string">'ny'</span>:<span class="number">41</span>, <span class="string">'oy'</span>:<span class="number">0</span>, <span class="string">'dy'</span>:<span class="number">0.05</span>,  <span class="string">'ly'</span>:<span class="string">'y'</span>, <span class="string">'uy'</span>:<span class="string">'km'</span>,</div><div class="line">    <span class="string">'nz'</span>:<span class="number">41</span>, <span class="string">'oz'</span>:<span class="number">0</span>, <span class="string">'dz'</span>:<span class="number">0.05</span>,  <span class="string">'lz'</span>:<span class="string">'z'</span>, <span class="string">'uz'</span>:<span class="string">'km'</span></div><div class="line">    &#125;</div><div class="line"><span class="comment"># 生成三维数据</span></div><div class="line">Flow(<span class="string">'data'</span>,<span class="keyword">None</span>,<span class="string">'''math n1=41 n2=41 n3=41 o1=-1 o2=-1 o3=-1</span></div><div class="line"><span class="string">     d1=0.05 d2=0.05 d3=0.05 output="exp(-2*(x1^2+x2^2+x3^2))"'''</span>)</div><div class="line"><span class="comment"># 绘图</span></div><div class="line">fdmod.param(par)</div><div class="line"><span class="comment"># 立体图</span></div><div class="line">Result(<span class="string">'data'</span>, <span class="string">'byte gainpanel=a pclip=95 |'</span></div><div class="line">+fdmod.cgrey3d(<span class="string">'flat=y '</span>,par))</div><div class="line"><span class="comment"># 三视图</span></div><div class="line">Result(<span class="string">'data1'</span>,<span class="string">'data'</span>,<span class="string">'byte gainpanel=a pclip=95 |'</span></div><div class="line">+fdmod.cgrey3d(<span class="string">'flat=n '</span>,par))</div></pre></td></tr></table></figure>
-<p>立体图</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1703880-2abc71bb5e93e99e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="立体图.png"></p>
-<p>三视图</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1703880-f7cd2a3b636692a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三视图.png"></p>
-<h2 id="绘制box"><a href="#绘制box" class="headerlink" title="绘制box"></a>绘制box</h2><p>常用于论文中的局部比较</p>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">from rsf.proj import *</div><div class="line">from rsf.recipes import fdmod,rwezo</div><div class="line">from math import pi</div><div class="line"></div><div class="line">zmin=<span class="number">0</span></div><div class="line">zmax=<span class="number">1</span></div><div class="line">xmin=<span class="number">0</span></div><div class="line">xmax=<span class="number">1</span></div><div class="line"></div><div class="line"><span class="meta"># make box data</span></div><div class="line">fdmod.makebox(<span class="string">'box'</span>,zmin,zmax,xmin,xmax,par)</div><div class="line"></div><div class="line"><span class="meta">#           __________________                      zmin</span></div><div class="line"><span class="meta">#          |                  |</span></div><div class="line"><span class="meta">#          |                  |</span></div><div class="line"><span class="meta">#          |                  |</span></div><div class="line"><span class="meta">#          |                  |</span></div><div class="line"><span class="meta"># xmin     |__________________|  xmax               zmax</span></div><div class="line"></div><div class="line"><span class="meta"># draw box</span></div><div class="line">Plot(<span class="string">'box'</span>,fdmod.bbplot(<span class="string">''</span>,par))</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/1703880-e5807184207362d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="box.png"></p>
-<h2 id="半圆"><a href="#半圆" class="headerlink" title="半圆"></a>半圆</h2><p>常用于脉冲响应的绘制。</p>
-<h3 id="给定参数"><a href="#给定参数" class="headerlink" title="给定参数"></a>给定参数</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">xcenter = 1285.0　# 圆心x坐标</div><div class="line">zcenter = 0.0　　 # 圆心z坐标　</div><div class="line">sampling = 1000　# 采样点数</div><div class="line">radius = 768　　　# 半径</div></pre></td></tr></table></figure>
-</code></pre><h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">fdmod.circle(&apos;cc&apos;,xcenter,zcenter,radius,sampling,par)</div><div class="line">Plot(  &apos;cc&apos;,fdmod.ssplot(&apos;plotfat=7 plotcol=2 &apos;,par))</div></pre></td></tr></table></figure>
-</code></pre><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="http://upload-images.jianshu.io/upload_images/1703880-c5c014618f04fed7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="半圆图.png"></p>
-<h2 id="椭圆"><a href="#椭圆" class="headerlink" title="椭圆"></a>椭圆</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">  #定义临时处理Flow</div><div class="line">  def Temp(o,i,r):</div><div class="line">    Flow(o,i,r+ &apos; datapath=%s &apos;%os.environ.get(&apos;TMPDATAPATH&apos;,os.environ.get(&apos;DATAPATH&apos;)))</div><div class="line">　#椭圆模块</div><div class="line">  def ellipse(cc,xcenter,zcenter,semiA,semiB,sampling,par):</div><div class="line">    Temp(cc+&apos;_x&apos;,None,</div><div class="line">         &apos;math n1=%d d1=%g o1=%g output=&quot;%g+%g*cos(%g*x1/180)&quot;&apos;</div><div class="line">         % (sampling,360./sampling,0.,xcenter,semiA,pi) )</div><div class="line">    Temp(cc+&apos;_z&apos;,None,</div><div class="line">         &apos;math n1=%d d1=%g o1=%g output=&quot;%g+%g*sin(%g*x1/180)&quot;&apos;</div><div class="line">         % (sampling,360./sampling,0.,zcenter,semiB,pi) )</div><div class="line">    Flow(cc,[cc+&apos;_x&apos;,cc+&apos;_z&apos;],</div><div class="line">         &apos;&apos;&apos;</div><div class="line">         cat axis=2 space=n</div><div class="line">         $&#123;SOURCES[0]&#125; $&#123;SOURCES[1]&#125; | transp |</div><div class="line">         put label1=&quot;&quot; unit1=&quot;&quot; label2=&quot;&quot; unit2=&quot;&quot;</div><div class="line">         &apos;&apos;&apos;, stdin=0)</div><div class="line"></div><div class="line">xcenter=(par[&apos;ox&apos;]+(par[&apos;nx&apos;]-1)*par[&apos;dx&apos;])/2.0　# 坐标系中心x</div><div class="line">zcenter=par[&apos;oz&apos;]  ＃坐标系中心z</div><div class="line">ab=par[&apos;dx&apos;]*(361-150)# 计算焦距</div><div class="line">semiA=(par[&apos;kt&apos;]-50)*par[&apos;dt&apos;]*1500　# 计算a</div><div class="line">semiB=np.sqrt(semiA**2.0-(ab/2.0)**2.0) # 计算b</div><div class="line">ellipse(&apos;ec&apos;,xcenter,zcenter,semiA,semiB,500,par) # 生成椭圆坐标</div><div class="line"></div><div class="line">Plot(  &apos;ec&apos;,fdmod.ssplot(&apos;plotfat=10 plotcol=2 symbol=.&apos;,par))　# 绘制椭圆</div></pre></td></tr></table></figure>
-<p>结果</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1703880-cafc3d996c171281.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="椭圆.png"></p>
-<h2 id="椭圆坐标系"><a href="#椭圆坐标系" class="headerlink" title="椭圆坐标系"></a>椭圆坐标系</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 生成坐标系文件 rays.rsf</span></div><div class="line">Flow(<span class="string">'rays'</span>,<span class="string">'datRC velo'</span>,</div><div class="line">   <span class="string">'''</span></div><div class="line"><span class="string">   %(rays)slrays</span></div><div class="line"><span class="string">	vel=$&#123;SOURCES[1]&#125;</span></div><div class="line"><span class="string">	dt=%(dt)g nt=%(nt)d</span></div><div class="line"><span class="string">	ot=%(ot)g minang=%(minang)g maxang=%(maxang)g</span></div><div class="line"><span class="string"> '''</span>%par)</div><div class="line"><span class="comment"># 绘制椭圆坐标系</span></div><div class="line">rwezo.cos(<span class="string">'rays'</span>,<span class="number">20</span>,<span class="number">100</span>,<span class="string">''</span>,par)</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/1703880-e6ffea2f30d92e10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="椭圆坐标系.png"></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。</p>
+<h2 id="线性地震事件合成步骤"><a href="#线性地震事件合成步骤" class="headerlink" title="线性地震事件合成步骤"></a>线性地震事件合成步骤</h2><h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><p>这里采用SAIG组开发的SeismicLab中公开的代码<code>linear_events</code>来进行线性地震数据的合成。<br>由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，<a href="https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/linear_events.m" target="_blank" rel="noopener">点击这里查看具体的代码内容</a>。</p>
+<h3 id="开始试验"><a href="#开始试验" class="headerlink" title="开始试验"></a>开始试验</h3><figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">clear;</div><div class="line">close all;</div><div class="line"></div><div class="line">dt = <span class="number">0.004</span>;  <span class="comment">% 时间间隔</span></div><div class="line">dx = <span class="number">20</span>;     <span class="comment">% 道间距</span></div><div class="line">nt = <span class="number">512</span>;              <span class="comment">% 总时间采样个数</span></div><div class="line">tmax = (nt<span class="number">-1</span>)*dt;      <span class="comment">% 记录最大时刻</span></div><div class="line">f0 = <span class="number">25</span>;               <span class="comment">% 地震子波的主频</span></div><div class="line">nx = <span class="number">128</span>;              <span class="comment">% 空间采样个数</span></div><div class="line">h = [<span class="number">0</span>:dx:dx*(nx<span class="number">-1</span>)];  <span class="comment">% 偏移距</span></div><div class="line"></div><div class="line">tau = [<span class="number">0.4</span>, <span class="number">0.7</span>, <span class="number">1.8</span>]; <span class="comment">% 共三个地震事件，其值为事件与时间轴的交点的时刻</span></div><div class="line">p = [<span class="number">1.6</span>/max(h), <span class="number">0.5</span>/max(h), <span class="number">-1.3</span>/max(h)]; <span class="comment">% 三个地震事件的射线参数</span></div><div class="line">amp = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>];          <span class="comment">% 三个地震事件的振幅</span></div><div class="line"></div><div class="line"><span class="comment">% 合成三个地震事件，d</span></div><div class="line">[d,h,t] = linear_events(dt,f0,tmax,h,tau,p,amp);</div><div class="line"></div><div class="line"><span class="comment">%%</span></div><div class="line">figure;</div><div class="line">wigb(d,<span class="number">1</span>,h,t); <span class="comment">% 用SeismicLab中的`wigb.m`函数绘制波形图</span></div><div class="line">set(gca,<span class="string">'TickDir'</span>,<span class="string">'out'</span>)</div><div class="line">ax = gca;</div><div class="line">ax.<span class="symbol">XAxisLocation</span> = <span class="string">'top'</span>;</div><div class="line">xlabel(<span class="string">'Distance (m)'</span>);</div><div class="line">ylabel(<span class="string">'Time (s)'</span>);</div></pre></td></tr></table></figure>
+<p>运行完上述代码后，得到的图形如下<br><img src="https://upload-images.jianshu.io/upload_images/1703880-d5011298fb447a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="线性地震事件"></p>
+<h2 id="双曲地震事件"><a href="#双曲地震事件" class="headerlink" title="双曲地震事件"></a>双曲地震事件</h2><h3 id="前期准备-1"><a href="#前期准备-1" class="headerlink" title="前期准备"></a>前期准备</h3><p>这里采用SAIG组开发的SeismicLab中公开的代码<code>hyperbolic_events</code>来进行线性地震数据的合成。<br>由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，<a href="https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/hyperbolic_events.m" target="_blank" rel="noopener">点击这里查看具体的代码内容</a>。</p>
+<h3 id="开始试验-1"><a href="#开始试验-1" class="headerlink" title="开始试验"></a>开始试验</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">clear;</div><div class="line">close all;</div><div class="line"></div><div class="line">%%</div><div class="line">dt = 0.002; % 时间间隔</div><div class="line">dx = 5;     % 道间距</div><div class="line">nt = 350;   % 总时间采样个数</div><div class="line">tmax = (nt-1)*dt;     % 记录最大时刻</div><div class="line">f0 = 30;              % 地震子波的主频</div><div class="line">nx = 80;              % 空间采样个数</div><div class="line">h = [0:dx:dx*(nx-1)]; % 偏移距</div><div class="line"></div><div class="line">tau = [0.15, 0.28, 0.39]; % 共三个地震事件，其值为事件与时间轴的交点的时刻</div><div class="line">v = [1500, 1750, 1800];   % 三个地震事件的速度</div><div class="line">amp = [1, 1, 1];          % 三个地震事件的振幅</div><div class="line"></div><div class="line">% 合成三个地震事件，d</div><div class="line">[d,h,t] = hyperbolic_events(dt,f0,tmax,h,tau,v,amp);</div><div class="line"></div><div class="line">figure;</div><div class="line"><span class="section">wigb(d,1,1:length(h),t);</span></div><div class="line">set(gca,'TickDir','out')</div><div class="line">ax = gca;</div><div class="line">ax.XAxisLocation = 'top';</div><div class="line">xlabel('Trace');</div><div class="line">ylabel('Time (s)');</div></pre></td></tr></table></figure>
+<p>运行完上述代码后，得到的图形如下<br><img src="https://upload-images.jianshu.io/upload_images/1703880-588726ecd9fd9e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双曲地震事件"></p>
 
       
     </div>
@@ -488,11 +470,11 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    Nick
+    Lloyd
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://nicklinyi.github.io/blog/2018/03/rsf-plot.html" title="Madagascar绘图总结">https://nicklinyi.github.io/blog/2018/03/rsf-plot.html</a>
+    <a href="https://nicklinyi.github.io/blog/2018/04/linear-events.html" title="合成地震事件">https://nicklinyi.github.io/blog/2018/04/linear-events.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -507,9 +489,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/madagascar/" rel="tag"># madagascar</a>
-          
-            <a href="/tags/绘图/" rel="tag"># 绘图</a>
+            <a href="/tags/合成数据/" rel="tag"># 合成数据</a>
           
         </div>
       
@@ -522,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/10/specfem2d-gmt.html" rel="next" title="采用 GMT 绘制 SPECFEM2D 波场快照">
-                <i class="fa fa-chevron-left"></i> 采用 GMT 绘制 SPECFEM2D 波场快照
+              <a href="/blog/2018/03/rsf-plot.html" rel="next" title="Madagascar绘图总结">
+                <i class="fa fa-chevron-left"></i> Madagascar绘图总结
               </a>
             
           </div>
@@ -531,10 +511,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2018/04/linear-events.html" rel="prev" title="合成地震事件">
-                合成地震事件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -677,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#波形图"><span class="nav-number">1.</span> <span class="nav-text">波形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3D图"><span class="nav-number">2.</span> <span class="nav-text">3D图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制box"><span class="nav-number">3.</span> <span class="nav-text">绘制box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半圆"><span class="nav-number">4.</span> <span class="nav-text">半圆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#给定参数"><span class="nav-number">4.1.</span> <span class="nav-text">给定参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘图"><span class="nav-number">4.2.</span> <span class="nav-text">绘图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果"><span class="nav-number">4.3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#椭圆"><span class="nav-number">5.</span> <span class="nav-text">椭圆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#椭圆坐标系"><span class="nav-number">6.</span> <span class="nav-text">椭圆坐标系</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性地震事件合成步骤"><span class="nav-number">2.</span> <span class="nav-text">线性地震事件合成步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前期准备"><span class="nav-number">2.1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始试验"><span class="nav-number">2.2.</span> <span class="nav-text">开始试验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲地震事件"><span class="nav-number">3.</span> <span class="nav-text">双曲地震事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前期准备-1"><span class="nav-number">3.1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始试验-1"><span class="nav-number">3.2.</span> <span class="nav-text">开始试验</span></a></li></ol></li></ol></div>
             
 
           </div>

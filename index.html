@@ -318,6 +318,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/04/linear-events.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nick">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nick@Seis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/04/linear-events.html" itemprop="url">合成地震事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T13:08:28+08:00">
+                2018-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/地震学/" itemprop="url" rel="index">
+                    <span itemprop="name">地震学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  654
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。</p>
+<h2 id="线性地震事件合成步骤"><a href="#线性地震事件合成步骤" class="headerlink" title="线性地震事件合成步骤"></a>线性地震事件合成步骤</h2><h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><p>这里采用SAIG组开发的SeismicLab中公开的代码<code>linear_events</code>来进行线性地震数据的合成。<br>由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，<a href="https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/linear_events.m" target="_blank" rel="noopener">点击这里查看具体的代码内容</a>。</p>
+<h3 id="开始试验"><a href="#开始试验" class="headerlink" title="开始试验"></a>开始试验</h3><figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">clear;</div><div class="line">close all;</div><div class="line"></div><div class="line">dt = <span class="number">0.004</span>;  <span class="comment">% 时间间隔</span></div><div class="line">dx = <span class="number">20</span>;     <span class="comment">% 道间距</span></div><div class="line">nt = <span class="number">512</span>;              <span class="comment">% 总时间采样个数</span></div><div class="line">tmax = (nt<span class="number">-1</span>)*dt;      <span class="comment">% 记录最大时刻</span></div><div class="line">f0 = <span class="number">25</span>;               <span class="comment">% 地震子波的主频</span></div><div class="line">nx = <span class="number">128</span>;              <span class="comment">% 空间采样个数</span></div><div class="line">h = [<span class="number">0</span>:dx:dx*(nx<span class="number">-1</span>)];  <span class="comment">% 偏移距</span></div><div class="line"></div><div class="line">tau = [<span class="number">0.4</span>, <span class="number">0.7</span>, <span class="number">1.8</span>]; <span class="comment">% 共三个地震事件，其值为事件与时间轴的交点的时刻</span></div><div class="line">p = [<span class="number">1.6</span>/max(h), <span class="number">0.5</span>/max(h), <span class="number">-1.3</span>/max(h)]; <span class="comment">% 三个地震事件的射线参数</span></div><div class="line">amp = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>];          <span class="comment">% 三个地震事件的振幅</span></div><div class="line"></div><div class="line"><span class="comment">% 合成三个地震事件，d</span></div><div class="line">[d,h,t] = linear_events(dt,f0,tmax,h,tau,p,amp);</div><div class="line"></div><div class="line"><span class="comment">%%</span></div><div class="line">figure;</div><div class="line">wigb(d,<span class="number">1</span>,h,t); <span class="comment">% 用SeismicLab中的`wigb.m`函数绘制波形图</span></div><div class="line">set(gca,<span class="string">'TickDir'</span>,<span class="string">'out'</span>)</div><div class="line">ax = gca;</div><div class="line">ax.<span class="symbol">XAxisLocation</span> = <span class="string">'top'</span>;</div><div class="line">xlabel(<span class="string">'Distance (m)'</span>);</div><div class="line">ylabel(<span class="string">'Time (s)'</span>);</div></pre></td></tr></table></figure>
+<p>运行完上述代码后，得到的图形如下<br><img src="https://upload-images.jianshu.io/upload_images/1703880-d5011298fb447a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="线性地震事件"></p>
+<h2 id="双曲地震事件"><a href="#双曲地震事件" class="headerlink" title="双曲地震事件"></a>双曲地震事件</h2><h3 id="前期准备-1"><a href="#前期准备-1" class="headerlink" title="前期准备"></a>前期准备</h3><p>这里采用SAIG组开发的SeismicLab中公开的代码<code>hyperbolic_events</code>来进行线性地震数据的合成。<br>由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，<a href="https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/hyperbolic_events.m" target="_blank" rel="noopener">点击这里查看具体的代码内容</a>。</p>
+<h3 id="开始试验-1"><a href="#开始试验-1" class="headerlink" title="开始试验"></a>开始试验</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">clear;</div><div class="line">close all;</div><div class="line"></div><div class="line">%%</div><div class="line">dt = 0.002; % 时间间隔</div><div class="line">dx = 5;     % 道间距</div><div class="line">nt = 350;   % 总时间采样个数</div><div class="line">tmax = (nt-1)*dt;     % 记录最大时刻</div><div class="line">f0 = 30;              % 地震子波的主频</div><div class="line">nx = 80;              % 空间采样个数</div><div class="line">h = [0:dx:dx*(nx-1)]; % 偏移距</div><div class="line"></div><div class="line">tau = [0.15, 0.28, 0.39]; % 共三个地震事件，其值为事件与时间轴的交点的时刻</div><div class="line">v = [1500, 1750, 1800];   % 三个地震事件的速度</div><div class="line">amp = [1, 1, 1];          % 三个地震事件的振幅</div><div class="line"></div><div class="line">% 合成三个地震事件，d</div><div class="line">[d,h,t] = hyperbolic_events(dt,f0,tmax,h,tau,v,amp);</div><div class="line"></div><div class="line">figure;</div><div class="line"><span class="section">wigb(d,1,1:length(h),t);</span></div><div class="line">set(gca,'TickDir','out')</div><div class="line">ax = gca;</div><div class="line">ax.XAxisLocation = 'top';</div><div class="line">xlabel('Trace');</div><div class="line">ylabel('Time (s)');</div></pre></td></tr></table></figure>
+<p>运行完上述代码后，得到的图形如下<br><img src="https://upload-images.jianshu.io/upload_images/1703880-588726ecd9fd9e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双曲地震事件"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/03/rsf-plot.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1041,194 +1220,6 @@ Each sample counts as 0.01 seconds.
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nick">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nick@Seis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/07/rsf-fonts.html" itemprop="url">Madagascar绘图字体以及特殊符号的处理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T12:47:24+08:00">
-                2017-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/地震学软件/" itemprop="url" rel="index">
-                    <span itemprop="name">地震学软件</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  428
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Madagascar自带的一共有15种字体，这些字体文件位于<code>$RSFSRC/pens/fonts</code>，通过编译最后得到的字体二进制文件位于<code>$RSFSRC/build/pens/fonts</code>下，后缀为<code>.bin</code>。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。</p>
-<h2 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h2><p>编辑<code>$RSFROOT/share/madagascar/etc/env.sh</code>或<code>$RSFROOT/share/madagascar/etc/env.csh</code>,根据自己所使用的shell决定。在该文件最后添加下列语句<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">VPLOTFONTDIR</span>=<span class="variable">$RSFSRC</span>/build/pens/fonts/</div></pre></td></tr></table></figure></p>
-<p>然后再终端执行下述语句完成环境变量的设置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bashrc</div></pre></td></tr></table></figure></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="改变字体"><a href="#改变字体" class="headerlink" title="改变字体"></a>改变字体</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Plot('example',fdmod.cgrey('font=<span class="number">1</span>'),par)</div><div class="line"># font=[<span class="number">1</span>,<span class="number">15</span>] 选择不同的字体，默认应</div><div class="line"># 该是<span class="number">3</span>,近年来文章中出现的比较多的是<span class="number">1</span>和<span class="number">2</span>．</div></pre></td></tr></table></figure>
-<h3 id="输入特殊字符"><a href="#输入特殊字符" class="headerlink" title="输入特殊字符"></a>输入特殊字符</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Plot<span class="params">('examples',fdmod.cgrey('<span class="attr">wantscalebar</span>=y  <span class="attr">font</span>=1 <span class="attr">bias</span>=0 <span class="attr">color</span>=e <span class="attr">allpos</span>=n <span class="attr">min1</span>=.5 <span class="attr">formatbar</span>=%3.0f <span class="attr">barlabel</span>="\s150 \\F10 \\v104 \\F10 "  <span class="attr">color</span>=e',par)</span>)</div><div class="line"><span class="comment"># F10为greekc字符集，v104查表可知为eta符号</span></div><div class="line"><span class="comment"># 注意一定要用`\\`，第一个表示转义，这样在命令行中出现的是\F10</span></div><div class="line"><span class="comment"># 如果在命令行中输入的话，用`\`即可</span></div></pre></td></tr></table></figure>
-<h3 id="特殊字符表"><a href="#特殊字符表" class="headerlink" title="特殊字符表"></a>特殊字符表</h3><h4 id="在线浏览"><a href="#在线浏览" class="headerlink" title="在线浏览"></a>在线浏览</h4><p>见<a href="http://ahay.org/blog/?s=font" target="_blank" rel="noopener">Madagascar官方博客</a></p>
-<h4 id="本地浏览"><a href="#本地浏览" class="headerlink" title="本地浏览"></a>本地浏览</h4><pre><code>$ cd $RSFSRC
-$ cd pens/tests
-$ scons
-</code></pre><p>运行完上述命令后，在<code>$RSFSRC/pens/tests/Fig</code>目录下会出现很多<code>.vpl</code>文件。接着我们把<code>font*.vpl</code><br>转化为<code>font*.pdf</code>，便于本地浏览。</p>
-<pre><code>$ vpconvert font*.vpl format=pdf
-</code></pre><p>至此，我们可以在本地浏览各种 font 字体了。感兴趣的同学也可以自己看看该目录下的其他字体。</p>
-<h2 id="修订历史"><a href="#修订历史" class="headerlink" title="修订历史"></a>修订历史</h2><ul>
-<li>2017-07-26：初稿；</li>
-<li>2017-08-13：增加本地浏览部分；</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1283,7 +1274,7 @@ $ scons
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1305,7 +1296,7 @@ $ scons
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1363,7 +1354,7 @@ $ scons
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.2k</span>
+    <span title="Site words total count">7.8k</span>
   
 </div>
 

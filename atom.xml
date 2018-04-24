@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nicklinyi.github.io/"/>
-  <updated>2018-03-31T10:59:42.033Z</updated>
+  <updated>2018-04-24T07:12:05.411Z</updated>
   <id>https://nicklinyi.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>合成地震事件</title>
+    <link href="https://nicklinyi.github.io//blog/2018/04/linear-events.html"/>
+    <id>https://nicklinyi.github.io//blog/2018/04/linear-events.html</id>
+    <published>2018-04-24T05:08:28.000Z</published>
+    <updated>2018-04-24T07:12:05.411Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。&lt;/p&gt;
+&lt;h2 id=&quot;线性地震事件合成步骤&quot;&gt;&lt;a href=&quot;#线性地震事件合成步骤&quot; class=&quot;headerlink&quot; title=&quot;线性地震事件合成步骤&quot;&gt;&lt;/a&gt;线性地震事件合成步骤&lt;/h2&gt;&lt;h3 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h3&gt;&lt;p&gt;这里采用SAIG组开发的SeismicLab中公开的代码&lt;code&gt;linear_events&lt;/code&gt;来进行线性地震数据的合成。&lt;br&gt;由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，&lt;a href=&quot;https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/linear_events.m&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点击这里查看具体的代码内容&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;开始试验&quot;&gt;&lt;a href=&quot;#开始试验&quot; class=&quot;headerlink&quot; title=&quot;开始试验&quot;&gt;&lt;/a&gt;开始试验&lt;/h3&gt;&lt;figure class=&quot;highlight prolog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;clear;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;close all;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dt = &lt;span class=&quot;number&quot;&gt;0.004&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;% 时间间隔&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dx = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;     &lt;span class=&quot;comment&quot;&gt;% 道间距&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nt = &lt;span class=&quot;number&quot;&gt;512&lt;/span&gt;;              &lt;span class=&quot;comment&quot;&gt;% 总时间采样个数&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tmax = (nt&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;)*dt;      &lt;span class=&quot;comment&quot;&gt;% 记录最大时刻&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;f0 = &lt;span class=&quot;number&quot;&gt;25&lt;/span&gt;;               &lt;span class=&quot;comment&quot;&gt;% 地震子波的主频&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nx = &lt;span class=&quot;number&quot;&gt;128&lt;/span&gt;;              &lt;span class=&quot;comment&quot;&gt;% 空间采样个数&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;h = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:dx:dx*(nx&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;)];  &lt;span class=&quot;comment&quot;&gt;% 偏移距&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tau = [&lt;span class=&quot;number&quot;&gt;0.4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0.7&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1.8&lt;/span&gt;]; &lt;span class=&quot;comment&quot;&gt;% 共三个地震事件，其值为事件与时间轴的交点的时刻&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;p = [&lt;span class=&quot;number&quot;&gt;1.6&lt;/span&gt;/max(h), &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;/max(h), &lt;span class=&quot;number&quot;&gt;-1.3&lt;/span&gt;/max(h)]; &lt;span class=&quot;comment&quot;&gt;% 三个地震事件的射线参数&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;amp = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];          &lt;span class=&quot;comment&quot;&gt;% 三个地震事件的振幅&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;% 合成三个地震事件，d&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[d,h,t] = linear_events(dt,f0,tmax,h,tau,p,amp);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%%&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;wigb(d,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,h,t); &lt;span class=&quot;comment&quot;&gt;% 用SeismicLab中的`wigb.m`函数绘制波形图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;set(gca,&lt;span class=&quot;string&quot;&gt;&#39;TickDir&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;out&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ax = gca;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ax.&lt;span class=&quot;symbol&quot;&gt;XAxisLocation&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&#39;top&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&lt;span class=&quot;string&quot;&gt;&#39;Distance (m)&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ylabel(&lt;span class=&quot;string&quot;&gt;&#39;Time (s)&#39;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;运行完上述代码后，得到的图形如下&lt;br&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-d5011298fb447a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;线性地震事件&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;双曲地震事件&quot;&gt;&lt;a href=&quot;#双曲地震事件&quot; class=&quot;headerlink&quot; title=&quot;双曲地震事件&quot;&gt;&lt;/a&gt;双曲地震事件&lt;/h2&gt;&lt;h3 id=&quot;前期准备-1&quot;&gt;&lt;a href=&quot;#前期准备-1&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h3&gt;&lt;p&gt;这里采用SAIG组开发的SeismicLab中公开的代码&lt;code&gt;hyperbolic_events&lt;/code&gt;来进行线性地震数据的合成。&lt;br&gt;由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，&lt;a href=&quot;https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/hyperbolic_events.m&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点击这里查看具体的代码内容&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;开始试验-1&quot;&gt;&lt;a href=&quot;#开始试验-1&quot; class=&quot;headerlink&quot; title=&quot;开始试验&quot;&gt;&lt;/a&gt;开始试验&lt;/h3&gt;&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;clear;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;close all;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;%%&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dt = 0.002; % 时间间隔&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dx = 5;     % 道间距&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nt = 350;   % 总时间采样个数&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tmax = (nt-1)*dt;     % 记录最大时刻&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;f0 = 30;              % 地震子波的主频&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;nx = 80;              % 空间采样个数&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;h = [0:dx:dx*(nx-1)]; % 偏移距&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tau = [0.15, 0.28, 0.39]; % 共三个地震事件，其值为事件与时间轴的交点的时刻&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;v = [1500, 1750, 1800];   % 三个地震事件的速度&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;amp = [1, 1, 1];          % 三个地震事件的振幅&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;% 合成三个地震事件，d&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[d,h,t] = hyperbolic_events(dt,f0,tmax,h,tau,v,amp);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;wigb(d,1,1:length(h),t);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;set(gca,&#39;TickDir&#39;,&#39;out&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ax = gca;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ax.XAxisLocation = &#39;top&#39;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&#39;Trace&#39;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ylabel(&#39;Time (s)&#39;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;运行完上述代码后，得到的图形如下&lt;br&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-588726ecd9fd9e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;双曲地震事件&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。&lt;/p&gt;
+&lt;h2 i
+    
+    </summary>
+    
+      <category term="地震学" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/"/>
+    
+    
+      <category term="合成数据" scheme="https://nicklinyi.github.io/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>Madagascar绘图总结</title>
@@ -241,9 +271,9 @@ $ scons
       <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
-    
       <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
+    
+      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
     
   </entry>
   
@@ -277,9 +307,9 @@ $ scons
       <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
-    
       <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
+    
+      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
     
   </entry>
   

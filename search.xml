@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[合成地震事件]]></title>
+      <url>https://nicklinyi.github.io/blog/2018/04/linear-events.html</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。</p>
+<h2 id="线性地震事件合成步骤"><a href="#线性地震事件合成步骤" class="headerlink" title="线性地震事件合成步骤"></a>线性地震事件合成步骤</h2><h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><p>这里采用SAIG组开发的SeismicLab中公开的代码<code>linear_events</code>来进行线性地震数据的合成。<br>由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，<a href="https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/linear_events.m" target="_blank" rel="noopener">点击这里查看具体的代码内容</a>。</p>
+<h3 id="开始试验"><a href="#开始试验" class="headerlink" title="开始试验"></a>开始试验</h3><figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">clear;</div><div class="line">close all;</div><div class="line"></div><div class="line">dt = <span class="number">0.004</span>;  <span class="comment">% 时间间隔</span></div><div class="line">dx = <span class="number">20</span>;     <span class="comment">% 道间距</span></div><div class="line">nt = <span class="number">512</span>;              <span class="comment">% 总时间采样个数</span></div><div class="line">tmax = (nt<span class="number">-1</span>)*dt;      <span class="comment">% 记录最大时刻</span></div><div class="line">f0 = <span class="number">25</span>;               <span class="comment">% 地震子波的主频</span></div><div class="line">nx = <span class="number">128</span>;              <span class="comment">% 空间采样个数</span></div><div class="line">h = [<span class="number">0</span>:dx:dx*(nx<span class="number">-1</span>)];  <span class="comment">% 偏移距</span></div><div class="line"></div><div class="line">tau = [<span class="number">0.4</span>, <span class="number">0.7</span>, <span class="number">1.8</span>]; <span class="comment">% 共三个地震事件，其值为事件与时间轴的交点的时刻</span></div><div class="line">p = [<span class="number">1.6</span>/max(h), <span class="number">0.5</span>/max(h), <span class="number">-1.3</span>/max(h)]; <span class="comment">% 三个地震事件的射线参数</span></div><div class="line">amp = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>];          <span class="comment">% 三个地震事件的振幅</span></div><div class="line"></div><div class="line"><span class="comment">% 合成三个地震事件，d</span></div><div class="line">[d,h,t] = linear_events(dt,f0,tmax,h,tau,p,amp);</div><div class="line"></div><div class="line"><span class="comment">%%</span></div><div class="line">figure;</div><div class="line">wigb(d,<span class="number">1</span>,h,t); <span class="comment">% 用SeismicLab中的`wigb.m`函数绘制波形图</span></div><div class="line">set(gca,<span class="string">'TickDir'</span>,<span class="string">'out'</span>)</div><div class="line">ax = gca;</div><div class="line">ax.<span class="symbol">XAxisLocation</span> = <span class="string">'top'</span>;</div><div class="line">xlabel(<span class="string">'Distance (m)'</span>);</div><div class="line">ylabel(<span class="string">'Time (s)'</span>);</div></pre></td></tr></table></figure>
+<p>运行完上述代码后，得到的图形如下<br><img src="https://upload-images.jianshu.io/upload_images/1703880-d5011298fb447a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="线性地震事件"></p>
+<h2 id="双曲地震事件"><a href="#双曲地震事件" class="headerlink" title="双曲地震事件"></a>双曲地震事件</h2><h3 id="前期准备-1"><a href="#前期准备-1" class="headerlink" title="前期准备"></a>前期准备</h3><p>这里采用SAIG组开发的SeismicLab中公开的代码<code>hyperbolic_events</code>来进行线性地震数据的合成。<br>由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，<a href="https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/hyperbolic_events.m" target="_blank" rel="noopener">点击这里查看具体的代码内容</a>。</p>
+<h3 id="开始试验-1"><a href="#开始试验-1" class="headerlink" title="开始试验"></a>开始试验</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">clear;</div><div class="line">close all;</div><div class="line"></div><div class="line">%%</div><div class="line">dt = 0.002; % 时间间隔</div><div class="line">dx = 5;     % 道间距</div><div class="line">nt = 350;   % 总时间采样个数</div><div class="line">tmax = (nt-1)*dt;     % 记录最大时刻</div><div class="line">f0 = 30;              % 地震子波的主频</div><div class="line">nx = 80;              % 空间采样个数</div><div class="line">h = [0:dx:dx*(nx-1)]; % 偏移距</div><div class="line"></div><div class="line">tau = [0.15, 0.28, 0.39]; % 共三个地震事件，其值为事件与时间轴的交点的时刻</div><div class="line">v = [1500, 1750, 1800];   % 三个地震事件的速度</div><div class="line">amp = [1, 1, 1];          % 三个地震事件的振幅</div><div class="line"></div><div class="line">% 合成三个地震事件，d</div><div class="line">[d,h,t] = hyperbolic_events(dt,f0,tmax,h,tau,v,amp);</div><div class="line"></div><div class="line">figure;</div><div class="line"><span class="section">wigb(d,1,1:length(h),t);</span></div><div class="line">set(gca,'TickDir','out')</div><div class="line">ax = gca;</div><div class="line">ax.XAxisLocation = 'top';</div><div class="line">xlabel('Trace');</div><div class="line">ylabel('Time (s)');</div></pre></td></tr></table></figure>
+<p>运行完上述代码后，得到的图形如下<br><img src="https://upload-images.jianshu.io/upload_images/1703880-588726ecd9fd9e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双曲地震事件"></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Madagascar绘图总结]]></title>
       <url>https://nicklinyi.github.io/blog/2018/03/rsf-plot.html</url>
       <content type="html"><![CDATA[<h2 id="波形图"><a href="#波形图" class="headerlink" title="波形图"></a>波形图</h2><p>比如，绘制子波形态，单道地震记录等。采用<code>sfgraph</code>来绘图，类似与Matlab的<code>plot</code>命令。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># plot wavelet</span></div><div class="line"><span class="keyword">from</span> rsf.proj <span class="keyword">import</span> *</div><div class="line"></div><div class="line">par=&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">waveplot</span><span class="params">(custom,par)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'''</span></div><div class="line"><span class="string">    graph title="" min1=%g min2=0 max2=+1</span></div><div class="line"><span class="string">    plotfat=5 plotcol=5</span></div><div class="line"><span class="string">    label1=%s unit1=%s</span></div><div class="line"><span class="string">    label2="Amplitude" unit2=""</span></div><div class="line"><span class="string">    parallel2=n screenratio=0.5 screenht=7</span></div><div class="line"><span class="string">    %s</span></div><div class="line"><span class="string">    '''</span> % (par[<span class="string">'oxx'</span>],par[<span class="string">'lxx'</span>],par[<span class="string">'uxx'</span>],</div><div class="line">           par[<span class="string">'labelattr'</span>]+<span class="string">' '</span>+custom)</div><div class="line"></div><div class="line">par[<span class="string">'labelattr'</span>]=<span class="string">' parallel2=n labelsz=6 labelfat=3 titlesz=12 titlefat=3 '</span></div><div class="line"></div><div class="line">par[<span class="string">'lxx'</span>]=<span class="string">'x'</span></div><div class="line">par[<span class="string">'uxx'</span>]=<span class="string">'m'</span></div><div class="line">par[<span class="string">'oxx'</span>]= <span class="number">0.</span></div><div class="line"></div><div class="line">Result(<span class="string">'wav'</span>,<span class="string">'transp |'</span> + waveplot(<span class="string">''</span>,par))</div></pre></td></tr></table></figure></p>
@@ -265,21 +278,6 @@ Argument list to give program being debugged when it is started is &quot;file1=a
   
     
     <entry>
-      <title><![CDATA[关于]]></title>
-      <url>https://nicklinyi.github.io/about.html</url>
-      <content type="html"><![CDATA[<h4>关于博主</h4>
-
-<p>地震学在读</p>
-<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
-<ul>
-<li>Email：<a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#108;&#x69;&#x6e;&#x79;&#x69;&#104;&#x61;&#x6e;&#99;&#x68;&#117;&#x61;&#110;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#108;&#x69;&#x6e;&#x79;&#x69;&#104;&#x61;&#x6e;&#99;&#x68;&#117;&#x61;&#110;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a></li>
-</ul>
-<p>如未能及时回复各种问题，请见谅。</p>
-<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
-]]></content>
-    </entry>
-    
-    <entry>
       <title></title>
       <url>https://nicklinyi.github.io/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -297,6 +295,21 @@ Argument list to give program being debugged when it is started is &quot;file1=a
 
 </body>
 </html>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>https://nicklinyi.github.io/about.html</url>
+      <content type="html"><![CDATA[<h4>关于博主</h4>
+
+<p>地震学在读</p>
+<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
+<ul>
+<li>Email：<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x6c;&#105;&#110;&#x79;&#x69;&#104;&#97;&#110;&#x63;&#104;&#117;&#x61;&#110;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#105;&#110;&#x79;&#x69;&#104;&#97;&#110;&#x63;&#104;&#117;&#x61;&#110;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+</ul>
+<p>如未能及时回复各种问题，请见谅。</p>
+<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
 ]]></content>
     </entry>
     
@@ -344,14 +357,14 @@ Argument list to give program being debugged when it is started is &quot;file1=a
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>https://nicklinyi.github.io/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>https://nicklinyi.github.io/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>https://nicklinyi.github.io/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>https://nicklinyi.github.io/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
