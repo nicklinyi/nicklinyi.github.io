@@ -84,7 +84,7 @@
 <meta name="description" content="Seismology">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nick@Seis">
-<meta property="og:url" content="https://nicklinyi.github.io/tags/Madagascar/index.html">
+<meta property="og:url" content="https://nicklinyi.github.io/tags/madagascar/index.html">
 <meta property="og:site_name" content="Nick@Seis">
 <meta property="og:description" content="Seismology">
 <meta property="og:locale" content="zh-Hans">
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://nicklinyi.github.io/tags/Madagascar/"/>
+  <link rel="canonical" href="https://nicklinyi.github.io/tags/madagascar/"/>
 
 
 
 
 
-  <title>标签: Madagascar | Nick@Seis</title>
+  <title>标签: madagascar | Nick@Seis</title>
   
 
 
@@ -310,7 +310,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Madagascar<small>标签</small>
+        <h1>madagascar<small>标签</small>
         </h1>
       </div>
 
@@ -322,37 +322,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/blog/2017/09/plot-salt.html" itemprop="url">
+            <a class="post-title-link" href="/blog/2018/03/rsf-plot.html" itemprop="url">
               
-                <span itemprop="name">Madagascar 绘制 SEG/EAGE 模型的盐丘轮廓</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-28T12:47:24+08:00"
-              content="2017-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2017/08/optmize-rsf-code.html" itemprop="url">
-              
-                <span itemprop="name">优化 Madagascar 程序</span>
+                <span itemprop="name">Madagascar绘图总结</span>
               
             </a>
         
@@ -360,93 +332,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-13T12:47:24+08:00"
-              content="2017-08-13" >
-          08-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2017/07/rsf-fonts.html" itemprop="url">
-              
-                <span itemprop="name">Madagascar绘图字体以及特殊符号的处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-26T12:47:24+08:00"
-              content="2017-07-26" >
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2017/01/rsf-print-log.html" itemprop="url">
-              
-                <span itemprop="name">Madagascar输出程序运行日志文件</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-01-12T10:47:24+08:00"
-              content="2017-01-12" >
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2016/12/rsf-datapath.html" itemprop="url">
-              
-                <span itemprop="name">DATAPATH 的使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-22T10:47:24+08:00"
-              content="2016-12-22" >
-          12-22
+              datetime="2018-03-31T08:57:57+08:00"
+              content="2018-03-31" >
+          03-31
         </time>
       </div>
 
@@ -463,10 +351,6 @@
   
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/Madagascar/page/2/">2</a><a class="extend next" rel="next" href="/tags/Madagascar/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1024,6 +908,114 @@
             };
             if (keywords.length === 1 && keywords[0] === "") {
               resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+i class="fa fa-search fa-5x" /></div>'
             } else if (resultItems.length === 0) {
               resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
             } else {
