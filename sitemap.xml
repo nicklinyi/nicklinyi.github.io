@@ -4,7 +4,7 @@
   <url>
     <loc>https://nicklinyi.github.io/blog/2018/04/linear-events.html</loc>
     
-    <lastmod>2018-04-24T07:12:05.411Z</lastmod>
+    <lastmod>2018-04-24T07:14:21.076Z</lastmod>
     
   </url>
   
@@ -23,7 +23,14 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2016/05/vim-scons-highlight.html</loc>
+    <loc>https://nicklinyi.github.io/blog/2017/08/optmize-rsf-code.html</loc>
+    
+    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2016/06/rsf-data-handle.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
@@ -44,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/index.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://nicklinyi.github.io/blog/2016/12/rsf-datapath.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
@@ -65,21 +65,21 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/404.html</loc>
+    
+    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/blog/2016/05/vim-scons-highlight.html</loc>
+    
+    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/blog/2017/09/plot-salt.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/blog/2016/05/rsf-use-latex.html</loc>
-    
-    <lastmod>2018-01-01T13:52:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/blog/2017/08/optmize-rsf-code.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
@@ -100,14 +100,14 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/blog/2016/06/rsf-data-handle.html</loc>
+    <loc>https://nicklinyi.github.io/blog/2016/05/rsf-use-latex.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/404.html</loc>
+    <loc>https://nicklinyi.github.io/tags/index.html</loc>
     
     <lastmod>2018-01-01T13:52:33.000Z</lastmod>
     
