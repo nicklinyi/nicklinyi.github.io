@@ -9,6 +9,7 @@
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要记录下常用各种子波函数以及对应的图形。</p>
 <h2 id="Ricker子波"><a href="#Ricker子波" class="headerlink" title="Ricker子波"></a>Ricker子波</h2><p>$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function [w] = ricker(fpeak,t,tdelay)</div><div class="line">w = exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>).*(<span class="number">1</span><span class="number">-2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><img src="https://upload-images.jianshu.io/upload_images/1703880-f71641eca2730b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ricker.png"></p>
 <h2 id="Ricker子波的一阶导数："><a href="#Ricker子波的一阶导数：" class="headerlink" title="Ricker子波的一阶导数："></a>Ricker子波的一阶导数：</h2><p>$$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [w] = ricker1(fpeak,t,tdelay)</div><div class="line"> w = <span class="number">2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).*(<span class="number">2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span><span class="number">-3</span>).*...</div><div class="line">     exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure>
@@ -326,6 +327,21 @@ Argument list to give program being debugged when it is started is &quot;file1=a
     </entry>
     
     <entry>
+      <title><![CDATA[关于]]></title>
+      <url>https://nicklinyi.github.io/about.html</url>
+      <content type="html"><![CDATA[<h4>关于博主</h4>
+
+<p>地震学在读</p>
+<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
+<ul>
+<li>Email：linyihanchuan[AT]gmail[DOT]com </li>
+</ul>
+<p>如未能及时回复各种问题，请见谅。</p>
+<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[藏经阁]]></title>
       <url>https://nicklinyi.github.io/links.html</url>
       <content type="html"><![CDATA[<h3 id="正演模拟"><a href="#正演模拟" class="headerlink" title="正演模拟"></a>正演模拟</h3><h4 id="谱元法"><a href="#谱元法" class="headerlink" title="谱元法"></a>谱元法</h4><ul>
@@ -365,21 +381,6 @@ Argument list to give program being debugged when it is started is &quot;file1=a
 <li><a href="http://sepwww.stanford.edu/doku.php?id=sep:home" title="Stanford Exploration Project" target="_blank" rel="noopener">SEP</a></li>
 <li><a href="https://seiscope2.osug.fr/" target="_blank" rel="noopener">SEISCOPE</a></li>
 </ul>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[关于]]></title>
-      <url>https://nicklinyi.github.io/about.html</url>
-      <content type="html"><![CDATA[<h4>关于博主</h4>
-
-<p>地震学在读</p>
-<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
-<ul>
-<li>Email：linyihanchuan[AT]gmail[DOT]com </li>
-</ul>
-<p>如未能及时回复各种问题，请见谅。</p>
-<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
 ]]></content>
     </entry>
     

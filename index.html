@@ -441,21 +441,16 @@
 
       
         
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要记录下常用各种子波函数以及对应的图形。</p>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要记录下常用各种子波函数以及对应的图形。</p>
 <h2 id="Ricker子波"><a href="#Ricker子波" class="headerlink" title="Ricker子波"></a>Ricker子波</h2><p>$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function [w] = ricker(fpeak,t,tdelay)</div><div class="line">w = exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>).*(<span class="number">1</span><span class="number">-2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/1703880-f71641eca2730b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ricker.png"></p>
-<h2 id="Ricker子波的一阶导数："><a href="#Ricker子波的一阶导数：" class="headerlink" title="Ricker子波的一阶导数："></a>Ricker子波的一阶导数：</h2><p>$$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [w] = ricker1(fpeak,t,tdelay)</div><div class="line"> w = <span class="number">2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).*(<span class="number">2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span><span class="number">-3</span>).*...</div><div class="line">     exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/1703880-4bd0b7444b017859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ricker1.png"></p>
-<h2 id="最小相位子波"><a href="#最小相位子波" class="headerlink" title="最小相位子波"></a>最小相位子波</h2><p>$$S(t)=texp(-3.5ft)sin(2\pi ft)$$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[w]</span> = <span class="title">min_phase</span><span class="params">(fpeak,t,tdelay)</span></span></div><div class="line">w = (t-tdelay).*<span class="built_in">exp</span>(<span class="number">-3.5</span>*fpeak*(t-tdelay)).*<span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*fpeak*(t-tdelay));</div><div class="line"><span class="keyword">return</span></div></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/1703880-75498f8321aee3f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="min_phase.png"></p>
-<h2 id="Gauss子波的导数："><a href="#Gauss子波的导数：" class="headerlink" title="Gauss子波的导数："></a>Gauss子波的导数：</h2><p>$$S(t)=-A\pi^2f^2texp(-\pi^2f^2t^2)(3-2\pi^2f^2t^2)$$<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [w] = gauss1(fpeak,t,tdelay)</div><div class="line">w =-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).*exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>).*...</div><div class="line">    (<span class="number">3</span><span class="number">-2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1703880-1b1a9880ca8c6b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gauss1.png"></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2018/04/seismic-wavelet.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

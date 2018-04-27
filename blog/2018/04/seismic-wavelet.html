@@ -81,22 +81,22 @@
 
 
 
-<meta name="description" content="前言主要记录下常用各种子波函数以及对应的图形。 Ricker子波$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ 123function [w] = ricker(fpeak,t,tdelay)w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2);return  Ricker">
+<meta name="description" content="前言主要记录下常用各种子波函数以及对应的图形。 Ricker子波$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ 123function [w] = ricker(fpeak,t,tdelay)w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2);return">
 <meta name="keywords" content="地震子波">
 <meta property="og:type" content="article">
 <meta property="og:title" content="地震子波">
 <meta property="og:url" content="https://nicklinyi.github.io/blog/2018/04/seismic-wavelet.html">
 <meta property="og:site_name" content="Nick@Seis">
-<meta property="og:description" content="前言主要记录下常用各种子波函数以及对应的图形。 Ricker子波$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ 123function [w] = ricker(fpeak,t,tdelay)w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2);return  Ricker">
+<meta property="og:description" content="前言主要记录下常用各种子波函数以及对应的图形。 Ricker子波$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ 123function [w] = ricker(fpeak,t,tdelay)w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2);return">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-f71641eca2730b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-4bd0b7444b017859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-75498f8321aee3f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-1b1a9880ca8c6b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-27T12:02:09.898Z">
+<meta property="og:updated_time" content="2018-04-27T12:04:51.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="地震子波">
-<meta name="twitter:description" content="前言主要记录下常用各种子波函数以及对应的图形。 Ricker子波$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ 123function [w] = ricker(fpeak,t,tdelay)w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2);return  Ricker">
+<meta name="twitter:description" content="前言主要记录下常用各种子波函数以及对应的图形。 Ricker子波$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ 123function [w] = ricker(fpeak,t,tdelay)w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2);return">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1703880-f71641eca2730b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -452,6 +452,7 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要记录下常用各种子波函数以及对应的图形。</p>
 <h2 id="Ricker子波"><a href="#Ricker子波" class="headerlink" title="Ricker子波"></a>Ricker子波</h2><p>$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function [w] = ricker(fpeak,t,tdelay)</div><div class="line">w = exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>).*(<span class="number">1</span><span class="number">-2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><img src="https://upload-images.jianshu.io/upload_images/1703880-f71641eca2730b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ricker.png"></p>
 <h2 id="Ricker子波的一阶导数："><a href="#Ricker子波的一阶导数：" class="headerlink" title="Ricker子波的一阶导数："></a>Ricker子波的一阶导数：</h2><p>$$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [w] = ricker1(fpeak,t,tdelay)</div><div class="line"> w = <span class="number">2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).*(<span class="number">2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span><span class="number">-3</span>).*...</div><div class="line">     exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure>
