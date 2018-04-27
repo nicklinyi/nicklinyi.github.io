@@ -853,6 +853,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/02/boot-partition.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nick">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nick@Seis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/02/boot-partition.html" itemprop="url">Linux /boot 重新分区</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T08:57:57+08:00">
+                2018-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  798
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>由于之前装机时 <code>/boot</code> 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 <code>/boot</code> 空间不足， 然后发现 <code>/boot</code>下有两个系统内核文件，一个 44M 左右， 再加上一些其他的文件，加起来足足占了 70% 的使用空间，后期如果再更新系统，将会十分不便。因此想到了扩大 <code>/boot</code> 空间。</p>
+<p>网上的一些博文都是简单的介绍了如何增大<code>/boot</code>, 没有提供一个详细的步骤，这里总结了各大博文的精华之处，整理出来供大家参考。</p>
+<ul>
+<li><p>运行<code>sudo cat /etc/fstab</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">➜  ~ sudo cat /etc/fstab</div><div class="line"># /etc/fstab: static file system information.</div><div class="line">#</div><div class="line"># Use &apos;blkid&apos; to print the universally unique identifier for a</div><div class="line"># device; this may be used with UUID= as a more robust way to name devices</div><div class="line"># that works even if disks are added and removed. See fstab(5).</div><div class="line">#</div><div class="line"># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;</div><div class="line"># / was on /dev/sda7 during installation</div><div class="line">UUID=50b02ca0-b7d6-47e7-b822-9d30caac57ec /               ext4    errors=remount-ro 0       1</div><div class="line"># /boot was on /dev/sda6 during installation</div><div class="line">UUID=c1a85b1e-b617-4f2f-82d4-0ed61e8347ba /boot           ext4    defaults        0       2</div><div class="line"># swap was on /dev/sda5 during installation</div><div class="line">UUID=3db90030-2801-4ba3-b126-7bb0af433172 none            swap    sw              0       0</div></pre></td></tr></table></figure>
+</li>
+<li><p>运行<code>sudo ls -al /dev/disk/by-uuid/*</code></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">➜  ~ sudo ls -al <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span>*</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">28</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span><span class="number">041838</span>F41838E678 -&gt; ..<span class="regexp">/../</span>sda4</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">28</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span><span class="number">3</span>db90030-<span class="number">2801</span>-<span class="number">4</span>ba3-b126-<span class="number">7</span>bb0af433172 -&gt; ..<span class="regexp">/../</span>sda5</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">27</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span><span class="number">40</span>D69E0DD69E0378 -&gt; ..<span class="regexp">/../</span>sdb1</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">27</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span><span class="number">50</span>b02ca0-b7d6-<span class="number">47</span>e7-b822-<span class="number">9</span>d30caac57ec -&gt; ..<span class="regexp">/../</span>sda7</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">27</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span><span class="number">6</span>C7AC53E7AC505B4 -&gt; ..<span class="regexp">/../</span>sdc1</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">28</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span><span class="number">7</span>AC85EFBC85EB4DB -&gt; ..<span class="regexp">/../</span>sda2</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">27</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span><span class="number">8646</span>ADF646ADE6E1 -&gt; ..<span class="regexp">/../</span>sdb2</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">28</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span><span class="number">948</span>E13708E134A5E -&gt; ..<span class="regexp">/../</span>sda1</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">27</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span>a6686297-cdf6-<span class="number">4600</span>-<span class="number">9465</span>-dcf2de344662 -&gt; ..<span class="regexp">/../</span>sda8</div><div class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> <span class="number">8</span>月  <span class="number">13</span> <span class="number">10</span>:<span class="number">28</span> <span class="regexp">/dev/</span>disk<span class="regexp">/by-uuid/</span>c1a85b1e-b617-<span class="number">4</span>f2f-<span class="number">82</span>d4-<span class="number">0</span>ed61e8347ba -&gt; ..<span class="regexp">/../</span>sda6</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>通过这个命令将自己的 <code>/boot</code> 与 硬盘编号<code>sd*</code> 以及 uuid 值对应起来。</p>
+<ul>
+<li>制作一个live 启动盘， 用它来启动系统。<br>然后在 live 系统中运行<code>gparted</code>。<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo gparted</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这时会出现一个图形界面。修改分区信息在图形界面很简单，我只说明一下我的分区策略：</p>
+<p>由于我的 <code>swap</code> 分区与 <code>/boot</code> 挨着， 而且 <code>swap</code> 分区空间也挺大，大概分了15GB。 这里采用的方式为直接将 <code>swap</code> 进行 <code>resize</code>, 然后将后面大概1gb的空间留出来。 接着对<code>/boot</code> 进行 <code>resize</code> 然后再刚才留出来的1gb 加进来即可。最后, 点击上面的绿色的√即可完成重新分区的过程。</p>
+<ul>
+<li><p>确认 <code>/boot</code>等的 uuid 值是否改变<br>在 live 系统中看 <code>/boot</code> 的 uuid 值可通过 <code>gparted</code> 右键查看，然后与你之前在原来系统上运行的结果比较，看是否一致。<br><strong><em>使用<code>gparted</code> 右键查看的时候，不要选择 New uuid ，不然你得修改<code>/etc/fstab</code> 文件，将其对应上。</em></strong><br>如果在原来系统上运行的结果没有保存，可在 live 里访问原来系统的文件， 然后再查看<code>/etc/fstab</code> 文件。</p>
+</li>
+<li><p>重启系统。</p>
+</li>
+</ul>
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><ul>
+<li><a href="http://forum.ubuntu.org.cn/viewtopic.php?t=481011" target="_blank" rel="noopener">http://forum.ubuntu.org.cn/viewtopic.php?t=481011</a></li>
+<li><a href="http://blog.csdn.net/caz28/article/details/50827904" target="_blank" rel="noopener">http://blog.csdn.net/caz28/article/details/50827904</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2017/10/specfem2d-gmt.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1017,183 +1216,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2017/09/plot-salt.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nick">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nick@Seis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/09/plot-salt.html" itemprop="url">Madagascar 绘制 SEG/EAGE 模型的盐丘轮廓</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-28T12:47:24+08:00">
-                2017-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/绘图/" itemprop="url" rel="index">
-                    <span itemprop="name">绘图</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  399
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>盐丘轮廓的绘制在地震偏移领域用途十分广泛，主要目的是为了分析偏移结果的好坏。当偏移结果和盐丘的轮廓基本吻合时，偏移质量就很高。最开始绘制轮廓的时候我采用的PS法，通过磁性套索把整个盐丘模型轮廓勾勒出来，然后再保存下来，与偏移结果进行对比。这里介绍一种直接通过 Madagascar 脚本的形式来绘制盐丘的结果，非常方便，可复用性很强，还可以用于其他的方面。此方法也借鉴于Prof. Sava 在 Madagascar book 文件夹下贡献的一个关于 Sigsbee 模型的脚本。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2017/09/plot-salt.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1248,7 +1270,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1270,7 +1292,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1328,7 +1350,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.1k</span>
+    <span title="Site words total count">8.9k</span>
   
 </div>
 
