@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nicklinyi.github.io/"/>
-  <updated>2018-04-24T07:34:36.885Z</updated>
+  <updated>2018-04-27T12:02:09.898Z</updated>
   <id>https://nicklinyi.github.io/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>地震子波</title>
+    <link href="https://nicklinyi.github.io//blog/2018/04/seismic-wavelet.html"/>
+    <id>https://nicklinyi.github.io//blog/2018/04/seismic-wavelet.html</id>
+    <published>2018-04-27T05:08:28.000Z</published>
+    <updated>2018-04-27T12:02:09.898Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;主要记录下常用各种子波函数以及对应的图形。&lt;/p&gt;
+&lt;h2 id=&quot;Ricker子波&quot;&gt;&lt;a href=&quot;#Ricker子波&quot; class=&quot;headerlink&quot; title=&quot;Ricker子波&quot;&gt;&lt;/a&gt;Ricker子波&lt;/h2&gt;&lt;p&gt;$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$&lt;/p&gt;
+&lt;figure class=&quot;highlight lsl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;function [w] = ricker(fpeak,t,tdelay)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;w = exp(-pi^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*fpeak^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*(t-tdelay).^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;).*(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;*pi^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*fpeak^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*(t-tdelay).^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;return&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-f71641eca2730b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;ricker.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Ricker子波的一阶导数：&quot;&gt;&lt;a href=&quot;#Ricker子波的一阶导数：&quot; class=&quot;headerlink&quot; title=&quot;Ricker子波的一阶导数：&quot;&gt;&lt;/a&gt;Ricker子波的一阶导数：&lt;/h2&gt;&lt;p&gt;$$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$&lt;/p&gt;
+&lt;figure class=&quot;highlight lsl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;function [w] = ricker1(fpeak,t,tdelay)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; w = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*pi^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*fpeak^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*(t-tdelay).*(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*pi^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*fpeak^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*(t-tdelay).^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-3&lt;/span&gt;).*...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     exp(-pi^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*fpeak^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*(t-tdelay).^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;return&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-4bd0b7444b017859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;ricker1.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;最小相位子波&quot;&gt;&lt;a href=&quot;#最小相位子波&quot; class=&quot;headerlink&quot; title=&quot;最小相位子波&quot;&gt;&lt;/a&gt;最小相位子波&lt;/h2&gt;&lt;p&gt;$$S(t)=texp(-3.5ft)sin(2\pi ft)$$&lt;/p&gt;
+&lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;[w]&lt;/span&gt; = &lt;span class=&quot;title&quot;&gt;min_phase&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(fpeak,t,tdelay)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;w = (t-tdelay).*&lt;span class=&quot;built_in&quot;&gt;exp&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;-3.5&lt;/span&gt;*fpeak*(t-tdelay)).*&lt;span class=&quot;built_in&quot;&gt;sin&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*&lt;span class=&quot;built_in&quot;&gt;pi&lt;/span&gt;*fpeak*(t-tdelay));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-75498f8321aee3f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;min_phase.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Gauss子波的导数：&quot;&gt;&lt;a href=&quot;#Gauss子波的导数：&quot; class=&quot;headerlink&quot; title=&quot;Gauss子波的导数：&quot;&gt;&lt;/a&gt;Gauss子波的导数：&lt;/h2&gt;&lt;p&gt;$$S(t)=-A\pi^2f^2texp(-\pi^2f^2t^2)(3-2\pi^2f^2t^2)$$&lt;br&gt;&lt;figure class=&quot;highlight lsl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;function [w] = gauss1(fpeak,t,tdelay)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;w =-pi^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*fpeak^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*(t-tdelay).*exp(-pi^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*fpeak^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*(t-tdelay).^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;).*...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    (&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;*pi^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*fpeak^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*(t-tdelay).^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;return&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-1b1a9880ca8c6b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;gauss1.png&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;主要记录下常用各种子波函数以及对应的图形。&lt;/p&gt;
+&lt;h2 id=&quot;Ricker子波&quot;&gt;&lt;a href=&quot;#Ricker子波&quot; class=
+    
+    </summary>
+    
+      <category term="地震学" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/"/>
+    
+    
+      <category term="地震子波" scheme="https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>合成地震事件</title>
