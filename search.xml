@@ -19,6 +19,7 @@
 <p><img src="https://upload-images.jianshu.io/upload_images/1703880-75498f8321aee3f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="min_phase.png"></p>
 <h2 id="Gauss子波的导数："><a href="#Gauss子波的导数：" class="headerlink" title="Gauss子波的导数："></a>Gauss子波的导数：</h2><p>$$S(t)=-A\pi^2f^2texp(-\pi^2f^2t^2)(3-2\pi^2f^2t^2)$$<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [w] = gauss1(fpeak,t,tdelay)</div><div class="line">w =-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).*exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>).*...</div><div class="line">    (<span class="number">3</span><span class="number">-2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1703880-1b1a9880ca8c6b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gauss1.png"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>罗焕宏.基于单程波算子的地震波场模拟及叠前深度偏移[D].中国石油大学,2010</p>
 ]]></content>
     </entry>
     

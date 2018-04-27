@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-4bd0b7444b017859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-75498f8321aee3f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-1b1a9880ca8c6b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-27T12:04:51.593Z">
+<meta property="og:updated_time" content="2018-04-27T12:11:50.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="地震子波">
 <meta name="twitter:description" content="前言主要记录下常用各种子波函数以及对应的图形。 Ricker子波$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ 123function [w] = ricker(fpeak,t,tdelay)w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2);return">
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  214
+                  250
                 </span>
               
 
@@ -462,6 +462,7 @@
 <p><img src="https://upload-images.jianshu.io/upload_images/1703880-75498f8321aee3f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="min_phase.png"></p>
 <h2 id="Gauss子波的导数："><a href="#Gauss子波的导数：" class="headerlink" title="Gauss子波的导数："></a>Gauss子波的导数：</h2><p>$$S(t)=-A\pi^2f^2texp(-\pi^2f^2t^2)(3-2\pi^2f^2t^2)$$<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [w] = gauss1(fpeak,t,tdelay)</div><div class="line">w =-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).*exp(-pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>).*...</div><div class="line">    (<span class="number">3</span><span class="number">-2</span>*pi^<span class="number">2</span>*fpeak^<span class="number">2</span>*(t-tdelay).^<span class="number">2</span>);</div><div class="line">return</div></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1703880-1b1a9880ca8c6b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gauss1.png"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>罗焕宏.基于单程波算子的地震波场模拟及叠前深度偏移[D].中国石油大学,2010</p>
 
       
     </div>
@@ -661,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ricker子波"><span class="nav-number">2.</span> <span class="nav-text">Ricker子波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ricker子波的一阶导数："><span class="nav-number">3.</span> <span class="nav-text">Ricker子波的一阶导数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小相位子波"><span class="nav-number">4.</span> <span class="nav-text">最小相位子波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss子波的导数："><span class="nav-number">5.</span> <span class="nav-text">Gauss子波的导数：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ricker子波"><span class="nav-number">2.</span> <span class="nav-text">Ricker子波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ricker子波的一阶导数："><span class="nav-number">3.</span> <span class="nav-text">Ricker子波的一阶导数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小相位子波"><span class="nav-number">4.</span> <span class="nav-text">最小相位子波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss子波的导数："><span class="nav-number">5.</span> <span class="nav-text">Gauss子波的导数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -695,7 +696,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.0k</span>
+    <span title="Site words total count">8.1k</span>
   
 </div>
 
