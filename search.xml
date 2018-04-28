@@ -41,6 +41,7 @@
       <title><![CDATA[macOS 挂载 NTFS 格式硬盘]]></title>
       <url>https://nicklinyi.github.io/blog/2018/04/macOS-ntfs.html</url>
       <content type="html"><![CDATA[<p>Mac本身是支持NTFS写入的，只是NTFS是微软开发，由于版权和技术细节原因，苹果不愿公开说自己支持NTFS写入，也是有自己以后可能不支持NTFS写入的考量。</p>
+<a id="more"></a>
 <p>方法一：<br>1.在terminal下使用命令<code>diskutil list</code>查询要挂载的NTFS硬盘名称<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">$ diskutil list</div><div class="line"><span class="attribute">UUID</span>=7E84540E-D729-44B9-9AB8-2056C250DC5D none auto ro</div><div class="line">/dev/disk0 (internal, physical):</div><div class="line">   #:                      <span class="built_in"> TYPE </span>NAME                    SIZE       IDENTIFIER</div><div class="line">   0:      GUID_partition_scheme                        <span class="number">*251</span>.0 GB   disk0</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</div><div class="line">   2:                 Apple_APFS Container disk1         250.8 GB   disk0s2</div><div class="line"></div><div class="line">/dev/disk1 (synthesized):</div><div class="line">   #:                      <span class="built_in"> TYPE </span>NAME                    SIZE       IDENTIFIER</div><div class="line">   0:      APFS Container Scheme -                      +250.8 GB   disk1</div><div class="line">                                 Physical Store disk0s2</div><div class="line">   1:                APFS Volume Macintosh HD            76.4 GB    disk1s1</div><div class="line">   2:                APFS Volume Preboot                 19.5 MB    disk1s2</div><div class="line">   3:                APFS Volume Recovery                509.8 MB   disk1s3</div><div class="line">   4:                APFS Volume VM                      3.2 GB     disk1s4</div><div class="line"></div><div class="line">/dev/disk2 (external, physical):</div><div class="line">   #:                      <span class="built_in"> TYPE </span>NAME                    SIZE       IDENTIFIER</div><div class="line">   0:      GUID_partition_scheme                        <span class="number">*4</span>.0 TB     disk2</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk2s1</div><div class="line">   2:                  Apple_HFS macOSbackup             1000.0 GB  disk2s2</div><div class="line">   3:       Microsoft Basic Data data                    3.0 TB     disk2s3</div></pre></td></tr></table></figure></p>
 <p>从输出的结果可以看到，最下面那个<code>data</code>即为我的名称。</p>
 <p>2.在terminal下使用命令<code>diskutil info /Volumes/data</code>查询该硬盘的UUID值<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">$ diskutil <span class="builtin-name">info</span> /Volumes/data</div><div class="line">Device Identifier:        disk2s3</div><div class="line">Device Node:              /dev/disk2s3</div><div class="line">Whole:                    <span class="literal">No</span></div><div class="line">Part of Whole:            disk2</div><div class="line"></div><div class="line">Volume Name:              data</div><div class="line">Mounted:                  <span class="literal">Yes</span></div><div class="line">Mount Point:              /Volumes/data</div><div class="line"></div><div class="line">Partition Type:           Microsoft Basic Data</div><div class="line">File<span class="built_in"> System </span>Personality:  NTFS</div><div class="line">Type (Bundle):            ntfs</div><div class="line">Name (User Visible):      Windows NT File<span class="built_in"> System </span>(NTFS)</div><div class="line"></div><div class="line">OS Can Be Installed:      <span class="literal">No</span></div><div class="line">Media Type:               Generic</div><div class="line">Protocol:                 USB</div><div class="line">SMART Status:             <span class="keyword">Not</span> Supported</div><div class="line">Volume UUID:              C0F838DA-F857-9CC0-2CC1-9CE6F19CE668</div><div class="line">Disk / Partition UUID:    2E13FC4C-6FC4-469F-B8DE-FBBAA5F5907D</div><div class="line"></div><div class="line">Disk Size:                3.0 TB (3000273383424 Bytes) (exactly 5859908952 512-Byte-Units)</div><div class="line">Device Block Size:        512 Bytes</div><div class="line"></div><div class="line">Volume Total Space:       3.0 TB (3000273379328 Bytes) (exactly 5859908944 512-Byte-Units)</div><div class="line">Volume Used Space:        16.1 GB (16052121600 Bytes) (exactly 31351800 512-Byte-Units) (0.5%)</div><div class="line">Volume Available Space:   3.0 TB (2984221257728 Bytes) (exactly 5828557144 512-Byte-Units) (99.5%)</div><div class="line">Allocation Block Size:    4096 Bytes</div><div class="line"></div><div class="line">Read-Only Media:          <span class="literal">No</span></div><div class="line">Read-Only Volume:         <span class="literal">Yes</span></div><div class="line"></div><div class="line">Device Location:          External</div><div class="line">Removable Media:          Fixed</div></pre></td></tr></table></figure></p>
@@ -362,6 +363,21 @@ Argument list to give program being debugged when it is started is &quot;file1=a
   
     
     <entry>
+      <title><![CDATA[关于]]></title>
+      <url>https://nicklinyi.github.io/about.html</url>
+      <content type="html"><![CDATA[<h4>关于博主</h4>
+
+<p>地震学在读</p>
+<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
+<ul>
+<li>Email：linyihanchuan[AT]gmail[DOT]com </li>
+</ul>
+<p>如未能及时回复各种问题，请见谅。</p>
+<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
+]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>https://nicklinyi.github.io/404.html</url>
       <content type="html"><![CDATA[<!DOCTYPE HTML>
@@ -379,21 +395,6 @@ Argument list to give program being debugged when it is started is &quot;file1=a
 
 </body>
 </html>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[关于]]></title>
-      <url>https://nicklinyi.github.io/about.html</url>
-      <content type="html"><![CDATA[<h4>关于博主</h4>
-
-<p>地震学在读</p>
-<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
-<ul>
-<li>Email：linyihanchuan[AT]gmail[DOT]com </li>
-</ul>
-<p>如未能及时回复各种问题，请见谅。</p>
-<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
 ]]></content>
     </entry>
     
@@ -441,14 +442,14 @@ Argument list to give program being debugged when it is started is &quot;file1=a
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>https://nicklinyi.github.io/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>https://nicklinyi.github.io/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>https://nicklinyi.github.io/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>https://nicklinyi.github.io/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
