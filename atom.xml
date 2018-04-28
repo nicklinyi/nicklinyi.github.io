@@ -176,10 +176,11 @@
     <link href="https://nicklinyi.github.io//blog/2018/02/boot-partition.html"/>
     <id>https://nicklinyi.github.io//blog/2018/02/boot-partition.html</id>
     <published>2018-02-04T00:57:57.000Z</published>
-    <updated>2018-04-27T12:22:54.312Z</updated>
+    <updated>2018-04-28T01:52:05.327Z</updated>
     
     <content type="html">&lt;p&gt;由于之前装机时 &lt;code&gt;/boot&lt;/code&gt; 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 &lt;code&gt;/boot&lt;/code&gt; 空间不足， 然后发现 &lt;code&gt;/boot&lt;/code&gt;下有两个系统内核文件，一个 44M 左右， 再加上一些其他的文件，加起来足足占了 70% 的使用空间，后期如果再更新系统，将会十分不便。因此想到了扩大 &lt;code&gt;/boot&lt;/code&gt; 空间。&lt;/p&gt;
 &lt;p&gt;网上的一些博文都是简单的介绍了如何增大&lt;code&gt;/boot&lt;/code&gt;, 没有提供一个详细的步骤，这里总结了各大博文的精华之处，整理出来供大家参考。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;运行&lt;code&gt;sudo cat /etc/fstab&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;➜  ~ sudo cat /etc/fstab&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# /etc/fstab: static file system information.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# Use &amp;apos;blkid&amp;apos; to print the universally unique identifier for a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# device; this may be used with UUID= as a more robust way to name devices&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# that works even if disks are added and removed. See fstab(5).&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# &amp;lt;file system&amp;gt; &amp;lt;mount point&amp;gt;   &amp;lt;type&amp;gt;  &amp;lt;options&amp;gt;       &amp;lt;dump&amp;gt;  &amp;lt;pass&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# / was on /dev/sda7 during installation&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;UUID=50b02ca0-b7d6-47e7-b822-9d30caac57ec /               ext4    errors=remount-ro 0       1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# /boot was on /dev/sda6 during installation&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;UUID=c1a85b1e-b617-4f2f-82d4-0ed61e8347ba /boot           ext4    defaults        0       2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# swap was on /dev/sda5 during installation&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;UUID=3db90030-2801-4ba3-b126-7bb0af433172 none            swap    sw              0       0&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -209,7 +210,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;由于之前装机时 &lt;code&gt;/boot&lt;/code&gt; 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 &lt;code&gt;/boot&lt;/code&gt; 空间不足， 然后发现 &lt;code&gt;/boot&lt;/code&gt;下有两个系统内核
+      &lt;p&gt;由于之前装机时 &lt;code&gt;/boot&lt;/code&gt; 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 &lt;code&gt;/boot&lt;/code&gt; 空间不足， 然后发现 &lt;code&gt;/boot&lt;/code&gt;下有两个系统内核文件，一个 44M 左右， 再加上一些其他的文件，加起来足足占了 70% 的使用空间，后期如果再更新系统，将会十分不便。因此想到了扩大 &lt;code&gt;/boot&lt;/code&gt; 空间。&lt;/p&gt;
+&lt;p&gt;网上的一些博文都是简单的介绍了如何增大&lt;code&gt;/boot&lt;/code&gt;, 没有提供一个详细的步骤，这里总结了各大博文的精华之处，整理出来供大家参考。&lt;/p&gt;
     
     </summary>
     

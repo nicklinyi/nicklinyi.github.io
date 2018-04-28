@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Nick@Seis">
 <meta property="og:description" content="由于之前装机时 /boot 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 /boot 空间不足， 然后发现 /boot下有两个系统内核文件，一个 44M 左右， 再加上一些其他的文件，加起来足足占了 70% 的使用空间，后期如果再更新系统，将会十分不便。因此想到了扩大 /boot 空间。 网上的一些博文都是简单的介绍了如何增大/boot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T12:22:54.312Z">
+<meta property="og:updated_time" content="2018-04-28T01:52:05.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux &#x2F;boot 重新分区">
 <meta name="twitter:description" content="由于之前装机时 /boot 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 /boot 空间不足， 然后发现 /boot下有两个系统内核文件，一个 44M 左右， 再加上一些其他的文件，加起来足足占了 70% 的使用空间，后期如果再更新系统，将会十分不便。因此想到了扩大 /boot 空间。 网上的一些博文都是简单的介绍了如何增大/boot">
@@ -446,6 +446,7 @@
       
         <p>由于之前装机时 <code>/boot</code> 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 <code>/boot</code> 空间不足， 然后发现 <code>/boot</code>下有两个系统内核文件，一个 44M 左右， 再加上一些其他的文件，加起来足足占了 70% 的使用空间，后期如果再更新系统，将会十分不便。因此想到了扩大 <code>/boot</code> 空间。</p>
 <p>网上的一些博文都是简单的介绍了如何增大<code>/boot</code>, 没有提供一个详细的步骤，这里总结了各大博文的精华之处，整理出来供大家参考。</p>
+<a id="more"></a>
 <ul>
 <li><p>运行<code>sudo cat /etc/fstab</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">➜  ~ sudo cat /etc/fstab</div><div class="line"># /etc/fstab: static file system information.</div><div class="line">#</div><div class="line"># Use &apos;blkid&apos; to print the universally unique identifier for a</div><div class="line"># device; this may be used with UUID= as a more robust way to name devices</div><div class="line"># that works even if disks are added and removed. See fstab(5).</div><div class="line">#</div><div class="line"># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;</div><div class="line"># / was on /dev/sda7 during installation</div><div class="line">UUID=50b02ca0-b7d6-47e7-b822-9d30caac57ec /               ext4    errors=remount-ro 0       1</div><div class="line"># /boot was on /dev/sda6 during installation</div><div class="line">UUID=c1a85b1e-b617-4f2f-82d4-0ed61e8347ba /boot           ext4    defaults        0       2</div><div class="line"># swap was on /dev/sda5 during installation</div><div class="line">UUID=3db90030-2801-4ba3-b126-7bb0af433172 none            swap    sw              0       0</div></pre></td></tr></table></figure>
