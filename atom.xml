@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nicklinyi.github.io/"/>
-  <updated>2018-04-27T12:11:50.687Z</updated>
+  <updated>2018-04-30T09:03:05.708Z</updated>
   <id>https://nicklinyi.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hoare&#39;s algorithm</title>
+    <link href="https://nicklinyi.github.io//blog/2018/04/Hoare-algorithm.html"/>
+    <id>https://nicklinyi.github.io//blog/2018/04/Hoare-algorithm.html</id>
+    <published>2018-04-30T05:08:28.000Z</published>
+    <updated>2018-04-30T09:03:05.708Z</updated>
+    
+    <content type="html">&lt;p&gt;快速选择算法通常用来在未排序的数组中寻找第k小/第k大的元素。其方法类似于快速排序。快速选择和快速排序都是Tony Hoare发明的，因此也称为Hoare’s algorithm。&lt;/p&gt;
+&lt;p&gt;下面是Madagascar中对快速选择算法的实现部分：&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sf_quantile&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; q    &lt;span class=&quot;comment&quot;&gt;/* quantile */&lt;/span&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;		  &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; n    &lt;span class=&quot;comment&quot;&gt;/* array length */&lt;/span&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;		  &lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;* a &lt;span class=&quot;comment&quot;&gt;/* array [n] */&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*&amp;lt; find quantile (caution: a is changed) &amp;gt;*/&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; *i, *j, ak, *low, *hi, buf, *k;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    low=a;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    hi=a+n&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    k=a+q;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (low&amp;lt;hi) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    ak = *k;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    i = low; j = hi;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 找出a[i]&amp;gt;=ak 时的i值&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	      &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (*i &amp;lt; ak) i++;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 找出a[j]&amp;gt;=ak 时的j值     &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	      &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (*j &amp;gt; ak) j--;   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 交换 a[i]与a[j]的值，并移动i和j  &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (i&amp;lt;=j) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		      buf = *i;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		      (*i)++ = *j;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		      (*j)-- = buf;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (i&amp;lt;=j);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// 更新low 和 hi&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (j&amp;lt;k) low = i;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (k&amp;lt;i) hi = j;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (*k);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;快速选择算法通常用来在未排序的数组中寻找第k小/第k大的元素。其方法类似于快速排序。快速选择和快速排序都是Tony Hoare发明的，因此也称为Hoare’s algorithm。&lt;/p&gt;
+&lt;p&gt;下面是Madagascar中对快速选择算法的实现部分：&lt;br&gt;&lt;figure 
+    
+    </summary>
+    
+      <category term="算法" scheme="https://nicklinyi.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="快速选择" scheme="https://nicklinyi.github.io/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>地震子波</title>

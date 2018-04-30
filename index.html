@@ -328,6 +328,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/04/Hoare-algorithm.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nick">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nick@Seis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/04/Hoare-algorithm.html" itemprop="url">Hoare's algorithm</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T13:08:28+08:00">
+                2018-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  196
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>快速选择算法通常用来在未排序的数组中寻找第k小/第k大的元素。其方法类似于快速排序。快速选择和快速排序都是Tony Hoare发明的，因此也称为Hoare’s algorithm。</p>
+<p>下面是Madagascar中对快速选择算法的实现部分：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">sf_quantile</span><span class="params">(<span class="keyword">int</span> q    <span class="comment">/* quantile */</span>,</span></span></div><div class="line"><span class="function"><span class="params">		  <span class="keyword">int</span> n    <span class="comment">/* array length */</span>,</span></span></div><div class="line"><span class="function"><span class="params">		  <span class="keyword">float</span>* a <span class="comment">/* array [n] */</span>)</span></span></div><div class="line"><span class="function"><span class="comment">/*&lt; find quantile (caution: a is changed) &gt;*/</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">float</span> *i, *j, ak, *low, *hi, buf, *k;</div><div class="line"></div><div class="line">    low=a;</div><div class="line">    hi=a+n<span class="number">-1</span>;</div><div class="line">    k=a+q;</div><div class="line">    <span class="keyword">while</span> (low&lt;hi) &#123;</div><div class="line">	    ak = *k;</div><div class="line">	    i = low; j = hi;</div><div class="line">	    <span class="keyword">do</span> &#123;</div><div class="line">        <span class="comment">// 找出a[i]&gt;=ak 时的i值</span></div><div class="line">	      <span class="keyword">while</span> (*i &lt; ak) i++;</div><div class="line">        <span class="comment">// 找出a[j]&gt;=ak 时的j值     </span></div><div class="line">	      <span class="keyword">while</span> (*j &gt; ak) j--;   </div><div class="line">        <span class="comment">// 交换 a[i]与a[j]的值，并移动i和j  </span></div><div class="line">	      <span class="keyword">if</span> (i&lt;=j) &#123;</div><div class="line">		      buf = *i;</div><div class="line">		      (*i)++ = *j;</div><div class="line">		      (*j)-- = buf;</div><div class="line">	      &#125;</div><div class="line">	    &#125; <span class="keyword">while</span> (i&lt;=j);</div><div class="line">      <span class="comment">// 更新low 和 hi</span></div><div class="line">	    <span class="keyword">if</span> (j&lt;k) low = i;</div><div class="line">	    <span class="keyword">if</span> (k&lt;i) hi = j;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> (*k);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/04/seismic-wavelet.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1027,184 +1201,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/02/boot-partition.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nick">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nick@Seis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/02/boot-partition.html" itemprop="url">Linux /boot 重新分区</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T08:57:57+08:00">
-                2018-02-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  798
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>由于之前装机时 <code>/boot</code> 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 <code>/boot</code> 空间不足， 然后发现 <code>/boot</code>下有两个系统内核文件，一个 44M 左右， 再加上一些其他的文件，加起来足足占了 70% 的使用空间，后期如果再更新系统，将会十分不便。因此想到了扩大 <code>/boot</code> 空间。</p>
-<p>网上的一些博文都是简单的介绍了如何增大<code>/boot</code>, 没有提供一个详细的步骤，这里总结了各大博文的精华之处，整理出来供大家参考。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/02/boot-partition.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1259,7 +1255,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1270,7 +1266,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1281,7 +1277,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1339,7 +1335,7 @@
     
       <span class="post-meta-item-text">站点字数统计&#58;</span>
     
-    <span title="站点字数统计">9.5k</span>
+    <span title="站点字数统计">9.7k</span>
   
 </div>
 
