@@ -397,6 +397,21 @@ Argument list to give program being debugged when it is started is &quot;file1=a
     </entry>
     
     <entry>
+      <title><![CDATA[关于]]></title>
+      <url>https://nicklinyi.github.io/about.html</url>
+      <content type="html"><![CDATA[<h4>关于博主</h4>
+
+<p>地震学在读</p>
+<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
+<ul>
+<li>Email：linyihanchuan[AT]gmail[DOT]com </li>
+</ul>
+<p>如未能及时回复各种问题，请见谅。</p>
+<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[藏经阁]]></title>
       <url>https://nicklinyi.github.io/links.html</url>
       <content type="html"><![CDATA[<h3 id="正演模拟"><a href="#正演模拟" class="headerlink" title="正演模拟"></a>正演模拟</h3><h4 id="谱元法"><a href="#谱元法" class="headerlink" title="谱元法"></a>谱元法</h4><ul>
@@ -436,21 +451,6 @@ Argument list to give program being debugged when it is started is &quot;file1=a
 <li><a href="http://sepwww.stanford.edu/doku.php?id=sep:home" title="Stanford Exploration Project" target="_blank" rel="noopener">SEP</a></li>
 <li><a href="https://seiscope2.osug.fr/" target="_blank" rel="noopener">SEISCOPE</a></li>
 </ul>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[关于]]></title>
-      <url>https://nicklinyi.github.io/about.html</url>
-      <content type="html"><![CDATA[<h4>关于博主</h4>
-
-<p>地震学在读</p>
-<p></p><h4>联系方式</h4><br>如果对博客内容有疑问或其他问题，可通过邮件方式联系博主：<p></p>
-<ul>
-<li>Email：linyihanchuan[AT]gmail[DOT]com </li>
-</ul>
-<p>如未能及时回复各种问题，请见谅。</p>
-<!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e0afaf&w=300&t=tt&d=H8EM4dB94q4C9oF5aWK5Moe1Rr7B2U0qk-clOMxJCXo&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script> -->
 ]]></content>
     </entry>
     
