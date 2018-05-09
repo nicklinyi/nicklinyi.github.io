@@ -328,6 +328,195 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/05/matlabColorbar.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nick">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nick@Seis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/05/matlabColorbar.html" itemprop="url">Matlab如何绘制美观的colorbar</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T08:57:57+08:00">
+                2018-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/matlab/" itemprop="url" rel="index">
+                    <span itemprop="name">matlab</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2018/05/matlabColorbar.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/blog/2018/05/matlabColorbar.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  698
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>通常情况下，matlab绘出的色标主要存在两个问题：1色标的宽度太宽；2色标的高度太高。为了绘制更美观的图像，这里深入研究了一下色标的大小调整方法。</p>
+<p>1.如何修改色标的大小，以及控制色标在图片中的位置？<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">fig=figure;</div><div class="line">fig.Units='centimeters'; %将图片的单位改为厘米，便于理解</div><div class="line">fig.Position=[<span class="number">17.9652</span> <span class="number">14.5256</span> <span class="number">8</span> <span class="number">12</span>];</div><div class="line">imagesc(linspace(<span class="number">0</span>,<span class="number">1</span>,<span class="number">201</span>),linspace(<span class="number">0</span>,<span class="number">250</span>,<span class="number">600</span>),Mask), axis ij</div><div class="line">set(gca,'xaxislocation','top','Fontsize',<span class="number">10</span>,...</div><div class="line">    'TickDir','out')</div><div class="line">ax=gca;</div><div class="line">ax.Position = [<span class="number">0.2</span> <span class="number">0.1</span> <span class="number">0.65</span> <span class="number">0.75</span>] %控制坐标轴的位置，以及长宽比</div><div class="line">c = colorbar;</div><div class="line">c.Position = [<span class="number">0.88</span> <span class="number">0.22</span> <span class="number">0.025</span> <span class="number">0.5</span>]; %控制色标的位置以及长宽比</div><div class="line">colormap(jet);</div><div class="line">xlabel('Normalized Wavenumber','FontSize',<span class="number">10</span>),ylabel('Frequency (Hz)','FontSize',<span class="number">10</span>);</div><div class="line">% set(gcf,'PaperPosition',[<span class="number">0</span> <span class="number">0</span> <span class="number">10</span> <span class="number">12</span>]);</div><div class="line">print -r300 -dtiff Mask.tif</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2018/05/matlabColorbar.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/04/Hoare-algorithm.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1071,195 +1260,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://nicklinyi.github.io/blog/2018/03/rsf-plot.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nick">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nick@Seis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/03/rsf-plot.html" itemprop="url">Madagascar绘图总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T08:57:57+08:00">
-                2018-03-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/绘图/" itemprop="url" rel="index">
-                    <span itemprop="name">绘图</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2018/03/rsf-plot.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/blog/2018/03/rsf-plot.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  616
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="波形图"><a href="#波形图" class="headerlink" title="波形图"></a>波形图</h2><p>比如，绘制子波形态，单道地震记录等。采用<code>sfgraph</code>来绘图，类似与Matlab的<code>plot</code>命令。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># plot wavelet</span></div><div class="line"><span class="keyword">from</span> rsf.proj <span class="keyword">import</span> *</div><div class="line"></div><div class="line">par=&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">waveplot</span><span class="params">(custom,par)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'''</span></div><div class="line"><span class="string">    graph title="" min1=%g min2=0 max2=+1</span></div><div class="line"><span class="string">    plotfat=5 plotcol=5</span></div><div class="line"><span class="string">    label1=%s unit1=%s</span></div><div class="line"><span class="string">    label2="Amplitude" unit2=""</span></div><div class="line"><span class="string">    parallel2=n screenratio=0.5 screenht=7</span></div><div class="line"><span class="string">    %s</span></div><div class="line"><span class="string">    '''</span> % (par[<span class="string">'oxx'</span>],par[<span class="string">'lxx'</span>],par[<span class="string">'uxx'</span>],</div><div class="line">           par[<span class="string">'labelattr'</span>]+<span class="string">' '</span>+custom)</div><div class="line"></div><div class="line">par[<span class="string">'labelattr'</span>]=<span class="string">' parallel2=n labelsz=6 labelfat=3 titlesz=12 titlefat=3 '</span></div><div class="line"></div><div class="line">par[<span class="string">'lxx'</span>]=<span class="string">'x'</span></div><div class="line">par[<span class="string">'uxx'</span>]=<span class="string">'m'</span></div><div class="line">par[<span class="string">'oxx'</span>]= <span class="number">0.</span></div><div class="line"></div><div class="line">Result(<span class="string">'wav'</span>,<span class="string">'transp |'</span> + waveplot(<span class="string">''</span>,par))</div></pre></td></tr></table></figure></p>
-<p><strong>说明<code>wav</code>为绘图的数据，其维度必须为1xn2的形式。</strong></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/03/rsf-plot.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1314,7 +1314,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1325,7 +1325,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1336,7 +1336,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1394,7 +1394,7 @@
     
       <span class="post-meta-item-text">站点字数统计&#58;</span>
     
-    <span title="站点字数统计">9.7k</span>
+    <span title="站点字数统计">10.4k</span>
   
 </div>
 
