@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nicklinyi.github.io/"/>
-  <updated>2018-05-09T15:10:09.211Z</updated>
+  <updated>2018-05-14T06:46:20.750Z</updated>
   <id>https://nicklinyi.github.io/</id>
   
   <author>
@@ -16,11 +16,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Matlab 拟合数据体类型解读</title>
+    <link href="https://nicklinyi.github.io//blog/2018/05/matlabFit.html"/>
+    <id>https://nicklinyi.github.io//blog/2018/05/matlabFit.html</id>
+    <published>2018-05-14T00:57:57.000Z</published>
+    <updated>2018-05-14T06:46:20.750Z</updated>
+    
+    <content type="html">&lt;p&gt;首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。&lt;br&gt;其三次样条拟合的结果如下图所示，并将其拟合结果存为&lt;code&gt;fitresult&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-7a0117878e8a5b17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;拟合曲线&quot;&gt;&lt;/p&gt;
+&lt;p&gt;matlab 对数据做完三次样条拟合后的数据为&lt;code&gt;cfit&lt;/code&gt;类型，&lt;br&gt;是一种拟合的数据体，虽然此数据体可直接通过plot函数绘制出来，&lt;br&gt;但往往我们需要对其中的数据进行进一步的操作。因此，需要对&lt;code&gt;cfit&lt;/code&gt;类型进行一定的了解。通过一次简单地试错，&lt;br&gt;我们发现cfit类型的数据有一个子参数p.&lt;br&gt;&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt;&amp;gt; fitresult.q&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;错误使用 cfit/subsref (&lt;span class=&quot;built_in&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;18&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The name &lt;span class=&quot;string&quot;&gt;&#39;q&#39;&lt;/span&gt; is &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;a&lt;/span&gt; coefficient &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;a&lt;/span&gt; problem parameter.  You can only use dot notation &lt;span class=&quot;built_in&quot;&gt;to&lt;/span&gt; access &lt;span class=&quot;keyword&quot;&gt;the&lt;/span&gt; coefficients &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; problem parameters &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;a&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cfit &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; sfit, e.g., &lt;span class=&quot;string&quot;&gt;&#39;f.p&#39;&lt;/span&gt;.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt;(&lt;span class=&quot;title&quot;&gt;fitresult&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;p&lt;/span&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ans =&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;struct&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; fitresult.p&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ans =&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;symbol&quot;&gt;form:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;pp&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;breaks:&lt;/span&gt; [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;x84 double]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     &lt;span class=&quot;symbol&quot;&gt;coefs:&lt;/span&gt; [&lt;span class=&quot;number&quot;&gt;83&lt;/span&gt;x4 double]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;pieces:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;83&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     &lt;span class=&quot;symbol&quot;&gt;order:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       &lt;span class=&quot;symbol&quot;&gt;dim:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上述实验表明cfit数据的本质为一个problem，因而其含有参数p. 其p参数是一个&lt;code&gt;struct&lt;/code&gt;,&lt;code&gt;struct&lt;/code&gt;含有&lt;code&gt;form&lt;/code&gt;等参数，用于指定所采用的拟合函数的类型，以及对应的一些系数等。&lt;br&gt;对于三次样条拟合，&lt;br&gt;我们可通过函数&lt;code&gt;ppval&lt;/code&gt;来计算出给定一个自变量&lt;code&gt;xq&lt;/code&gt;对应的函数值&lt;code&gt;yq&lt;/code&gt;.&lt;br&gt;&lt;figure class=&quot;highlight ebnf&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;xq&lt;/span&gt; = linspace(0,100,500);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;yq&lt;/span&gt; = ppval(fitresult.p, xq);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;xq 和 yq 即为原数据(x1,y1)进行三次样条拟合后的数据集。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。&lt;br&gt;其三次样条拟合的结果如下图所示，并将其拟合结果存为&lt;code&gt;fitresult&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.i
+    
+    </summary>
+    
+      <category term="编程" scheme="https://nicklinyi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="matlab" scheme="https://nicklinyi.github.io/tags/matlab/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Matlab如何绘制美观的colorbar</title>
     <link href="https://nicklinyi.github.io//blog/2018/05/matlabColorbar.html"/>
     <id>https://nicklinyi.github.io//blog/2018/05/matlabColorbar.html</id>
     <published>2018-05-09T00:57:57.000Z</published>
-    <updated>2018-05-09T15:10:09.211Z</updated>
+    <updated>2018-05-14T06:45:38.853Z</updated>
     
     <content type="html">&lt;p&gt;通常情况下，matlab绘出的色标主要存在两个问题：1色标的宽度太宽；2色标的高度太高。为了绘制更美观的图像，这里深入研究了一下色标的大小调整方法。&lt;/p&gt;
 &lt;p&gt;1.如何修改色标的大小，以及控制色标在图片中的位置？&lt;br&gt;&lt;figure class=&quot;highlight lsl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fig=figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fig.Units=&#39;inch&#39;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fig.Position=[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3.5&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;imagesc(linspace(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;201&lt;/span&gt;),linspace(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;250&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;600&lt;/span&gt;),Mask), axis ij&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;set(gca,&#39;xaxislocation&#39;,&#39;top&#39;,&#39;Fontsize&#39;,&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &#39;TickDir&#39;,&#39;out&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ax=gca;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ax.Position = [&lt;span class=&quot;number&quot;&gt;0.2&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.65&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.75&lt;/span&gt;] %控制坐标轴的位置，以及长宽比&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;c = colorbar;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;c.Position = [&lt;span class=&quot;number&quot;&gt;0.88&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.22&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.025&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;]; %控制色标的位置以及长宽比&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;colormap(jet);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&#39;Normalized Wavenumber&#39;,&#39;FontSize&#39;,&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;),ylabel(&#39;Frequency (Hz)&#39;,&#39;FontSize&#39;,&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;% set(gcf,&#39;PaperPosition&#39;,[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print -r300 -dtiff spectra.tif&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -41,7 +70,7 @@
     
     </summary>
     
-      <category term="matlab" scheme="https://nicklinyi.github.io/categories/matlab/"/>
+      <category term="绘图" scheme="https://nicklinyi.github.io/categories/%E7%BB%98%E5%9B%BE/"/>
     
     
       <category term="matlab" scheme="https://nicklinyi.github.io/tags/matlab/"/>
@@ -637,9 +666,9 @@ Argument list to give program being debugged when it is started is &amp;quot;fil
       <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
-    
       <category term="RSF" scheme="https://nicklinyi.github.io/tags/RSF/"/>
+    
+      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
     
   </entry>
   
@@ -745,41 +774,6 @@ Argument list to give program being debugged when it is started is &amp;quot;fil
       <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
     
       <category term="Vim" scheme="https://nicklinyi.github.io/tags/Vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Madagascar下使用latex</title>
-    <link href="https://nicklinyi.github.io//blog/2016/05/rsf-use-latex.html"/>
-    <id>https://nicklinyi.github.io//blog/2016/05/rsf-use-latex.html</id>
-    <published>2016-05-24T00:57:57.000Z</published>
-    <updated>2018-04-24T07:16:26.576Z</updated>
-    
-    <content type="html">&lt;p&gt;之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，&lt;code&gt;cd&lt;/code&gt;到&lt;code&gt;book&lt;/code&gt;目录下，任选一个文件夹进去，然后运行&lt;code&gt;$ scons&lt;/code&gt;，发现总是出现权限不够错误。后来再进入到其他文件夹，发现还是存在同样的问题。但这次发现问题的根源所在了。&lt;/p&gt;
-&lt;p&gt;Madagascar 下使用 scons 来编译 latex 将会在&lt;code&gt;$RSFROOT/share/madagascar&lt;/code&gt;下创建一个本地文件夹的副本，其目的是为了用来之后&lt;code&gt;lock&lt;/code&gt;图片所用，而由于不管将 Madagascar 安装在&lt;code&gt;/opt&lt;/code&gt;下，还是&lt;code&gt;$HOME&lt;/code&gt;下的某个目录，&lt;code&gt;$RSFROOT&lt;/code&gt;都默认不是 766 权限。因此其下的&lt;code&gt;share/madagascar&lt;/code&gt;也一样。通过测试发现，只有&lt;code&gt;share/madagascar&lt;/code&gt;为 766 权限时，madagascar 才能向里边写文件.因此第一步就是将该路径设置为 766 .&lt;/p&gt;
-&lt;p&gt;按上述设置后，scons 暂时不报错了，也可以正常编译 latex 文件，但是由于 madagascar 下的 tex 基本是与地球物理相关的，因此 latex 下的 texmf 缺少一些 cls 文件，可从 sourceforge 上下载 segtex ，然后将源码解压并放在&lt;code&gt;$HOME/texmf&lt;/code&gt;下，然后通过&lt;code&gt;texhash&lt;/code&gt;来将其添加到现有的 latex 的 texmf 中。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;虽然，按上述操作后 latex 也不报错了，但 latex 编译完后，scons 还是会报一些小的错误，主要是关于阅读和打印 pdf 的问题，因为采用 tex.py 中的 Paper 来编译 latex 文件时，编译完会自动打开并打印文件，而在其打印机下并未写打印机名称以及地址，因此总会报错，毕竟这是一个 machine-depending 的问题， Madagascar 没有处理好这个问题是很正常的。这算是 Madagascar 的一个小 bug 。但并不影响读者正常编译和使用。&lt;/p&gt;
-&lt;p&gt;但笔者还是要解决这个问题，因为并不是每个人编译完文件都想马上打开 pdf 文件，也没有这个必要这么做，因此，我们找到&lt;code&gt;$RSFROOT&lt;/code&gt;中的 tex.py 文件，注释掉其中的两行代码，就可解决上述问题。&lt;/p&gt;
-&lt;p&gt;至于 latex 编译时会遇到系统中缺少一些字体的情况，并不是本文讨论的重点。大家可自行谷歌予以解决。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，&lt;code&gt;cd&lt;/code&gt;到&lt;code&gt;book&lt;/code&gt;目录下，任选一个文件夹进去，然后运行&lt;code&gt;$ scons&lt;/code&gt;，发现总是出现权限不够错误。后来再进入到其他文件夹，发现还是存在同样的问题。但这次发现问题的根源所在了。&lt;/p&gt;
-&lt;p&gt;Madagascar 下使用 scons 来编译 latex 将会在&lt;code&gt;$RSFROOT/share/madagascar&lt;/code&gt;下创建一个本地文件夹的副本，其目的是为了用来之后&lt;code&gt;lock&lt;/code&gt;图片所用，而由于不管将 Madagascar 安装在&lt;code&gt;/opt&lt;/code&gt;下，还是&lt;code&gt;$HOME&lt;/code&gt;下的某个目录，&lt;code&gt;$RSFROOT&lt;/code&gt;都默认不是 766 权限。因此其下的&lt;code&gt;share/madagascar&lt;/code&gt;也一样。通过测试发现，只有&lt;code&gt;share/madagascar&lt;/code&gt;为 766 权限时，madagascar 才能向里边写文件.因此第一步就是将该路径设置为 766 .&lt;/p&gt;
-&lt;p&gt;按上述设置后，scons 暂时不报错了，也可以正常编译 latex 文件，但是由于 madagascar 下的 tex 基本是与地球物理相关的，因此 latex 下的 texmf 缺少一些 cls 文件，可从 sourceforge 上下载 segtex ，然后将源码解压并放在&lt;code&gt;$HOME/texmf&lt;/code&gt;下，然后通过&lt;code&gt;texhash&lt;/code&gt;来将其添加到现有的 latex 的 texmf 中。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
-    
-    
-      <category term="RSF" scheme="https://nicklinyi.github.io/tags/RSF/"/>
-    
-      <category term="Latex" scheme="https://nicklinyi.github.io/tags/Latex/"/>
-    
-      <category term="Paper" scheme="https://nicklinyi.github.io/tags/Paper/"/>
     
   </entry>
   
