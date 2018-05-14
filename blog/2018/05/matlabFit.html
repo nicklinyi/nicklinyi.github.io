@@ -90,7 +90,7 @@
 <meta property="og:description" content="首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将其拟合结果存为fitresult。  matlab 对数据做完三次样条拟合后的数据为cfit类型，是一种拟合的数据体，虽然此数据体可直接通过plot函数绘制出来，但往往我们需要对其中的数据进行进一步的操作。因此，需要对cfit类型进行一定的了解。通过一次简单地试错，我们发现cfit类型的数据">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1703880-7a0117878e8a5b17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-14T06:46:20.750Z">
+<meta property="og:updated_time" content="2018-05-14T06:50:19.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab 拟合数据体类型解读">
 <meta name="twitter:description" content="首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将其拟合结果存为fitresult。  matlab 对数据做完三次样条拟合后的数据为cfit类型，是一种拟合的数据体，虽然此数据体可直接通过plot函数绘制出来，但往往我们需要对其中的数据进行进一步的操作。因此，需要对cfit类型进行一定的了解。通过一次简单地试错，我们发现cfit类型的数据">
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  351
+                  352
                 </span>
               
 
@@ -467,11 +467,13 @@
       
 
       
-        <p>首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。<br>其三次样条拟合的结果如下图所示，并将其拟合结果存为<code>fitresult</code>。</p>
+        <p>首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将<br>其拟合结果存为<code>fitresult</code>。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1703880-7a0117878e8a5b17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="拟合曲线"></p>
-<p>matlab 对数据做完三次样条拟合后的数据为<code>cfit</code>类型，<br>是一种拟合的数据体，虽然此数据体可直接通过plot函数绘制出来，<br>但往往我们需要对其中的数据进行进一步的操作。因此，需要对<code>cfit</code>类型进行一定的了解。通过一次简单地试错，<br>我们发现cfit类型的数据有一个子参数p.<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; fitresult.q</div><div class="line">错误使用 cfit/subsref (<span class="built_in">line</span> <span class="number">18</span>)</div><div class="line">The name <span class="string">'q'</span> is <span class="keyword">not</span> <span class="keyword">a</span> coefficient <span class="keyword">or</span> <span class="keyword">a</span> problem parameter.  You can only use dot notation <span class="built_in">to</span> access <span class="keyword">the</span> coefficients <span class="keyword">and</span> problem parameters <span class="keyword">of</span> <span class="keyword">a</span></div><div class="line">cfit <span class="keyword">or</span> sfit, e.g., <span class="string">'f.p'</span>.</div></pre></td></tr></table></figure></p>
+<p>matlab 对数据做完三次样条拟合后的数据为<code>cfit</code>类型，是一种拟合的数据体，虽然此数据体可直接通过<br>plot函数绘制出来，但往往我们需要对其中的数据进行进一步的操作。因此，需要对<code>cfit</code>类型进行一定的<br>了解。通过一次简单地试错，我们发现cfit类型的数据有一个子参数p.</p>
+<a id="more"></a>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; fitresult.q</div><div class="line">错误使用 cfit/subsref (<span class="built_in">line</span> <span class="number">18</span>)</div><div class="line">The name <span class="string">'q'</span> is <span class="keyword">not</span> <span class="keyword">a</span> coefficient <span class="keyword">or</span> <span class="keyword">a</span> problem parameter.  You can only use dot notation <span class="built_in">to</span> access <span class="keyword">the</span> coefficients <span class="keyword">and</span> problem parameters <span class="keyword">of</span> <span class="keyword">a</span></div><div class="line">cfit <span class="keyword">or</span> sfit, e.g., <span class="string">'f.p'</span>.</div></pre></td></tr></table></figure>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> <span class="class"><span class="keyword">class</span>(<span class="title">fitresult</span>.<span class="title">p</span>)</span></div><div class="line"></div><div class="line">ans =</div><div class="line"></div><div class="line">struct</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;</span> fitresult.p</div><div class="line"></div><div class="line">ans =</div><div class="line"></div><div class="line">      <span class="symbol">form:</span> <span class="string">'pp'</span></div><div class="line">    <span class="symbol">breaks:</span> [<span class="number">1</span>x84 double]</div><div class="line">     <span class="symbol">coefs:</span> [<span class="number">83</span>x4 double]</div><div class="line">    <span class="symbol">pieces:</span> <span class="number">83</span></div><div class="line">     <span class="symbol">order:</span> <span class="number">4</span></div><div class="line">       <span class="symbol">dim:</span> <span class="number">1</span></div></pre></td></tr></table></figure>
-<p>上述实验表明cfit数据的本质为一个problem，因而其含有参数p. 其p参数是一个<code>struct</code>,<code>struct</code>含有<code>form</code>等参数，用于指定所采用的拟合函数的类型，以及对应的一些系数等。<br>对于三次样条拟合，<br>我们可通过函数<code>ppval</code>来计算出给定一个自变量<code>xq</code>对应的函数值<code>yq</code>.<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">xq</span> = linspace(0,100,500);</div><div class="line"><span class="attribute">yq</span> = ppval(fitresult.p, xq);</div></pre></td></tr></table></figure></p>
+<p>上述实验表明cfit数据的本质为一个problem，因而其含有参数p. 其p参数是一个<code>struct</code>,<code>struct</code><br>含有<code>form</code>等参数，用于指定所采用的拟合函数的类型，以及对应的一些系数等。对于三次样条拟合，我们可<br>通过函数<code>ppval</code>来计算出给定一个自变量<code>xq</code>对应的函数值<code>yq</code>.<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">xq</span> = linspace(0,100,500);</div><div class="line"><span class="attribute">yq</span> = ppval(fitresult.p, xq);</div></pre></td></tr></table></figure></p>
 <p>xq 和 yq 即为原数据(x1,y1)进行三次样条拟合后的数据集。</p>
 
       
