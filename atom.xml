@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nicklinyi.github.io/"/>
-  <updated>2018-05-17T04:08:17.573Z</updated>
+  <updated>2018-05-17T04:14:39.135Z</updated>
   <id>https://nicklinyi.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/05/matlab4DPlot.html"/>
     <id>https://nicklinyi.github.io//blog/2018/05/matlab4DPlot.html</id>
     <published>2018-05-17T00:57:57.000Z</published>
-    <updated>2018-05-17T04:08:17.573Z</updated>
+    <updated>2018-05-17T04:14:39.135Z</updated>
     
     <content type="html">&lt;h3 id=&quot;绘图基础&quot;&gt;&lt;a href=&quot;#绘图基础&quot; class=&quot;headerlink&quot; title=&quot;绘图基础&quot;&gt;&lt;/a&gt;绘图基础&lt;/h3&gt;&lt;p&gt;首先，需要知道的是matlab三维图的默认坐标轴的位置：面向大家的是 y-z平面，侧面是 x-z 平面，顶底是 x-y 平面。如下图所示&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -37,6 +37,7 @@
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-4c2ef45ea1c431aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;图3.png&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;完善细节&quot;&gt;&lt;a href=&quot;#完善细节&quot; class=&quot;headerlink&quot; title=&quot;完善细节&quot;&gt;&lt;/a&gt;完善细节&lt;/h3&gt;&lt;p&gt;图3的主要缺陷是x轴与y轴的label位置未与坐标轴平行，调整的方式为，可将label进行一定程度地旋转，使其与坐标轴平行。&lt;br&gt;&lt;figure class=&quot;highlight lisp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;x1 = xlabel(&#39;x (&lt;span class=&quot;name&quot;&gt;km&lt;/span&gt;)&#39;)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;y1 = ylabel(&#39;y (&lt;span class=&quot;name&quot;&gt;km&lt;/span&gt;)&#39;)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;set(&lt;span class=&quot;name&quot;&gt;x1&lt;/span&gt;,&#39;Rotation&#39;,&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;set(&lt;span class=&quot;name&quot;&gt;y1&lt;/span&gt;,&#39;Rotation&#39;,&lt;span class=&quot;number&quot;&gt;-20&lt;/span&gt;)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;旋转之后的效果见图4&lt;br&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-14f2cb47869ba626.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;图4.png&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference:&quot;&gt;&lt;/a&gt;Reference:&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_618af1950100eyjn.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.sina.com.cn/s/blog_618af1950100eyjn.html&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://muchong.com/html/201206/4636839.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://muchong.com/html/201206/4636839.html&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -542,9 +543,9 @@ $ scons
       <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
-    
       <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
+    
+      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
     
   </entry>
   
@@ -579,9 +580,9 @@ $ scons
       <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
-    
       <category term="SCons" scheme="https://nicklinyi.github.io/tags/SCons/"/>
+    
+      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
     
   </entry>
   
@@ -706,9 +707,9 @@ Argument list to give program being debugged when it is started is &amp;quot;fil
       <category term="地震学软件" scheme="https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
-    
       <category term="RSF" scheme="https://nicklinyi.github.io/tags/RSF/"/>
+    
+      <category term="Madagascar" scheme="https://nicklinyi.github.io/tags/Madagascar/"/>
     
   </entry>
   
