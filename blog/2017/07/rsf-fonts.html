@@ -2,15 +2,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -38,10 +50,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -50,49 +58,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Madagascar,Plot," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Nick@Seis" type="application/atom+xml" />
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
 
 
 
 
 
 
-<meta name="description" content="背景介绍Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位于$RSFSRC/build/pens/fonts下，后缀为.bin。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。 环境变量设置编辑$RSFROOT/share/madagascar/etc/env.sh或$RSFROO">
-<meta name="keywords" content="Madagascar,Plot">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Madagascar绘图字体以及特殊符号的处理">
-<meta property="og:url" content="https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html">
-<meta property="og:site_name" content="Nick@Seis">
-<meta property="og:description" content="背景介绍Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位于$RSFSRC/build/pens/fonts下，后缀为.bin。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。 环境变量设置编辑$RSFROOT/share/madagascar/etc/env.sh或$RSFROO">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-13T12:09:00.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Madagascar绘图字体以及特殊符号的处理">
-<meta name="twitter:description" content="背景介绍Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位于$RSFSRC/build/pens/fonts下，后缀为.bin。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。 环境变量设置编辑$RSFROOT/share/madagascar/etc/env.sh或$RSFROO">
 
 
 
@@ -101,15 +85,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
+    version: '6.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -121,12 +103,40 @@
 </script>
 
 
+  
+
+
+
+
+  <meta name="description" content="背景介绍Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位于$RSFSRC/build/pens/fonts下，后缀为.bin。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。 环境变量设置编辑$RSFROOT/share/madagascar/etc/env.sh或$RSFROO">
+<meta name="keywords" content="Madagascar,Plot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Madagascar绘图字体以及特殊符号的处理">
+<meta property="og:url" content="https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html">
+<meta property="og:site_name" content="Nick@Seis">
+<meta property="og:description" content="背景介绍Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位于$RSFSRC/build/pens/fonts下，后缀为.bin。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。 环境变量设置编辑$RSFROOT/share/madagascar/etc/env.sh或$RSFROO">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-13T12:09:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Madagascar绘图字体以及特殊符号的处理">
+<meta name="twitter:description" content="背景介绍Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位于$RSFSRC/build/pens/fonts下，后缀为.bin。且该目录十分重要，需要在环境变量中进行设置，否则绘图的时候会出现找不到该字体的现象。 环境变量设置编辑$RSFROOT/share/madagascar/etc/env.sh或$RSFROO">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nick@Seis" type="application/atom+xml" />
+
+
+
 
   <link rel="canonical" href="https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html"/>
 
 
 
-
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Madagascar绘图字体以及特殊符号的处理 | Nick@Seis</title>
   
@@ -138,9 +148,37 @@
 
 
 
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -156,19 +194,21 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Nick@Seis</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">Explore the Earth</p>
       
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -176,106 +216,93 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-links">
-          <a href="/links.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
-            
-            链接
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-install">
-          <a href="/awesome-installation/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-cog"></i> <br />
-            
-            安装
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
         
-        <li class="menu-item menu-item-wiki">
-          <a href="/wiki/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-wikipedia-w"></i> <br />
-            
-            维基
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+    <a href="/links.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-link"></i> <br />链接</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-install">
+    <a href="/awesome-installation/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-cog"></i> <br />安装</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-wiki">
+    <a href="/wiki/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-wikipedia-w"></i> <br />维基</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
 
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
         </li>
       
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -306,12 +333,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -324,6 +359,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -333,8 +370,8 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nick">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="Seismology">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -346,11 +383,19 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Madagascar绘图字体以及特殊符号的处理</h1>
+          <h1 class="post-title" itemprop="name headline">Madagascar绘图字体以及特殊符号的处理
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -358,13 +403,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T12:47:24+08:00">
-                2017-07-26
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-26 12:47:24" itemprop="dateCreated datePublished" datetime="2017-07-26T12:47:24+08:00">2017-07-26</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-08-13 20:09:00" itemprop="dateModified" datetime="2017-08-13T20:09:00+08:00">2017-08-13</time>
+              
             
           </span>
 
@@ -380,11 +442,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/地震学软件/" itemprop="url" rel="index">
-                    <span itemprop="name">地震学软件</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/地震学软件/" itemprop="url" rel="index"><span itemprop="name">地震学软件</span></a></span>
 
                 
                 
@@ -400,6 +458,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/blog/2017/07/rsf-fonts.html#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="/blog/2017/07/rsf-fonts.html" itemprop="commentCount"></span>
                 </a>
@@ -412,42 +471,14 @@
 
           
             <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
             <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  428
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
           
 
           
@@ -485,6 +516,9 @@ $ scons
 
       
     </div>
+
+    
+
     
     
     
@@ -526,17 +560,13 @@ $ scons
       <div>
         <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    Nick
-  </li>
+    <strong>本文作者： </strong>Nick</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     <a href="https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html" title="Madagascar绘图字体以及特殊符号的处理">https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-  </li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -599,9 +629,6 @@ $ scons
           </div>
           
 
-
-          
-
   
     <div class="comments" id="comments">
       <div id="disqus_thread">
@@ -649,50 +676,114 @@ $ scons
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="Nick" />
-            
               <p class="site-author-name" itemprop="name">Nick</p>
               <p class="site-description motion-element" itemprop="description">Seismology</p>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">22</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
             <div class="feed-link motion-element">
@@ -711,6 +802,9 @@ $ scons
           
           
 
+          
+            
+          
           
 
         </div>
@@ -747,25 +841,20 @@ $ scons
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Nick</span>
 
   
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">站点字数统计&#58;</span>
-    
-    <span title="站点字数统计">11.4k</span>
+
   
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.6.0</div>
 
 
 
@@ -773,7 +862,7 @@ $ scons
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
 
 
 
@@ -783,21 +872,20 @@ $ scons
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv">
+    <span class="site-uv" title="总访客量">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
     </span>
   
 
   
-    <span class="site-pv">
+    <span class="site-pv" title="总访问量">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
     </span>
   
 </div>
+
 
 
 
@@ -837,7 +925,11 @@ $ scons
 
 
 
-  
+
+
+
+
+
 
 
 
@@ -857,16 +949,6 @@ $ scons
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -875,18 +957,13 @@ $ scons
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
 
 
 
@@ -894,42 +971,43 @@ $ scons
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
 
 
 
   
 
-
+  
+    <script id="dsq-count-scr" src="https://githubnick.disqus.com/count.js" async></script>
   
 
-    
-      <script id="dsq-count-scr" src="https://githubnick.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html';
-          this.page.identifier = '/blog/2017/07/rsf-fonts.html';
-          this.page.title = 'Madagascar绘图字体以及特殊符号的处理';
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://nicklinyi.github.io/blog/2017/07/rsf-fonts.html';
+        this.page.identifier = '/blog/2017/07/rsf-fonts.html';
+        this.page.title = 'Madagascar绘图字体以及特殊符号的处理';
         };
+      function loadComments () {
         var d = document, s = d.createElement('script');
         s.src = 'https://githubnick.disqus.com/embed.js';
         s.setAttribute('data-timestamp', '' + +new Date());
         (d.head || d.body).appendChild(s);
-      </script>
-    
-
+      }
+      
+        loadComments();
+      
+    </script>
   
+
 
 
 
@@ -941,8 +1019,6 @@ $ scons
 
 
   
-
-
 
 
 
@@ -1006,6 +1082,8 @@ $ scons
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -1039,6 +1117,7 @@ $ scons
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
                 var articleUrl = decodeURIComponent(data.url);
                 var indexOfTitle = [];
@@ -1289,27 +1368,18 @@ $ scons
 
   
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+
+  
+  
+
+  
+
+  
+
+  
 
   
 
