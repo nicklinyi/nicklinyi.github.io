@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nicklinyi.github.io/"/>
-  <updated>2018-05-17T04:14:39.135Z</updated>
+  <updated>2018-05-18T02:20:36.445Z</updated>
   <id>https://nicklinyi.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/05/matlab4DPlot.html"/>
     <id>https://nicklinyi.github.io//blog/2018/05/matlab4DPlot.html</id>
     <published>2018-05-17T00:57:57.000Z</published>
-    <updated>2018-05-17T04:14:39.135Z</updated>
+    <updated>2018-05-18T02:20:36.445Z</updated>
     
     <content type="html">&lt;h3 id=&quot;绘图基础&quot;&gt;&lt;a href=&quot;#绘图基础&quot; class=&quot;headerlink&quot; title=&quot;绘图基础&quot;&gt;&lt;/a&gt;绘图基础&lt;/h3&gt;&lt;p&gt;首先，需要知道的是matlab三维图的默认坐标轴的位置：面向大家的是 y-z平面，侧面是 x-z 平面，顶底是 x-y 平面。如下图所示&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -58,7 +58,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/05/matlabFit.html"/>
     <id>https://nicklinyi.github.io//blog/2018/05/matlabFit.html</id>
     <published>2018-05-14T00:57:57.000Z</published>
-    <updated>2018-05-14T06:50:19.668Z</updated>
+    <updated>2018-05-18T02:20:34.938Z</updated>
     
     <content type="html">&lt;p&gt;首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将&lt;br&gt;其拟合结果存为&lt;code&gt;fitresult&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-7a0117878e8a5b17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;拟合曲线&quot;&gt;&lt;/p&gt;
