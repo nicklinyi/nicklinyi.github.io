@@ -6,10 +6,19 @@
     <description>Recent content on Lloyd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 May 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://nicklinyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>链接</title>
+      <link>https://nicklinyi.github.io/links/</link>
+      <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/links/</guid>
+      <description>正演模拟 谱元法 SPECFEM1D - Spectral element seismic modelling code in 1D media SPECFEM2D - Spectral element seismic modelling code in 2D Cartesian Coordinates SPECFEM3D - Spectral element seismic modelling code in 3D Cartesian Coordinates SPECFEM3D_GLOBE - Spectral element seismic modelling code in 3D Spherical Coordinates 有限差分 Seismic 2D/3D modelling FD codes SOFI from KIT Seismic CPML 2D/3D FD modelling codes for visco-</description>
+    </item>
     
     <item>
       <title>关于</title>
