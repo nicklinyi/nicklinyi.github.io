@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nicklinyi.github.io/"/>
-  <updated>2018-05-18T02:20:36.445Z</updated>
+  <updated>2018-05-18T02:20:36.444Z</updated>
   <id>https://nicklinyi.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/05/matlab4DPlot.html"/>
     <id>https://nicklinyi.github.io//blog/2018/05/matlab4DPlot.html</id>
     <published>2018-05-17T00:57:57.000Z</published>
-    <updated>2018-05-18T02:20:36.445Z</updated>
+    <updated>2018-05-18T02:20:36.444Z</updated>
     
     <content type="html">&lt;h3 id=&quot;绘图基础&quot;&gt;&lt;a href=&quot;#绘图基础&quot; class=&quot;headerlink&quot; title=&quot;绘图基础&quot;&gt;&lt;/a&gt;绘图基础&lt;/h3&gt;&lt;p&gt;首先，需要知道的是matlab三维图的默认坐标轴的位置：面向大家的是 y-z平面，侧面是 x-z 平面，顶底是 x-y 平面。如下图所示&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -58,7 +58,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/05/matlabFit.html"/>
     <id>https://nicklinyi.github.io//blog/2018/05/matlabFit.html</id>
     <published>2018-05-14T00:57:57.000Z</published>
-    <updated>2018-05-18T02:20:34.938Z</updated>
+    <updated>2018-05-18T02:20:34.937Z</updated>
     
     <content type="html">&lt;p&gt;首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将&lt;br&gt;其拟合结果存为&lt;code&gt;fitresult&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/1703880-7a0117878e8a5b17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;拟合曲线&quot;&gt;&lt;/p&gt;
@@ -90,7 +90,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/05/matlabColorbar.html"/>
     <id>https://nicklinyi.github.io//blog/2018/05/matlabColorbar.html</id>
     <published>2018-05-09T00:57:57.000Z</published>
-    <updated>2018-05-14T06:45:38.853Z</updated>
+    <updated>2018-05-14T06:45:38.852Z</updated>
     
     <content type="html">&lt;p&gt;通常情况下，matlab绘出的色标主要存在两个问题：1色标的宽度太宽；2色标的高度太高。为了绘制更美观的图像，这里深入研究了一下色标的大小调整方法。&lt;/p&gt;
 &lt;p&gt;1.如何修改色标的大小，以及控制色标在图片中的位置？&lt;br&gt;&lt;figure class=&quot;highlight lsl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fig=figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fig.Units=&#39;inch&#39;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fig.Position=[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3.5&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;imagesc(linspace(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;201&lt;/span&gt;),linspace(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;250&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;600&lt;/span&gt;),Mask), axis ij&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;set(gca,&#39;xaxislocation&#39;,&#39;top&#39;,&#39;Fontsize&#39;,&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &#39;TickDir&#39;,&#39;out&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ax=gca;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ax.Position = [&lt;span class=&quot;number&quot;&gt;0.2&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.65&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.75&lt;/span&gt;] %控制坐标轴的位置，以及长宽比&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;c = colorbar;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;c.Position = [&lt;span class=&quot;number&quot;&gt;0.88&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.22&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.025&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;]; %控制色标的位置以及长宽比&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;colormap(jet);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&#39;Normalized Wavenumber&#39;,&#39;FontSize&#39;,&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;),ylabel(&#39;Frequency (Hz)&#39;,&#39;FontSize&#39;,&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;% set(gcf,&#39;PaperPosition&#39;,[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print -r300 -dtiff spectra.tif&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -125,7 +125,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/04/Hoare-algorithm.html"/>
     <id>https://nicklinyi.github.io//blog/2018/04/Hoare-algorithm.html</id>
     <published>2018-04-30T05:08:28.000Z</published>
-    <updated>2018-04-30T11:42:06.171Z</updated>
+    <updated>2018-04-30T11:42:06.170Z</updated>
     
     <content type="html">&lt;p&gt;快速选择算法通常用来在未排序的数组中寻找第k小/第k大的元素。其方法类似于快速排序。快速选择和快速排序都是Tony Hoare发明的，因此也称为Hoare’s algorithm。&lt;/p&gt;
 &lt;p&gt;下面是Madagascar中对快速选择算法的实现部分：&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sf_quantile&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; q    &lt;span class=&quot;comment&quot;&gt;/* quantile */&lt;/span&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;		  &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; n    &lt;span class=&quot;comment&quot;&gt;/* array length */&lt;/span&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;		  &lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;* a &lt;span class=&quot;comment&quot;&gt;/* array [n] */&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*&amp;lt; find quantile (caution: a is changed) &amp;gt;*/&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt; *i, *j, ak, *low, *hi, buf, *k;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    low=a;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    hi=a+n&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    k=a+q;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (low&amp;lt;hi) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    ak = *k;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    i = low; j = hi;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 找出a[i]&amp;gt;=ak 时的i值&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	      &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (*i &amp;lt; ak) i++;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 找出a[j]&amp;gt;=ak 时的j值     &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	      &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (*j &amp;gt; ak) j--;   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 交换 a[i]与a[j]的值，并移动i和j  &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (i&amp;lt;=j) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		      buf = *i;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		      (*i)++ = *j;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		      (*j)-- = buf;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (i&amp;lt;=j);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// 更新low 和 hi&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (j&amp;lt;k) low = i;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (k&amp;lt;i) hi = j;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (*k);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -154,7 +154,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/04/seismic-wavelet.html"/>
     <id>https://nicklinyi.github.io//blog/2018/04/seismic-wavelet.html</id>
     <published>2018-04-27T05:08:28.000Z</published>
-    <updated>2018-04-27T12:11:50.687Z</updated>
+    <updated>2018-04-27T12:11:50.686Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;主要记录下常用各种子波函数以及对应的图形。&lt;/p&gt;
 &lt;h2 id=&quot;Ricker子波&quot;&gt;&lt;a href=&quot;#Ricker子波&quot; class=&quot;headerlink&quot; title=&quot;Ricker子波&quot;&gt;&lt;/a&gt;Ricker子波&lt;/h2&gt;&lt;p&gt;$$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$&lt;/p&gt;
@@ -192,7 +192,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/04/linear-events.html"/>
     <id>https://nicklinyi.github.io//blog/2018/04/linear-events.html</id>
     <published>2018-04-24T05:08:28.000Z</published>
-    <updated>2018-04-24T07:34:36.885Z</updated>
+    <updated>2018-04-24T07:34:36.884Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。&lt;/p&gt;
 &lt;h2 id=&quot;线性地震事件合成步骤&quot;&gt;&lt;a href=&quot;#线性地震事件合成步骤&quot; class=&quot;headerlink&quot; title=&quot;线性地震事件合成步骤&quot;&gt;&lt;/a&gt;线性地震事件合成步骤&lt;/h2&gt;&lt;h3 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h3&gt;&lt;p&gt;这里采用SAIG组开发的SeismicLab中公开的代码&lt;code&gt;linear_events.m&lt;/code&gt;来进行线性地震数据的合成。&lt;br&gt;由于该代码中默认是要添加随机噪音的，有时候我们并不需要添加随机噪音的数据，因此，我对源程序进行了修改，将添加噪音的部分删除了，&lt;a href=&quot;https://github.com/nicklinyi/seismic_utils/tree/master/synthetics/linear_events.m&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点击这里查看具体的代码内容&lt;/a&gt;。&lt;/p&gt;
@@ -223,7 +223,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/04/macOS-ntfs.html"/>
     <id>https://nicklinyi.github.io//blog/2018/04/macOS-ntfs.html</id>
     <published>2018-04-06T00:57:57.000Z</published>
-    <updated>2018-04-28T00:46:10.096Z</updated>
+    <updated>2018-04-28T00:46:10.095Z</updated>
     
     <content type="html">&lt;p&gt;Mac本身是支持NTFS写入的，只是NTFS是微软开发，由于版权和技术细节原因，苹果不愿公开说自己支持NTFS写入，也是有自己以后可能不支持NTFS写入的考量。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -264,7 +264,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/03/rsf-plot.html"/>
     <id>https://nicklinyi.github.io//blog/2018/03/rsf-plot.html</id>
     <published>2018-03-31T00:57:57.000Z</published>
-    <updated>2018-03-31T10:59:42.033Z</updated>
+    <updated>2018-03-31T10:59:42.032Z</updated>
     
     <content type="html">&lt;h2 id=&quot;波形图&quot;&gt;&lt;a href=&quot;#波形图&quot; class=&quot;headerlink&quot; title=&quot;波形图&quot;&gt;&lt;/a&gt;波形图&lt;/h2&gt;&lt;p&gt;比如，绘制子波形态，单道地震记录等。采用&lt;code&gt;sfgraph&lt;/code&gt;来绘图，类似与Matlab的&lt;code&gt;plot&lt;/code&gt;命令。&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# plot wavelet&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; rsf.proj &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; *&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;par=&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;waveplot&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(custom,par)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;&#39;&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    graph title=&quot;&quot; min1=%g min2=0 max2=+1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    plotfat=5 plotcol=5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    label1=%s unit1=%s&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    label2=&quot;Amplitude&quot; unit2=&quot;&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    parallel2=n screenratio=0.5 screenht=7&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    %s&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;    &#39;&#39;&#39;&lt;/span&gt; % (par[&lt;span class=&quot;string&quot;&gt;&#39;oxx&#39;&lt;/span&gt;],par[&lt;span class=&quot;string&quot;&gt;&#39;lxx&#39;&lt;/span&gt;],par[&lt;span class=&quot;string&quot;&gt;&#39;uxx&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;           par[&lt;span class=&quot;string&quot;&gt;&#39;labelattr&#39;&lt;/span&gt;]+&lt;span class=&quot;string&quot;&gt;&#39; &#39;&lt;/span&gt;+custom)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;par[&lt;span class=&quot;string&quot;&gt;&#39;labelattr&#39;&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&#39; parallel2=n labelsz=6 labelfat=3 titlesz=12 titlefat=3 &#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;par[&lt;span class=&quot;string&quot;&gt;&#39;lxx&#39;&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;par[&lt;span class=&quot;string&quot;&gt;&#39;uxx&#39;&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&#39;m&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;par[&lt;span class=&quot;string&quot;&gt;&#39;oxx&#39;&lt;/span&gt;]= &lt;span class=&quot;number&quot;&gt;0.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Result(&lt;span class=&quot;string&quot;&gt;&#39;wav&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;transp |&#39;&lt;/span&gt; + waveplot(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;,par))&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;说明&lt;code&gt;wav&lt;/code&gt;为绘图的数据，其维度必须为1xn2的形式。&lt;/strong&gt;&lt;/p&gt;
@@ -310,7 +310,7 @@
     <link href="https://nicklinyi.github.io//blog/2018/02/boot-partition.html"/>
     <id>https://nicklinyi.github.io//blog/2018/02/boot-partition.html</id>
     <published>2018-02-04T00:57:57.000Z</published>
-    <updated>2018-04-28T01:52:05.327Z</updated>
+    <updated>2018-04-28T01:52:05.326Z</updated>
     
     <content type="html">&lt;p&gt;由于之前装机时 &lt;code&gt;/boot&lt;/code&gt; 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 &lt;code&gt;/boot&lt;/code&gt; 空间不足， 然后发现 &lt;code&gt;/boot&lt;/code&gt;下有两个系统内核文件，一个 44M 左右， 再加上一些其他的文件，加起来足足占了 70% 的使用空间，后期如果再更新系统，将会十分不便。因此想到了扩大 &lt;code&gt;/boot&lt;/code&gt; 空间。&lt;/p&gt;
 &lt;p&gt;网上的一些博文都是简单的介绍了如何增大&lt;code&gt;/boot&lt;/code&gt;, 没有提供一个详细的步骤，这里总结了各大博文的精华之处，整理出来供大家参考。&lt;/p&gt;
@@ -520,7 +520,7 @@ $ scons
     <link href="https://nicklinyi.github.io//blog/2017/01/rsf-print-log.html"/>
     <id>https://nicklinyi.github.io//blog/2017/01/rsf-print-log.html</id>
     <published>2017-01-12T02:47:24.000Z</published>
-    <updated>2018-04-24T07:17:23.172Z</updated>
+    <updated>2018-04-24T07:17:23.171Z</updated>
     
     <content type="html">&lt;h2 id=&quot;为什么要输出日志文件？&quot;&gt;&lt;a href=&quot;#为什么要输出日志文件？&quot; class=&quot;headerlink&quot; title=&quot;为什么要输出日志文件？&quot;&gt;&lt;/a&gt;为什么要输出日志文件？&lt;/h2&gt;&lt;p&gt;输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。&lt;/p&gt;
 &lt;p&gt;程序运行时有些信息如程序运行时间，剩余运行时间等一般情况下需要打印在屏幕上，以便使用者能预估程序运行时间。另外一些信息如具体的参数信息，某个变量的输出值等信息可以既打印在屏幕上，同时又输出到日志文件中，方便以后对其进行分析处理。&lt;/p&gt;
@@ -669,7 +669,7 @@ Argument list to give program being debugged when it is started is &amp;quot;fil
     <link href="https://nicklinyi.github.io//blog/2016/06/rsf-data-handle.html"/>
     <id>https://nicklinyi.github.io//blog/2016/06/rsf-data-handle.html</id>
     <published>2016-06-15T05:43:37.000Z</published>
-    <updated>2018-04-24T07:16:56.851Z</updated>
+    <updated>2018-04-24T07:16:56.850Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Why&quot;&gt;&lt;a href=&quot;#Why&quot; class=&quot;headerlink&quot; title=&quot;Why?&quot;&gt;&lt;/a&gt;Why?&lt;/h2&gt;&lt;p&gt;我们都知道 Madagascar 的数据和道头是放置在不同的位置，然后在道头里通过指针指向数据文件的实际位置。这样做的好处有一下几点:&lt;/p&gt;
 &lt;ul&gt;
@@ -749,7 +749,7 @@ Argument list to give program being debugged when it is started is &amp;quot;fil
     <link href="https://nicklinyi.github.io//blog/2016/05/su-scons-together.html"/>
     <id>https://nicklinyi.github.io//blog/2016/05/su-scons-together.html</id>
     <published>2016-05-26T02:47:24.000Z</published>
-    <updated>2018-04-24T07:16:46.787Z</updated>
+    <updated>2018-04-24T07:16:46.786Z</updated>
     
     <content type="html">&lt;p&gt;最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题：&lt;/p&gt;
 &lt;ol&gt;
