@@ -1,238 +1,238 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Even - A super concise theme for Hugo</title>
-    <link>https://nicklilinyi.github.io/tags/</link>
-    <description>Recent content in Tags on Even - A super concise theme for Hugo</description>
+    <title>Tags on Lloyd</title>
+    <link>https://nicklinyi.github.io/tags/</link>
+    <description>Recent content in Tags on Lloyd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 09 May 2018 08:57:57 +0000</lastBuildDate>
     
-	<atom:link href="https://nicklilinyi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nicklinyi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Colorbar</title>
-      <link>https://nicklilinyi.github.io/tags/colorbar/</link>
+      <link>https://nicklinyi.github.io/tags/colorbar/</link>
       <pubDate>Wed, 09 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/colorbar/</guid>
+      <guid>https://nicklinyi.github.io/tags/colorbar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EAGE</title>
-      <link>https://nicklilinyi.github.io/tags/eage/</link>
+      <link>https://nicklinyi.github.io/tags/eage/</link>
       <pubDate>Thu, 28 Sep 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/eage/</guid>
+      <guid>https://nicklinyi.github.io/tags/eage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GMT</title>
-      <link>https://nicklilinyi.github.io/tags/gmt/</link>
+      <link>https://nicklinyi.github.io/tags/gmt/</link>
       <pubDate>Sat, 28 Oct 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/gmt/</guid>
+      <guid>https://nicklinyi.github.io/tags/gmt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gdb</title>
-      <link>https://nicklilinyi.github.io/tags/gdb/</link>
+      <link>https://nicklinyi.github.io/tags/gdb/</link>
       <pubDate>Thu, 23 Jun 2016 16:45:30 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/gdb/</guid>
+      <guid>https://nicklinyi.github.io/tags/gdb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Latex</title>
-      <link>https://nicklilinyi.github.io/tags/latex/</link>
+      <link>https://nicklinyi.github.io/tags/latex/</link>
       <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/latex/</guid>
+      <guid>https://nicklinyi.github.io/tags/latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://nicklilinyi.github.io/tags/linux/</link>
+      <link>https://nicklinyi.github.io/tags/linux/</link>
       <pubDate>Sat, 17 Dec 2016 16:45:30 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/linux/</guid>
+      <guid>https://nicklinyi.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://nicklilinyi.github.io/tags/linux/</link>
+      <link>https://nicklinyi.github.io/tags/linux/</link>
       <pubDate>Sat, 17 Dec 2016 16:45:30 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/linux/</guid>
+      <guid>https://nicklinyi.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MacOS</title>
-      <link>https://nicklilinyi.github.io/tags/macos/</link>
+      <link>https://nicklinyi.github.io/tags/macos/</link>
       <pubDate>Fri, 06 Apr 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/macos/</guid>
+      <guid>https://nicklinyi.github.io/tags/macos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Madagascar</title>
-      <link>https://nicklilinyi.github.io/tags/madagascar/</link>
+      <link>https://nicklinyi.github.io/tags/madagascar/</link>
       <pubDate>Thu, 28 Sep 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/madagascar/</guid>
+      <guid>https://nicklinyi.github.io/tags/madagascar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Madagascar</title>
-      <link>https://nicklilinyi.github.io/tags/madagascar/</link>
+      <link>https://nicklinyi.github.io/tags/madagascar/</link>
       <pubDate>Thu, 28 Sep 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/madagascar/</guid>
+      <guid>https://nicklinyi.github.io/tags/madagascar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Matlab</title>
-      <link>https://nicklilinyi.github.io/tags/matlab/</link>
+      <link>https://nicklinyi.github.io/tags/matlab/</link>
       <pubDate>Thu, 17 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/matlab/</guid>
+      <guid>https://nicklinyi.github.io/tags/matlab/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ntfs</title>
-      <link>https://nicklilinyi.github.io/tags/ntfs/</link>
+      <link>https://nicklinyi.github.io/tags/ntfs/</link>
       <pubDate>Fri, 06 Apr 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/ntfs/</guid>
+      <guid>https://nicklinyi.github.io/tags/ntfs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Paper</title>
-      <link>https://nicklilinyi.github.io/tags/paper/</link>
+      <link>https://nicklinyi.github.io/tags/paper/</link>
       <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/paper/</guid>
+      <guid>https://nicklinyi.github.io/tags/paper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Plot</title>
-      <link>https://nicklilinyi.github.io/tags/plot/</link>
+      <link>https://nicklinyi.github.io/tags/plot/</link>
       <pubDate>Wed, 26 Jul 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/plot/</guid>
+      <guid>https://nicklinyi.github.io/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RSF</title>
-      <link>https://nicklilinyi.github.io/tags/rsf/</link>
+      <link>https://nicklinyi.github.io/tags/rsf/</link>
       <pubDate>Wed, 15 Jun 2016 13:43:37 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/rsf/</guid>
+      <guid>https://nicklinyi.github.io/tags/rsf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SCons</title>
-      <link>https://nicklilinyi.github.io/tags/scons/</link>
+      <link>https://nicklinyi.github.io/tags/scons/</link>
       <pubDate>Thu, 12 Jan 2017 10:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/scons/</guid>
+      <guid>https://nicklinyi.github.io/tags/scons/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SEG</title>
-      <link>https://nicklilinyi.github.io/tags/seg/</link>
+      <link>https://nicklinyi.github.io/tags/seg/</link>
       <pubDate>Thu, 28 Sep 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/seg/</guid>
+      <guid>https://nicklinyi.github.io/tags/seg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SPECFEM2D</title>
-      <link>https://nicklilinyi.github.io/tags/specfem2d/</link>
+      <link>https://nicklinyi.github.io/tags/specfem2d/</link>
       <pubDate>Sat, 28 Oct 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/specfem2d/</guid>
+      <guid>https://nicklinyi.github.io/tags/specfem2d/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SU</title>
-      <link>https://nicklilinyi.github.io/tags/su/</link>
+      <link>https://nicklinyi.github.io/tags/su/</link>
       <pubDate>Thu, 26 May 2016 10:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/su/</guid>
+      <guid>https://nicklinyi.github.io/tags/su/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vim</title>
-      <link>https://nicklilinyi.github.io/tags/vim/</link>
+      <link>https://nicklinyi.github.io/tags/vim/</link>
       <pubDate>Tue, 24 May 2016 16:15:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/vim/</guid>
+      <guid>https://nicklinyi.github.io/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>合成数据</title>
-      <link>https://nicklilinyi.github.io/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/</link>
+      <link>https://nicklinyi.github.io/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Tue, 24 Apr 2018 13:08:28 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://nicklinyi.github.io/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>地震子波</title>
-      <link>https://nicklilinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/</link>
+      <link>https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/</link>
       <pubDate>Fri, 27 Apr 2018 13:08:28 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/</guid>
+      <guid>https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>快速选择</title>
-      <link>https://nicklilinyi.github.io/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/</link>
+      <link>https://nicklinyi.github.io/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/</link>
       <pubDate>Mon, 30 Apr 2018 13:08:28 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/</guid>
+      <guid>https://nicklinyi.github.io/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数据</title>
-      <link>https://nicklilinyi.github.io/tags/%E6%95%B0%E6%8D%AE/</link>
+      <link>https://nicklinyi.github.io/tags/%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Thu, 09 Jun 2016 13:08:28 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://nicklinyi.github.io/tags/%E6%95%B0%E6%8D%AE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>绘图</title>
-      <link>https://nicklilinyi.github.io/tags/%E7%BB%98%E5%9B%BE/</link>
+      <link>https://nicklinyi.github.io/tags/%E7%BB%98%E5%9B%BE/</link>
       <pubDate>Sat, 31 Mar 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/tags/%E7%BB%98%E5%9B%BE/</guid>
+      <guid>https://nicklinyi.github.io/tags/%E7%BB%98%E5%9B%BE/</guid>
       <description></description>
     </item>
     

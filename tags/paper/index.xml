@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Paper on Even - A super concise theme for Hugo</title>
-    <link>https://nicklilinyi.github.io/tags/paper/</link>
-    <description>Recent content in Paper on Even - A super concise theme for Hugo</description>
+    <title>Paper on Lloyd</title>
+    <link>https://nicklinyi.github.io/tags/paper/</link>
+    <description>Recent content in Paper on Lloyd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 May 2016 08:57:57 +0000</lastBuildDate>
     
-	<atom:link href="https://nicklilinyi.github.io/tags/paper/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nicklinyi.github.io/tags/paper/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Madagascar下使用latex</title>
-      <link>https://nicklilinyi.github.io/post/2016-05-24-rsf-use-latex/</link>
+      <link>https://nicklinyi.github.io/post/2016-05-24-rsf-use-latex/</link>
       <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/post/2016-05-24-rsf-use-latex/</guid>
+      <guid>https://nicklinyi.github.io/post/2016-05-24-rsf-use-latex/</guid>
       <description>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，cd到book目录下</description>
     </item>
     

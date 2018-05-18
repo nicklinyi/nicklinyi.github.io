@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Colorbar on Even - A super concise theme for Hugo</title>
-    <link>https://nicklilinyi.github.io/tags/colorbar/</link>
-    <description>Recent content in Colorbar on Even - A super concise theme for Hugo</description>
+    <title>Colorbar on Lloyd</title>
+    <link>https://nicklinyi.github.io/tags/colorbar/</link>
+    <description>Recent content in Colorbar on Lloyd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 09 May 2018 08:57:57 +0000</lastBuildDate>
     
-	<atom:link href="https://nicklilinyi.github.io/tags/colorbar/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nicklinyi.github.io/tags/colorbar/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Matlab如何绘制美观的colorbar</title>
-      <link>https://nicklilinyi.github.io/post/2018-05-09-matlabcolorbar/</link>
+      <link>https://nicklinyi.github.io/post/2018-05-09-matlabcolorbar/</link>
       <pubDate>Wed, 09 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/post/2018-05-09-matlabcolorbar/</guid>
+      <guid>https://nicklinyi.github.io/post/2018-05-09-matlabcolorbar/</guid>
       <description>通常情况下，matlab绘出的色标主要存在两个问题：1色标的宽度太宽；2色标的高度太高。为了绘制更美观的图像，这里深入研究了一下色标的大小调</description>
     </item>
     

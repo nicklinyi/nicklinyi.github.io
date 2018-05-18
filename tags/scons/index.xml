@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SCons on Even - A super concise theme for Hugo</title>
-    <link>https://nicklilinyi.github.io/tags/scons/</link>
-    <description>Recent content in SCons on Even - A super concise theme for Hugo</description>
+    <title>SCons on Lloyd</title>
+    <link>https://nicklinyi.github.io/tags/scons/</link>
+    <description>Recent content in SCons on Lloyd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 12 Jan 2017 10:47:24 +0000</lastBuildDate>
     
-	<atom:link href="https://nicklilinyi.github.io/tags/scons/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nicklinyi.github.io/tags/scons/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Madagascar输出程序运行日志文件</title>
-      <link>https://nicklilinyi.github.io/post/2017-01-12-rsf-print-log/</link>
+      <link>https://nicklinyi.github.io/post/2017-01-12-rsf-print-log/</link>
       <pubDate>Thu, 12 Jan 2017 10:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/post/2017-01-12-rsf-print-log/</guid>
+      <guid>https://nicklinyi.github.io/post/2017-01-12-rsf-print-log/</guid>
       <description>为什么要输出日志文件？ 输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息</description>
     </item>
     
     <item>
       <title>DATAPATH 的使用</title>
-      <link>https://nicklilinyi.github.io/post/2016-12-22-rsf-datapath/</link>
+      <link>https://nicklinyi.github.io/post/2016-12-22-rsf-datapath/</link>
       <pubDate>Thu, 22 Dec 2016 10:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/post/2016-12-22-rsf-datapath/</guid>
+      <guid>https://nicklinyi.github.io/post/2016-12-22-rsf-datapath/</guid>
       <description>正常情况下， 执行完Madagascar命令后的二进制数据文件是存在/var/tmp/下的，实际我们在写自己就的项目的时候，一般最好是把数据文</description>
     </item>
     
     <item>
       <title>采用 SCons 写 SU 脚本</title>
-      <link>https://nicklilinyi.github.io/post/2016-05-26-su-scons-together/</link>
+      <link>https://nicklinyi.github.io/post/2016-05-26-su-scons-together/</link>
       <pubDate>Thu, 26 May 2016 10:47:24 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/post/2016-05-26-su-scons-together/</guid>
+      <guid>https://nicklinyi.github.io/post/2016-05-26-su-scons-together/</guid>
       <description>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题： 1. bash 脚本是按顺序执行的，也就是说，如果</description>
     </item>
     
     <item>
       <title>Vim高亮SConstruct</title>
-      <link>https://nicklilinyi.github.io/post/2016-05-24-vim-scons-highlight/</link>
+      <link>https://nicklinyi.github.io/post/2016-05-24-vim-scons-highlight/</link>
       <pubDate>Tue, 24 May 2016 16:15:57 +0000</pubDate>
       
-      <guid>https://nicklilinyi.github.io/post/2016-05-24-vim-scons-highlight/</guid>
+      <guid>https://nicklinyi.github.io/post/2016-05-24-vim-scons-highlight/</guid>
       <description>Vim高亮文件一般只对含后缀的文件名有效，对于经常使用 Madagascar 的人来说，每次采用 Vim 写 SConstruct 文件显得十分不便，因此如果能让 Vim 自动识别 SConstruct 文件为 Python 文件，则处</description>
     </item>
     
