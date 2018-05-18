@@ -2,74 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Even - A super concise theme for Hugo</title>
-    <link>http://nicklilinyi.github.io/categories/</link>
+    <link>https://nicklilinyi.github.io/categories/</link>
     <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="http://nicklilinyi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nicklilinyi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux</title>
-      <link>http://nicklilinyi.github.io/categories/linux/</link>
+      <link>https://nicklilinyi.github.io/categories/linux/</link>
       <pubDate>Sat, 17 Dec 2016 16:45:30 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/categories/linux/</guid>
+      <guid>https://nicklilinyi.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MacOS</title>
-      <link>http://nicklilinyi.github.io/categories/macos/</link>
+      <link>https://nicklilinyi.github.io/categories/macos/</link>
       <pubDate>Fri, 06 Apr 2018 08:57:57 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/categories/macos/</guid>
+      <guid>https://nicklilinyi.github.io/categories/macos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>地震学</title>
-      <link>http://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/</link>
+      <link>https://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/</link>
       <pubDate>Fri, 27 Apr 2018 13:08:28 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/</guid>
+      <guid>https://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>地震学软件</title>
-      <link>http://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</link>
+      <link>https://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Sun, 13 Aug 2017 12:47:24 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>https://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>算法</title>
-      <link>http://nicklilinyi.github.io/categories/%E7%AE%97%E6%B3%95/</link>
+      <link>https://nicklilinyi.github.io/categories/%E7%AE%97%E6%B3%95/</link>
       <pubDate>Mon, 30 Apr 2018 13:08:28 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/categories/%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://nicklilinyi.github.io/categories/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>绘图</title>
-      <link>http://nicklilinyi.github.io/categories/%E7%BB%98%E5%9B%BE/</link>
+      <link>https://nicklilinyi.github.io/categories/%E7%BB%98%E5%9B%BE/</link>
       <pubDate>Thu, 17 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/categories/%E7%BB%98%E5%9B%BE/</guid>
+      <guid>https://nicklilinyi.github.io/categories/%E7%BB%98%E5%9B%BE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>编程</title>
-      <link>http://nicklilinyi.github.io/categories/%E7%BC%96%E7%A8%8B/</link>
+      <link>https://nicklilinyi.github.io/categories/%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Mon, 14 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/categories/%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://nicklilinyi.github.io/categories/%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
     

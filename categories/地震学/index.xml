@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>地震学 on Even - A super concise theme for Hugo</title>
-    <link>http://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/</link>
+    <link>https://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/</link>
     <description>Recent content in 地震学 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 27 Apr 2018 13:08:28 +0000</lastBuildDate>
     
-	<atom:link href="http://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nicklilinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>地震子波</title>
-      <link>http://nicklilinyi.github.io/post/2018-04-27-seismic-wavelet/</link>
+      <link>https://nicklilinyi.github.io/post/2018-04-27-seismic-wavelet/</link>
       <pubDate>Fri, 27 Apr 2018 13:08:28 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/post/2018-04-27-seismic-wavelet/</guid>
+      <guid>https://nicklilinyi.github.io/post/2018-04-27-seismic-wavelet/</guid>
       <description>前言 主要记录下常用各种子波函数以及对应的图形。 Ricker子波 $$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ function [w] = ricker(fpeak,t,tdelay) w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2); return Ricker子波的一阶导数： $$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$ function [w] = ricker1(fpeak,t,tdelay) w = 2*pi^2*fpeak^2*(t-tdelay).*(2*pi^2*fpeak^2*(t-tdelay).^2-3).*... exp(-pi^2*fpeak^2*(t-tdelay).^2); return 最小相位子波</description>
     </item>
     
     <item>
       <title>合成地震事件</title>
-      <link>http://nicklilinyi.github.io/post/2018-04-23-linear-events/</link>
+      <link>https://nicklilinyi.github.io/post/2018-04-23-linear-events/</link>
       <pubDate>Tue, 24 Apr 2018 13:08:28 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/post/2018-04-23-linear-events/</guid>
+      <guid>https://nicklilinyi.github.io/post/2018-04-23-linear-events/</guid>
       <description>前言 地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。 线性地震事件合成</description>
     </item>
     
     <item>
       <title>勘探数据获取</title>
-      <link>http://nicklilinyi.github.io/post/2016-06-09-data-resources/</link>
+      <link>https://nicklilinyi.github.io/post/2016-06-09-data-resources/</link>
       <pubDate>Thu, 09 Jun 2016 13:08:28 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/post/2016-06-09-data-resources/</guid>
+      <guid>https://nicklilinyi.github.io/post/2016-06-09-data-resources/</guid>
       <description>本文主要用于收集一些免费的数据来源。将不定期更新新的数据源。 Madagascar 数据：http://www.ahay.org/data/ SEG Research Data: http://seg.org/News-Resources/Research-Data CREWES 公开的数据 NMESdata.zip</description>
     </item>
     

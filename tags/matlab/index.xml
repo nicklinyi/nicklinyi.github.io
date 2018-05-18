@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Matlab on Even - A super concise theme for Hugo</title>
-    <link>http://nicklilinyi.github.io/tags/matlab/</link>
+    <link>https://nicklilinyi.github.io/tags/matlab/</link>
     <description>Recent content in Matlab on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 17 May 2018 08:57:57 +0000</lastBuildDate>
     
-	<atom:link href="http://nicklilinyi.github.io/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nicklilinyi.github.io/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Matlab 绘制4D数据</title>
-      <link>http://nicklilinyi.github.io/post/2018-05-17-matlab4dplot/</link>
+      <link>https://nicklilinyi.github.io/post/2018-05-17-matlab4dplot/</link>
       <pubDate>Thu, 17 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/post/2018-05-17-matlab4dplot/</guid>
+      <guid>https://nicklilinyi.github.io/post/2018-05-17-matlab4dplot/</guid>
       <description>绘图基础 首先，需要知道的是matlab三维图的默认坐标轴的位置：面向大家的是 y-z平面，侧面是 x-z 平面，顶底是 x-y 平面。如下图所示 通过该图，我们</description>
     </item>
     
     <item>
       <title>Matlab 拟合数据体类型解读</title>
-      <link>http://nicklilinyi.github.io/post/2018-05-14-matlabfit/</link>
+      <link>https://nicklilinyi.github.io/post/2018-05-14-matlabfit/</link>
       <pubDate>Mon, 14 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/post/2018-05-14-matlabfit/</guid>
+      <guid>https://nicklilinyi.github.io/post/2018-05-14-matlabfit/</guid>
       <description>首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将 其拟合结果存为fitresult</description>
     </item>
     
     <item>
       <title>Matlab如何绘制美观的colorbar</title>
-      <link>http://nicklilinyi.github.io/post/2018-05-09-matlabcolorbar/</link>
+      <link>https://nicklilinyi.github.io/post/2018-05-09-matlabcolorbar/</link>
       <pubDate>Wed, 09 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>http://nicklilinyi.github.io/post/2018-05-09-matlabcolorbar/</guid>
+      <guid>https://nicklilinyi.github.io/post/2018-05-09-matlabcolorbar/</guid>
       <description>通常情况下，matlab绘出的色标主要存在两个问题：1色标的宽度太宽；2色标的高度太高。为了绘制更美观的图像，这里深入研究了一下色标的大小调</description>
     </item>
     
