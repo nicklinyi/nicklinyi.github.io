@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://nicklilinyi.github.io/sitemap.xml

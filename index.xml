@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Even - A super concise theme for Hugo</title>
+    <link>http://nicklilinyi.github.io/</link>
+    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
+    
+	<atom:link href="http://nicklilinyi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于</title>
+      <link>http://nicklilinyi.github.io/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/about/</guid>
+      <description>联系方式 如果对博客内容有疑问或其他问题，可通过邮件方式联系博主： Email：linyihanchuan[AT]gmail[DOT]com 如未</description>
+    </item>
+    
+    <item>
+      <title>Matlab 绘制4D数据</title>
+      <link>http://nicklilinyi.github.io/post/2018-05-17-matlab4dplot/</link>
+      <pubDate>Thu, 17 May 2018 08:57:57 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-05-17-matlab4dplot/</guid>
+      <description>绘图基础 首先，需要知道的是matlab三维图的默认坐标轴的位置：面向大家的是 y-z平面，侧面是 x-z 平面，顶底是 x-y 平面。如下图所示 通过该图，我们</description>
+    </item>
+    
+    <item>
+      <title>Matlab 拟合数据体类型解读</title>
+      <link>http://nicklilinyi.github.io/post/2018-05-14-matlabfit/</link>
+      <pubDate>Mon, 14 May 2018 08:57:57 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-05-14-matlabfit/</guid>
+      <description>首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将 其拟合结果存为fitresult</description>
+    </item>
+    
+    <item>
+      <title>Matlab如何绘制美观的colorbar</title>
+      <link>http://nicklilinyi.github.io/post/2018-05-09-matlabcolorbar/</link>
+      <pubDate>Wed, 09 May 2018 08:57:57 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-05-09-matlabcolorbar/</guid>
+      <description>通常情况下，matlab绘出的色标主要存在两个问题：1色标的宽度太宽；2色标的高度太高。为了绘制更美观的图像，这里深入研究了一下色标的大小调</description>
+    </item>
+    
+    <item>
+      <title>Hoare&#39;s algorithm</title>
+      <link>http://nicklilinyi.github.io/post/2018-04-30-hoare-algorithm/</link>
+      <pubDate>Mon, 30 Apr 2018 13:08:28 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-04-30-hoare-algorithm/</guid>
+      <description>快速选择算法通常用来在未排序的数组中寻找第k小/第k大的元素。其方法类似于快速排序。快速选择和快速排序都是Tony Hoare发明的，因此也称</description>
+    </item>
+    
+    <item>
+      <title>地震子波</title>
+      <link>http://nicklilinyi.github.io/post/2018-04-27-seismic-wavelet/</link>
+      <pubDate>Fri, 27 Apr 2018 13:08:28 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-04-27-seismic-wavelet/</guid>
+      <description>前言 主要记录下常用各种子波函数以及对应的图形。 Ricker子波 $$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ function [w] = ricker(fpeak,t,tdelay) w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2); return Ricker子波的一阶导数： $$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$ function [w] = ricker1(fpeak,t,tdelay) w = 2*pi^2*fpeak^2*(t-tdelay).*(2*pi^2*fpeak^2*(t-tdelay).^2-3).*... exp(-pi^2*fpeak^2*(t-tdelay).^2); return 最小相位子波</description>
+    </item>
+    
+    <item>
+      <title>合成地震事件</title>
+      <link>http://nicklilinyi.github.io/post/2018-04-23-linear-events/</link>
+      <pubDate>Tue, 24 Apr 2018 13:08:28 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-04-23-linear-events/</guid>
+      <description>前言 地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。 线性地震事件合成</description>
+    </item>
+    
+    <item>
+      <title>macOS 挂载 NTFS 格式硬盘</title>
+      <link>http://nicklilinyi.github.io/post/2018-04-06-macos-ntfs/</link>
+      <pubDate>Fri, 06 Apr 2018 08:57:57 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-04-06-macos-ntfs/</guid>
+      <description>Mac本身是支持NTFS写入的，只是NTFS是微软开发，由于版权和技术细节原因，苹果不愿公开说自己支持NTFS写入，也是有自己以后可能不支持</description>
+    </item>
+    
+    <item>
+      <title>Madagascar绘图总结</title>
+      <link>http://nicklilinyi.github.io/post/2018-03-31-rsf-plot/</link>
+      <pubDate>Sat, 31 Mar 2018 08:57:57 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-03-31-rsf-plot/</guid>
+      <description>波形图 比如，绘制子波形态，单道地震记录等。采用sfgraph来绘图，类似与Matlab的plot命令。 # plot wavelet from rsf.proj import * par={ } def waveplot(custom,par): return &#39;&#39;&#39; graph title=&amp;quot;&amp;quot; min1=%g min2=0 max2=+1 plotfat=5</description>
+    </item>
+    
+    <item>
+      <title>Linux /boot 重新分区</title>
+      <link>http://nicklilinyi.github.io/post/2018-02-04-boot-partition/</link>
+      <pubDate>Sun, 04 Feb 2018 08:57:57 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2018-02-04-boot-partition/</guid>
+      <description>由于之前装机时 /boot 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 /boot 空间不足， 然后发现 /boot下有两个系统内核文件，一个 44M 左右</description>
+    </item>
+    
+    <item>
+      <title>采用 GMT 绘制 SPECFEM2D 波场快照</title>
+      <link>http://nicklilinyi.github.io/post/2017-10-28-specfem2d-gmt/</link>
+      <pubDate>Sat, 28 Oct 2017 12:47:24 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2017-10-28-specfem2d-gmt/</guid>
+      <description>前言 SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于 与其他模拟程序生成的波场快照进行对比。因此本文记录</description>
+    </item>
+    
+    <item>
+      <title>Madagascar 绘制 SEG/EAGE 模型的盐丘轮廓</title>
+      <link>http://nicklilinyi.github.io/post/2017-10-28-plot-salt/</link>
+      <pubDate>Thu, 28 Sep 2017 12:47:24 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2017-10-28-plot-salt/</guid>
+      <description>前言 盐丘轮廓的绘制在地震偏移领域用途十分广泛，主要目的是为了分析偏移结果的好坏。当偏移结果和盐丘的轮廓基本吻合时，偏移质量就很高。最开始绘制</description>
+    </item>
+    
+    <item>
+      <title>优化 Madagascar 程序</title>
+      <link>http://nicklilinyi.github.io/post/2017-08-13-optmize-rsf-code/</link>
+      <pubDate>Sun, 13 Aug 2017 12:47:24 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2017-08-13-optmize-rsf-code/</guid>
+      <description>前言 在勘探地球物理中，往往一个程序会重复计算多次，比如叠前数据的合成（需要对一个有限差分程序往复执行上 百次，最后得到一个叠前的炮集记录）。因</description>
+    </item>
+    
+    <item>
+      <title>Madagascar绘图字体以及特殊符号的处理</title>
+      <link>http://nicklilinyi.github.io/post/2017-07-26-rsf-fonts/</link>
+      <pubDate>Wed, 26 Jul 2017 12:47:24 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2017-07-26-rsf-fonts/</guid>
+      <description>背景介绍 Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位</description>
+    </item>
+    
+    <item>
+      <title>Madagascar输出程序运行日志文件</title>
+      <link>http://nicklilinyi.github.io/post/2017-01-12-rsf-print-log/</link>
+      <pubDate>Thu, 12 Jan 2017 10:47:24 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2017-01-12-rsf-print-log/</guid>
+      <description>为什么要输出日志文件？ 输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息</description>
+    </item>
+    
+    <item>
+      <title>DATAPATH 的使用</title>
+      <link>http://nicklilinyi.github.io/post/2016-12-22-rsf-datapath/</link>
+      <pubDate>Thu, 22 Dec 2016 10:47:24 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2016-12-22-rsf-datapath/</guid>
+      <description>正常情况下， 执行完Madagascar命令后的二进制数据文件是存在/var/tmp/下的，实际我们在写自己就的项目的时候，一般最好是把数据文</description>
+    </item>
+    
+    <item>
+      <title>Linux下复制单个文件到多个文件夹</title>
+      <link>http://nicklilinyi.github.io/post/2016-12-17-cp-command/</link>
+      <pubDate>Sat, 17 Dec 2016 16:45:30 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2016-12-17-cp-command/</guid>
+      <description>问题 复制一个文件到多个文件夹中 解决方案 $ echo ~/test1 ~/test2 | xargs -n 1 cp -v test.py 上面的命令，目录的路径(~/test1,~/test2)被管道作为输入到xarg</description>
+    </item>
+    
+    <item>
+      <title>Debug Madagascar程序</title>
+      <link>http://nicklilinyi.github.io/post/2016-06-23-debug-in-rsf/</link>
+      <pubDate>Thu, 23 Jun 2016 16:45:30 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2016-06-23-debug-in-rsf/</guid>
+      <description>前言 当我们在 Madagascar API框架上写完自己的代码后，对于简单的程序，可以采用在源文件中增加printf或者write语句等打印一些变量信息，但比较麻</description>
+    </item>
+    
+    <item>
+      <title>合并 Madagascar 道头与数据</title>
+      <link>http://nicklilinyi.github.io/post/2016-06-15-rsf-data-handle/</link>
+      <pubDate>Wed, 15 Jun 2016 13:43:37 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2016-06-15-rsf-data-handle/</guid>
+      <description>Why? 我们都知道 Madagascar 的数据和道头是放置在不同的位置，然后在道头里通过指针指向数据文件的实际位置。这样做的好处有一下几点: 误删文件不会造成实际数据的</description>
+    </item>
+    
+    <item>
+      <title>勘探数据获取</title>
+      <link>http://nicklilinyi.github.io/post/2016-06-09-data-resources/</link>
+      <pubDate>Thu, 09 Jun 2016 13:08:28 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2016-06-09-data-resources/</guid>
+      <description>本文主要用于收集一些免费的数据来源。将不定期更新新的数据源。 Madagascar 数据：http://www.ahay.org/data/ SEG Research Data: http://seg.org/News-Resources/Research-Data CREWES 公开的数据 NMESdata.zip</description>
+    </item>
+    
+    <item>
+      <title>采用 SCons 写 SU 脚本</title>
+      <link>http://nicklilinyi.github.io/post/2016-05-26-su-scons-together/</link>
+      <pubDate>Thu, 26 May 2016 10:47:24 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2016-05-26-su-scons-together/</guid>
+      <description>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题： 1. bash 脚本是按顺序执行的，也就是说，如果</description>
+    </item>
+    
+    <item>
+      <title>Vim高亮SConstruct</title>
+      <link>http://nicklilinyi.github.io/post/2016-05-24-vim-scons-highlight/</link>
+      <pubDate>Tue, 24 May 2016 16:15:57 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2016-05-24-vim-scons-highlight/</guid>
+      <description>Vim高亮文件一般只对含后缀的文件名有效，对于经常使用 Madagascar 的人来说，每次采用 Vim 写 SConstruct 文件显得十分不便，因此如果能让 Vim 自动识别 SConstruct 文件为 Python 文件，则处</description>
+    </item>
+    
+    <item>
+      <title>Madagascar下使用latex</title>
+      <link>http://nicklilinyi.github.io/post/2016-05-24-rsf-use-latex/</link>
+      <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2016-05-24-rsf-use-latex/</guid>
+      <description>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，cd到book目录下</description>
+    </item>
+    
+  </channel>
+</rss>

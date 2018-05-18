@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SPECFEM2D on Even - A super concise theme for Hugo</title>
+    <link>http://nicklilinyi.github.io/tags/specfem2d/</link>
+    <description>Recent content in SPECFEM2D on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 28 Oct 2017 12:47:24 +0000</lastBuildDate>
+    
+	<atom:link href="http://nicklilinyi.github.io/tags/specfem2d/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>采用 GMT 绘制 SPECFEM2D 波场快照</title>
+      <link>http://nicklilinyi.github.io/post/2017-10-28-specfem2d-gmt/</link>
+      <pubDate>Sat, 28 Oct 2017 12:47:24 +0000</pubDate>
+      
+      <guid>http://nicklilinyi.github.io/post/2017-10-28-specfem2d-gmt/</guid>
+      <description>前言 SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于 与其他模拟程序生成的波场快照进行对比。因此本文记录</description>
+    </item>
+    
+  </channel>
+</rss>
