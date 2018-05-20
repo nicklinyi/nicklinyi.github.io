@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Lloyd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 17 May 2018 08:57:57 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 May 2018 08:57:57 +0000</lastBuildDate>
     
 	<atom:link href="https://nicklinyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Madagascar Matlab 混合编程</title>
+      <link>https://nicklinyi.github.io/post/2018-05-20-rsf-matlab/</link>
+      <pubDate>Sun, 20 May 2018 08:57:57 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/post/2018-05-20-rsf-matlab/</guid>
+      <description>配置 安装含Matlab API的Madagascar过程详见Madagascar安装 写.rsf文件 下面的matlab程序提供了一个使用line</description>
+    </item>
     
     <item>
       <title>Matlab 绘制4D数据</title>

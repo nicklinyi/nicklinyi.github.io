@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/post/2018-05-20-rsf-matlab/</loc>
+    <lastmod>2018-05-20T08:57:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/post/2018-05-17-matlab4dplot/</loc>
     <lastmod>2018-05-17T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -212,21 +219,21 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/tags/linux/</loc>
+    <lastmod>2016-12-17T16:45:30+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/linux/</loc>
+    <lastmod>2016-12-17T16:45:30+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/categories/linux/</loc>
-    <lastmod>2016-12-17T16:45:30+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/tags/linux/</loc>
-    <lastmod>2016-12-17T16:45:30+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/tags/linux/</loc>
     <lastmod>2016-12-17T16:45:30+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -240,13 +247,6 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/categories/macos/</loc>
-    <lastmod>2018-04-06T08:57:57+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://nicklinyi.github.io/tags/macos/</loc>
     <lastmod>2018-04-06T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -254,15 +254,22 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/madagascar/</loc>
-    <lastmod>2017-09-28T12:47:24+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/categories/macos/</loc>
+    <lastmod>2018-04-06T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nicklinyi.github.io/tags/madagascar/</loc>
-    <lastmod>2017-09-28T12:47:24+00:00</lastmod>
+    <lastmod>2018-05-20T08:57:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/madagascar/</loc>
+    <lastmod>2018-05-20T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -270,6 +277,13 @@
   <url>
     <loc>https://nicklinyi.github.io/tags/matlab/</loc>
     <lastmod>2018-05-17T08:57:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/matlab/</loc>
+    <lastmod>2018-05-20T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -297,7 +311,7 @@
   
   <url>
     <loc>https://nicklinyi.github.io/post/</loc>
-    <lastmod>2018-05-17T08:57:57+00:00</lastmod>
+    <lastmod>2018-05-20T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -401,13 +415,6 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/categories/%E7%BB%98%E5%9B%BE/</loc>
-    <lastmod>2018-05-17T08:57:57+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://nicklinyi.github.io/tags/%E7%BB%98%E5%9B%BE/</loc>
     <lastmod>2018-03-31T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -415,8 +422,15 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/categories/%E7%BB%98%E5%9B%BE/</loc>
+    <lastmod>2018-05-17T08:57:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2018-05-14T08:57:57+00:00</lastmod>
+    <lastmod>2018-05-20T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
