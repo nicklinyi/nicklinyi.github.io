@@ -20,5 +20,14 @@
       <description>波形图 比如，绘制子波形态，单道地震记录等。采用sfgraph来绘图，类似与Matlab的plot命令。 # plot wavelet from rsf.proj import * par={ } def waveplot(custom,par): return &#39;&#39;&#39; graph title=&amp;quot;&amp;quot; min1=%g min2=0 max2=+1 plotfat=5</description>
     </item>
     
+    <item>
+      <title>Madagascar绘图字体以及特殊符号的处理</title>
+      <link>https://nicklinyi.github.io/rsf-fonts/</link>
+      <pubDate>Wed, 26 Jul 2017 12:47:24 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/rsf-fonts/</guid>
+      <description>背景介绍 Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位</description>
+    </item>
+    
   </channel>
 </rss>

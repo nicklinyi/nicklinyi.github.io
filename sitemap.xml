@@ -115,22 +115,22 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E5%AD%97%E4%BD%93%E4%BB%A5%E5%8F%8A%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%A4%84%E7%90%86/</loc>
+    <loc>https://nicklinyi.github.io/rsf-fonts/</loc>
     <lastmod>2017-07-26T12:47:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/madagascar%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2017-01-12T10:47:24+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/rsf-print-log/</loc>
+    <lastmod>2017-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/datapath-%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2016-12-22T10:47:24+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/rsf-datapath/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -164,22 +164,22 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/%E9%87%87%E7%94%A8-scons-%E5%86%99-su-%E8%84%9A%E6%9C%AC/</loc>
-    <lastmod>2016-05-26T10:47:24+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/su-scons-together/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/vim%E9%AB%98%E4%BA%AEsconstruct/</loc>
-    <lastmod>2016-05-24T16:15:57+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8latex/</loc>
+    <loc>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8-latex/</loc>
     <lastmod>2016-05-24T08:57:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/vim-scons-highlight/</loc>
+    <lastmod>2016-05-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -200,6 +200,13 @@
   <url>
     <loc>https://nicklinyi.github.io/tags/eage/</loc>
     <lastmod>2017-09-28T12:47:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/font/</loc>
+    <lastmod>2017-07-26T12:47:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -227,14 +234,7 @@
   
   <url>
     <loc>https://nicklinyi.github.io/tags/linux/</loc>
-    <lastmod>2016-12-17T16:45:30+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/tags/linux/</loc>
-    <lastmod>2016-12-17T16:45:30+00:00</lastmod>
+    <lastmod>2018-02-04T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -275,22 +275,8 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/madagascar/</loc>
-    <lastmod>2018-05-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://nicklinyi.github.io/tags/matlab/</loc>
     <lastmod>2018-05-20T08:57:57+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/tags/matlab/</loc>
-    <lastmod>2018-05-17T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -310,13 +296,6 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/plot/</loc>
-    <lastmod>2017-07-26T12:47:24+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://nicklinyi.github.io/post/</loc>
     <lastmod>2018-05-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -324,15 +303,8 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/rsf/</loc>
-    <lastmod>2016-06-15T13:43:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nicklinyi.github.io/tags/scons/</loc>
-    <lastmod>2017-01-12T10:47:24+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/tags/sconstruct/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -353,7 +325,7 @@
   
   <url>
     <loc>https://nicklinyi.github.io/tags/su/</loc>
-    <lastmod>2016-05-26T10:47:24+00:00</lastmod>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -367,7 +339,7 @@
   
   <url>
     <loc>https://nicklinyi.github.io/tags/vim/</loc>
-    <lastmod>2016-05-24T16:15:57+00:00</lastmod>
+    <lastmod>2016-05-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

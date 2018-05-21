@@ -139,28 +139,28 @@
     
     <item>
       <title>Madagascar绘图字体以及特殊符号的处理</title>
-      <link>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E5%AD%97%E4%BD%93%E4%BB%A5%E5%8F%8A%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%A4%84%E7%90%86/</link>
+      <link>https://nicklinyi.github.io/rsf-fonts/</link>
       <pubDate>Wed, 26 Jul 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E5%AD%97%E4%BD%93%E4%BB%A5%E5%8F%8A%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%A4%84%E7%90%86/</guid>
+      <guid>https://nicklinyi.github.io/rsf-fonts/</guid>
       <description>背景介绍 Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位</description>
     </item>
     
     <item>
       <title>Madagascar输出程序运行日志文件</title>
-      <link>https://nicklinyi.github.io/madagascar%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Thu, 12 Jan 2017 10:47:24 +0000</pubDate>
+      <link>https://nicklinyi.github.io/rsf-print-log/</link>
+      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/madagascar%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://nicklinyi.github.io/rsf-print-log/</guid>
       <description>为什么要输出日志文件？ 输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息</description>
     </item>
     
     <item>
       <title>DATAPATH 的使用</title>
-      <link>https://nicklinyi.github.io/datapath-%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Thu, 22 Dec 2016 10:47:24 +0000</pubDate>
+      <link>https://nicklinyi.github.io/rsf-datapath/</link>
+      <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/datapath-%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://nicklinyi.github.io/rsf-datapath/</guid>
       <description>正常情况下， 执行完Madagascar命令后的二进制数据文件是存在/var/tmp/下的，实际我们在写自己就的项目的时候，一般最好是把数据文</description>
     </item>
     
@@ -201,30 +201,30 @@
     </item>
     
     <item>
-      <title>采用 SCons 写 SU 脚本</title>
-      <link>https://nicklinyi.github.io/%E9%87%87%E7%94%A8-scons-%E5%86%99-su-%E8%84%9A%E6%9C%AC/</link>
-      <pubDate>Thu, 26 May 2016 10:47:24 +0000</pubDate>
+      <title>采用 SConstruct 写 SU 脚本</title>
+      <link>https://nicklinyi.github.io/su-scons-together/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/%E9%87%87%E7%94%A8-scons-%E5%86%99-su-%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://nicklinyi.github.io/su-scons-together/</guid>
       <description>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题： 1. bash 脚本是按顺序执行的，也就是说，如果</description>
     </item>
     
     <item>
-      <title>Vim高亮SConstruct</title>
-      <link>https://nicklinyi.github.io/vim%E9%AB%98%E4%BA%AEsconstruct/</link>
-      <pubDate>Tue, 24 May 2016 16:15:57 +0000</pubDate>
+      <title>Madagascar下使用 LaTeX</title>
+      <link>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8-latex/</link>
+      <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/vim%E9%AB%98%E4%BA%AEsconstruct/</guid>
-      <description>Vim高亮文件一般只对含后缀的文件名有效，对于经常使用 Madagascar 的人来说，每次采用 Vim 写 SConstruct 文件显得十分不便，因此如果能让 Vim 自动识别 SConstruct 文件为 Python 文件，则处</description>
+      <guid>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8-latex/</guid>
+      <description>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，cd到book目录下</description>
     </item>
     
     <item>
-      <title>Madagascar下使用latex</title>
-      <link>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8latex/</link>
-      <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
+      <title>Vim 高亮 SConstruct</title>
+      <link>https://nicklinyi.github.io/vim-scons-highlight/</link>
+      <pubDate>Tue, 24 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8latex/</guid>
-      <description>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，cd到book目录下</description>
+      <guid>https://nicklinyi.github.io/vim-scons-highlight/</guid>
+      <description>Vim高亮文件一般只对含后缀的文件名有效，对于经常使用 Madagascar 的人来说，每次采用 Vim 写 SConstruct 文件显得十分不便，因此如果能让 Vim 自动识别 SConstruct 文件为 Python 文件，则处</description>
     </item>
     
   </channel>

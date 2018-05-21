@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Madagascar绘图总结</title>
+      <link>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sat, 31 Mar 2018 08:57:57 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E6%80%BB%E7%BB%93/</guid>
+      <description>波形图 比如，绘制子波形态，单道地震记录等。采用sfgraph来绘图，类似与Matlab的plot命令。 # plot wavelet from rsf.proj import * par={ } def waveplot(custom,par): return &#39;&#39;&#39; graph title=&amp;quot;&amp;quot; min1=%g min2=0 max2=+1 plotfat=5</description>
+    </item>
+    
+    <item>
       <title>Madagascar 绘制 SEG/EAGE 模型的盐丘轮廓</title>
       <link>https://nicklinyi.github.io/madagascar-%E7%BB%98%E5%88%B6-seg/eage-%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%9B%90%E4%B8%98%E8%BD%AE%E5%BB%93/</link>
       <pubDate>Thu, 28 Sep 2017 12:47:24 +0000</pubDate>
@@ -49,28 +58,28 @@
     
     <item>
       <title>Madagascar绘图字体以及特殊符号的处理</title>
-      <link>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E5%AD%97%E4%BD%93%E4%BB%A5%E5%8F%8A%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%A4%84%E7%90%86/</link>
+      <link>https://nicklinyi.github.io/rsf-fonts/</link>
       <pubDate>Wed, 26 Jul 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E5%AD%97%E4%BD%93%E4%BB%A5%E5%8F%8A%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%A4%84%E7%90%86/</guid>
+      <guid>https://nicklinyi.github.io/rsf-fonts/</guid>
       <description>背景介绍 Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位</description>
     </item>
     
     <item>
       <title>Madagascar输出程序运行日志文件</title>
-      <link>https://nicklinyi.github.io/madagascar%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Thu, 12 Jan 2017 10:47:24 +0000</pubDate>
+      <link>https://nicklinyi.github.io/rsf-print-log/</link>
+      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/madagascar%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://nicklinyi.github.io/rsf-print-log/</guid>
       <description>为什么要输出日志文件？ 输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息</description>
     </item>
     
     <item>
       <title>DATAPATH 的使用</title>
-      <link>https://nicklinyi.github.io/datapath-%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Thu, 22 Dec 2016 10:47:24 +0000</pubDate>
+      <link>https://nicklinyi.github.io/rsf-datapath/</link>
+      <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/datapath-%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://nicklinyi.github.io/rsf-datapath/</guid>
       <description>正常情况下， 执行完Madagascar命令后的二进制数据文件是存在/var/tmp/下的，实际我们在写自己就的项目的时候，一般最好是把数据文</description>
     </item>
     
@@ -90,6 +99,15 @@
       
       <guid>https://nicklinyi.github.io/%E5%90%88%E5%B9%B6-madagascar-%E9%81%93%E5%A4%B4%E4%B8%8E%E6%95%B0%E6%8D%AE/</guid>
       <description>Why? 我们都知道 Madagascar 的数据和道头是放置在不同的位置，然后在道头里通过指针指向数据文件的实际位置。这样做的好处有一下几点: 误删文件不会造成实际数据的</description>
+    </item>
+    
+    <item>
+      <title>Madagascar下使用 LaTeX</title>
+      <link>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8-latex/</link>
+      <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8-latex/</guid>
+      <description>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，cd到book目录下</description>
     </item>
     
   </channel>
