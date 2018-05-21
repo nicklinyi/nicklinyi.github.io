@@ -26,7 +26,7 @@
       <pubDate>Fri, 27 Apr 2018 13:08:28 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/</guid>
-      <description>前言 主要记录下常用各种子波函数以及对应的图形。 Ricker子波 $$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ function [w] = ricker(fpeak,t,tdelay) w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2); return Ricker子波的一阶导数： $$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$ function [w] = ricker1(fpeak,t,tdelay) w = 2*pi^2*fpeak^2*(t-tdelay).*(2*pi^2*fpeak^2*(t-tdelay).^2-3).*... exp(-pi^2*fpeak^2*(t-tdelay).^2); return 最小相位子波</description>
+      <description>前言 主要记录下常用各种子波函数以及对应的图形。 Ricker子波 $ S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2) $ function [w] = ricker(fpeak,t,tdelay) w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2); return Ricker子波的一阶导数： $$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$ function [w] = ricker1(fpeak,t,tdelay) w = 2*pi^2*fpeak^2*(t-tdelay).*(2*pi^2*fpeak^2*(t-tdelay).^2-3).*... exp(-pi^2*fpeak^2*(t-tdelay).^2); return 最小相位</description>
     </item>
     
     <item>
