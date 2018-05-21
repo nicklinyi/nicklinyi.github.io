@@ -57,7 +57,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-04-27T13:08:28&#43;00:00"/>
+<meta property="og:updated_time" content="2018-04-30T13:08:28&#43;00:00"/>
 
 
 
@@ -156,7 +156,33 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2018-04-27-seismic-wavelet/">地震子波</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/hoares-algorithm/">Hoare&#39;s algorithm</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-04-30 </span>
+      <div class="post-category">
+          
+            <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
+          
+        </div>
+      <span class="more-meta"> 约 308 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      快速选择算法通常用来在未排序的数组中寻找第k小/第k大的元素。其方法类似于快速排序。快速选择和快速排序都是Tony Hoare发明的，因此也称
+    </div>
+    <div class="read-more">
+      <a href="/hoares-algorithm/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/">地震子波</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-04-27 </span>
       <div class="post-category">
@@ -174,7 +200,7 @@
       前言 主要记录下常用各种子波函数以及对应的图形。 Ricker子波 $$S(t)=(1-2\pi^2f^2t^2)exp(-\pi^2f^2t^2)$$ function [w] = ricker(fpeak,t,tdelay) w = exp(-pi^2*fpeak^2*(t-tdelay).^2).*(1-2*pi^2*fpeak^2*(t-tdelay).^2); return Ricker子波的一阶导数： $$S(t)=2\pi^2f^2t(2\pi^2f^2t^2-3)exp(-\pi^2f^2t^2)$$ function [w] = ricker1(fpeak,t,tdelay) w = 2*pi^2*fpeak^2*(t-tdelay).*(2*pi^2*fpeak^2*(t-tdelay).^2-3).*... exp(-pi^2*fpeak^2*(t-tdelay).^2); return 最小相位子波
     </div>
     <div class="read-more">
-      <a href="/post/2018-04-27-seismic-wavelet/" class="read-more-link">阅读更多</a>
+      <a href="/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -182,7 +208,7 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2018-04-23-linear-events/">合成地震事件</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/%E5%90%88%E6%88%90%E5%9C%B0%E9%9C%87%E4%BA%8B%E4%BB%B6/">合成地震事件</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-04-24 </span>
       <div class="post-category">
@@ -200,7 +226,7 @@
       前言 地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。 线性地震事件合成
     </div>
     <div class="read-more">
-      <a href="/post/2018-04-23-linear-events/" class="read-more-link">阅读更多</a>
+      <a href="/%E5%90%88%E6%88%90%E5%9C%B0%E9%9C%87%E4%BA%8B%E4%BB%B6/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -208,7 +234,7 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2018-04-06-macos-ntfs/">macOS 挂载 NTFS 格式硬盘</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/macos-%E6%8C%82%E8%BD%BD-ntfs-%E6%A0%BC%E5%BC%8F%E7%A1%AC%E7%9B%98/">macOS 挂载 NTFS 格式硬盘</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-04-06 </span>
       <div class="post-category">
@@ -226,7 +252,7 @@
       Mac本身是支持NTFS写入的，只是NTFS是微软开发，由于版权和技术细节原因，苹果不愿公开说自己支持NTFS写入，也是有自己以后可能不支持
     </div>
     <div class="read-more">
-      <a href="/post/2018-04-06-macos-ntfs/" class="read-more-link">阅读更多</a>
+      <a href="/macos-%E6%8C%82%E8%BD%BD-ntfs-%E6%A0%BC%E5%BC%8F%E7%A1%AC%E7%9B%98/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -234,7 +260,7 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2018-03-31-rsf-plot/">Madagascar绘图总结</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/madagascar%E7%BB%98%E5%9B%BE%E6%80%BB%E7%BB%93/">Madagascar绘图总结</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-03-31 </span>
       <div class="post-category">
@@ -252,33 +278,7 @@
       波形图 比如，绘制子波形态，单道地震记录等。采用sfgraph来绘图，类似与Matlab的plot命令。 # plot wavelet from rsf.proj import * par={ } def waveplot(custom,par): return ''' graph title=&quot;&quot; min1=%g min2=0 max2=+1 plotfat=5
     </div>
     <div class="read-more">
-      <a href="/post/2018-03-31-rsf-plot/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2018-02-04-boot-partition/">Linux /boot 重新分区</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-02-04 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E7%BC%96%E7%A8%8B/"> 编程 </a>
-          
-        </div>
-      <span class="more-meta"> 约 824 字 </span>
-      <span class="more-meta"> 预计阅读 2 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      由于之前装机时 /boot 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 /boot 空间不足， 然后发现 /boot下有两个系统内核文件，一个 44M 左右
-    </div>
-    <div class="read-more">
-      <a href="/post/2018-02-04-boot-partition/" class="read-more-link">阅读更多</a>
+      <a href="/madagascar%E7%BB%98%E5%9B%BE%E6%80%BB%E7%BB%93/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

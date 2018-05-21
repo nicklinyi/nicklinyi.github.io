@@ -13,28 +13,28 @@
     
     <item>
       <title>Matlab 绘制4D数据</title>
-      <link>https://nicklinyi.github.io/post/2018-05-17-matlab4dplot/</link>
+      <link>https://nicklinyi.github.io/matlab-%E7%BB%98%E5%88%B64d%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Thu, 17 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2018-05-17-matlab4dplot/</guid>
+      <guid>https://nicklinyi.github.io/matlab-%E7%BB%98%E5%88%B64d%E6%95%B0%E6%8D%AE/</guid>
       <description>绘图基础 首先，需要知道的是matlab三维图的默认坐标轴的位置：面向大家的是 y-z平面，侧面是 x-z 平面，顶底是 x-y 平面。如下图所示 通过该图，我们</description>
     </item>
     
     <item>
       <title>Matlab 拟合数据体类型解读</title>
-      <link>https://nicklinyi.github.io/post/2018-05-14-matlabfit/</link>
+      <link>https://nicklinyi.github.io/matlab-%E6%8B%9F%E5%90%88%E6%95%B0%E6%8D%AE%E4%BD%93%E7%B1%BB%E5%9E%8B%E8%A7%A3%E8%AF%BB/</link>
       <pubDate>Mon, 14 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2018-05-14-matlabfit/</guid>
+      <guid>https://nicklinyi.github.io/matlab-%E6%8B%9F%E5%90%88%E6%95%B0%E6%8D%AE%E4%BD%93%E7%B1%BB%E5%9E%8B%E8%A7%A3%E8%AF%BB/</guid>
       <description>首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将 其拟合结果存为fitresult</description>
     </item>
     
     <item>
       <title>Matlab如何绘制美观的colorbar</title>
-      <link>https://nicklinyi.github.io/post/2018-05-09-matlabcolorbar/</link>
+      <link>https://nicklinyi.github.io/matlab%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6%E7%BE%8E%E8%A7%82%E7%9A%84colorbar/</link>
       <pubDate>Wed, 09 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2018-05-09-matlabcolorbar/</guid>
+      <guid>https://nicklinyi.github.io/matlab%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6%E7%BE%8E%E8%A7%82%E7%9A%84colorbar/</guid>
       <description>通常情况下，matlab绘出的色标主要存在两个问题：1色标的宽度太宽；2色标的高度太高。为了绘制更美观的图像，这里深入研究了一下色标的大小调</description>
     </item>
     

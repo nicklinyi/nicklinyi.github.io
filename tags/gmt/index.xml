@@ -13,10 +13,10 @@
     
     <item>
       <title>采用 GMT 绘制 SPECFEM2D 波场快照</title>
-      <link>https://nicklinyi.github.io/post/2017-10-28-specfem2d-gmt/</link>
+      <link>https://nicklinyi.github.io/%E9%87%87%E7%94%A8-gmt-%E7%BB%98%E5%88%B6-specfem2d-%E6%B3%A2%E5%9C%BA%E5%BF%AB%E7%85%A7/</link>
       <pubDate>Sat, 28 Oct 2017 12:47:24 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2017-10-28-specfem2d-gmt/</guid>
+      <guid>https://nicklinyi.github.io/%E9%87%87%E7%94%A8-gmt-%E7%BB%98%E5%88%B6-specfem2d-%E6%B3%A2%E5%9C%BA%E5%BF%AB%E7%85%A7/</guid>
       <description>前言 SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于 与其他模拟程序生成的波场快照进行对比。因此本文记录</description>
     </item>
     

@@ -13,10 +13,10 @@
     
     <item>
       <title>Madagascar绘图总结</title>
-      <link>https://nicklinyi.github.io/post/2018-03-31-rsf-plot/</link>
+      <link>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sat, 31 Mar 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2018-03-31-rsf-plot/</guid>
+      <guid>https://nicklinyi.github.io/madagascar%E7%BB%98%E5%9B%BE%E6%80%BB%E7%BB%93/</guid>
       <description>波形图 比如，绘制子波形态，单道地震记录等。采用sfgraph来绘图，类似与Matlab的plot命令。 # plot wavelet from rsf.proj import * par={ } def waveplot(custom,par): return &#39;&#39;&#39; graph title=&amp;quot;&amp;quot; min1=%g min2=0 max2=+1 plotfat=5</description>
     </item>
     

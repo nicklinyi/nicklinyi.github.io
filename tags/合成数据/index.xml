@@ -13,10 +13,10 @@
     
     <item>
       <title>合成地震事件</title>
-      <link>https://nicklinyi.github.io/post/2018-04-23-linear-events/</link>
+      <link>https://nicklinyi.github.io/%E5%90%88%E6%88%90%E5%9C%B0%E9%9C%87%E4%BA%8B%E4%BB%B6/</link>
       <pubDate>Tue, 24 Apr 2018 13:08:28 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2018-04-23-linear-events/</guid>
+      <guid>https://nicklinyi.github.io/%E5%90%88%E6%88%90%E5%9C%B0%E9%9C%87%E4%BA%8B%E4%BB%B6/</guid>
       <description>前言 地震事件的合成主要用于测试一些信号处理的方法，比如插值、去噪等。为了避免大家重复造轮子，这里介绍一下合成地震事件的方法。 线性地震事件合成</description>
     </item>
     

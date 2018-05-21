@@ -13,19 +13,19 @@
     
     <item>
       <title>合并 Madagascar 道头与数据</title>
-      <link>https://nicklinyi.github.io/post/2016-06-15-rsf-data-handle/</link>
+      <link>https://nicklinyi.github.io/%E5%90%88%E5%B9%B6-madagascar-%E9%81%93%E5%A4%B4%E4%B8%8E%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Wed, 15 Jun 2016 13:43:37 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2016-06-15-rsf-data-handle/</guid>
+      <guid>https://nicklinyi.github.io/%E5%90%88%E5%B9%B6-madagascar-%E9%81%93%E5%A4%B4%E4%B8%8E%E6%95%B0%E6%8D%AE/</guid>
       <description>Why? 我们都知道 Madagascar 的数据和道头是放置在不同的位置，然后在道头里通过指针指向数据文件的实际位置。这样做的好处有一下几点: 误删文件不会造成实际数据的</description>
     </item>
     
     <item>
       <title>Madagascar下使用latex</title>
-      <link>https://nicklinyi.github.io/post/2016-05-24-rsf-use-latex/</link>
+      <link>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8latex/</link>
       <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2016-05-24-rsf-use-latex/</guid>
+      <guid>https://nicklinyi.github.io/madagascar%E4%B8%8B%E4%BD%BF%E7%94%A8latex/</guid>
       <description>之前一直尝试在 Madagascar 下使用 latex 功能，但一直没有实现。也没有太多地时间来研究这个。今天，实在是忍不住了，开始重新研究起来。首先，cd到book目录下</description>
     </item>
     

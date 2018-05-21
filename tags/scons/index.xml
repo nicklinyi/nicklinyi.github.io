@@ -13,37 +13,37 @@
     
     <item>
       <title>Madagascar输出程序运行日志文件</title>
-      <link>https://nicklinyi.github.io/post/2017-01-12-rsf-print-log/</link>
+      <link>https://nicklinyi.github.io/madagascar%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</link>
       <pubDate>Thu, 12 Jan 2017 10:47:24 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2017-01-12-rsf-print-log/</guid>
+      <guid>https://nicklinyi.github.io/madagascar%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</guid>
       <description>为什么要输出日志文件？ 输出日志文件的目的就是保存整个程序执行过程的所有状态信息，以便未来排错或者对结果进行分析的一种手段。 程序运行时有些信息</description>
     </item>
     
     <item>
       <title>DATAPATH 的使用</title>
-      <link>https://nicklinyi.github.io/post/2016-12-22-rsf-datapath/</link>
+      <link>https://nicklinyi.github.io/datapath-%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 22 Dec 2016 10:47:24 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2016-12-22-rsf-datapath/</guid>
+      <guid>https://nicklinyi.github.io/datapath-%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>正常情况下， 执行完Madagascar命令后的二进制数据文件是存在/var/tmp/下的，实际我们在写自己就的项目的时候，一般最好是把数据文</description>
     </item>
     
     <item>
       <title>采用 SCons 写 SU 脚本</title>
-      <link>https://nicklinyi.github.io/post/2016-05-26-su-scons-together/</link>
+      <link>https://nicklinyi.github.io/%E9%87%87%E7%94%A8-scons-%E5%86%99-su-%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Thu, 26 May 2016 10:47:24 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2016-05-26-su-scons-together/</guid>
+      <guid>https://nicklinyi.github.io/%E9%87%87%E7%94%A8-scons-%E5%86%99-su-%E8%84%9A%E6%9C%AC/</guid>
       <description>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题： 1. bash 脚本是按顺序执行的，也就是说，如果</description>
     </item>
     
     <item>
       <title>Vim高亮SConstruct</title>
-      <link>https://nicklinyi.github.io/post/2016-05-24-vim-scons-highlight/</link>
+      <link>https://nicklinyi.github.io/vim%E9%AB%98%E4%BA%AEsconstruct/</link>
       <pubDate>Tue, 24 May 2016 16:15:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2016-05-24-vim-scons-highlight/</guid>
+      <guid>https://nicklinyi.github.io/vim%E9%AB%98%E4%BA%AEsconstruct/</guid>
       <description>Vim高亮文件一般只对含后缀的文件名有效，对于经常使用 Madagascar 的人来说，每次采用 Vim 写 SConstruct 文件显得十分不便，因此如果能让 Vim 自动识别 SConstruct 文件为 Python 文件，则处</description>
     </item>
     

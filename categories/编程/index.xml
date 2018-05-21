@@ -13,37 +13,37 @@
     
     <item>
       <title>Madagascar Matlab 混合编程</title>
-      <link>https://nicklinyi.github.io/post/2018-05-20-rsf-matlab/</link>
+      <link>https://nicklinyi.github.io/madagascar-matlab-%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Sun, 20 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2018-05-20-rsf-matlab/</guid>
+      <guid>https://nicklinyi.github.io/madagascar-matlab-%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/</guid>
       <description>配置 安装含Matlab API的Madagascar过程详见Madagascar安装 写.rsf文件 下面的matlab程序提供了一个使用line</description>
     </item>
     
     <item>
       <title>Matlab 拟合数据体类型解读</title>
-      <link>https://nicklinyi.github.io/post/2018-05-14-matlabfit/</link>
+      <link>https://nicklinyi.github.io/matlab-%E6%8B%9F%E5%90%88%E6%95%B0%E6%8D%AE%E4%BD%93%E7%B1%BB%E5%9E%8B%E8%A7%A3%E8%AF%BB/</link>
       <pubDate>Mon, 14 May 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2018-05-14-matlabfit/</guid>
+      <guid>https://nicklinyi.github.io/matlab-%E6%8B%9F%E5%90%88%E6%95%B0%E6%8D%AE%E4%BD%93%E7%B1%BB%E5%9E%8B%E8%A7%A3%E8%AF%BB/</guid>
       <description>首先我们先针对一些列的散点(x1,y1)进行拟合(x1,y1均为矢量)。其三次样条拟合的结果如下图所示，并将 其拟合结果存为fitresult</description>
     </item>
     
     <item>
       <title>Linux /boot 重新分区</title>
-      <link>https://nicklinyi.github.io/post/2018-02-04-boot-partition/</link>
+      <link>https://nicklinyi.github.io/linux-/boot-%E9%87%8D%E6%96%B0%E5%88%86%E5%8C%BA/</link>
       <pubDate>Sun, 04 Feb 2018 08:57:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2018-02-04-boot-partition/</guid>
+      <guid>https://nicklinyi.github.io/linux-/boot-%E9%87%8D%E6%96%B0%E5%88%86%E5%8C%BA/</guid>
       <description>由于之前装机时 /boot 只分配了 200MB 的空间，而 Ubuntu 16.04 LTS 会自动更新内核， 导致某次开机突然提示 /boot 空间不足， 然后发现 /boot下有两个系统内核文件，一个 44M 左右</description>
     </item>
     
     <item>
       <title>Vim高亮SConstruct</title>
-      <link>https://nicklinyi.github.io/post/2016-05-24-vim-scons-highlight/</link>
+      <link>https://nicklinyi.github.io/vim%E9%AB%98%E4%BA%AEsconstruct/</link>
       <pubDate>Tue, 24 May 2016 16:15:57 +0000</pubDate>
       
-      <guid>https://nicklinyi.github.io/post/2016-05-24-vim-scons-highlight/</guid>
+      <guid>https://nicklinyi.github.io/vim%E9%AB%98%E4%BA%AEsconstruct/</guid>
       <description>Vim高亮文件一般只对含后缀的文件名有效，对于经常使用 Madagascar 的人来说，每次采用 Vim 写 SConstruct 文件显得十分不便，因此如果能让 Vim 自动识别 SConstruct 文件为 Python 文件，则处</description>
     </item>
     
