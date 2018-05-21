@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安装 on Lloyd</title>
+    <link>https://nicklinyi.github.io/categories/%E5%AE%89%E8%A3%85/</link>
+    <description>Recent content in 安装 on Lloyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://nicklinyi.github.io/categories/%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux 下安装 SPECFEM3D</title>
+      <link>https://nicklinyi.github.io/specfem3d/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/specfem3d/</guid>
+      <description>下载 要下载SPECFEM3D，可以在终端中输入以下命令： $ git clone --recursive --branch devel https://github.com/geodynamics/specfem3d.git 可选依赖包 以下安装包均为可选。 ifort编译器，可使用 gfortran 代替。 mpi并</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 OpenCV</title>
+      <link>https://nicklinyi.github.io/opencv/</link>
+      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux 下常用软件安装</title>
+      <link>https://nicklinyi.github.io/daily/</link>
+      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/daily/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 MPICH</title>
+      <link>https://nicklinyi.github.io/mpich/</link>
+      <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/mpich/</guid>
+      <description>首先要知道的是 MPI 并不是一种编程语言，只是一种并行库，用来指示编译器自己的程序中哪些地方需要并行，哪些地方正常串行等等。目前常用的有 MPICH 和 OPENMPI 两个</description>
+    </item>
+    
+    <item>
+      <title>Debian升级系统至Stretch</title>
+      <link>https://nicklinyi.github.io/debian/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/debian/</guid>
+      <description>做好数据备份(最重要) 升级Debian 8系统上的所有软件 在升级到Debian 9系统之前，要把当前系统上的所有软件升级到最新版本，输入下面的命</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 SCOTCH</title>
+      <link>https://nicklinyi.github.io/scotch/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/scotch/</guid>
+      <description>下载 Scotch最新版本目前为 6.0.4， 下载地址为：https://gforge.inria.fr/projects/scotch 安装依赖</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 METIS</title>
+      <link>https://nicklinyi.github.io/metis/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/metis/</guid>
+      <description>下载 选择最新版本(5.1.0)进行下载： 源码链接：http://glaros.dtc.umn.edu/gkhome/metis/metis/</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 MUMPS</title>
+      <link>https://nicklinyi.github.io/mumps/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/mumps/</guid>
+      <description>下载 下载,需要上下面的网站去预留信息，然后开发者会在几小时内将软件发至你留的邮箱中，建议下载最新版本5.1.1。 源码：http://graa</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 TOOLBOX-OPTIMIZATION</title>
+      <link>https://nicklinyi.github.io/toolbox-optimization/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/toolbox-optimization/</guid>
+      <description>下载 下载链接: https://seiscope2.obs.ujf-grenoble.fr/SEISCOPE-OPTIMIZATION-TOOLBOX 编译 将下载的软件解压后，进入doc/目录下，查看manual文档进行编译。 修改Makefile.inc Makefile.in</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 TOY2DAC</title>
+      <link>https://nicklinyi.github.io/toy2dac/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/toy2dac/</guid>
+      <description>下载 下载链接:https://seiscope2.obs.ujf-grenoble.fr/TOY2DAC,82 编译 将下载的软件解压后，进入d</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 SPECFEM2D</title>
+      <link>https://nicklinyi.github.io/specfem2d/</link>
+      <pubDate>Sat, 14 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/specfem2d/</guid>
+      <description>下载 要下载SPECFEM2D，可以在终端中输入以下命令： $ git clone --recursive --branch devel https://github.com/geodynamics/specfem2d.git 安装 安装SPECFEM 2D需要安装 ifort编译器，可使用 gfortran 代替。 mp</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 SEPlib</title>
+      <link>https://nicklinyi.github.io/seplib/</link>
+      <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/seplib/</guid>
+      <description>软件下载 下载最新版本的 SEPlib，目前为6.5.3. 实际有7.0.5，但官网上没有链接了，估计人都转向 Madagascar 了。 下载地址： http://sepwww.stanford.edu/doku.php?id=sep:software:installing_seplib 安装依赖包 安装 SE</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 Seismic Unix</title>
+      <link>https://nicklinyi.github.io/seismic-unix/</link>
+      <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/seismic-unix/</guid>
+      <description>Seismic Unix是Colorado School of Mines开发的一款地震数据处理软件。最新的版本代号为44R1。 这里选择43R8版本进行安装。 下载地址：ht</description>
+    </item>
+    
+    <item>
+      <title>Madagascar 的安装</title>
+      <link>https://nicklinyi.github.io/madagascar/</link>
+      <pubDate>Thu, 14 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/madagascar/</guid>
+      <description>与Seismic Unix类似，Madagascar也是一款地震数据处理软件，其开发者众多，内置的软件也非常多， 缺点就是代码注释比较少，不容易</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 DENISE</title>
+      <link>https://nicklinyi.github.io/denise/</link>
+      <pubDate>Wed, 13 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/denise/</guid>
+      <description>DENISE是一个KIT开发的用于全波形反演的软件。 下载 下载,需要上下面的网站去预留信息，然后开发者会在几小时内将软件发至你留的邮箱中。 官网</description>
+    </item>
+    
+  </channel>
+</rss>

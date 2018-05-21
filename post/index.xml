@@ -120,6 +120,15 @@
     </item>
     
     <item>
+      <title>Linux 下安装 SPECFEM3D</title>
+      <link>https://nicklinyi.github.io/specfem3d/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/specfem3d/</guid>
+      <description>下载 要下载SPECFEM3D，可以在终端中输入以下命令： $ git clone --recursive --branch devel https://github.com/geodynamics/specfem3d.git 可选依赖包 以下安装包均为可选。 ifort编译器，可使用 gfortran 代替。 mpi并</description>
+    </item>
+    
+    <item>
       <title>Madagascar 绘制 SEG/EAGE 模型的盐丘轮廓</title>
       <link>https://nicklinyi.github.io/madagascar-%E7%BB%98%E5%88%B6-seg/eage-%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%9B%90%E4%B8%98%E8%BD%AE%E5%BB%93/</link>
       <pubDate>Thu, 28 Sep 2017 12:47:24 +0000</pubDate>
@@ -138,12 +147,66 @@
     </item>
     
     <item>
+      <title>Linux 下安装 OpenCV</title>
+      <link>https://nicklinyi.github.io/opencv/</link>
+      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux 下常用软件安装</title>
+      <link>https://nicklinyi.github.io/daily/</link>
+      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/daily/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 MPICH</title>
+      <link>https://nicklinyi.github.io/mpich/</link>
+      <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/mpich/</guid>
+      <description>首先要知道的是 MPI 并不是一种编程语言，只是一种并行库，用来指示编译器自己的程序中哪些地方需要并行，哪些地方正常串行等等。目前常用的有 MPICH 和 OPENMPI 两个</description>
+    </item>
+    
+    <item>
+      <title>Debian升级系统至Stretch</title>
+      <link>https://nicklinyi.github.io/debian/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/debian/</guid>
+      <description>做好数据备份(最重要) 升级Debian 8系统上的所有软件 在升级到Debian 9系统之前，要把当前系统上的所有软件升级到最新版本，输入下面的命</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 CUDA</title>
+      <link>https://nicklinyi.github.io/cuda/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/cuda/</guid>
+      <description>本文介绍如何在 Ubuntu 16.04 LTS 上安装 CUDA-8.0 。 下载 下载之前首先确定自己的电脑的显卡为Nvidia的显卡。其次是查询自己电脑的操作系统。 确定自己有NVIDIA</description>
+    </item>
+    
+    <item>
       <title>Madagascar绘图字体以及特殊符号的处理</title>
       <link>https://nicklinyi.github.io/rsf-fonts/</link>
       <pubDate>Wed, 26 Jul 2017 12:47:24 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/rsf-fonts/</guid>
       <description>背景介绍 Madagascar自带的一共有15种字体，这些字体文件位于$RSFSRC/pens/fonts，通过编译最后得到的字体二进制文件位</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 SCOTCH</title>
+      <link>https://nicklinyi.github.io/scotch/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/scotch/</guid>
+      <description>下载 Scotch最新版本目前为 6.0.4， 下载地址为：https://gforge.inria.fr/projects/scotch 安装依赖</description>
     </item>
     
     <item>
@@ -225,6 +288,87 @@
       
       <guid>https://nicklinyi.github.io/vim-scons-highlight/</guid>
       <description>Vim高亮文件一般只对含后缀的文件名有效，对于经常使用 Madagascar 的人来说，每次采用 Vim 写 SConstruct 文件显得十分不便，因此如果能让 Vim 自动识别 SConstruct 文件为 Python 文件，则处</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 METIS</title>
+      <link>https://nicklinyi.github.io/metis/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/metis/</guid>
+      <description>下载 选择最新版本(5.1.0)进行下载： 源码链接：http://glaros.dtc.umn.edu/gkhome/metis/metis/</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 MUMPS</title>
+      <link>https://nicklinyi.github.io/mumps/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/mumps/</guid>
+      <description>下载 下载,需要上下面的网站去预留信息，然后开发者会在几小时内将软件发至你留的邮箱中，建议下载最新版本5.1.1。 源码：http://graa</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 TOOLBOX-OPTIMIZATION</title>
+      <link>https://nicklinyi.github.io/toolbox-optimization/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/toolbox-optimization/</guid>
+      <description>下载 下载链接: https://seiscope2.obs.ujf-grenoble.fr/SEISCOPE-OPTIMIZATION-TOOLBOX 编译 将下载的软件解压后，进入doc/目录下，查看manual文档进行编译。 修改Makefile.inc Makefile.in</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 TOY2DAC</title>
+      <link>https://nicklinyi.github.io/toy2dac/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/toy2dac/</guid>
+      <description>下载 下载链接:https://seiscope2.obs.ujf-grenoble.fr/TOY2DAC,82 编译 将下载的软件解压后，进入d</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 SPECFEM2D</title>
+      <link>https://nicklinyi.github.io/specfem2d/</link>
+      <pubDate>Sat, 14 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/specfem2d/</guid>
+      <description>下载 要下载SPECFEM2D，可以在终端中输入以下命令： $ git clone --recursive --branch devel https://github.com/geodynamics/specfem2d.git 安装 安装SPECFEM 2D需要安装 ifort编译器，可使用 gfortran 代替。 mp</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 SEPlib</title>
+      <link>https://nicklinyi.github.io/seplib/</link>
+      <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/seplib/</guid>
+      <description>软件下载 下载最新版本的 SEPlib，目前为6.5.3. 实际有7.0.5，但官网上没有链接了，估计人都转向 Madagascar 了。 下载地址： http://sepwww.stanford.edu/doku.php?id=sep:software:installing_seplib 安装依赖包 安装 SE</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 Seismic Unix</title>
+      <link>https://nicklinyi.github.io/seismic-unix/</link>
+      <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/seismic-unix/</guid>
+      <description>Seismic Unix是Colorado School of Mines开发的一款地震数据处理软件。最新的版本代号为44R1。 这里选择43R8版本进行安装。 下载地址：ht</description>
+    </item>
+    
+    <item>
+      <title>Madagascar 的安装</title>
+      <link>https://nicklinyi.github.io/madagascar/</link>
+      <pubDate>Thu, 14 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/madagascar/</guid>
+      <description>与Seismic Unix类似，Madagascar也是一款地震数据处理软件，其开发者众多，内置的软件也非常多， 缺点就是代码注释比较少，不容易</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 DENISE</title>
+      <link>https://nicklinyi.github.io/denise/</link>
+      <pubDate>Wed, 13 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/denise/</guid>
+      <description>DENISE是一个KIT开发的用于全波形反演的软件。 下载 下载,需要上下面的网站去预留信息，然后开发者会在几小时内将软件发至你留的邮箱中。 官网</description>
     </item>
     
   </channel>

@@ -21,11 +21,47 @@
     </item>
     
     <item>
+      <title>Cuda</title>
+      <link>https://nicklinyi.github.io/tags/cuda/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/cuda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DENISE</title>
+      <link>https://nicklinyi.github.io/tags/denise/</link>
+      <pubDate>Wed, 13 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/denise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debian</title>
+      <link>https://nicklinyi.github.io/tags/debian/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>EAGE</title>
       <link>https://nicklinyi.github.io/tags/eage/</link>
       <pubDate>Thu, 28 Sep 2017 12:47:24 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/tags/eage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FWI</title>
+      <link>https://nicklinyi.github.io/tags/fwi/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/fwi/</guid>
       <description></description>
     </item>
     
@@ -44,6 +80,15 @@
       <pubDate>Sat, 28 Oct 2017 12:47:24 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/tags/gmt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPU</title>
+      <link>https://nicklinyi.github.io/tags/gpu/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/gpu/</guid>
       <description></description>
     </item>
     
@@ -71,6 +116,33 @@
       <pubDate>Sun, 04 Feb 2018 08:57:57 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>METIS</title>
+      <link>https://nicklinyi.github.io/tags/metis/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/metis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MPI</title>
+      <link>https://nicklinyi.github.io/tags/mpi/</link>
+      <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/mpi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MUMPS</title>
+      <link>https://nicklinyi.github.io/tags/mumps/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/mumps/</guid>
       <description></description>
     </item>
     
@@ -111,11 +183,29 @@
     </item>
     
     <item>
+      <title>OpenCV</title>
+      <link>https://nicklinyi.github.io/tags/opencv/</link>
+      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Paper</title>
       <link>https://nicklinyi.github.io/tags/paper/</link>
       <pubDate>Tue, 24 May 2016 08:57:57 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/tags/paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SCOTCH</title>
+      <link>https://nicklinyi.github.io/tags/scotch/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/scotch/</guid>
       <description></description>
     </item>
     
@@ -138,6 +228,15 @@
     </item>
     
     <item>
+      <title>SEPlib</title>
+      <link>https://nicklinyi.github.io/tags/seplib/</link>
+      <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/seplib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>SPECFEM2D</title>
       <link>https://nicklinyi.github.io/tags/specfem2d/</link>
       <pubDate>Sat, 28 Oct 2017 12:47:24 +0000</pubDate>
@@ -147,11 +246,47 @@
     </item>
     
     <item>
+      <title>SPECFEM3D</title>
+      <link>https://nicklinyi.github.io/tags/specfem3d/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/specfem3d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>SU</title>
       <link>https://nicklinyi.github.io/tags/su/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/tags/su/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Toolbox</title>
+      <link>https://nicklinyi.github.io/tags/toolbox/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/toolbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Toy2dac</title>
+      <link>https://nicklinyi.github.io/tags/toy2dac/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/toy2dac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>https://nicklinyi.github.io/tags/ubuntu/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     
@@ -179,6 +314,24 @@
       <pubDate>Fri, 27 Apr 2018 13:08:28 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%90%E6%B3%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>地震学软件</title>
+      <link>https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>常用软件</title>
+      <link>https://nicklinyi.github.io/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
       <description></description>
     </item>
     

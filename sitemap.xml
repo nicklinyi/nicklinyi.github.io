@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://nicklinyi.github.io/collection/</loc>
+    <lastmod>2016-05-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/links/</loc>
     <lastmod>2016-05-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -101,6 +108,13 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/specfem3d/</loc>
+    <lastmod>2017-10-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/madagascar-%E7%BB%98%E5%88%B6-seg/eage-%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%9B%90%E4%B8%98%E8%BD%AE%E5%BB%93/</loc>
     <lastmod>2017-09-28T12:47:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -115,8 +129,50 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/opencv/</loc>
+    <lastmod>2017-08-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/daily/</loc>
+    <lastmod>2017-08-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/mpich/</loc>
+    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/debian/</loc>
+    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/cuda/</loc>
+    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/rsf-fonts/</loc>
     <lastmod>2017-07-26T12:47:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/scotch/</loc>
+    <lastmod>2017-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -185,6 +241,69 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/metis/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/mumps/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/toolbox-optimization/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/toy2dac/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/specfem2d/</loc>
+    <lastmod>2016-05-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/seplib/</loc>
+    <lastmod>2016-05-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/seismic-unix/</loc>
+    <lastmod>2016-05-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/madagascar/</loc>
+    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/denise/</loc>
+    <lastmod>2015-05-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -198,8 +317,36 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/tags/cuda/</loc>
+    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/denise/</loc>
+    <lastmod>2015-05-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/debian/</loc>
+    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/tags/eage/</loc>
     <lastmod>2017-09-28T12:47:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/fwi/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -214,6 +361,13 @@
   <url>
     <loc>https://nicklinyi.github.io/tags/gmt/</loc>
     <lastmod>2017-10-28T12:47:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/gpu/</loc>
+    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -254,6 +408,27 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/tags/metis/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/mpi/</loc>
+    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/mumps/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/tags/macos/</loc>
     <lastmod>2018-04-06T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -289,6 +464,13 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/tags/opencv/</loc>
+    <lastmod>2017-08-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/tags/paper/</loc>
     <lastmod>2016-05-24T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -298,6 +480,13 @@
   <url>
     <loc>https://nicklinyi.github.io/post/</loc>
     <lastmod>2018-05-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/scotch/</loc>
+    <lastmod>2017-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -317,8 +506,22 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/tags/seplib/</loc>
+    <lastmod>2016-05-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/tags/specfem2d/</loc>
     <lastmod>2017-10-28T12:47:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/specfem3d/</loc>
+    <lastmod>2017-10-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -333,6 +536,27 @@
   <url>
     <loc>https://nicklinyi.github.io/tags/</loc>
     <lastmod>2018-05-09T08:57:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/toolbox/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/toy2dac/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/ubuntu/</loc>
+    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -366,8 +590,29 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2016-05-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2017-08-13T12:47:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/categories/%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2017-10-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2017-08-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -410,6 +655,13 @@
   <url>
     <loc>https://nicklinyi.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2018-05-20T08:57:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/categories/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/</loc>
+    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SPECFEM3D on Lloyd</title>
+    <link>https://nicklinyi.github.io/tags/specfem3d/</link>
+    <description>Recent content in SPECFEM3D on Lloyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://nicklinyi.github.io/tags/specfem3d/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux 下安装 SPECFEM3D</title>
+      <link>https://nicklinyi.github.io/specfem3d/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/specfem3d/</guid>
+      <description>下载 要下载SPECFEM3D，可以在终端中输入以下命令： $ git clone --recursive --branch devel https://github.com/geodynamics/specfem3d.git 可选依赖包 以下安装包均为可选。 ifort编译器，可使用 gfortran 代替。 mpi并</description>
+    </item>
+    
+  </channel>
+</rss>

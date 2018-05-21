@@ -21,12 +21,30 @@
     </item>
     
     <item>
+      <title>Debian升级系统至Stretch</title>
+      <link>https://nicklinyi.github.io/debian/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/debian/</guid>
+      <description>做好数据备份(最重要) 升级Debian 8系统上的所有软件 在升级到Debian 9系统之前，要把当前系统上的所有软件升级到最新版本，输入下面的命</description>
+    </item>
+    
+    <item>
       <title>Linux下复制单个文件到多个文件夹</title>
       <link>https://nicklinyi.github.io/linux%E4%B8%8B%E5%A4%8D%E5%88%B6%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%88%B0%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
       <pubDate>Sat, 17 Dec 2016 16:45:30 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/linux%E4%B8%8B%E5%A4%8D%E5%88%B6%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%88%B0%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
       <description>问题 复制一个文件到多个文件夹中 解决方案 $ echo ~/test1 ~/test2 | xargs -n 1 cp -v test.py 上面的命令，目录的路径(~/test1,~/test2)被管道作为输入到xarg</description>
+    </item>
+    
+    <item>
+      <title>Linux 下安装 SEPlib</title>
+      <link>https://nicklinyi.github.io/seplib/</link>
+      <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/seplib/</guid>
+      <description>软件下载 下载最新版本的 SEPlib，目前为6.5.3. 实际有7.0.5，但官网上没有链接了，估计人都转向 Madagascar 了。 下载地址： http://sepwww.stanford.edu/doku.php?id=sep:software:installing_seplib 安装依赖包 安装 SE</description>
     </item>
     
   </channel>

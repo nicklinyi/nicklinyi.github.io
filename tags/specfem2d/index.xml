@@ -20,5 +20,14 @@
       <description>前言 SPECFEM2D 本身程序运行的结果也可以输出波场快照，但是其图形由于是自己生成的，并不美观，也不便于 与其他模拟程序生成的波场快照进行对比。因此本文记录</description>
     </item>
     
+    <item>
+      <title>Linux 下安装 SPECFEM2D</title>
+      <link>https://nicklinyi.github.io/specfem2d/</link>
+      <pubDate>Sat, 14 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/specfem2d/</guid>
+      <description>下载 要下载SPECFEM2D，可以在终端中输入以下命令： $ git clone --recursive --branch devel https://github.com/geodynamics/specfem2d.git 安装 安装SPECFEM 2D需要安装 ifort编译器，可使用 gfortran 代替。 mp</description>
+    </item>
+    
   </channel>
 </rss>
