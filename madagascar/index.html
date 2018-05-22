@@ -58,7 +58,7 @@
 
 <meta property="article:published_time" content="2015-05-14T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-05-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-05-22T00:00:00&#43;00:00"/>
 
 
 
@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2015-05-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-05-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="642">
+<meta itemprop="wordCount" content="755">
 
 
 
@@ -171,7 +171,7 @@
               <a href="/categories/%E5%AE%89%E8%A3%85/"> 安装 </a>
             
           </div>
-        <span class="more-meta"> 约 642 字 </span>
+        <span class="more-meta"> 约 755 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -198,6 +198,8 @@
 <li><a href="#安装依赖包-1">安装依赖包</a></li>
 <li><a href="#编译-安装-1">编译，安装</a></li>
 <li><a href="#配置环境变量-1">配置环境变量</a></li>
+<li><a href="#参考">参考</a></li>
+<li><a href="#修订历史">修订历史</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -281,11 +283,22 @@ sudo port install libnetpbm
 
 <h3 id="编译-安装-1">编译，安装</h3>
 
+<p>macOS 安装 Matlab API 限制比较多，首先需要在<code>~/.bash_profile</code>中添加 Matlab 的安装路径。</p>
+
+<pre><code class="language-bash"># MATLAB 20XXX, XXX 为版本号，比如 Matlab 2018a etc.
+export PATH=$PATH:/Applications/MATLAB_R20XXX.app/bin
+</code></pre>
+
 <pre><code class="language-console">## 在Madagascar 源码的根目录下执行下列操作
-$ ./configure CC=clang CXX=clang++ API=python,f90 --prefix=/Users/lloyd/rsf # 额外安装python，Fortran两个API
+$ ./configure CC=clang CXX=clang++ API=python,f90,matlab --prefix=/Users/lloyd/rsf # 额外安装python，Fortran两个API
 $ make
 $ make install
 </code></pre>
+
+<blockquote>
+<p>另外，需要考虑 Matlab mex 支持的编译器，比如最新的 macOS High Sierra 系统中 Xcode 的版本为9.X，而 Matlab 2016x 等不支持该版本的编译器。关于 Matlab 版本与对应的 Xcode 版本对应关系详见：
+<a href="https://www.mathworks.com/support/sysreq/previous_releases.html">https://www.mathworks.com/support/sysreq/previous_releases.html</a></p>
+</blockquote>
 
 <h3 id="配置环境变量-1">配置环境变量</h3>
 
@@ -296,11 +309,21 @@ export RSFROOT=/Users/lloyd/rsf
 source $RSFROOT/share/madagascar/etc/env.sh
 </code></pre>
 
+<h3 id="参考">参考</h3>
+
+<ul>
+<li><a href="https://www.mathworks.com/support/sysreq/previous_releases.html">https://www.mathworks.com/support/sysreq/previous_releases.html</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/answers/361388-matlab-2016b-on-mac-with-xcode-9-error">https://www.mathworks.com/matlabcentral/answers/361388-matlab-2016b-on-mac-with-xcode-9-error</a></li>
+</ul>
+
+<h3 id="修订历史">修订历史</h3>
+
 <ul>
 <li>2016-05-22: 初稿；</li>
-<li>2017-07-18: 更新至madagascar2.0</li>
-<li>2018-04-28: 更新macOS High Sierra下安装Madagascar</li>
-<li>2018-05-20: 更新安装Matlab API</li>
+<li>2017-07-18: 更新至 madagascar2.0;</li>
+<li>2018-04-28: 更新 macOS High Sierra 下安装 Madagascar;</li>
+<li>2018-05-20: 更新 Linux 安装 Matlab API;</li>
+<li>2018-05-22: 更新 macOS High Sierra 下安装 Matlab API;</li>
 </ul>
 
     </div>
@@ -313,7 +336,7 @@ source $RSFROOT/share/madagascar/etc/env.sh
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-05-20</span>
+    <span class="item-content">2018-05-22</span>
   </p>
   
   <p class="copyright-item">
