@@ -394,15 +394,15 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/linux/</loc>
-    <lastmod>2018-02-04T08:57:57+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/categories/linux/</loc>
+    <lastmod>2016-12-17T16:45:30+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/categories/linux/</loc>
-    <lastmod>2016-12-17T16:45:30+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/tags/linux/</loc>
+    <lastmod>2018-02-04T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -436,14 +436,14 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/macos/</loc>
+    <loc>https://nicklinyi.github.io/categories/macos/</loc>
     <lastmod>2018-04-06T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/categories/macos/</loc>
+    <loc>https://nicklinyi.github.io/tags/macos/</loc>
     <lastmod>2018-04-06T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -604,15 +604,15 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2016-05-23T00:00:00+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2017-08-13T12:47:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2017-08-13T12:47:24+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/tags/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2016-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -653,15 +653,15 @@
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/tags/%E7%BB%98%E5%9B%BE/</loc>
-    <lastmod>2018-03-31T08:57:57+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/categories/%E7%BB%98%E5%9B%BE/</loc>
+    <lastmod>2018-05-17T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nicklinyi.github.io/categories/%E7%BB%98%E5%9B%BE/</loc>
-    <lastmod>2018-05-17T08:57:57+00:00</lastmod>
+    <loc>https://nicklinyi.github.io/tags/%E7%BB%98%E5%9B%BE/</loc>
+    <lastmod>2018-03-31T08:57:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
