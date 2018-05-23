@@ -24,6 +24,13 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/wsl/</loc>
+    <lastmod>2018-05-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/rsf-unif2/</loc>
     <lastmod>2018-05-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -479,7 +486,7 @@
   
   <url>
     <loc>https://nicklinyi.github.io/post/</loc>
-    <lastmod>2018-05-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -569,6 +576,13 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/tags/wsl/</loc>
+    <lastmod>2018-05-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2018-04-24T13:08:28+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -605,7 +619,7 @@
   
   <url>
     <loc>https://nicklinyi.github.io/categories/%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2017-10-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

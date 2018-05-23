@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Madagascar 建立速度模型流程 - Lloyd</title>
+  <title>Windows Subsystem for Linux 安装及使用 - Lloyd</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="Lloyd" />
-  <meta name="description" content="生成界面坐标文件 # 界面1 # x z, 第一列为x坐标， 第二列为z坐标 Flow(&#39;bvel1.asc&#39;,None, &#39;&#39;&#39; echo 0 700 500 900 1000 1000 1500 900 2000 700 2500 900 3000 1000 3500 900 4000 700 n1=2 n2=9 in=$TARGET data_format=ascii_float &#39;&#39;&#39;) 可以按照上述，生成多个界面的" />
+  <meta name="description" content="简介 Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。 安装 WSL 其安装过程比较简" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -29,7 +29,7 @@
 <meta name="generator" content="Hugo 0.37.1" />
 
 
-<link rel="canonical" href="https://nicklinyi.github.io/rsf-unif2/" />
+<link rel="canonical" href="https://nicklinyi.github.io/wsl/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -49,20 +49,16 @@
 
 
 
-<meta property="og:title" content="Madagascar 建立速度模型流程" />
-<meta property="og:description" content="生成界面坐标文件 # 界面1 # x z, 第一列为x坐标， 第二列为z坐标 Flow(&#39;bvel1.asc&#39;,None, &#39;&#39;&#39; echo 0 700 500 900 1000 1000 1500 900 2000 700 2500 900 3000 1000 3500 900 4000 700 n1=2 n2=9 in=$TARGET data_format=ascii_float &#39;&#39;&#39;) 可以按照上述，生成多个界面的" />
+<meta property="og:title" content="Windows Subsystem for Linux 安装及使用" />
+<meta property="og:description" content="简介 Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。 安装 WSL 其安装过程比较简" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nicklinyi.github.io/rsf-unif2/" />
+<meta property="og:url" content="https://nicklinyi.github.io/wsl/" />
 
 
 
-<meta property="article:published_time" content="2018-05-21T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-05-23T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-05-21T00:00:00&#43;00:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-05-23T00:00:00&#43;00:00"/>
 
 
 
@@ -70,20 +66,24 @@
 
 
 
-<meta itemprop="name" content="Madagascar 建立速度模型流程">
-<meta itemprop="description" content="生成界面坐标文件 # 界面1 # x z, 第一列为x坐标， 第二列为z坐标 Flow(&#39;bvel1.asc&#39;,None, &#39;&#39;&#39; echo 0 700 500 900 1000 1000 1500 900 2000 700 2500 900 3000 1000 3500 900 4000 700 n1=2 n2=9 in=$TARGET data_format=ascii_float &#39;&#39;&#39;) 可以按照上述，生成多个界面的">
-
-
-<meta itemprop="datePublished" content="2018-05-21T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-05-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="427">
 
 
 
-<meta itemprop="keywords" content="Madagascar," />
+
+<meta itemprop="name" content="Windows Subsystem for Linux 安装及使用">
+<meta itemprop="description" content="简介 Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。 安装 WSL 其安装过程比较简">
+
+
+<meta itemprop="datePublished" content="2018-05-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-05-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="545">
+
+
+
+<meta itemprop="keywords" content="WSL," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Madagascar 建立速度模型流程"/>
-<meta name="twitter:description" content="生成界面坐标文件 # 界面1 # x z, 第一列为x坐标， 第二列为z坐标 Flow(&#39;bvel1.asc&#39;,None, &#39;&#39;&#39; echo 0 700 500 900 1000 1000 1500 900 2000 700 2500 900 3000 1000 3500 900 4000 700 n1=2 n2=9 in=$TARGET data_format=ascii_float &#39;&#39;&#39;) 可以按照上述，生成多个界面的"/>
+<meta name="twitter:title" content="Windows Subsystem for Linux 安装及使用"/>
+<meta name="twitter:description" content="简介 Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。 安装 WSL 其安装过程比较简"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -162,17 +162,17 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Madagascar 建立速度模型流程</h1>
+      <h1 class="post-title">Windows Subsystem for Linux 安装及使用</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-05-21 </span>
+        <span class="post-time"> 2018-05-23 </span>
         <div class="post-category">
             
-              <a href="/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6/"> 地震学 </a>
+              <a href="/categories/%E5%AE%89%E8%A3%85/"> 安装 </a>
             
           </div>
-        <span class="more-meta"> 约 427 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 545 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -187,9 +187,11 @@
 <ul>
 <li>
 <ul>
-<li><a href="#生成界面坐标文件">生成界面坐标文件</a></li>
-<li><a href="#将界面坐标进行插值">将界面坐标进行插值</a></li>
-<li><a href="#建模">建模</a></li>
+<li><a href="#简介">简介</a></li>
+<li><a href="#安装-wsl">安装 WSL</a></li>
+<li><a href="#使用">使用</a></li>
+<li><a href="#迁移文件系统">迁移文件系统</a></li>
+<li><a href="#效率提高">效率提高</a></li>
 <li><a href="#参考">参考</a></li>
 </ul></li>
 </ul>
@@ -201,106 +203,55 @@
     <div class="post-content">
       
 
-<h2 id="生成界面坐标文件">生成界面坐标文件</h2>
+<h2 id="简介">简介</h2>
 
-<pre><code class="language-python"># 界面1
-# x z, 第一列为x坐标， 第二列为z坐标
-Flow('bvel1.asc',None,
-     '''
-     echo
-     0    700
-     500  900
-     1000 1000
-     1500 900
-     2000 700
-     2500 900
-     3000 1000
-     3500 900
-     4000 700
-     n1=2 n2=9 in=$TARGET
-     data_format=ascii_float
-     ''')
+<p>Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。</p>
+
+<h2 id="安装-wsl">安装 WSL</h2>
+
+<p>其安装过程比较简单，打开<code>cmd</code>终端，然后输入</p>
+
+<pre><code>lxrun /install
 </code></pre>
 
-<p>可以按照上述，生成多个界面的坐标信息文件</p>
+<p>之后会自动进行下载一个比较小的 Linux 发行版的安装文件 (默认是 Ubuntu)，然后按照提示的操作一步步执行就安装完毕。整个安装过程不超过 5 分钟。</p>
 
-<h2 id="将界面坐标进行插值">将界面坐标进行插值</h2>
+<h2 id="使用">使用</h2>
 
-<pre><code class="language-python"># n1 表示x轴
-Flow('lay1','bvel1.asc',
-     '''
-     dd form=native |
-     spline n1=401 d1=10 o1=0
-     ''')
+<p>使用 WSL 可直接在 Win10 的搜索框中输入 <code>bash</code>, 最上面应该会显示一个 Ubuntu 的 logo 的 应用 Bash on Ubuntu on Windows，点开即可正常使用。</p>
+
+<h2 id="迁移文件系统">迁移文件系统</h2>
+
+<p>WSL 的文件系统位于 C 盘，当安装的软件越来越多时，会占用大量的 C 盘空间。这对于使用 SSD 的同学或者C 盘空间本身很小的同学十分不便，因此很多人都存在将 WSL rootfs 迁移至系统其它路径的需求。该问题官方正在研究一种稳定可行的方案，具体进展详见 <a href="https://github.com/Microsoft/WSL/issues/449">https://github.com/Microsoft/WSL/issues/449</a>. 目前一个比较好的解决方案是采用<a href="https://github.com/DDoSolitary">DDoSolitary</a>开发的 <a href="https://github.com/DDoSolitary/LxRunOffline">LxRunOffline</a>. 其解决方案如下：</p>
+
+<ol>
+<li><p>下载 LxRunOffline 软件
+链接为：<a href="https://github.com/DDoSolitary/LxRunOffline/releases">https://github.com/DDoSolitary/LxRunOffline/releases</a></p></li>
+
+<li><p>解压，并在该目录下打开命令提示符，输入如下代码</p>
+
+<pre><code># 显示当前的 Distribution 名称
+&gt; LxRunOffline list
+Legacy
+# 移动该 Distribution
+&gt; LxRunOffline move -n Legacy -d D:\wsl\legacy
 </code></pre>
 
-<p>插值的目的是为了得到一个规则网格的界面坐标信息</p>
+<p>上述命令将整个 WSL 的 rootfs 移动至 <code>D:\wsl\legacy</code> 文件夹下。</p></li>
 
-<h2 id="建模">建模</h2>
+<li><p>check 能否正常使用，按照使用一节提示的操作进行即可。</p></li>
+</ol>
 
-<pre><code class="language-python"># 建模前首先将多个界面信息文件拼接成一个总的文件
-Flow('lays','lay1 lay2','cat axis=2 ${SOURCES[1:2]}')
+<h2 id="效率提高">效率提高</h2>
 
-# 采用sfunif2来建模，和su中的unif2类似
-nz = 201; dz = 10; oz = 0 # spatial sampling in z
-Flow('vel1','lays',
-     '''
-     unif2 n1=%d d1=%g o1=%g v00=2000,2500,3000 |
-     put label1=Depth unit1=m label2=Distance unit2=m
-     label=Velocity unit=m/s
-     ''' % (nz,dz,oz) )
-</code></pre>
-
-<p>将上述各部分合并成一个文件，并进行适当的优化，新的脚本如下</p>
-
-<pre><code class="language-python"># velocity model construction
-nz = 201; dz = 10; oz = 0 # spatial sampling in z
-nx = 401; dx = 10; ox = 0 # spatial sampling in x
-
-# 注意，每个界面至少有4个坐标，与三次样条插值sfspline有关
-layers = (
-     ((0,700),(500,900),(1000,1000),(1500,900),(2000,700),(2500,900),(3000,1000),(3500,900),(4000,700)), # 第一个界面
-     ((0,1500),(1000,1500),(2000,1500),(3000,1500),(4000, 1500)) # 第二个界面
-)
-
-def arr2str(array,sep=' '):
-    return string.join(map(str,array),sep)
-
-nlays = len(layers)
-
-# 将生成界面坐标文件与插值合并
-for i in range(nlays):
-    inp = 'inp%d' % i
-    Flow(inp+'.asc',None,
-          '''
-          echo %s in=$TARGET
-          data_format=ascii_float n1=2 n2=%d
-          ''' % \
-          (' '.join(map(lambda x: ' '.join(map(str,x)),
-                           layers[i])),len(layers[i])))
-    lay = 'lay%d' % i
-    Flow(lay,inp+'.asc','dd form=native | spline n1=%d d1=%g o1=%g' %(nx,dx,ox))
-
-Flow('lays','lay0 lay1 ',
-     'cat axis=2 ${SOURCES[1:2]}')
-
-Flow('vel','lays',
-    '''
-    unif2 n1=%d d1=%g o1=%g v00=1.500,2.000 |
-    put label1=Depth unit1=km label2=Distance unit2=km
-    label=Velocity unit=km/s
-    ''' % (nz,dz,oz) )
-</code></pre>
-
-<p>运行上述脚本，得到的结果图如下：</p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/1703880-435469885a68db68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vel1.png" /></p>
+<p><strong><a href="https://github.com/goreliu/wsl-terminal">wsl-terminal</a></strong> 是一款用来快速在当前目录下打开 WSL 的终端，其使用步骤详见官方说明。</p>
 
 <h2 id="参考">参考</h2>
 
 <ul>
-<li><a href="http://www.ahay.org/RSF/book/rsf/school2015/modmig.html">http://www.ahay.org/RSF/book/rsf/school2015/modmig.html</a></li>
-<li><a href="https://github.com/ahay/src/blob/master/book/tccs/nmodeblend/synth/SConstruct">https://github.com/ahay/src/blob/master/book/tccs/nmodeblend/synth/SConstruct</a></li>
+<li><a href="https://github.com/DDoSolitary/LxRunOffline">https://github.com/DDoSolitary/LxRunOffline</a></li>
+<li><a href="https://github.com/Microsoft/WSL/issues/449">https://github.com/Microsoft/WSL/issues/449</a></li>
+<li><a href="https://github.com/goreliu/wsl-terminal/releases">https://github.com/goreliu/wsl-terminal/releases</a></li>
 </ul>
 
     </div>
@@ -313,7 +264,7 @@ Flow('vel','lays',
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-05-21</span>
+    <span class="item-content">2018-05-23</span>
   </p>
   
   <p class="copyright-item">
@@ -345,21 +296,16 @@ Flow('vel','lays',
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/madagascar/">Madagascar</a>
+          <a href="/tags/wsl/">WSL</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/wsl/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Windows Subsystem for Linux 安装及使用</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/madagascar-matlab-%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/">
-            <span class="next-text nav-default">Madagascar Matlab 混合编程</span>
+          <a class="next" href="/rsf-unif2/">
+            <span class="next-text nav-default">Madagascar 建立速度模型流程</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
