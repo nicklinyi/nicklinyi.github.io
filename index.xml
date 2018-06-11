@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Seismic Unix 绘图指南</title>
+      <link>https://nicklinyi.github.io/suplot/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/suplot/</guid>
+      <description>本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 http://nickwhyy.top/su-scons-togethe</description>
+    </item>
+    
+    <item>
       <title>Windows Subsystem for Linux 安装及使用</title>
       <link>https://nicklinyi.github.io/wsl/</link>
       <pubDate>Wed, 23 May 2018 00:00:00 +0000</pubDate>

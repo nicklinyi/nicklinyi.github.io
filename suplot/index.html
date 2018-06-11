@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Windows Subsystem for Linux 安装及使用 - Lloyd</title>
+  <title>Seismic Unix 绘图指南 - Lloyd</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="Lloyd" />
-  <meta name="description" content="简介 Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。 安装 WSL 其安装过程比较简" />
+  <meta name="description" content="本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 http://nickwhyy.top/su-scons-togethe" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -29,7 +29,7 @@
 <meta name="generator" content="Hugo 0.37.1" />
 
 
-<link rel="canonical" href="https://nicklinyi.github.io/wsl/" />
+<link rel="canonical" href="https://nicklinyi.github.io/suplot/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -49,20 +49,16 @@
 
 
 
-<meta property="og:title" content="Windows Subsystem for Linux 安装及使用" />
-<meta property="og:description" content="简介 Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。 安装 WSL 其安装过程比较简" />
+<meta property="og:title" content="Seismic Unix 绘图指南" />
+<meta property="og:description" content="本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 http://nickwhyy.top/su-scons-togethe" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nicklinyi.github.io/wsl/" />
+<meta property="og:url" content="https://nicklinyi.github.io/suplot/" />
 
 
 
-<meta property="article:published_time" content="2018-05-23T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-06-11T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-05-23T00:00:00&#43;00:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-06-11T00:00:00&#43;00:00"/>
 
 
 
@@ -70,20 +66,24 @@
 
 
 
-<meta itemprop="name" content="Windows Subsystem for Linux 安装及使用">
-<meta itemprop="description" content="简介 Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。 安装 WSL 其安装过程比较简">
-
-
-<meta itemprop="datePublished" content="2018-05-23T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-05-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="616">
 
 
 
-<meta itemprop="keywords" content="WSL," />
+
+<meta itemprop="name" content="Seismic Unix 绘图指南">
+<meta itemprop="description" content="本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 http://nickwhyy.top/su-scons-togethe">
+
+
+<meta itemprop="datePublished" content="2018-06-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-06-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="221">
+
+
+
+<meta itemprop="keywords" content="Seismic Unix," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Windows Subsystem for Linux 安装及使用"/>
-<meta name="twitter:description" content="简介 Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。 安装 WSL 其安装过程比较简"/>
+<meta name="twitter:title" content="Seismic Unix 绘图指南"/>
+<meta name="twitter:description" content="本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 http://nickwhyy.top/su-scons-togethe"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -162,17 +162,17 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Windows Subsystem for Linux 安装及使用</h1>
+      <h1 class="post-title">Seismic Unix 绘图指南</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-05-23 </span>
+        <span class="post-time"> 2018-06-11 </span>
         <div class="post-category">
             
-              <a href="/categories/%E5%AE%89%E8%A3%85/"> 安装 </a>
+              <a href="/categories/%E7%BB%98%E5%9B%BE/"> 绘图 </a>
             
           </div>
-        <span class="more-meta"> 约 616 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 221 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -187,13 +187,18 @@
 <ul>
 <li>
 <ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#安装-wsl">安装 WSL</a></li>
-<li><a href="#使用">使用</a></li>
-<li><a href="#图形界面">图形界面</a></li>
-<li><a href="#迁移文件系统">迁移文件系统</a></li>
-<li><a href="#效率提高">效率提高</a></li>
-<li><a href="#参考">参考</a></li>
+<li><a href="#二维数据">二维数据</a>
+<ul>
+<li><a href="#灰度图">灰度图</a></li>
+<li><a href="#彩色图">彩色图</a></li>
+<li><a href="#波形图">波形图</a></li>
+</ul></li>
+<li><a href="#三维数据">三维数据</a>
+<ul>
+<li><a href="#灰度图-1">灰度图</a></li>
+<li><a href="#彩色图-1">彩色图</a></li>
+</ul></li>
+<li><a href="#参考资料">参考资料</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -204,65 +209,131 @@
     <div class="post-content">
       
 
-<h2 id="简介">简介</h2>
+<p>本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 <a href="http://nickwhyy.top/su-scons-together/。">http://nickwhyy.top/su-scons-together/。</a></p>
 
-<p>Windows Subsystem for Linux (WSL) 是 Win10 系统的新功能，其主要特性是在 Windows 下包含一个 Linux 子系统，方便开发人员不用切换系统就能开发一些软件，功能等。</p>
+<h2 id="二维数据">二维数据</h2>
 
-<h2 id="安装-wsl">安装 WSL</h2>
+<h3 id="灰度图">灰度图</h3>
 
-<p>其安装过程比较简单，打开<code>cmd</code>终端，然后输入</p>
+<pre><code class="language-python">from rsf.proj import *
+import rsf.suproj as sp
 
-<pre><code>lxrun /install
+sp.Flow('velocity.eps','velocity.dat',
+    '''
+    psimage
+    n1=300 d1=12.192 d2=12.192
+    d1num=1000 f1num=0 n1tic=1
+    d2num=2000 f2num=0 n2tic=1
+    width=3.33 height=1.6
+    label2='Distance (m)' label1='Depth (m)' labelsize=8
+    legend=1 lstyle=vertright units='Velocity (m/s)'
+    lwidth=0.1 lheight=1.6
+    ''')
+
+End()
 </code></pre>
 
-<p>之后会自动进行下载一个比较小的 Linux 发行版的安装文件 (默认是 Ubuntu)，然后按照提示的操作一步步执行就安装完毕。整个安装过程不超过 5 分钟。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-dee3a973ced2d0c0.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="捕获.PNG" /></p>
 
-<h2 id="使用">使用</h2>
+<h3 id="彩色图">彩色图</h3>
 
-<p>使用 WSL 可直接在 Win10 的搜索框中输入 <code>bash</code>, 最上面应该会显示一个 Ubuntu 的 logo 的 应用 Bash on Ubuntu on Windows，点开即可正常使用。</p>
+<pre><code class="language-python">from rsf.proj import *
+import rsf.suproj as sp
 
-<h2 id="图形界面">图形界面</h2>
+sp.Flow('vel-color.eps','velocity.dat',
+    '''
+    psimage
+    n1=300 d1=12.192 d2=12.192
+    d1num=1000 f1num=0 n1tic=1
+    d2num=2000 f2num=0 n2tic=1
+    width=3.33 height=1.6
+    label2='Distance (m)' label1='Depth (m)' labelsize=8
+    legend=1 lstyle=vertright units='Velocity (m/s)'
+    lwidth=0.1 lheight=1.6
+    threecolor=1 wrgb=1.0,0,0 grgb=1.0,1.0,1.0 brgb=0,0,1.0
+    ''')
 
-<p>可采用 <a href="https://sourceforge.net/projects/xming/">Xming</a> 作为显示来展示 WSL 需要图形界面显示的内容。然后在<code>${HOME}/.bashrc</code>中设置<code>DISPLAY=:0</code>即可。设置如下</p>
-
-<pre><code class="language-bash"># DISPLAY 
-export DISPLAY=:0
+End()
 </code></pre>
 
-<h2 id="迁移文件系统">迁移文件系统</h2>
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-242d948bc6cf875f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="捕获1.PNG" /></p>
 
-<p>WSL 的文件系统位于 C 盘，当安装的软件越来越多时，会占用大量的 C 盘空间。这对于使用 SSD 的同学或者C 盘空间本身很小的同学十分不便，因此很多人都存在将 WSL rootfs 迁移至系统其它路径的需求。该问题官方正在研究一种稳定可行的方案，具体进展详见 <a href="https://github.com/Microsoft/WSL/issues/449">https://github.com/Microsoft/WSL/issues/449</a>. 目前一个比较好的解决方案是采用<a href="https://github.com/DDoSolitary">DDoSolitary</a>开发的 <a href="https://github.com/DDoSolitary/LxRunOffline">LxRunOffline</a>. 其解决方案如下：</p>
+<h3 id="波形图">波形图</h3>
 
-<ol>
-<li><p>下载 LxRunOffline 软件
-链接为：<a href="https://github.com/DDoSolitary/LxRunOffline/releases">https://github.com/DDoSolitary/LxRunOffline/releases</a></p></li>
-
-<li><p>解压，并在该目录下打开命令提示符，输入如下代码</p>
-
-<pre><code># 显示当前的 Distribution 名称
-&gt; LxRunOffline list
-Legacy
-# 移动该 Distribution
-&gt; LxRunOffline move -n Legacy -d D:\wsl\legacy
+<pre><code class="language-python">sp.Flow('dn.eps','dn.bin',
+    '''
+    pswigb
+    n1=501 d1=0.002 d2=1
+    wbox=3.33 hbox=4
+    label2='Trace #' label1='Time (s)' labelsize=8
+    ''')
 </code></pre>
 
-<p>上述命令将整个 WSL 的 rootfs 移动至 <code>D:\wsl\legacy</code> 文件夹下。</p></li>
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-d9f143d5ae0bc96d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<li><p>check 能否正常使用，按照使用一节提示的操作进行即可。</p></li>
-</ol>
+<h2 id="三维数据">三维数据</h2>
 
-<h2 id="效率提高">效率提高</h2>
+<h3 id="灰度图-1">灰度图</h3>
 
-<p><strong><a href="https://github.com/goreliu/wsl-terminal">wsl-terminal</a></strong> 是一款用来快速在当前目录下打开 WSL 的终端，其使用步骤详见官方说明。</p>
+<pre><code class="language-python">sp.Flow('salt3d_dat_txy.eps','salt3d_dat_txy.TRC',
+    '''
+    pscube n1=501 n2=250 n3=201
+    d1=0.008 f1=0
+    d2=0.04 f2=0
+    d3=0.04 f3=0
+    f3num=0.5
+    d3num=2
+    n3tic=1
+    size1=4 size2=3.33 size3=1.5
+    label1='Time (s)'
+    label2='x (km)'
+    label3='y (km)'
+    labelsize=8
+    perc=98
+    bps=24
+    legend=1
+    lstyle=vertright
+    units='Amplitude'
+    lwidth=0.1
+    lheight=4.0
+    ''')
+</code></pre>
 
-<h2 id="参考">参考</h2>
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-f18f51765de5b643.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<ul>
-<li><a href="https://github.com/DDoSolitary/LxRunOffline">https://github.com/DDoSolitary/LxRunOffline</a></li>
-<li><a href="https://github.com/Microsoft/WSL/issues/449">https://github.com/Microsoft/WSL/issues/449</a></li>
-<li><a href="https://github.com/goreliu/wsl-terminal/releases">https://github.com/goreliu/wsl-terminal/releases</a></li>
-<li><a href="https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/">https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/</a></li>
-</ul>
+<h3 id="彩色图-1">彩色图</h3>
+
+<pre><code class="language-python">sp.Flow('salt3d_vel_zxy.eps','salt3d_vel_zxy.TRC',
+    '''
+    pscube n1=201 n2=250 n3=250
+    d1=0.04 f1=0
+    d2=0.04 f2=0
+    d3=0.04 f3=0
+    f3num=0.5
+    d3num=2
+    n3tic=1
+    size1=4 size2=3.33 size3=1.5
+    label1='Depth (km)'
+    label2='x (km)'
+    label3='y (km)'
+    labelsize=8
+    perc=98
+    bps=24
+    legend=1
+    lstyle=vertright
+    units='Amplitude'
+    lwidth=0.1
+    lheight=4.0
+    wrgb=0.0,0.0,1.0 grgb=1.0,0.0,0.0 brgb=1.0,1.0,1.0
+    bps=24
+    ''')
+</code></pre>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-8c8448f87004d2ba.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="捕获4.PNG" /></p>
+
+<h2 id="参考资料">参考资料</h2>
+
+<p><a href="http://blog.sciencenet.cn/blog-2834901-1084725.html">http://blog.sciencenet.cn/blog-2834901-1084725.html</a></p>
 
     </div>
 
@@ -274,7 +345,7 @@ Legacy
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-05-23</span>
+    <span class="item-content">2018-06-11</span>
   </p>
   
   <p class="copyright-item">
@@ -306,21 +377,16 @@ Legacy
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/wsl/">WSL</a>
+          <a href="/tags/seismic-unix/">Seismic Unix</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/suplot/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Seismic Unix 绘图指南</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/rsf-unif2/">
-            <span class="next-text nav-default">Madagascar 建立速度模型流程</span>
+          <a class="next" href="/wsl/">
+            <span class="next-text nav-default">Windows Subsystem for Linux 安装及使用</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -6,10 +6,19 @@
     <description>Recent content in 绘图 on Lloyd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 17 May 2018 08:57:57 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://nicklinyi.github.io/categories/%E7%BB%98%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Seismic Unix 绘图指南</title>
+      <link>https://nicklinyi.github.io/suplot/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/suplot/</guid>
+      <description>本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 http://nickwhyy.top/su-scons-togethe</description>
+    </item>
     
     <item>
       <title>Matlab 绘制4D数据</title>
