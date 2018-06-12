@@ -17,7 +17,7 @@
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/suplot/</guid>
-      <description>本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 http://nickwhyy.top/su-scons-togethe</description>
+      <description>本博文的示例采用 SConstruct 脚本来书写，关于如何采用 SConstruct 写 Seismic Unix 脚本详见另一篇博文 http://nickwhyy.top/su-scons-together/ 。 二维数据 灰度图 from rsf.proj import * import rsf.suproj as sp sp.Flow(&#39;velocity.eps&#39;,&#39;velocity.dat&#39;, &#39;&#39;&#39; psimage n1=300 d1=12.192 d2=12.192 d1num=1000 f1num=0 n1tic=1 d2num=2000 f2num=0 n2tic=1 width=3.33 height=1.6 label2=&#39;Distance (m)&#39; label1=&#39;Depth (m)&#39; labelsize=8</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/su-scons-together/</guid>
-      <description>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题： 1. bash 脚本是按顺序执行的，也就是说，如果</description>
+      <description>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题： bash 脚本是按顺序执行的，也就是说，如果你</description>
     </item>
     
     <item>

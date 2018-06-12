@@ -71,7 +71,7 @@
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/su-scons-together/</guid>
-      <description>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题： 1. bash 脚本是按顺序执行的，也就是说，如果</description>
+      <description>最开始使用 SU 的时候，写脚本文件是个比较令人头疼的问题。因为 SU 下给的例子都是普通的 bash 脚本，存在以下问题： bash 脚本是按顺序执行的，也就是说，如果你</description>
     </item>
     
     <item>
