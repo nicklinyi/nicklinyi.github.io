@@ -211,7 +211,7 @@ sp.Flow('plane',None,'suplane',stdin=0)
 # creat a wigb type plot
 sp.Plot('plane','supswigb')
 
-surun.End()
+sp.End()
 </code></pre>
 
 <p>上述脚本实际上是 SU 安装是否成功的一个简单的测试例子,这里将 <code>rsf.proj</code>模块导入并命名为<code>surun</code>，大家可以更改为不同的名字，主要目的是为了在同一文件中既写 SU 的脚本，也写 Madagascar 的脚本。需要注意的是上述脚本创建了一个<code>plane.su</code>的文件，然后通过<code>surun.Plot</code>命令创建了<code>plane.eps</code>的矢量图片文件。因为 SCons 总是将不含后缀的文件自动加上<code>.su</code>的后缀。而并不是所有的 SU 程序都生成<code>.su</code>后缀的文件，比如速度建模程序<code>unif2</code>，因此，对于 SU 的 SCons 脚本书写规范，建议最好对于输入和输出文件都显示的给出文件后缀。总结一下就是：</p>
