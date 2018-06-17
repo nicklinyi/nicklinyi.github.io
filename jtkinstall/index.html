@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>安装 - Lloyd</title>
+  <title>Windows 下 MinesJTK 安装指南 - Lloyd</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="Lloyd" />
-  <meta name="description" content="地震学软件 DENISE Madagascar MinesJTK Seismic Unix SEPlib SPECFEM2D SPECFEM3D TOOLBOX-OPTIMIZATION TOY2DAC 工具库 OpenCV 常用软件 常用软件 数学库 METIS MUMPS SCOTCH 系统 Debian Stretch WSL 高性能计算 CUDA MPICH" />
+  <meta name="description" content="下载源码 &amp;gt; git clone https://github.com/MinesJTK/jtk.git 编译 进入jtk\目录，在命令提示符中输入 &amp;gt; gradlew 待操作完成后，若在core\build\libs\下发现有edu-mines-j" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -29,7 +29,7 @@
 <meta name="generator" content="Hugo 0.37.1" />
 
 
-<link rel="canonical" href="https://nicklinyi.github.io/collection/" />
+<link rel="canonical" href="https://nicklinyi.github.io/jtkinstall/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -49,20 +49,16 @@
 
 
 
-<meta property="og:title" content="安装" />
-<meta property="og:description" content="地震学软件 DENISE Madagascar MinesJTK Seismic Unix SEPlib SPECFEM2D SPECFEM3D TOOLBOX-OPTIMIZATION TOY2DAC 工具库 OpenCV 常用软件 常用软件 数学库 METIS MUMPS SCOTCH 系统 Debian Stretch WSL 高性能计算 CUDA MPICH" />
+<meta property="og:title" content="Windows 下 MinesJTK 安装指南" />
+<meta property="og:description" content="下载源码 &gt; git clone https://github.com/MinesJTK/jtk.git 编译 进入jtk\目录，在命令提示符中输入 &gt; gradlew 待操作完成后，若在core\build\libs\下发现有edu-mines-j" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nicklinyi.github.io/collection/" />
+<meta property="og:url" content="https://nicklinyi.github.io/jtkinstall/" />
 
 
 
-<meta property="article:published_time" content="2016-05-19T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-06-17T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2016-05-19T00:00:00&#43;00:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-06-17T00:00:00&#43;00:00"/>
 
 
 
@@ -70,20 +66,24 @@
 
 
 
-<meta itemprop="name" content="安装">
-<meta itemprop="description" content="地震学软件 DENISE Madagascar MinesJTK Seismic Unix SEPlib SPECFEM2D SPECFEM3D TOOLBOX-OPTIMIZATION TOY2DAC 工具库 OpenCV 常用软件 常用软件 数学库 METIS MUMPS SCOTCH 系统 Debian Stretch WSL 高性能计算 CUDA MPICH">
-
-
-<meta itemprop="datePublished" content="2016-05-19T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-05-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="45">
 
 
 
-<meta itemprop="keywords" content="" />
+
+<meta itemprop="name" content="Windows 下 MinesJTK 安装指南">
+<meta itemprop="description" content="下载源码 &gt; git clone https://github.com/MinesJTK/jtk.git 编译 进入jtk\目录，在命令提示符中输入 &gt; gradlew 待操作完成后，若在core\build\libs\下发现有edu-mines-j">
+
+
+<meta itemprop="datePublished" content="2018-06-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-06-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="179">
+
+
+
+<meta itemprop="keywords" content="MinesJTK," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="安装"/>
-<meta name="twitter:description" content="地震学软件 DENISE Madagascar MinesJTK Seismic Unix SEPlib SPECFEM2D SPECFEM3D TOOLBOX-OPTIMIZATION TOY2DAC 工具库 OpenCV 常用软件 常用软件 数学库 METIS MUMPS SCOTCH 系统 Debian Stretch WSL 高性能计算 CUDA MPICH"/>
+<meta name="twitter:title" content="Windows 下 MinesJTK 安装指南"/>
+<meta name="twitter:description" content="下载源码 &gt; git clone https://github.com/MinesJTK/jtk.git 编译 进入jtk\目录，在命令提示符中输入 &gt; gradlew 待操作完成后，若在core\build\libs\下发现有edu-mines-j"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -160,59 +160,158 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <article class="post">
-  <div class="post-content">
+    
+    <header class="post-header">
+      <h1 class="post-title">Windows 下 MinesJTK 安装指南</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-06-17 </span>
+        <div class="post-category">
+            
+              <a href="/categories/%E5%9C%B0%E9%9C%87%E5%AD%A6%E8%BD%AF%E4%BB%B6/"> 地震学软件 </a>
+            
+          </div>
+        <span class="more-meta"> 约 179 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#下载源码">下载源码</a></li>
+<li><a href="#编译">编译</a></li>
+<li><a href="#测试">测试</a></li>
+<li><a href="#示例程序">示例程序</a></li>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
       
 
-<h2 id="地震学软件">地震学软件</h2>
+<h3 id="下载源码">下载源码</h3>
 
-<ul>
-<li><a href="https://nicklinyi.github.io/denise">DENISE</a></li>
-<li><a href="https://nicklinyi.github.io/madagascar">Madagascar</a></li>
-<li><a href="https://nicklinyi.github.io/jtkinstall">MinesJTK</a></li>
-<li><a href="https://nicklinyi.github.io/seismic-unix">Seismic Unix</a></li>
-<li><a href="https://nicklinyi.github.io/seplib">SEPlib</a></li>
-<li><a href="https://nicklinyi.github.io/specfem2d">SPECFEM2D</a></li>
-<li><a href="https://nicklinyi.github.io/specfem3d">SPECFEM3D</a></li>
-<li><a href="https://nicklinyi.github.io/toolbox-optimization">TOOLBOX-OPTIMIZATION</a></li>
-<li><a href="https://nicklinyi.github.io/toy2dac">TOY2DAC</a></li>
-</ul>
+<pre><code>&gt; git clone https://github.com/MinesJTK/jtk.git
+</code></pre>
 
-<h2 id="工具库">工具库</h2>
+<h3 id="编译">编译</h3>
 
-<ul>
-<li><a href="https://nicklinyi.github.io/opencv">OpenCV</a></li>
-</ul>
+<p>进入<code>jtk\</code>目录，在命令提示符中输入</p>
 
-<h2 id="常用软件">常用软件</h2>
+<pre><code>&gt; gradlew
+</code></pre>
 
-<ul>
-<li><a href="https://nicklinyi.github.io/daily">常用软件</a></li>
-</ul>
+<p>待操作完成后，若在<code>core\build\libs\</code>下发现有<code>edu-mines-jtk-x.x.x.jar</code>文件，表示编译成功</p>
 
-<h2 id="数学库">数学库</h2>
+<h3 id="测试">测试</h3>
 
-<ul>
-<li><a href="https://nicklinyi.github.io/metis">METIS</a></li>
-<li><a href="https://nicklinyi.github.io/mumps">MUMPS</a></li>
-<li><a href="https://nicklinyi.github.io/scotch">SCOTCH</a></li>
-</ul>
+<p>进入<code>jtk\</code>目录，在命令提示符中输入</p>
 
-<h2 id="系统">系统</h2>
+<pre><code>&gt; gradlew test
+BUILD SUCCESSFUL in 12m 15s.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0.jar
+8 actionable tasks: 5 executed, 3 up-to-date2/org/python/jython-standalone/2.7.0/jython-standalone-2.7.0.pom
+</code></pre>
 
-<ul>
-<li><a href="https://nicklinyi.github.io/debian">Debian Stretch</a></li>
-<li><a href="https://nicklinyi.github.io/wsl">WSL</a></li>
-</ul>
+<p>若最终结果如图中所示，则表示单元测试成功。</p>
 
-<h2 id="高性能计算">高性能计算</h2>
+<h3 id="示例程序">示例程序</h3>
 
-<ul>
-<li><a href="https://nicklinyi.github.io/cuda">CUDA</a></li>
-<li><a href="https://nicklinyi.github.io/mpich">MPICH</a></li>
-</ul>
+<ol>
+<li><p>示例一(Java)</p>
 
+<pre><code>&gt; gradlew run -P demo=mosaic.PlotFrameDemo
+</code></pre>
+
+<p>其结果为下图所示
+<img src="https://upload-images.jianshu.io/upload_images/1703880-fb7baf47721656ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p></li>
+
+<li><p>示例二(Jython)</p>
+
+<pre><code>&gt; gradlew run -P demo=mosaic/PlotFrameDemo.py
+</code></pre>
+
+<p>其结果为下图所示
+<img src="https://upload-images.jianshu.io/upload_images/1703880-9a97c0a81bc881d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p></li>
+</ol>
+
+<h3 id="参考">参考</h3>
+
+<p><a href="https://github.com/MinesJTK/jtk">https://github.com/MinesJTK/jtk</a></p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Lloyd</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-06-17</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechatpay.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
   </div>
-</article>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/minesjtk/">MinesJTK</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/suplot/">
+            <span class="next-text nav-default">Seismic Unix 绘图指南</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
   <div id="disqus_thread"></div>

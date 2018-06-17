@@ -17,7 +17,7 @@
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/collection/</guid>
-      <description>地震学软件 DENISE Madagascar Seismic Unix SEPlib SPECFEM2D SPECFEM3D TOOLBOX-OPTIMIZATION TOY2DAC 工具库 OpenCV 常用软件 常用软件 数学库 METIS MUMPS SCOTCH 系统 Debian Stretch WSL 高性能计算 CUDA MPICH</description>
+      <description>地震学软件 DENISE Madagascar MinesJTK Seismic Unix SEPlib SPECFEM2D SPECFEM3D TOOLBOX-OPTIMIZATION TOY2DAC 工具库 OpenCV 常用软件 常用软件 数学库 METIS MUMPS SCOTCH 系统 Debian Stretch WSL 高性能计算 CUDA MPICH</description>
     </item>
     
     <item>
@@ -36,6 +36,15 @@
       
       <guid>https://nicklinyi.github.io/about/</guid>
       <description>联系方式 如果对博客内容有疑问或其他问题，可通过邮件方式联系博主： Email：linyihanchuan[AT]gmail[DOT]com 如未</description>
+    </item>
+    
+    <item>
+      <title>Windows 下 MinesJTK 安装指南</title>
+      <link>https://nicklinyi.github.io/jtkinstall/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/jtkinstall/</guid>
+      <description>下载源码 &amp;gt; git clone https://github.com/MinesJTK/jtk.git 编译 进入jtk\目录，在命令提示符中输入 &amp;gt; gradlew 待操作完成后，若在core\build\libs\下发现有edu-mines-j</description>
     </item>
     
     <item>
