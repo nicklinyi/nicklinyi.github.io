@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>MinesJTK 绘图指南</title>
+      <link>https://nicklinyi.github.io/jtkplot/</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/jtkplot/</guid>
+      <description>前言 采用 Mines JTK 绘图的好处： 符合 Geophysics 等主流杂志的图片要求 自动设置图片的各种参数，并根据需求(论文，演讲)生成不同大小的 label 文字 三维绘图能力突出，个人</description>
+    </item>
+    
+    <item>
       <title>Windows 下 MinesJTK 安装指南</title>
       <link>https://nicklinyi.github.io/jtkinstall/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>

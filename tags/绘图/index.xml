@@ -6,10 +6,19 @@
     <description>Recent content in 绘图 on Lloyd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Mar 2018 08:57:57 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://nicklinyi.github.io/tags/%E7%BB%98%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MinesJTK 绘图指南</title>
+      <link>https://nicklinyi.github.io/jtkplot/</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/jtkplot/</guid>
+      <description>前言 采用 Mines JTK 绘图的好处： 符合 Geophysics 等主流杂志的图片要求 自动设置图片的各种参数，并根据需求(论文，演讲)生成不同大小的 label 文字 三维绘图能力突出，个人</description>
+    </item>
     
     <item>
       <title>Madagascar绘图总结</title>
