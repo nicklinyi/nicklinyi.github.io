@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>MinesJTK 绘图指南 - Lloyd</title>
+  <title>macOS 安装 SeismicJulia - Lloyd</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="Lloyd" />
-  <meta name="description" content="前言 采用 Mines JTK 绘图的好处： 符合 Geophysics 等主流杂志的图片要求 自动设置图片的各种参数，并根据需求(论文，演讲)生成不同大小的 label 文字 三维绘图能力突出，个人" />
+  <meta name="description" content="Julia SeismicJulia 采用 Julia 语言编写，因此要先安装 Julia. macOS 安装 Julia 非常简单， 直接上官网下载 dmg 镜像文件安装即可。 安装完成后，可以配置一下环境变量，在${HOME}/." />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -29,7 +29,7 @@
 <meta name="generator" content="Hugo 0.37.1" />
 
 
-<link rel="canonical" href="https://nicklinyi.github.io/jtkplot/" />
+<link rel="canonical" href="https://nicklinyi.github.io/seismicjulia/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -49,20 +49,16 @@
 
 
 
-<meta property="og:title" content="MinesJTK 绘图指南" />
-<meta property="og:description" content="前言 采用 Mines JTK 绘图的好处： 符合 Geophysics 等主流杂志的图片要求 自动设置图片的各种参数，并根据需求(论文，演讲)生成不同大小的 label 文字 三维绘图能力突出，个人" />
+<meta property="og:title" content="macOS 安装 SeismicJulia" />
+<meta property="og:description" content="Julia SeismicJulia 采用 Julia 语言编写，因此要先安装 Julia. macOS 安装 Julia 非常简单， 直接上官网下载 dmg 镜像文件安装即可。 安装完成后，可以配置一下环境变量，在${HOME}/." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nicklinyi.github.io/jtkplot/" />
+<meta property="og:url" content="https://nicklinyi.github.io/seismicjulia/" />
 
 
 
-<meta property="article:published_time" content="2018-06-18T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-07-25T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-06-18T00:00:00&#43;00:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-07-25T00:00:00&#43;00:00"/>
 
 
 
@@ -70,20 +66,24 @@
 
 
 
-<meta itemprop="name" content="MinesJTK 绘图指南">
-<meta itemprop="description" content="前言 采用 Mines JTK 绘图的好处： 符合 Geophysics 等主流杂志的图片要求 自动设置图片的各种参数，并根据需求(论文，演讲)生成不同大小的 label 文字 三维绘图能力突出，个人">
-
-
-<meta itemprop="datePublished" content="2018-06-18T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-06-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="437">
 
 
 
-<meta itemprop="keywords" content="MinesJTK,绘图," />
+
+<meta itemprop="name" content="macOS 安装 SeismicJulia">
+<meta itemprop="description" content="Julia SeismicJulia 采用 Julia 语言编写，因此要先安装 Julia. macOS 安装 Julia 非常简单， 直接上官网下载 dmg 镜像文件安装即可。 安装完成后，可以配置一下环境变量，在${HOME}/.">
+
+
+<meta itemprop="datePublished" content="2018-07-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="240">
+
+
+
+<meta itemprop="keywords" content="SeismicJulia," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MinesJTK 绘图指南"/>
-<meta name="twitter:description" content="前言 采用 Mines JTK 绘图的好处： 符合 Geophysics 等主流杂志的图片要求 自动设置图片的各种参数，并根据需求(论文，演讲)生成不同大小的 label 文字 三维绘图能力突出，个人"/>
+<meta name="twitter:title" content="macOS 安装 SeismicJulia"/>
+<meta name="twitter:description" content="Julia SeismicJulia 采用 Julia 语言编写，因此要先安装 Julia. macOS 安装 Julia 非常简单， 直接上官网下载 dmg 镜像文件安装即可。 安装完成后，可以配置一下环境变量，在${HOME}/."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -162,16 +162,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">MinesJTK 绘图指南</h1>
+      <h1 class="post-title">macOS 安装 SeismicJulia</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-06-18 </span>
+        <span class="post-time"> 2018-07-25 </span>
         <div class="post-category">
             
-              <a href="/categories/%E7%BB%98%E5%9B%BE/"> 绘图 </a>
+              <a href="/categories/%E8%BD%AF%E4%BB%B6/"> 软件 </a>
             
           </div>
-        <span class="more-meta"> 约 437 字 </span>
+        <span class="more-meta"> 约 240 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -187,9 +187,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#前言">前言</a></li>
-<li><a href="#mines-jtk-基础配置">Mines JTK 基础配置</a></li>
-<li><a href="#二维图形">二维图形</a></li>
+<li><a href="#julia">Julia</a></li>
+<li><a href="#seismic-jl">Seismic.jl</a></li>
+<li><a href="#示例运行">示例运行</a></li>
 <li><a href="#参考资料">参考资料</a></li>
 </ul></li>
 </ul>
@@ -201,174 +201,53 @@
     <div class="post-content">
       
 
-<h2 id="前言">前言</h2>
+<h2 id="julia">Julia</h2>
 
-<p>采用 Mines JTK 绘图的好处：</p>
+<p>SeismicJulia 采用 Julia 语言编写，因此要先安装 Julia. macOS 安装 Julia 非常简单，
+直接上<a href="https://julialang.org/downloads/">官网</a>下载 dmg 镜像文件安装即可。</p>
 
-<ul>
-<li>符合 Geophysics 等主流杂志的图片要求</li>
-<li>自动设置图片的各种参数，并根据需求(论文，演讲)生成不同大小的 label 文字</li>
-<li>三维绘图能力突出，个人感觉比 MATLAB 要美观。</li>
-</ul>
+<p>安装完成后，可以配置一下环境变量，在<code>${HOME}/.bash_profile</code> 文件末尾添加一行即可：</p>
 
-<h2 id="mines-jtk-基础配置">Mines JTK 基础配置</h2>
-
-<ul>
-<li>安装 <a href="http://nickwhyy.top/jtkinstall/">Mines JTK</a></li>
-<li>安装 Jython</li>
-</ul>
-
-<h2 id="二维图形">二维图形</h2>
-
-<pre><code>import sys
-import os
-
-from java.awt import *
-from java.io import *
-from java.lang import *
-from javax.swing import *
-from java.util import *
-
-# MINES_JTK_LIB 为 edu-mines-jtk-1.1.0.jar 文件的绝对位置，此例中将其设为系统环境变量。
-sys.path += [os.environ.get('MINES_JTK_LIB')]
-
-from edu.mines.jtk.awt import *
-from edu.mines.jtk.dsp import *
-from edu.mines.jtk.io import *
-from edu.mines.jtk.interp import *
-from edu.mines.jtk.mosaic import *
-from edu.mines.jtk.util import *
-from edu.mines.jtk.util.ArrayMath import *
-
-pngDir = None
-pngDir = &quot;./png/&quot;
-
-seismicDir = &quot;./data/&quot;
-fxfile = &quot;vel2&quot;
-f1,f2 = 0,0
-d1,d2 = 0.012192,0.012192
-n1,n2 = 300,1290
-s1 = Sampling(n1,d1,f1)
-s2 = Sampling(n2,d2,f2)
-
-def main(args):
-  greyPlot()
-  #colorPlot()
-
-def greyPlot():
-  fx = readImage(fxfile)
-  # 绘制灰度图
-  plot(fx,cmap=gray,cmin=1.500,cmax=4.500,cint=0.500,label=&quot;Velocity (km/s)&quot;,png=&quot;vel-grey&quot;)
-  # 绘制彩色图 
-  plot(fx,cmap=jet,cmin=1.500,cmax=4.500,cint=0.500,label=&quot;Velocity (km/s)&quot;,png=&quot;vel-jet&quot;)
-#############################################################################
-# graphics
-gray = ColorMap.GRAY
-jet = ColorMap.JET
-def jetFill(alpha):
-  return ColorMap.setAlpha(ColorMap.JET,alpha)
-def jetFillExceptMin(alpha):
-  a = fillfloat(alpha,256)
-  a[0] = 0.0
-  return ColorMap.setAlpha(ColorMap.JET,a)
-def jetRamp(alpha):
-  return ColorMap.setAlpha(ColorMap.HUE_BLUE_TO_RED,rampfloat(0.0,alpha/256,256))
-def grayRamp(alpha):
-  return ColorMap.setAlpha(ColorMap.GRAY,rampfloat(0.0,alpha/256,256))
-
-def plot(f,g=None,v1=None,v2=None, cmap=None,cmin=None,cmax=None,cint=None,
-        label=None,neareast=False,png=None):
-  sp = SimplePlot(SimplePlot.Origin.UPPER_LEFT)
-  sp.setVInterval(1.000)
-  sp.setHInterval(2.000)
-  sp.setHLabel(&quot;Distance (km)&quot;)
-  sp.setVLabel(&quot;Depth (km)&quot;)
-  pxv = sp.addPixels(s1,s2,f)
-  sp.setVLimits(f1,f1+n1*d1)
-  sp.setHLimits(f2,f2+n2*d2)
-  if cmap:
-    pxv.setColorModel(cmap)
-  else:
-    pxv.setColorModel(ColorMap.JET)
-  #pxv.setInterpolation(PixelsView.Interpolation.NEAREST)
-  if g:
-    pxv.setClips(-1,1)
-  else:
-    if cmin and cmax:
-      pxv.setClips(cmin,cmax)
-  if g:
-    pv = sp.addPixels(s1,s2,g)
-    pv.setInterpolation(PixelsView.Interpolation.NEAREST)
-    pv.setColorModel(cmap)
-    if cmin and cmax:
-      pv.setClips(cmin,cmax)
-  cb = sp.addColorBar()
-  if cint:
-    cb.setInterval(cint)
-  if label:
-    cb.setLabel(label)
-  if (v1 and v2):
-    x1 = zerofloat(2)
-    x2 = zerofloat(2)
-    dx1,dx2 = 6, 14
-    scale = 4
-    for i2 in range(0,n2,dx2):
-      for i1 in range(0,n1,dx1):
-        x2[0] = (i2-v2[i2][i1]*scale)*d2+f2
-        x2[1] = (i2+v2[i2][i1]*scale)*d2+f2
-        x1[0] = (i1-v1[i2][i1]*scale)*d1+f1
-        x1[1] = (i1+v1[i2][i1]*scale)*d1+f1
-        pvu = sp.addPoints(x1,x2)
-        pvu.setLineWidth(4)
-        pvu.setLineColor(Color.CYAN)
-  sp.plotPanel.setColorBarWidthMinimum(100)
-  sp.setSize(1050,700) #for f3d
-  sp.setFontSize(30)
-  if pngDir and png:
-    sp.paintToPng(300,3.333,pngDir+png+&quot;.png&quot;)
-
-
-#############################################################################
-# utilities
-def gain(x):
-  g = mul(x,x)
-  ref = RecursiveExponentialFilter(100.0)
-  ref.apply1(g,g)
-  y = zerofloat(n1,n2)
-  div(x,sqrt(g),y)
-  return y
-
-def readImage(name):
-  fileName = seismicDir+name+&quot;.dat&quot; # this data must be xdr_float format.
-  n1,n2 = s1.count,s2.count
-  image = zerofloat(n1,n2)
-  ais = ArrayInputStream(fileName)
-  ais.readFloats(image)
-  ais.close()
-  return image
-
-#############################################################################
-# Run the function main on the Swing thread
-import sys
-class _RunMain(Runnable):
-  def __init__(self,main):
-    self.main = main
-  def run(self):
-    self.main(sys.argv)
-def run(main):
-  SwingUtilities.invokeLater(_RunMain(main))
-run(main)
+<pre><code># PATH 后面添加 julia 可执行二进制文件的路径即可
+export PATH=&quot;/Applications/Julia-0.6.app/Contents/Resources/julia/bin:$PATH&quot;
 </code></pre>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/1703880-b8e666588f3448fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vel-grey.png" /></p>
+<h2 id="seismic-jl">Seismic.jl</h2>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/1703880-75de757be329fead.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vel-jet.png" /></p>
+<p>在任一终端下输入：</p>
+
+<pre><code>$ julia 
+</code></pre>
+
+<p>即可启动 Julia, 安装 Seismic.jl 只需要下面的命令即可：</p>
+
+<pre><code>julia&gt; Pkg.add(&quot;Seismic&quot;)
+julia&gt; Pkg.checkout(&quot;Seismic&quot;) 
+</code></pre>
+
+<h2 id="示例运行">示例运行</h2>
+
+<p>我们以一个简单的二维 FK 滤波为例，具体代码见链接 <a href="https://github.com/SeismicJulia/Seismic.jl/blob/master/test/test_SeisFKFilter.jl">https://github.com/SeismicJulia/Seismic.jl/blob/master/test/test_SeisFKFilter.jl</a></p>
+
+<p>首先找到<code>test_SeisFKFilter.jl</code>文件的目录，然后在该目录下运行</p>
+
+<pre><code>$ julia test_SeisFKFilter.jl
+</code></pre>
+
+<p>如果没有报错的话，应该出现以下四幅图片，表示安装成功。</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-32730aa930139b94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Figure_1.png" /></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-04ff347183250297.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Figure_2.png" /></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-cd031953d958b184.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Figure_3.png" /></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/1703880-4c2834d844a77f7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Figure_4.png" /></p>
 
 <h2 id="参考资料">参考资料</h2>
 
 <ol>
-<li><a href="https://github.com/xinwucwp/sos">https://github.com/xinwucwp/sos</a></li>
-<li><a href="http://inside.mines.edu/~dhale/notebook.html#2009_07_05">http://inside.mines.edu/~dhale/notebook.html#2009_07_05</a></li>
+<li><a href="https://github.com/SeismicJulia/Seismic.jl">https://github.com/SeismicJulia/Seismic.jl</a></li>
 </ol>
 
     </div>
@@ -381,7 +260,7 @@ run(main)
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-06-18</span>
+    <span class="item-content">2018-07-25</span>
   </p>
   
   <p class="copyright-item">
@@ -413,23 +292,16 @@ run(main)
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/minesjtk/">MinesJTK</a>
-          
-          <a href="/tags/%E7%BB%98%E5%9B%BE/">绘图</a>
+          <a href="/tags/seismicjulia/">SeismicJulia</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/seismicjulia/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">macOS 安装 SeismicJulia</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/jtkinstall/">
-            <span class="next-text nav-default">Windows 下 MinesJTK 安装指南</span>
+          <a class="next" href="/jtkplot/">
+            <span class="next-text nav-default">MinesJTK 绘图指南</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -24,6 +24,13 @@
   </url>
   
   <url>
+    <loc>https://nicklinyi.github.io/seismicjulia/</loc>
+    <lastmod>2018-07-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://nicklinyi.github.io/jtkplot/</loc>
     <lastmod>2018-06-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -514,7 +521,7 @@
   
   <url>
     <loc>https://nicklinyi.github.io/post/</loc>
-    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -564,6 +571,13 @@
   <url>
     <loc>https://nicklinyi.github.io/tags/su/</loc>
     <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/tags/seismicjulia/</loc>
+    <lastmod>2018-07-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -697,6 +711,13 @@
   <url>
     <loc>https://nicklinyi.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2018-05-20T08:57:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nicklinyi.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2018-07-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

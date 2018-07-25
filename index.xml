@@ -17,7 +17,7 @@
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://nicklinyi.github.io/collection/</guid>
-      <description>地震学软件 DENISE Madagascar MinesJTK Seismic Unix SEPlib SPECFEM2D SPECFEM3D TOOLBOX-OPTIMIZATION TOY2DAC 工具库 OpenCV 常用软件 常用软件 数学库 METIS MUMPS SCOTCH 系统 Debian Stretch WSL 高性能计算 CUDA MPICH</description>
+      <description>地震学软件 DENISE Madagascar MinesJTK SeismicJulia Seismic Unix SEPlib SPECFEM2D SPECFEM3D TOOLBOX-OPTIMIZATION TOY2DAC 工具库 OpenCV 常用软件 常用软件 数学库 METIS MUMPS SCOTCH 系统 Debian Stretch WSL 高性能计算 CUDA MPICH</description>
     </item>
     
     <item>
@@ -36,6 +36,15 @@
       
       <guid>https://nicklinyi.github.io/about/</guid>
       <description>联系方式 如果对博客内容有疑问或其他问题，可通过邮件方式联系博主： Email：linyihanchuan[AT]gmail[DOT]com 如未</description>
+    </item>
+    
+    <item>
+      <title>macOS 安装 SeismicJulia</title>
+      <link>https://nicklinyi.github.io/seismicjulia/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://nicklinyi.github.io/seismicjulia/</guid>
+      <description>Julia SeismicJulia 采用 Julia 语言编写，因此要先安装 Julia. macOS 安装 Julia 非常简单， 直接上官网下载 dmg 镜像文件安装即可。 安装完成后，可以配置一下环境变量，在${HOME}/.</description>
     </item>
     
     <item>
