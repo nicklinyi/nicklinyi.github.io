@@ -10,7 +10,7 @@
 locale                   : "en-US"
 title                    : "Yi LIN"
 title_separator          : "-"
-name                     : &name "Yi LIN (林羿)"
+name                     : &name "Yi LIN"
 description              : &description "personal description"
 url                      : https://nicklinyi.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
