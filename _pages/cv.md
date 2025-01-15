@@ -11,35 +11,27 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Solid Earth Physics, Institute of Geology and Geophysics, Chinese Academy of Sciences 2020 
+* B.E. in Applied Geophysics, Jilin University, 2014
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* 2024-present: Visiting Scientist
+  * Dipartimento di Geoscienze, Università Degli Studi di Padova, Padova, Italy
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2022-present: Associate Researcher
+  * College of Geophysics, Chengdu University of Technology, Chengdu, China
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2020-2022: Postdoctoral Research Fellow
+  * Department of Geophysics, Peking University, Beijing, China
+  * Advisor: Prof. Li ZHAO
+
   
-Skills
+Research Grants
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Collaborator. National Natural Science Foundation of China. No. 42430303. Deep mechanism of differential activities between strong earthquakes and volcanoes beneath the Shanxi Rift. Project period: 01/2025-12/2029. Funding: 2,290,000 RMB.
+* Principal Investigator. National Natural Science Foundation of China. No. 42404065. Crust-mantle deformation beneath the northeastern margin of the Tibet Plateau revealed by full-wave anisotropy tomography. Project period: 01/2025-12/2027. Funding: 300,000 RMB.
+* Principal Investigator. China Postdoctoral Science Foundation. No. 2020M680205. Automatic measurement of SKS splitting intensity and its application in anisotropy tomography in Sichuan-Yunnan region. Project period: 11/2020-09/2022. Funding: 80,000 RMB.
 
 Publications
 ======
