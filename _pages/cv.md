@@ -11,7 +11,8 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Solid Earth Physics, Institute of Geology and Geophysics, Chinese Academy of Sciences 2020 
+* Ph.D in Solid Earth Physics, Institute of Geology and Geophysics, Chinese Academy of Sciences, 2020 
+  * Supervisor: Prof. Jinhai ZHANG
 * B.E. in Applied Geophysics, Jilin University, 2014
 
 Work experience
@@ -33,9 +34,15 @@ Research Grants
 * Principal Investigator. National Natural Science Foundation of China. No. 42404065. Crust-mantle deformation beneath the northeastern margin of the Tibet Plateau revealed by full-wave anisotropy tomography. Project period: 01/2025-12/2027. Funding: 300,000 RMB.
 * Principal Investigator. China Postdoctoral Science Foundation. No. 2020M680205. Automatic measurement of SKS splitting intensity and its application in anisotropy tomography in Sichuan-Yunnan region. Project period: 11/2020-09/2022. Funding: 80,000 RMB.
 
-Publications
+Services
 ======
-  <ul>{% for post in site.publications reversed %}
+<h3>Reviewers</h3>
+<ul>
+<li><i>Geophysics</i>,</li>
+<li><i>Frontiers in Earth Science</i></li>
+</ul>
+
+  <!-- <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
@@ -49,8 +56,8 @@ Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Service and leadership
+<!-- Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->
