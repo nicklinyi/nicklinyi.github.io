@@ -7,6 +7,7 @@ redirect_from:
   - /resume
 ---
 
+<a href="../files/CV-YiLIN-011625.pdf" target="_blank" rel="noopener noreferrer">; Download my full CV in PDF</a>
 {% include base_path %}
 
 Education
