@@ -35,6 +35,13 @@ Research Grants
 * Principal Investigator. National Natural Science Foundation of China. No. 42404065. Crust-mantle deformation beneath the northeastern margin of the Tibet Plateau revealed by full-wave anisotropy tomography. Project period: 01/2025-12/2027. Funding: 300,000 RMB.
 * Principal Investigator. China Postdoctoral Science Foundation. No. 2020M680205. Automatic measurement of SKS splitting intensity and its application in anisotropy tomography in Sichuan-Yunnan region. Project period: 11/2020-09/2022. Funding: 80,000 RMB.
 
+Professional Societies & Activities
+======
+* Member of the European Geosciences Union (since 2025)
+* Life member of the Chinese Geosciences Union (since 2024)
+* Member of the American Geophysical Union (since 2020)
+* Member of the Society of Exploration Geophysicists (since 2017)
+
 Services
 ======
 <h3>Reviewers</h3>
