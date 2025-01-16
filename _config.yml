@@ -21,7 +21,7 @@ repository               : "nicklinyi/nicklinyi.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "bio-photo-yl.jpg"
   name             : "林羿 Yi LIN"
   pronouns         : # example: "she/her"  
   bio              : "Visiting Scientist"
