@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * Ph.D in Solid Earth Physics, Institute of Geology and Geophysics, Chinese Academy of Sciences, 2020 
-  * Supervisor: Prof. Jinhai ZHANG
+  * Supervisor: Prof. <a href="http://igg.cas.cn/sourcedb_igg_cas/cn/zjrck/201001/t20100119_2728795.html" target="_blank" rel="noopener noreferrer">Jinhai ZHANG</a>
 * B.E. in Applied Geophysics, Jilin University, 2014
 
 Work experience
@@ -25,7 +25,7 @@ Work experience
 
 * 2020-2022: Postdoctoral Research Fellow
   * Department of Geophysics, Peking University, Beijing, China
-  * Advisor: Prof. Li ZHAO
+  * Advisor: Prof. <a href="https://geophy.pku.edu.cn/people/zhaoli/" target="_blank" rel="noopener noreferrer">Li ZHAO</a>
 
   
 Research Grants
