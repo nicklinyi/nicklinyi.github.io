@@ -24,8 +24,9 @@ Before joining CDUT, I completed a two-year postdoctoral research program superv
 </p>
   
 <ul>
-<li>Signal Processing</li>
-<li>Observation seismology</li>
-<li>Seismic anisotropy</li>
+<li>Observational seismology</li>
+<li>Signal Processing in Seismology</li>
+<li>Imaging of seismic Anisotropy</li>
+<li>Structure, evolution, and deformation of continental lithosphere</li>
 </ul>
 
