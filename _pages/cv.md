@@ -21,7 +21,7 @@ Work experience
 * 2024-present: Visiting Scientist
   * Dipartimento di Geoscienze, Università Degli Studi di Padova, Padova, Italy
 
-* 2022-present: Associate Researcher
+* 2022-present: Associate Research Professor
   * College of Geophysics, Chengdu University of Technology, Chengdu, China
 
 * 2020-2022: Postdoctoral Research Fellow
