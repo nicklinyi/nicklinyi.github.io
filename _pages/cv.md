@@ -48,12 +48,14 @@ redirect_from:
 </ol>
   
 
-Professional Societies & Activities
-======
-* Member of the European Geosciences Union (since 2025)
-* Life member of the Chinese Geosciences Union (since 2024)
-* Member of the American Geophysical Union (since 2020)
-* Member of the Society of Exploration Geophysicists (since 2017)
+
+<h2>Professional Societies & Activities</h2>
+<ul>
+<li>Member of the European Geosciences Union (since 2025)</li>
+<li>Life member of the Chinese Geosciences Union (since 2024)</li>
+<li>Member of the American Geophysical Union (since 2020)</li>
+<li>Member of the Society of Exploration Geophysicists (since 2017)</li>
+</ul>
 
 <h2>Honors and Awards</h2>
 <ul>
@@ -65,8 +67,8 @@ Training Program.</li>
 <li><strong>2012</strong>	First-class Scholarship of Jilin University.</li>
 </ul>
 
-Services
-======
+
+<h2>Services</h2>
 <h3>Reviewers</h3>
 <ul>
 <li><i>Geophysics</i>,</li>
