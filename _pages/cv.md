@@ -10,30 +10,43 @@ redirect_from:
 <a href="../files/CV-YiLIN-012125.pdf" target="_blank" rel="noopener noreferrer"> Download my full CV in PDF</a>
 {% include base_path %}
 
-Education
-======
-* Ph.D in Solid Earth Physics, Institute of Geology and Geophysics, Chinese Academy of Sciences, 2020 
-  * Supervisor: Prof. <a href="http://igg.cas.cn/sourcedb_igg_cas/cn/zjrck/201001/t20100119_2728795.html" target="_blank" rel="noopener noreferrer">Jinhai ZHANG</a>
-* B.E. in Applied Geophysics, Jilin University, 2014
+<h2>Education</h2>
+<ul>
+<li>Ph.D in Geophysics, Institute of Geology and Geophysics, Chinese Academy of Sciences, 2020</li>
+  <ul>
+  <li>Advisor: Prof. <a href="http://igg.cas.cn/sourcedb_igg_cas/cn/zjrck/201001/t20100119_2728795.html" target="_blank" rel="noopener noreferrer">Jinhai ZHANG</a></li>
+  </ul>
+<li>B.E. in Applied Geophysics, Jilin University, 2014</li>
+</ul>
 
-Work experience
-======
-* 2024-present: Visiting Scientist
-  * Dipartimento di Geoscienze, Università Degli Studi di Padova, Padova, Italy
 
-* 2022-present: Associate Research Professor
-  * College of Geophysics, Chengdu University of Technology, Chengdu, China
 
-* 2020-2022: Postdoctoral Research Fellow
-  * Department of Geophysics, Peking University, Beijing, China
-  * Advisor: Prof. <a href="https://geophy.pku.edu.cn/people/zhaoli/" target="_blank" rel="noopener noreferrer">Li ZHAO</a>
+<h2>Professional Appointments</h2>
+<ul>
+<li>2024-present: Visiting Scientist</li>
+  <ul>
+  <li>Dipartimento di Geoscienze, Università Degli Studi di Padova, Padova, Italy</li>
+  </ul>
+<li>2022-present: Associate Research Professor</li>
+  <ul>
+  <li>College of Geophysics, Chengdu University of Technology</li>
+  </ul>
+<li>2020-2022: Postdoctoral Researcher</li>
+  <ul>
+  <li>Department of Geophysics, Peking University, Beijing, China</li>
+  <li>Advisor: Prof. <a href="https://geophy.pku.edu.cn/people/zhaoli/" target="_blank" rel="noopener noreferrer">Li ZHAO</a></li>
+  </ul>
+</ul>
 
+<h2>Research Grants</h2>
+<ol reversed>
+<li><strong>Collaborator.</strong> National Natural Science Foundation of China. No. 42430303. <i>Deep mechanism of differential activities between strong earthquakes and volcanoes beneath the Shanxi Rift</i>. Project period: 01/2025-12/2029. Funding: 2,290,000 RMB.</li>
+
+<li><strong>Principal Investigator.</strong> National Natural Science Foundation of China. No. 42404065. <i>Crust-mantle deformation beneath the northeastern margin of the Tibet Plateau revealed by full-wave anisotropy tomography</i>. Project period: 01/2025-12/2027. Funding: 300,000 RMB.</li>
+
+<li><strong>Principal Investigator.</strong> China Postdoctoral Science Foundation. No. 2020M680205. <i>Automatic measurement of SKS splitting intensity and its application in anisotropy tomography in Sichuan-Yunnan region</i>. Project period: 11/2020-09/2022. Funding: 80,000 RMB.</li>
+</ol>
   
-Research Grants
-======
-* Collaborator. National Natural Science Foundation of China. No. 42430303. Deep mechanism of differential activities between strong earthquakes and volcanoes beneath the Shanxi Rift. Project period: 01/2025-12/2029. Funding: 2,290,000 RMB.
-* Principal Investigator. National Natural Science Foundation of China. No. 42404065. Crust-mantle deformation beneath the northeastern margin of the Tibet Plateau revealed by full-wave anisotropy tomography. Project period: 01/2025-12/2027. Funding: 300,000 RMB.
-* Principal Investigator. China Postdoctoral Science Foundation. No. 2020M680205. Automatic measurement of SKS splitting intensity and its application in anisotropy tomography in Sichuan-Yunnan region. Project period: 11/2020-09/2022. Funding: 80,000 RMB.
 
 Professional Societies & Activities
 ======
@@ -41,6 +54,16 @@ Professional Societies & Activities
 * Life member of the Chinese Geosciences Union (since 2024)
 * Member of the American Geophysical Union (since 2020)
 * Member of the Society of Exploration Geophysicists (since 2017)
+
+<h2>Honors and Awards</h2>
+<ul>
+<li><strong>2024</strong>	Outstanding Demonstration Class Participant in the 31st Sichuan Province New Faculty Professional Skills
+Training Program.</li>
+<li><strong>2022</strong>	Recipient of the Everest Talent Program at Chengdu University of Technology.</li>
+<li><strong>2015</strong>	Outstanding Student of University of Chinese Academy of Sciences.</li>
+<li><strong>2012</strong>	Outstanding Student of Jilin University.</li>
+<li><strong>2012</strong>	First-class Scholarship of Jilin University.</li>
+</ul>
 
 Services
 ======
