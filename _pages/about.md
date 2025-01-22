@@ -15,7 +15,7 @@ redirect_from:
   }
 </style>
 
-<h3>Hi there, I'm Yi LIN;</h3>
+<!-- <h3>Hi there, I'm Yi LIN;</h3> -->
 <p align = "justify"> 
   I am an associate researcher with the <a href="https://www.cdut.edu.cn/en/" target="_blank" rel="noopener noreferrer"> College of Geophysics at Chengdu University of Technology</a> (CDUT). Before joining CDUT, I completed a two-year postdoctoral research program at <a href="https://english.pku.edu.cn/" target="_blank" rel="noopener noreferrer">Peking University</a> (PKU) in 2022. I obtained my PhD in Solid Earth Physics in 2020 from <a href="http://english.igg.cas.cn/" target="_blank" rel="noopener noreferrer">Institute of Geology and Geophysics, Chinese Academy of Sciences</a> (IGGCAS), China, and BE in Applied Geophysics in 2014 from <a href="https://jlu.edu.cn/" target="_blank" rel="noopener noreferrer">Jilin University</a> (JLU), China.
 </p> 
