@@ -9,31 +9,25 @@ redirect_from:
 
 
 
-<style>
-  a{
-  text-decoration: none;
-  }
-</style>
 
-<!-- <h3>Hi there, I'm Yi LIN;</h3> -->
-<p align = "justify"> 
-  I am an associate researcher with the <a href="https://www.cdut.edu.cn/en/" target="_blank" rel="noopener noreferrer"> College of Geophysics at Chengdu University of Technology</a> (CDUT). Before joining CDUT, I completed a two-year postdoctoral research program at <a href="https://english.pku.edu.cn/" target="_blank" rel="noopener noreferrer">Peking University</a> (PKU) in 2022. I obtained my PhD in Solid Earth Physics in 2020 from <a href="http://english.igg.cas.cn/" target="_blank" rel="noopener noreferrer">Institute of Geology and Geophysics, Chinese Academy of Sciences</a> (IGGCAS), China, and BE in Applied Geophysics in 2014 from <a href="https://jlu.edu.cn/" target="_blank" rel="noopener noreferrer">Jilin University</a> (JLU), China.
-</p> 
+I am an associate researcher with the [College of Geophysics at Chengdu University of Technology (CDUT)](https://www.cdut.edu.cn/en/) . Before joining CDUT, I completed a two-year postdoctoral research program at [Peking University (PKU)](https://english.pku.edu.cn/) in 2022. I obtained my PhD in Solid Earth Physics in 2020 from [Institute of Geology and Geophysics, Chinese Academy of Sciences (IGGCAS)](http://english.igg.cas.cn/), and BE in Applied Geophysics in 2014 from [Jilin University (JLU)](https://jlu.edu.cn/).
 
-<p align = "justify"> 
-I am currently a visiting scientist at <a href="https://www.unipd.it/en/" target="_blank" rel="noopener noreferrer">University of Padua</a>, working with Prof. <a href="http://geo.geoscienze.unipd.it/personal/faccenda-manuele" target="_blank" rel="noopener noreferrer">Manuele Faccenda</a> on seismic anisotropy tomography methods.
-</p>
-<p align = "justify"> 
+I am currently a visiting scientist at [University of Padua (UNIPD)](https://www.unipd.it/en/), working with Prof. [Manuele Faccenda](https://scholar.google.com/citations?user=cF3kRg0AAAAJ&hl=en&oi=ao) on seismic anisotropy tomography methods.
 
-</p>
-<p align = "justify"> 
-<strong>My research interests include:</strong>
-</p>
-  
-<ul>
-<li>Observational seismology</li>
-<li>Signal Processing in Seismology</li>
-<li>Imaging of seismic Anisotropy</li>
-<li>Structure, evolution, and deformation of continental lithosphere</li>
-</ul>
+
+
+**My research interests include:**
+- Observational seismology
+- Signal Processing in Seismology
+- Imaging of seismic Anisotropy
+- Structure, evolution, and deformation of continental lithosphere
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="../images/unipd.png" alt="UNIPD" style="width: 20%; margin-right: 1%;">
+  <img src="../images/cdut.png" alt="CDUT" style="width: 20%; margin-right: 1%;">
+  <img src="../images/pku.png" alt="PKU" style="width: 20%; margin-right: 1%;">
+  <img src="../images/iggcas.png" alt="IGGCAS" style="width: 20%; margin-right: 1%">
+  <img src="../images/jlu.jpg" alt="JLU" style="width: 20%;">
+</div>
+
 
