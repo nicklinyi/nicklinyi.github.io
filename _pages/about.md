@@ -30,8 +30,6 @@ I am currently a visiting scientist at [University of Padua (UNIPD)](https://www
   <img src="../images/jlu.jpg" alt="JLU" style="width: 20%;">
 </div>
 
-<div style="visibility: hidden;">
-<a href="https://clustrmaps.com/site/1c42d"  title="ClustrMaps"><img src="//www.clustrmaps.com/map_v2.png?d=BEUaXCM75TaG9CRLjYQbn4tt--Dub24xomoKbxPCfJg&cl=ffffff" /></a>
-</div>
+
 
 
