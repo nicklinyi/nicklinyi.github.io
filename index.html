@@ -12,16 +12,17 @@
     <header class="header-fixed">
         <div class="header-content">
             <div class="logo">Yi LIN</div>
-            <nav>
-                <ul>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#news">News</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#teaching">Teaching</a></li>
                     <li><a href="#people">People</a></li>
-                    <!-- <li><a href="#CV">CV</a></li> -->
-                    <!-- <li><a href="#contact">Contact</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -33,7 +34,7 @@
                 <div class="profile-content">
                     <img src="./images/bio-photo-yl.jpg" alt="Profile Photo">
                     <div class="profile-text">
-                        <h1>Yi LIN</h1>
+                        <h1>Yi LIN 林羿</h1>
                         <h2>Associate Research Professor</h2>
                         <p class="institution">College of Geophysics</p>
                         <p class="university">Chengdu University Of Technology</p>
@@ -100,23 +101,25 @@
                         <li>[2024/03] Our study "Upper-mantle anisotropy in the southeastern margin of Tibetan Plateau revealed by fullwave SKS splitting intensity tomography" is published in 
                             Journal of Geophysical Research: Solid Earth, 129(3), e2023JB027629. [<a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023JB027629" target="_blank" rel="noopener noreferrer">Link</a>]</li>
                         <li>[2022/11] I start a new postion as a associate research professor at Chengdu University of Technology.</li>
-                            <li>[2022/01] Our study "A multispectral denoising framework for seismic random noise attenuation" is 
+                        <li>[2022/01] Our study "A multispectral denoising framework for seismic random noise attenuation" is 
                             published in IEEE Transactions on Geoscience and Remote Sensing, 60, 1–17. 
                              [<a href="https://ieeexplore.ieee.org/document/9325070" target="_blank" rel="noopener noreferrer">Link</a>]</li>
-
-                        <li>  [2021/01] Our study "Eliminating above-surface diffractions from ground-penetrating radar data using iterative Stolt migration" is published in Geophysics, 86(1), H1–H11.
+                        <li>[2021/01] Our study "Eliminating above-surface diffractions from ground-penetrating radar data using iterative Stolt migration" is published in Geophysics, 86(1), H1–H11.
                                  [<a href="https://doi.org/10.1190/geo2019-0796.1" target="_blank" rel="noopener noreferrer">Link</a>]</li>        
                         <li> [2020/11] I received a grant of 80,000 CNY from the China Postdoctoral Foundation</li>
-                                 <li> [2020/09] Our study "Lunar regolith and substructure at Chang’E-4 landing site in South Pole–Aitken basin" is
+                        <li> [2020/09] Our study "Lunar regolith and substructure at Chang’E-4 landing site in South Pole–Aitken basin" is
                             published in Nature Astronomy, 5(1), 25-30.
                             [<a href="https://www.nature.com/articles/s41550-020-1197-x" target="_blank" rel="noopener noreferrer">Link</a>]</li>
-                            <li>[2020/06] I start a new postion as a Postdoc at the School of Earth and Space Sciences, Peking University.</li>
-                            <li>  [2020/05] Our study "NanoSIMS image enhancement by reducing random noise using low rank method" is published in Surface and Interface Analysis, 52(5), 240–248.   
+                        </ul>
+                        <ul id="more-news" style="display: none;">
+                        <li>[2020/06] I start a new postion as a Postdoc at the School of Earth and Space Sciences, Peking University.</li>
+                        <li>  [2020/05] Our study "NanoSIMS image enhancement by reducing random noise using low rank method" is published in Surface and Interface Analysis, 52(5), 240–248.   
                                 [<a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/sia.6736" target="_blank" rel="noopener noreferrer">Link</a>]</li>  
-                                <li>  [2020/01] Our study "Progressive denoising of seismic data via robust noise estimation in dual domains" is published in Geophysics, 85(1), V99–V118.
+                        <li>  [2020/01] Our study "Progressive denoising of seismic data via robust noise estimation in dual domains" is published in Geophysics, 85(1), V99–V118.
                                     [<a href="https://doi.org/10.1190/geo2019-0010.1" target="_blank" rel="noopener noreferrer">Link</a>]</li>
                         <li>[2019/12] I finished my Ph.D. at the Institute of Geology and Geophysics, Chinese Academy of Sciences!</li>
-                                </ul>
+                        </ul>
+                        <button id="view-more" onclick="toggleNews()" style="margin-top: 20px; padding: 10px 20px; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; cursor: pointer;">View More News</button>
                 </div>
             </div>
         </section>
@@ -314,5 +317,36 @@
     <footer>
         <p>&copy; 2025 Yi LIN. All rights reserved. Designed with Claude 3.7 Sonnet</p>
     </footer>
+
+    <script>
+        function toggleNews() {
+            const moreNews = document.getElementById('more-news');
+            const button = document.getElementById('view-more');
+            if (moreNews.style.display === 'none') {
+                moreNews.style.display = 'block';
+                button.textContent = 'Show Less';
+            } else {
+                moreNews.style.display = 'none';
+                button.textContent = 'View More News';
+            }
+        }
+
+         // Add new navigation toggle code
+         const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('.nav');
+        
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('nav--visible');
+            navToggle.classList.toggle('nav-toggle--active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav--visible');
+                navToggle.classList.remove('nav-toggle--active');
+            });
+        });
+    </script>
 </body>
 </html>
