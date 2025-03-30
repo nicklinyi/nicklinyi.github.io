@@ -1,0 +1,564 @@
+/* Modern Academic Website Styles */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+/* Header Styles */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 5rem;
+    padding: 2rem 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    margin-top: 0.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.profile img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 1rem;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
+}
+
+.contact-info-profile p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-profile i {
+    color: var(--accent-color);
+    width: 1.2rem;
+}
+
+.contact-info-profile .address {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding-left: 1.7rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+/* Professional Appointments and Education Styles */
+.professional-appointments,
+.education {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.professional-appointments li,
+.education li {
+    position: relative;
+    padding: 0.8rem 0 0.8rem 1.5rem;
+    border-left: 2px solid var(--accent-color);
+    margin-left: 1rem;
+}
+
+.professional-appointments li::before,
+.education li::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 1.2rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.professional-appointments li:hover,
+.education li:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .professional-appointments li,
+    .education li {
+        padding-left: 1rem;
+        margin-left: 0.5rem;
+    }
+}
+
+/* News Section Styles */
+.news-section {
+    padding: 2rem 0;
+}
+
+.news-list {
+    max-width: 100%;
+    margin: 0;
+}
+
+.news-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.news-item li {
+    position: relative;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    margin-bottom: 1rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.news-item li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent-color);
+    border-radius: 4px 0 0 4px;
+}
+
+.news-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.news-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Date styling */
+.news-item li strong {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .news-item li {
+        padding: 1rem 1rem 1rem 1.5rem;
+    }
+}
+/* Research Section */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.research-card {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.research-card i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* Publications Section */
+/* .publication {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.publication:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+} */
+
+/* Add these styles for publications */
+.publication ol {
+    padding-left: 2em;  /* Reduces the left padding */
+}
+
+.publication ol li {
+    margin-bottom: 1em;  /* Adds space between list items */
+    text-align: left;    /* Ensures text alignment */
+}
+
+.teaching ul{
+    padding-left: 2em;
+}
+
+/* People Section Styles */
+/* People Section Styles */
+.people-section {
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.people-section h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.people-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.people-section h4 {
+    color: var(--accent-color);
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.opportunities-box, .students-box, .alumni-box {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.student-category {
+    margin-bottom: 2rem;
+}
+
+.people-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.people-section li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.people-section li:last-child {
+    border-bottom: none;
+}
+
+.people-section li:hover {
+    padding-left: 10px;
+    background-color: #f8f9fa;
+}
+
+.opportunities-box p {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .people-section {
+        padding: 1rem;
+    }
+    
+    .opportunities-box, .students-box, .alumni-box {
+        padding: 1rem;
+    }
+}
+
+
+/* CV Section Styles */
+.CV-section {
+    padding: 2rem 0;
+}
+
+.CV-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.CV-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.CV-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.CV-item i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.CV-item a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+    display: block;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.CV-item a:hover {
+    color: var(--accent-color);
+}
+/* .year {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.paper-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    text-decoration: none;
+} */
+
+/* Teaching Section */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.course {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.course-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.course-header i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.course-details {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.course-details li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-bg);
+    margin-top: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .profile-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Add this to remove underlines from links */
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* ... rest of your styles ... */
+.research-interests {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.research-interests li {
+    margin-bottom: 5px;
+}
