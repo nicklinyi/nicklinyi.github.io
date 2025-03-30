@@ -288,6 +288,41 @@ h2::after {
     }
 }
 
+.ongoing-projects {
+    margin-top: 15px;
+}
+
+.project-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.project-item h4 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.project-item ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.project-item ul li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.project-item ul li strong {
+    color: #34495e;
+    margin-right: 8px;
+}
+
 /* News Section Styles */
 .news-section {
     padding: 2rem 0;
