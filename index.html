@@ -1,400 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr Yi LIN's Homepage</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yi Lin — Academic Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header-fixed">
-        <div class="header-content">
-            <div class="logo">Yi LIN</div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#teaching">Teaching</a></li>
-                    <li><a href="#people">People</a></li>
-                </ul>
-            </nav>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Yi Lin</a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#news" class="nav-link">News</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#teaching" class="nav-link">Teaching</a></li>
+        <li><a href="#cv" class="nav-link">CV</a></li>
+        <li><a href="#people" class="nav-link">People</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HOME SECTION ===== -->
+  <section id="home" class="section home-section">
+    <div class="container home-container">
+      <div class="home-avatar">
+        <div class="avatar-placeholder">
+          <!-- <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="45" r="22" fill="currentColor" opacity="0.6"/><ellipse cx="60" cy="105" rx="35" ry="22" fill="currentColor" opacity="0.6"/></svg> -->
+          <img src="./images/bio-photo-yl.jpg" alt="Profile Photo">
         </div>
-    </header>
+      </div>
+      <div class="home-info">
+        <h1 class="home-name">Yi Lin <span class="home-name-zh">林羿</span></h1>
+        <p class="home-title">Associate Research Professor of Geophysics</p>
+        <p class="home-affiliation">
+          College of Geophysics<br>
+          Chengdu University of Technology
+        </p>
+        <div class="home-contact">
+          <span>📧 ylin@cdut.edu.cn</span>
+          <span>📍 No. 1, East Third Road, Erxianqiao, Chenghua District, Chengdu, China</span>
+        </div>
+        <div class="home-links">
+          <a href="https://scholar.google.com/citations?user=_dCqZFAAAAAJ&hl=en" class="link-btn" aria-label="Google Scholar">Google Scholar</a>
+          <!-- <a href="https://scholar.google.com/citations?user=_dCqZFAAAAAJ&hl=en" class="social-icon"><i class="fas fa-graduation-cap"></i></a> -->
+          <a href="https://www.researchgate.net/profile/Yi-Lin-12?ev=hdr_xprf" class="link-btn" aria-label="ResearchGate">ResearchGate</a>
+          <a href="https://orcid.org/0000-0001-8450-8829" class="link-btn" aria-label="ORCID">ORCID</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span></span>
+    </div>
+  </section>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="profile">
-                <div class="profile-content">
-                    <img src="./images/bio-photo-yl.jpg" alt="Profile Photo">
-                    <div class="profile-text">
-                        <h1>Yi LIN 林羿</h1>
-                        <h2>Associate Research Professor</h2>
-                        <p class="institution">College of Geophysics</p>
-                        <p class="university">Chengdu University Of Technology</p>
-<!--  -->               
-                        <div class="social-links">
-                            <a href="https://scholar.google.com/citations?user=_dCqZFAAAAAJ&hl=en" class="social-icon"><i class="fas fa-graduation-cap"></i></a>
-                            <a href="https://www.researchgate.net/profile/Yi-Lin-12?ev=hdr_xprf" class="social-icon"><i class="fa-brands fa-researchgate"></i></a>
-                            <a href="https://orcid.org/0000-0001-8450-8829" class="social-icon"><i class="fab fa-orcid"></i></a>
-                            <!-- <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> -->
-                        </div>
-                        <br>
-                        <div class="contact-info-profile">
-                            <p><i class="fas fa-envelope"></i> ylin@cdut.edu.cn</p>
-                            <p><i class="fas fa-map-marker-alt"></i> No. 1, East Third Road, Erxianqiao<br>Chenghua District, Chengdu, China</p>
-                            <!-- <p class="address"></p> -->
-                        </div>
-                    </div>
-                </div>
+  <!-- ===== NEWS SECTION ===== -->
+  <section id="news" class="section news-section">
+    <div class="container">
+      <h2 class="section-title">News</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">May 2026</span>
+          <span class="news-content">Our review paper <strong>"Progress in anisotropic imaging of the crust and upper mantle"</strong> was accepted in 
+            <em>Computing Techniques for Geophysical and Geochemical Exploration</em>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Jan 2026</span>
+          <!-- Our study "" is published in Geophysical Research Letters, 53(2), e2025GL118409.  -->
+          <span class="news-content">Our paper <strong>"Full-wave SKS splitting intensity tomography 
+            suggests depth-dependent upper mantle fabrics and anisotropy beneath Alaska"</strong> was 
+            published in <em>GRL</em>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Nov 2024</span>
+          <span class="news-content">I started a new postion as a visiting scholar at <em>University of Padua</em>, Italy.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Aug 2024</span>
+          <span class="news-content">I received a grant of 300,000 CNY from the <em>National Science Foundation of China</em> (NSFC).</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Jun 2024</span>
+          <span class="news-content">I received a grant of 16,200 EUR from the <em>China Scholarship Council</em>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Mar 2024</span>
+          <span class="news-content">Our study <strong>"Upper-mantle anisotropy in the southeastern margin 
+            of Tibetan Plateau revealed by fullwave SKS splitting intensity tomography"</strong> was published 
+            in <em>JGR: Solid Earth</em>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Nov 2022</span>
+          <span class="news-content">I start a new postion as a associate research professor at <em>Chengdu University of Technology</em>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Jan 2022</span>
+          <span class="news-content">Our study <strong>"A multispectral denoising 
+            framework for seismic random noise attenuation"</strong> was published in 
+            <em>IEEE TGRS</em>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Jan 2021</span>
+          <span class="news-content">Our study <strong>"Eliminating above-surface diffractions from ground-penetrating 
+            radar data using iterative Stolt migration"</strong> was published in 
+            <em>Geophysics</em>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Nov 2020</span>
+          <span class="news-content">I received a grant of 80,000 CNY from the 
+            <em>China Postdoctoral Foundation</em>.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH SECTION ===== -->
+  <section id="research" class="section research-section">
+    <div class="container">
+      <h2 class="section-title">Research</h2>
+      <!-- <p class="section-intro">
+        My research focuses on machine learning, computer vision, and their applications in real-world problems. 
+        I am particularly interested in developing algorithms that can learn from limited supervision and generalize across domains.
+      </p> -->
+      <div class="research-topics">
+        <div class="research-topic">
+          <h3>Subduction zone stucture and dynamics</h3>
+          <p>I study upper mantle deformation beneath the Alaska subduction zone using SKS splitting intensity tomography method. 
+            The derived 3D anisotropy model characterizes depth-varying mantle fabrics, providing key constraints on slab retreat,
+            mantle flow, and lithosphere-asthenosphere coupling (Lin et al., 2026).</p>
+          <div class="research-figure">
+            <div class="figure-placeholder">
+              <!-- <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 36l8-8 6 6 8-8 10 10" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Upload Figure</span> -->
+              <img src="./images/LinGRL2026_Fig04.jpg" alt="Alaska">
             </div>
-            <div class="bio">
-                <h2>About Me</h2>
-                <p>I am an associate researcher with the <a href="https://www.cdut.edu.cn/en/">College of Geophysics at Chengdu University of Technology (CDUT)</a>. Before joining CDUT, I completed a two-year postdoctoral research program at <a href="https://english.pku.edu.cn/">Peking University (PKU)</a> in 2022. I obtained my PhD in Solid Earth Physics in 2020 from <a href="http://english.igg.cas.cn/">Institute of Geology and Geophysics, Chinese Academy of Sciences (IGGCAS)</a>, and BE in Applied Geophysics in 2014 from <a href="https://jlu.edu.cn/">Jilin University (JLU)</a>.
-
-                    
-                <br>
-                <p><strong>My research interests include:</strong></p>
-                <ul class="research-interests">
-                    <li>Observational seismology</li>
-                    <li>Signal Processing in Seismology</li>
-                    <li>Imaging of seismic Anisotropy</li>
-                    <li>Structure, evolution, and deformation of continental lithosphere</li>
-                </ul>
-                <br>
-                <p><strong>Professional Appointments</strong></p>
-                <ul class="professional-appointments">
-                    <li>2022-present: Associate Research Professor, College of Geophysics, Chengdu University of Technology</li>
-                    <li>2024-2025:  Visiting Scientist, Department of Geosciences, University of Padua</li>
-                    <li>2020-2022: Postdoctoral Researcher, School of Earth and Space Sciences, Peking University</li>
-                </ul>
-                <br>
-                <p><strong>Education</strong></p>
-                <ul class="education">
-                    <li>2014-2020: Ph.D. in Solid Earth Physics, Institute of Geology and Geophysics, Chinese Academy of Sciences</li>
-                    <li>2010-2014: B.E. in Applied Geophysics, Jilin University</li> 
-                </ul>
-                <br>
-                <p><strong>Ongoing Projects</strong></p>
-                <div class="ongoing-projects">
-                    <div class="project-item">
-                        <h4>2025-2029: Deep mechanism of differential activities between strong earthquakes and volcanoes beneath the Shanxi Rift</h4>
-                        <ul>
-                            <li><strong>Role:</strong> Collaborator</li>
-                            <li><strong>Funding Agency:</strong> National Natural Science Foundation of China</li>
-                            <li><strong>Grant Number:</strong> 42430303</li>
-                        </ul>
-                    </div>
-                    <div class="project-item">
-                        <h4>2025-2027: Crust-mantle deformation beneath the northeastern margin of the Tibet Plateau revealed by full-wave anisotropy tomography</h4>
-                        <ul>
-                            <li><strong>Role:</strong> Principal Investigator</li>
-                            <li><strong>Funding Agency:</strong> National Natural Science Foundation of China</li>
-                            <li><strong>Grant Number:</strong> 42404065</li>
-                        </ul>
-                    </div>
-                </div>
-                You can view my CV <a href="./files/cv.pdf" target="_blank"> here </a>.
-                
-                
-                <!-- <p>Email: ylin@cdut.edu.cn </p> -->
-
+          </div>
+        </div>
+        <div class="research-topic">
+          <h3>Imaging of seismic anisotropy</h3>
+          <p>I am deeply interested in advancing seismic anisotropy tomography methods, with a particular focus on shear wave splitting tomography. 
+            My work involves applying full-wave anisotropy tomography techniques using shear wave splitting intensity data to explore the anisotropic 
+            characteristics of the crust and mantle (Lin & Zhao, 2024; Lin et al., 2026).</p>
+          <div class="research-figure">
+            <div class="figure-placeholder">
+              <!-- <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 36l8-8 6 6 8-8 10 10" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Upload Figure</span> -->
+              <img src="./images/LinJGR2024_Fig12.jpg" alt="Full-wave anisotropy tomography">
             </div>
-
-        </section>
-
-        <section id="news" class="news-section">
-            <h2>Recent News</h2>
-            <div class="news-list">
-                <div class="news-item">
-                    <ul>
-                        <li>[2026/01] Our study "Full-wave SKS splitting intensity tomography suggests depth-dependent upper mantle fabrics and anisotropy beneath Alaska" is published in 
-                            Geophysical Research Letters, 53(2), e2025GL118409. [<a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL118409" target="_blank" rel="noopener noreferrer">Link</a>]</li>
-                        <li>[2025/03] Our study "Full-wave anisotropy tomography for the upper mantle of Alaska" is accepted by EGU25. [<a href="https://meetingorganizer.copernicus.org/EGU25/session/53054#Orals" target="_blank" rel="noopener noreferrer">Check the schedule here</a>]. </li>
-                        <li>[2024/11] I start a new postion as a visiting scholar at University of Padua, Italy</li>
-                        <li>[2024/08] I received a grant of 300,000 CNY from the National Science Foundation of China (NSFC)</li>
-                        <li>[2024/06] I received a grant of 16,200 EUR from the China Scholarship Council to work as a visiting scholar at University of Padua</li>
-                        <li>[2024/03] Our study "Upper-mantle anisotropy in the southeastern margin of Tibetan Plateau revealed by fullwave SKS splitting intensity tomography" is published in 
-                            Journal of Geophysical Research: Solid Earth, 129(3), e2023JB027629. [<a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023JB027629" target="_blank" rel="noopener noreferrer">Link</a>]</li>
-                        <li>[2022/11] I start a new postion as a associate research professor at Chengdu University of Technology.</li>
-                        <li>[2022/01] Our study "A multispectral denoising framework for seismic random noise attenuation" is 
-                            published in IEEE Transactions on Geoscience and Remote Sensing, 60, 1–17. 
-                             [<a href="https://ieeexplore.ieee.org/document/9325070" target="_blank" rel="noopener noreferrer">Link</a>]</li>
-                        <li>[2021/01] Our study "Eliminating above-surface diffractions from ground-penetrating radar data using iterative Stolt migration" is published in Geophysics, 86(1), H1–H11.
-                                 [<a href="https://doi.org/10.1190/geo2019-0796.1" target="_blank" rel="noopener noreferrer">Link</a>]</li>        
-                        <li> [2020/11] I received a grant of 80,000 CNY from the China Postdoctoral Foundation</li>
-                        <li> [2020/09] Our study "Lunar regolith and substructure at Chang’E-4 landing site in South Pole–Aitken basin" is
-                            published in Nature Astronomy, 5(1), 25-30.
-                            [<a href="https://www.nature.com/articles/s41550-020-1197-x" target="_blank" rel="noopener noreferrer">Link</a>]</li>
-                        </ul>
-                        <ul id="more-news" style="display: none;">
-                        <li>[2020/06] I start a new postion as a Postdoc at the School of Earth and Space Sciences, Peking University.</li>
-                        <li>  [2020/05] Our study "NanoSIMS image enhancement by reducing random noise using low rank method" is published in Surface and Interface Analysis, 52(5), 240–248.   
-                                [<a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/sia.6736" target="_blank" rel="noopener noreferrer">Link</a>]</li>  
-                        <li>  [2020/01] Our study "Progressive denoising of seismic data via robust noise estimation in dual domains" is published in Geophysics, 85(1), V99–V118.
-                                    [<a href="https://doi.org/10.1190/geo2019-0010.1" target="_blank" rel="noopener noreferrer">Link</a>]</li>
-                        <li>[2019/12] I finished my Ph.D. at the Institute of Geology and Geophysics, Chinese Academy of Sciences!</li>
-                        </ul>
-                        <button id="view-more" onclick="toggleNews()" style="margin-top: 20px; padding: 10px 20px; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; cursor: pointer;">View More News</button>
-                </div>
+          </div>
+        </div>
+        <div class="research-topic">
+          <h3>Seismic data denoising</h3>
+          <p>Attenuating random noise is crucial in seismic data processing. We have developed two methods, PID and MDF, to effectively reduce 
+            random noise in seismic data. Numerical examples demonstrate that both methods outperform conventional denoising techniques, 
+            delivering superior results (Lin & Zhang, 2020, 2022).</p>
+          <div class="research-figure">
+            <div class="figure-placeholder">
+              <!-- <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 36l8-8 6 6 8-8 10 10" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Upload Figure</span> -->
+              <img src="./images/GEO2020.jpg" alt="Seismic Data Denoising">
             </div>
-        </section>
-
-        <section id="research" class="card-section">
-            <h2>Research</h2>
-            
-            <div class="research-area">
-                <h3>Imaging of seismic anisotropy</h3>
-                <p class="research-description">
-                    I am deeply interested in advancing seismic anisotropy tomography methods, with a particular focus on shear wave splitting tomography. My work involves applying full-wave anisotropy tomography techniques using shear wave splitting intensity data to explore the anisotropic characteristics of the Earth's crust and mantle.
-                </p>
-                
-                <div class="research-project">
-                    <h4>&#9658; Full-wave anisotropy tomography</h4>
-                    <div class="project-content">
-                        <img src="./images/LinJGR2024_Fig12.jpg" alt="Full-wave anisotropy tomography">
-                        <div class="project-citation">
-                            <a href="https://doi.org/10.1029/2023JB027629" target="_blank">Lin & Zhao, 2024</a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="research-topic">
+          <h3>NanoSIMS image enhancement</h3>
+          <p>We applied the weighted nuclear norm minimization (WNNM) method to reduce the random noise in the NanoSIMS image. The low-rank 
+            property of the image is fully considered to suppress random noise while retaining reliable details of weak signals (Lin et al., 2020).</p>
+          <div class="research-figure">
+            <div class="figure-placeholder">
+              <!-- <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 36l8-8 6 6 8-8 10 10" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Upload Figure</span> -->
+              <img src="./images/NanoSIMSDenoising.jpg" alt="NanoSIMS image enhancement">
             </div>
+          </div>
+        </div>
 
-            <div class="research-area">
-                <h3>Signal Processing in Geosciences</h3>
-                <p class="research-description">
-                    I develop signal processing techniques to improve data quality in geosciences, including denoising Nanoscale secondary ion mass spectrometry (NanoSIMS) data and seismic data.
-                </p>
+      </div>
+    </div>
+  </section>
 
-                <div class="research-project">
-                    <h4>&#9658; Seismic Data Denoising</h4>
-                    <div class="project-content">
-                        <div class="project-grid">
+  <!-- ===== PUBLICATIONS SECTION ===== -->
+  <section id="publications" class="section publications-section">
+    <div class="container">
+      <h2 class="section-title">Publications</h2>
 
-                            <div class="project-text">
-                                <p>
-                                    Attenuating random noise is crucial in seismic data processing. We have developed two methods, PID and MDF, 
-                                    to effectively reduce random noise in seismic data. Numerical examples demonstrate that both methods outperform 
-                                    conventional denoising techniques, delivering superior results.
-                                </p>
-                                <div class="project-citation">
-                                    <a href="https://doi.org/10.1190/geo2019-0010.1" target="_blank">Lin & Zhang, 2020</a>,
-                                    <a href="https://doi.org/10.1109/TGRS.2020.3047633" target="_blank">2022</a>
-                                </div>
-                            </div>
-                            <div class="project-image">
-                                <img src="./images/GEO2020.jpg" alt="Seismic Data Denoising">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <h3 class="pub-subheading">Peer-reviewed Papers</h3>
+      <ol class="pub-citation-list" reversed>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, Zhao, L., &amp; Liang, C.T., 2026. Progress in anisotropic imaging of the Earth's crust and upper mantle. <em>Computing Techniques for Geophysical and Geochemical Exploration</em>, in press.</span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, Faccenda, M., &amp; Zhao, L., 2026. Full-wave SKS splitting intensity tomography suggests depth-dependent upper mantle fabrics and anisotropy beneath Alaska. <em>Geophysical Research Letters</em>, 53(2), e2025GL118409. <a href="https://doi.org/10.1029/2025GL118409" target="_blank" rel="noopener">https://doi.org/10.1029/2025GL118409</a></span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, &amp; Zhao, L., 2024. Upper-mantle anisotropy in the southeastern margin of Tibetan Plateau revealed by fullwave SKS splitting intensity tomography. <em>Journal of Geophysical Research: Solid Earth</em>, 129(3), e2023JB027629. <a href="https://doi.org/10.1029/2023JB027629" target="_blank" rel="noopener">https://doi.org/10.1029/2023JB027629</a></span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, &amp; Zhang, J., 2022. A multispectral denoising framework for seismic random noise attenuation. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 60, 1–17. <a href="https://doi.org/10.1109/TGRS.2020.3047633" target="_blank" rel="noopener">https://doi.org/10.1109/TGRS.2020.3047633</a></span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text">Li, C., <strong>Lin, Y.</strong>, Lv, W., &amp; Zhang, J., 2021. Eliminating above-surface diffractions from ground-penetrating radar data using iterative Stolt migration. <em>Geophysics</em>, 86(1), H1–H11. <a href="https://doi.org/10.1190/geo2019-0796.1" target="_blank" rel="noopener">https://doi.org/10.1190/geo2019-0796.1</a></span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text">Zhang, J., Zhou, B., <strong>Lin, Y.</strong>, Zhu, M-H., Song, H., Dong, Z., Gao, Y., Di, K., Yang, W., Lin, H., Yang, J., Liu, E., Wang, L., <strong>Lin, Y.</strong>, Li, C., Yue, Z., Yao, Z., Ouyang, Z. 2021. Lunar regolith and substructure at Chang'E-4 landing site in South Pole-Aitken basin. <em>Nature Astronomy</em>, 5(1), 25-30. <a href="https://doi.org/10.1038/s41550-020-1197-x" target="_blank" rel="noopener">https://doi.org/10.1038/s41550-020-1197-x</a></span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, &amp; Zhang, J. 2020. Progressive denoising of seismic data via robust noise estimation in dual domains. <em>Geophysics</em>, 85(1), V99–V118. <a href="https://doi.org/10.1190/geo2019-0010.1" target="_blank" rel="noopener">https://doi.org/10.1190/geo2019-0010.1</a></span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, Hao, J., Miao, Z., Zhang, J., &amp; Yang, W. 2020. NanoSIMS image enhancement by reducing random noise using low rank method. <em>Surface and Interface Analysis</em>, 52(5), 240–248. <a href="https://doi.org/10.1002/sia.6736" target="_blank" rel="noopener">https://doi.org/10.1002/sia.6736</a></span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text">Sun, W., Fu, L., Wei, W., <strong>Lin, Y.</strong>, Tang, Q. 2018. The crust-mantle transition structures beneath eastern China. <em>Chinese Journal of Geophysics</em>, 61(3):845-855. <a href="https://doi.org/10.6038/cjg2018L0551" target="_blank" rel="noopener">https://doi.org/10.6038/cjg2018L0551</a></span>
+        </li>
+      </ol>
 
-                <div class="research-project">
-                    <h4>&#9658; NanoSIMS image enhancement</h4>
-                    <div class="project-content">
-                        <div class="project-grid">
-                            <div class="project-text">
-                                <p>
-                                    We applied the weighted nuclear norm minimization (WNNM) method to reduce the random noise in the NanoSIMS image. The
-                                    low-rank property of the image is fully considered to suppress random noise while
-                                    retaining reliable details of weak signals.
-                                </p>
-                                <div class="project-citation">
-                                    <a href="https://doi.org/10.1002/sia.6736" target="_blank">Lin et al., 2020</a>
-                                </div>
-                            </div>
-                            <div class="project-image">
-                                <img src="./images/NanoSIMSDenoising.jpg" alt="NanoSIMS image enhancement">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <h3 class="pub-subheading">Selected Conference Abstracts and Posters</h3>
+      <ol class="pub-citation-list" reversed>
+        <li class="pub-citation">
+          <span class="pub-citation-text">Arvin, S., Lan, H., Chen, L., Ke, Z., <strong>Lin, Y.</strong>, Zhao, L., Talebian, M., 2026. 3-D anisotropic structure of the upper mantle beneath the Iranian Plateau using SKS splitting intensity tomography. In <em>EGU Annual Meeting Abstracts</em>.</span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, Faccenda, M., &amp; Zhao, L., 2025. Full-wave anisotropy tomography for the upper mantle of Alaska. In <em>EGU Annual Meeting Abstracts</em>.</span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text">Suwen, J., <strong>Lin, Y.</strong>, Zhao, L., &amp; Chen, Q.-F., 2023. Full-wave anisotropy tomography for the upper mantle of Northeast China using SKS splitting intensities. In <em>EGU (European Geosciences Union) Annual Meeting Abstracts</em>.</span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, &amp; Zhao, L., 2021. Full-wave upper-mantle anisotropy tomography for the southeastern margin of the Tibetan Plateau using SKS splitting intensity data. In <em>AGU Annual Meeting Abstracts</em>.</span>
+        </li>
+        <li class="pub-citation">
+          <span class="pub-citation-text"><strong>Lin, Y.</strong>, &amp; Zhao, L., 2021. Full wave multiscale tomography for the upper mantle anisotropy under Sichuan Yunnan, China. In <em>37th General Assembly of the European Seismological Commission</em>.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== TEACHING SECTION ===== -->
+  <section id="teaching" class="section teaching-section">
+    <div class="container">
+      <h2 class="section-title">Teaching</h2>
+      <div class="teaching-grid">
+        <div class="teaching-card">
+          <div class="teaching-semester">Spring 2026</div>
+          <h3>Numerical Analysis</h3>
+          <p>Undergraduate course covering numerical methods that attempt to find approximate solutions of problems rather than the exact ones.</p>
+
+        </div>
+        <div class="teaching-card">
+          <div class="teaching-semester">Fall 2026</div>
+          <h3>Fundamentals of Geophysics</h3>
+          <p>Undergraduate course covers core theories and methods exploring the Earth's interior, including gravity, magnetism, seismology,
+            heat flow and geoelectric observations.</p>
+
+        </div>
+        <div class="teaching-card">
+          <div class="teaching-semester">Fall 2026</div>
+          <h3>Seismology Laboratory</h3>
+          <p>Undergraduate course introduces fundamental observational techniques in seismology, including 
+            seismic data processing, waveform analysis and interpretation of seismograms.</p>
+
+        </div>
+        <div class="teaching-card">
+          <div class="teaching-semester">Fall 2026</div>
+          <h3>Intelligent Earth Exploration</h3>
+          <p>Graduate course covering advanced methods and technologies (maily machine learning) for remote sensing, 
+            geophysics and Earth science investigations.</p>
+
+        </div>
+      </div>
+      <div class="teaching-note">
+        <p>I am always looking for motivated students. If you are interested in working with me, please send 
+          me an email with your CV and research interests.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CV SECTION ===== -->
+  <section id="cv" class="section cv-section">
+    <div class="container">
+      <div class="cv-header">
+        <h2 class="section-title">Curriculum Vitae</h2>
+        <a href="./files/cv.pdf" class="cv-download-btn" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Full CV (PDF)
+        </a>
+      </div>
+
+      <!-- Education -->
+      <div class="cv-block">
+        <h3 class="cv-block-title">Education</h3>
+        <div class="cv-timeline">
+          <!-- <div class="cv-entry">
+            <div class="cv-entry-period">2012 – 2016</div>
+            <div class="cv-entry-content">
+              <h4>Ph.D. in Computer Science</h4>
+              <p class="cv-entry-sub">Stanford University</p>
+              <p class="cv-entry-desc">Thesis: "Learning Representations from Weak Supervision" · Advisor: Prof. Andrew Ng</p>
             </div>
-        </section>
-            
-            
-
-            
-
-
-            
-
-
-        <section id="publications">
-            <h2>Publications</h2>
-            <div class="publication">
-                <!-- <h3>Manuscripts in preparation/submission/review</h3> 
-                <ol reversed>
-               
-                </ol>      -->
-                <h3>Peer-reviewed Papers</h3>
-                <p > 
-                <ol reversed>
-                <li><strong>Lin, Y.</strong>, Zhao, L., & Liang, C.T., 2026. Progress in anisotropic imaging of the Earth's crust and upper mantle. <strong>Computing Techniques for Geophysical and Geochemical Exploration</strong>, in press. </li>  
-                <li><strong>Lin, Y.</strong>, Faccenda, M., & Zhao, L., 2026. Full-wave SKS splitting intensity tomography suggests depth-dependent upper mantle fabrics and anisotropy beneath Alaska. <strong>Geophysical Research Letters</strong>, 53(2), e2025GL118409. <a href="https://doi.org/10.1029/2025GL118409" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2025GL118409</a></li>
-                <li><strong>Lin, Y.</strong>,  & Zhao, L., 2024. Upper-mantle anisotropy in the southeastern margin of Tibetan Plateau revealed by fullwave SKS splitting intensity tomography. <strong>Journal of Geophysical Research: Solid Earth</strong>, 129(3), e2023JB027629. <a href="https://doi.org/10.1029/2023JB027629" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2023JB027629</a></li>
-                
-                <li><strong>Lin, Y.</strong>,  & Zhang, J., 2022. A multispectral denoising framework for seismic random noise attenuation. <strong>IEEE Transactions on Geoscience and Remote Sensing</strong>, 60, 1–17. <a href="https://doi.org/10.1109/TGRS.2020.3047633" target="_blank" rel="noopener noreferrer">https://doi.org/10.1109/TGRS.2020.3047633</a></li>
-                
-                <li>Li, C., <strong>Lin, Y.</strong>, Lv, W., & Zhang, J., 2021. Eliminating above-surface diffractions from ground-penetrating radar data using iterative Stolt migration. <strong>Geophysics</strong>, 86(1), H1–H11. <a href="https://doi.org/10.1190/geo2019-0796.1" target="_blank" rel="noopener noreferrer">https://doi.org/10.1190/geo2019-0796.1</a></li>
-                
-                <li>Zhang, J., Zhou, B., Lin, Y., Zhu, M-H., Song, H., Dong, Z., Gao, Y., Di, K., Yang, W., Lin, H., Yang, J., Liu, E., Wang, L., <strong>Lin, Y.</strong>, Li, C., Yue, Z., Yao, Z., Ouyang, Z. 2021. Lunar regolith and substructure at Chang’E-4 landing site in South Pole-Aitken basin. <strong>Nature Astronomy</strong>, 5(1), 25-30. <a href="https://doi.org/10.1038/s41550-020-1197-x" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41550-020-1197-x</a></li>
-                
-                <li><strong>Lin, Y.</strong>, & Zhang, J. 2020. Progressive denoising of seismic data via robust noise estimation in dual domains. <strong>Geophysics</strong>, 85(1), V99–V118. <a href="https://doi.org/10.1190/geo2019-0010.1" target="_blank" rel="noopener noreferrer">https://doi.org/10.1190/geo2019-0010.1</a></li>
-                
-                <li><strong>Lin, Y.</strong>, Hao, J., Miao, Z., Zhang, J., & Yang, W. 2020. NanoSIMS image enhancement by reducing random noise using low rank method. <strong>Surface and Interface Analysis</strong>, 52(5), 240–248.  <a href="https://doi.org/10.1002/sia.6736" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/sia.6736</a></li>
-                
-                <li>Sun, W., Fu, L., Wei, W., <strong>Lin, Y.</strong>, Tang, Q. 2018. The crust-mantle transition structures beneath eastern China. <strong>Chinese Journal of Geophysics</strong>, 61(3):845-855.  <a href="http://www.geophy.cn/en/article/doi/10.6038/cjg2018L0551?viewType=HTML" target="_blank" rel="noopener noreferrer">https://doi.org/10.6038/cjg2018L0551</a></li>
-                </ol>
-                </p>
-                <br>
-                <h3>Selected Conference Abstracts and Posters</h3>
-                <p>
-                <ol reversed>
-                <li>Arvin, S., Lan, H., Chen, L., Ke, Z., <strong>Lin, Y.</strong>, Zhao, L., Talebian, M., 2026. 3-D anisotropic structure of the upper mantle beneath the Iranian Plateau using SKS splitting intensity tomography. In EGU Annual Meeting Abstracts. </li>
-                <!-- <li><strong>Lin, Y.</strong>, Del Piccolo, G., Faccenda, M., & VanderBeek, B., 2026. Investigation of the Mt. Fuji seismogenic zone using probalistic anisotropic P-wave tomography and geodynamic modelling methods. In AOGS (Asia Oceania geosciences society) Annual Meeting Abstracts. </li> -->
-                <li><strong>Lin, Y.</strong>, Faccenda, M., & Zhao, L., 2025. Full-wave anisotropy tomography for the upper mantle of Alaska. In EGU Annual Meeting Abstracts. </li>
-                <li>Suwen, J., <strong>Lin, Y.</strong>, Zhao, L., & Chen, Q.-F., 2023.  Full-wave anisotropy tomography for the upper mantle of Northeast China using SKS splitting intensities. In EGU (European Geosciences Union) Annual Meeting Abstracts.</li>
-                <li><strong>Lin, Y.</strong>, & Zhao, L., 2021. Full-wave upper-mantle anisotropy tomography for the southeastern margin of the Tibetan Plateau using SKS splitting intensity data. In AGU Annual Meeting Abstracts.</li>
-                <li><strong>Lin, Y.</strong>, & Zhao, L., 2021. Full wave multiscale tomography for the upper mantle anisotropy under Sichuan Yunnan, China. In 37th General Assembly of the European Seismological Commission.</li>
-                </ol>
-                
-                </p> 
+          </div> -->
+          <div class="cv-entry">
+            <div class="cv-entry-period">2014 – 2020</div>
+            <div class="cv-entry-content">
+              <h4>Ph.D. in Geophysics</h4>
+              <p class="cv-entry-sub">Institute of Geology &amp; Geophysics, Chinese Academy of Sciences</p>
+              <p class="cv-entry-desc">Advisor: Prof. Jinhai Zhang</p>
             </div>
-        </section>
-
-        <section id="teaching" class="teaching-section">
-
-            <h2>Teaching</h2>
-            <div class="teaching">
-            <!-- <div class="courses-grid">
-                <div class="course">
-                    <div class="course-header">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <h3>Course Name</h3>
-                    </div>
-                    <p>Brief description of the course</p>
-                    <ul class="course-details">
-                        <li><i class="far fa-calendar"></i> Fall 2023</li>
-                        <li><i class="far fa-clock"></i> Schedule</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Location</li>
-                    </ul>
-                </div>
-            </div> -->
-            <!-- <h2>Teaching history</h2> -->
-             <p>
-            <ul>
-            <li><strong>Numerical Analysis</strong> (2024S, 2026S)</li>
-            Undergraduate course covering numerical methods that attempt to find approximate solutions of problems rather than the exact ones. Average enrollment: 30 students
-
-            <li><strong>Seismology</strong> (2024F)</li>
-            Advanced undergraduate course covering earthquakes and seismic waves, P and S waves, surface waves and faulting mechanisms. Enrollment: 30 students.
-
-            <li><strong>Progress in Geophysics</strong> (2023S, 2024S)</li>
-            Graduate course featuring a series of student-led presentations, primarily focused on the latest research and developments in geophysics. Average enrollment: 30 students.
-
-            <li><strong>Intelligent Earth Exploration</strong> (2023F, 2024F, 2025F)</li>
-            Graduate course covering advanced methods and technologies (maily machine learning) for remote sensing, geophysics and Earth science investigations. Average enrollment: 30 students.
-
-            </ul>
-            </p>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-period">2010 – 2014</div>
+            <div class="cv-entry-content">
+              <h4>B.E. in Applied Geophysics</h4>
+              <p class="cv-entry-sub">Jilin University</p>
+              <!-- <p class="cv-entry-desc">Summa Cum Laude · Chu Kochen Honors College</p> -->
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
 
-        <section id="people" class="people-section">
-            <h2>People</h2>
-            
-            <!-- <div class="opportunities-box">
-                <h3>Opportunities</h3>
-                <p><strong>For prospective graduate students</strong>: I am looking for three graduate students who are motivated and interested in observational seismology and solid earth geophysics.</p>
-                <p><strong>For CDUT undergraduates</strong>: If you are interested in observational seismology and solid earth geophysics, please contact me to talk about opportunities and potential projects.</p>
-            </div> -->
-
-            <div class="students-box">
-                <h3>Current Students</h3>
-                <div class="student-category">
-                    <h4>Graduate advisees</h4>
-                    <ul>
-                        <li>Yifan HOU 侯一帆 (MS enrolled in 2026)</li> 
-                        <li>Junyu WU 吴君钰 (MS enrolled in 2026)</li> 
-                        <li>Jiaxin HE 何嘉昕 (MS enrolled in 2025)</li> 
-                        <li>Hongxin LI 李宏鑫  (MS enrolled in 2025)</li> 
-                        <li>Dianping XIONG 熊典萍  (MS enrolled in 2025)</li> 
-                    </ul>
-                </div>
-
-                <div class="student-category">
-                    <h4>Undergraduate advisees</h4>
-                    <ul>
-                        <li>Menghao LI 李孟昊 (Enrolled in 2025) - research advisor, 2026-present</li>
-                        <li>Silin CHEN 陈思霖 (Enrolled in 2025) - research advisor, 2025-present</li>
-                        <li>Peijun LIU 刘珮君 (Enrolled in 2025) - research advisor, 2025-present</li>
-                        <li>Xunyi XIE 谢勋毅 (Enrolled in 2024) - research advisor, 2025-present</li>
-                        <li>Jianjun LI 李建军 (Enrolled in 2023) - research advisor, 2025-present</li>
-                    </ul>
-                </div>
+      <!-- Employment -->
+      <div class="cv-block">
+        <h3 class="cv-block-title">Employment</h3>
+        <div class="cv-timeline">
+          <div class="cv-entry">
+            <div class="cv-entry-period">2022 – Present</div>
+            <div class="cv-entry-content">
+              <h4>Associate Research Professor of Geophysics</h4>
+              <p class="cv-entry-sub">Chengdu University of Technology</p>
             </div>
-
-            <div class="alumni-box">
-                <h3>Alumni</h3>
-                <div class="student-category">
-                    <h4>Past undergraduate advisees</h4>
-                    <ul>
-                        <li>Yifan HOU 侯一帆 (Class of 2026)- senior thesis advisor, 2025-2026, now a MS student at Chengdu University of Technology</li>
-                        <li>Junyu WU 吴君钰 (Class of 2026)- senior thesis advisor, 2024-2026, now a MS student at Chengdu University of Technology</li>
-                        <li>Huaxuan LI 李华轩 (Class of 2026)- senior thesis advisor, 2024-2026, now a MS student at  China Unversity of Petroleum (East China) </li>
-                        <li>Junang CHEN 陈均昂 (Class of 2026)- senior thesis advisor, 2023-2026, now a PhD student at Chengdu University of Technology </li>
-                        <li>Junkai YAN 严俊凯 (Class of 2025)- senior thesis advisor, 2024-2025, now a MS student at Southern University of Science and Technology </li>
-                        <li>Zhuoyu MO 莫卓雨 (Class of 2025)- senior thesis advisor, 2024-2025, now a MS student at China Unversity of Geosciences (Beijing) </li>
-                        <li>Shuyang SHAO 邵舒洋 (Class of 2025)- senior thesis advisor, 2024-2025</li>
-                        <li>Ao LI 李奡 (Class of 2024) - senior thesis advisor, 2023-2024, now a MS student at Southern University of Science and Technology</li>
-                        <li>Ying PENG 彭萤 (Class of 2023) - senior thesis advisor, 2022-2023</li>
-                        <li>Yongteng GONG 龚永腾 (Class of 2023) - senior thesis advisor, 2022-2023</li>
-                    </ul>
-                </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-period">2024 – 2025</div>
+            <div class="cv-entry-content">
+              <h4>Visiting Scientist</h4>
+              <p class="cv-entry-sub">University of Padua, Italy</p>
             </div>
-        </section>
-    </main>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-period">2020 – 2022</div>
+            <div class="cv-entry-content">
+              <h4>Postdoctoral Researcher</h4>
+              <p class="cv-entry-sub">Peking University</p>
+              <p class="cv-entry-desc">Advisor: Prof. Li Zhao</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <footer>
-        <p>&copy; 2026 Yi LIN. All rights reserved. Designed with Claude 3.7 Sonnet</p>
-    </footer>
+      <!-- Honors & Awards -->
+      <!-- <div class="cv-block">
+        <h3 class="cv-block-title">Honors &amp; Awards</h3>
+        <div class="cv-timeline">
+          <div class="cv-entry">
+            <div class="cv-entry-period">2025</div>
+            <div class="cv-entry-content">
+              <h4>NSF CAREER Award</h4>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-period">2024</div>
+            <div class="cv-entry-content">
+              <h4>Outstanding Research Award, University of Technology</h4>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-period">2023</div>
+            <div class="cv-entry-content">
+              <h4>CVPR Best Paper Honorable Mention</h4>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-period">2020</div>
+            <div class="cv-entry-content">
+              <h4>Google Faculty Research Award</h4>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-period">2019</div>
+            <div class="cv-entry-content">
+              <h4>Rising Star in Data Science</h4>
+            </div>
+          </div>
+        </div>
+      </div> -->
 
-    <script>
-        function toggleNews() {
-            const moreNews = document.getElementById('more-news');
-            const button = document.getElementById('view-more');
-            if (moreNews.style.display === 'none') {
-                moreNews.style.display = 'block';
-                button.textContent = 'Show Less';
-            } else {
-                moreNews.style.display = 'none';
-                button.textContent = 'View More News';
-            }
-        }
+      <!-- Professional Service -->
+      <div class="cv-block">
+        <h3 class="cv-block-title">Professional Service</h3>
+        <div class="cv-timeline">
+          <!-- <div class="cv-entry">
+            <div class="cv-entry-period">2026</div>
+            <div class="cv-entry-content">
+              <h4>Area Chair</h4>
+              <p class="cv-entry-sub">ICLR 2026, NeurIPS 2026</p>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-period">2024 – 2026</div>
+            <div class="cv-entry-content">
+              <h4>Senior Program Committee</h4>
+              <p class="cv-entry-sub">AAAI 2024–2026</p>
+            </div>
+          </div> -->
+          <div class="cv-entry">
+            <div class="cv-entry-period">Ongoing</div>
+            <div class="cv-entry-content">
+              <h4>Reviewer</h4>
+              <p class="cv-entry-sub">Journal of Geophysical Research: Solid Earth, Geophysics, Earthquake Science, Frontiers in Earth Science</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-         // Add new navigation toggle code
-         const navToggle = document.querySelector('.nav-toggle');
-        const nav = document.querySelector('.nav');
-        
-        navToggle.addEventListener('click', () => {
-            nav.classList.toggle('nav--visible');
-            navToggle.classList.toggle('nav-toggle--active');
-        });
+    </div>
+  </section>
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('nav--visible');
-                navToggle.classList.remove('nav-toggle--active');
-            });
-        });
-    </script>
+  <!-- ===== PEOPLE SECTION ===== -->
+  <section id="people" class="section people-section">
+    <div class="container">
+      <h2 class="section-title">People</h2>
+
+      <!-- <div class="people-group">
+        <h3 class="people-role">Ph.D. Students</h3>
+        <div class="people-grid">
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>Alice Wang</h4>
+            <p>Efficient Vision Transformers, 2024–</p>
+            <div class="person-links"><a href="#">Homepage</a><a href="#">Scholar</a></div>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>Bob Johnson</h4>
+            <p>Multi-Modal Learning, 2025–</p>
+            <div class="person-links"><a href="#">Homepage</a><a href="#">Scholar</a></div>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>Charlie Zhang</h4>
+            <p>Self-Supervised Learning, 2023–</p>
+            <div class="person-links"><a href="#">Homepage</a><a href="#">Scholar</a></div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="people-group">
+        <h3 class="people-role">Master's Students</h3>
+        <div class="people-grid">
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>李宏鑫</h4>
+            <p class="person-pinyin">Hongxin Li</p>
+            <p>2025–</p>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>何嘉昕</h4>
+            <p class="person-pinyin">Jiaxin He</p>
+            <p>2025–</p>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>熊典萍</h4>
+            <p class="person-pinyin">Dianping Xiong</p>
+            <p>2025–</p>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>吴君钰</h4>
+            <p class="person-pinyin">Junyu Wu</p>
+            <p>2026–</p>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>侯一帆</h4>
+            <p class="person-pinyin">Yifan Hou</p>
+            <p>2026–</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="people-group">
+        <h3 class="people-role">Bachelor's Students</h3>
+        <div class="people-grid">
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>李建军</h4>
+            <p class="person-pinyin">Jianjun Li</p>
+            <p>2023–</p>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>谢勋毅</h4>
+            <p class="person-pinyin">Xunyi Xie</p>
+            <p>2024–</p>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>刘珮君</h4>
+            <p class="person-pinyin">Peijun Liu</p>
+            <p>2025–</p>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>陈思霖</h4>
+            <p class="person-pinyin">Silin Chen</p>
+            <p>2025–</p>
+          </div>
+          <div class="person-card">
+            <div class="person-avatar"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="16" fill="currentColor" opacity="0.5"/><ellipse cx="40" cy="72" rx="26" ry="16" fill="currentColor" opacity="0.5"/></svg></div>
+            <h4>李孟昊</h4>
+            <p class="person-pinyin">Menghao Li</p>
+            <p>2025–</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="people-group">
+        <h3 class="people-role">Alumni</h3>
+        <div class="alumni-list">
+          <div class="alumni-item">
+            <span class="alumni-name">李华轩 (Huaxuan Li)</span>
+            <span class="alumni-info">B.S. 2026 → Master student at China University of Petroleum (East China)</span>
+          </div>
+          <div class="alumni-item">
+            <span class="alumni-name">陈均昂 (Junang Chen)</span>
+            <span class="alumni-info">B.S. 2026 → Ph.D. student at Chengdu University of Technology</span>
+          </div>
+          <div class="alumni-item">
+            <span class="alumni-name">严俊凯 (Junkai Yan)</span>
+            <span class="alumni-info">B.S. 2025 → Master student at Southern University of Science and Technology</span>
+          </div>
+          <div class="alumni-item">
+            <span class="alumni-name">莫卓雨 (Zhuoyu Mo)</span>
+            <span class="alumni-info">B.S. 2025 → Master student at China Unversity of Geosciences (Beijing) </span>
+          </div>
+          <div class="alumni-item">
+            <span class="alumni-name">邵舒洋 (Shuyang Shao)</span>
+            <span class="alumni-info">B.S. 2025 </span>
+          </div>
+          <div class="alumni-item">
+            <span class="alumni-name">李奡 (Ao Li)</span>
+            <span class="alumni-info">B.S. 2024 → Master student at Southern University of Science and Technology</span>
+          </div>
+          <div class="alumni-item">
+            <span class="alumni-name">龚永腾 (Yongteng Gong)</span>
+            <span class="alumni-info">B.S. 2023 </span>
+          </div>
+          <div class="alumni-item">
+            <span class="alumni-name">彭萤 (Ying Peng)</span>
+            <span class="alumni-info">B.S. 2023 </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Yi Lin. All rights reserved.</p>
+      <p>College of Geophysics, Chengdu University of Technology</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
